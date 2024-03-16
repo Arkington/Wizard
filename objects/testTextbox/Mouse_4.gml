@@ -1,0 +1,1 @@
+create_textbox(new Page("Testing objTextbox!"));

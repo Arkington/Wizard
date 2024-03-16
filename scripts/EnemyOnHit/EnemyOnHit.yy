@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"EnemyOnHit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"EnemyOnHit",
+  "parent":{
+    "name":"Enemies",
+    "path":"folders/Enemies.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

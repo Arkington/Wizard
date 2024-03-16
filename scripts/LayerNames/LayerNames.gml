@@ -1,0 +1,6 @@
+#macro LAYER_TEXT "Text"
+#macro LAYER_INTERACTS "Interacts"
+#macro LAYER_WALLS "Walls"
+#macro LAYER_INSTANCES "Instances"
+#macro LAYER_TILES "TilesMain"
+#macro LAYER_MECHANICS "Mechanics"

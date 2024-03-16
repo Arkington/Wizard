@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ControlDefinitions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ControlDefinitions",
+  "parent":{
+    "name":"Macros",
+    "path":"folders/Macros.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

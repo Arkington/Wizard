@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ThoughtSwirlConstants",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ThoughtSwirlConstants",
+  "parent":{
+    "name":"Macros",
+    "path":"folders/Macros.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

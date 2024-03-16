@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ProgrammingConstants",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ProgrammingConstants",
+  "parent":{
+    "name":"Macros",
+    "path":"folders/Macros.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

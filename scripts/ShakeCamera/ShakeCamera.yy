@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ShakeCamera",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ShakeCamera",
+  "parent":{
+    "name":"Managers",
+    "path":"folders/Objects/Managers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

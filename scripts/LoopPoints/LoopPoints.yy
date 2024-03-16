@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"LoopPoints",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LoopPoints",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

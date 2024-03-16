@@ -1,0 +1,2 @@
+#macro THOUGHT_WIDTH 36
+#macro THOUGHT_HEIGHT 20

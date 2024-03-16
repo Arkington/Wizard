@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"LayerNames",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LayerNames",
+  "parent":{
+    "name":"Macros",
+    "path":"folders/Macros.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
