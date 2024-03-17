@@ -8,7 +8,7 @@ pitch_alter = function() { return 1; }
 
 // Sprites
 textbox_sprite = sMenubox;
-textbox_font = fnt_text;
+textbox_font = fntText;
 portrait_border_sprite = sMenubox;
 portrait_border_width = 3;
 	

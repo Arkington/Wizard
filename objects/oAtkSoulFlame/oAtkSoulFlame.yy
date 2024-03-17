@@ -7,6 +7,8 @@
   "overriddenProperties":[
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pAtk","path":"objects/pAtk/pAtk.yy",},"propertyId":{"name":"speed","path":"objects/pAtk/pAtk.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pAtk","path":"objects/pAtk/pAtk.yy",},"propertyId":{"name":"damage","path":"objects/pAtk/pAtk.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pAtk","path":"objects/pAtk/pAtk.yy",},"propertyId":{"name":"fire_sfx","path":"objects/pAtk/pAtk.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sndAtkFire",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pAtk","path":"objects/pAtk/pAtk.yy",},"propertyId":{"name":"hit_sfx","path":"objects/pAtk/pAtk.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sndAtkHit",},
   ],
   "parent":{
     "name":"Attacks",

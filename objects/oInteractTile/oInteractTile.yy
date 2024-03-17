@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oChoiceMenu",
+  "%Name":"oInteractTile",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oChoiceMenu",
+  "name":"oInteractTile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text System",
-    "path":"folders/Text System.yy",
+    "name":"Overworld Mechanics Tiles",
+    "path":"folders/Objects/Overworld Mechanics Tiles.yy",
   },
-  "parentObjectId":{
-    "name":"oMenu",
-    "path":"objects/oMenu/oMenu.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sInteractTile",
+    "path":"sprites/sInteractTile/sInteractTile.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

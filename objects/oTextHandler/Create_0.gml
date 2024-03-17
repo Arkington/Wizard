@@ -14,7 +14,7 @@ state_name = "Awaiting";
 stateAwaiting = function() {
 	state_name = "Awaiting";
 	if activeTextNode == noone { return; }
-	activePauser = instance_create_depth(0, 0, 0, objPauser);
+	activePauser = instance_create_depth(0, 0, 0, oPauser);
 	activeTextbox = create_textbox(activeTextNode.pages[0]);
 	nextTextNode = activeTextNode.nextnode;
 	state = stateReadingPage;

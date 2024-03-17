@@ -1,5 +1,0 @@
-depth = -bbox_bottom;
-
-
-
-

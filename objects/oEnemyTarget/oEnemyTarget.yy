@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprEnemyTarget_tmp",
-    "path":"sprites/sprEnemyTarget_tmp/sprEnemyTarget_tmp.yy",
+    "name":"sEnemyTarget",
+    "path":"sprites/sEnemyTarget/sEnemyTarget.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oChoiceMenu",
+  "%Name":"oMonster",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oChoiceMenu",
+  "name":"oMonster",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text System",
-    "path":"folders/Text System.yy",
+    "name":"Entities",
+    "path":"folders/Objects/Entities.yy",
   },
   "parentObjectId":{
-    "name":"oMenu",
-    "path":"objects/oMenu/oMenu.yy",
+    "name":"oWall",
+    "path":"objects/oWall/oWall.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sMonster",
+    "path":"sprites/sMonster/sMonster.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

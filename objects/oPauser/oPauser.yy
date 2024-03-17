@@ -1,21 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oChoiceMenu",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oPauser",
+  "eventList":[],
   "managed":true,
-  "name":"oChoiceMenu",
+  "name":"oPauser",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text System",
-    "path":"folders/Text System.yy",
+    "name":"Overworld Mechanics",
+    "path":"folders/Objects/Overworld Mechanics.yy",
   },
-  "parentObjectId":{
-    "name":"oMenu",
-    "path":"objects/oMenu/oMenu.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

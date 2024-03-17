@@ -23,8 +23,8 @@ if key.aim_held {
 	}
 }
 
-x = objPlayer.x;
-y = objPlayer.y;
+x = oPlayer.x;
+y = oPlayer.y;
 
 lifetime++;
 for (var i = 0; i < n_thoughts; i++) {

@@ -1,22 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oChoiceMenu",
+  "%Name":"oTransitionLinesVertical",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oChoiceMenu",
+  "name":"oTransitionLinesVertical",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text System",
-    "path":"folders/Text System.yy",
+    "name":"Room Transitions",
+    "path":"folders/Objects/Room Transitions.yy",
   },
   "parentObjectId":{
-    "name":"oMenu",
-    "path":"objects/oMenu/oMenu.yy",
+    "name":"oTransition",
+    "path":"objects/oTransition/oTransition.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -33,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sTransitionLinesVertical",
+    "path":"sprites/sTransitionLinesVertical/sTransitionLinesVertical.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

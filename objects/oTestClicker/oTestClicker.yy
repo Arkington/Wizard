@@ -1,21 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oChoiceMenu",
+  "%Name":"oTestClicker",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oChoiceMenu",
+  "name":"oTestClicker",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text System",
-    "path":"folders/Text System.yy",
+    "name":"Test",
+    "path":"folders/Test.yy",
   },
-  "parentObjectId":{
-    "name":"oMenu",
-    "path":"objects/oMenu/oMenu.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sTestClicker",
+    "path":"sprites/sTestClicker/sTestClicker.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

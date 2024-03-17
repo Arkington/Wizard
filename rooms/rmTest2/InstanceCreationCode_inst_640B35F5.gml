@@ -1,1 +1,0 @@
-action = function() { load_textnode("hatrick_intro_conversation"); }

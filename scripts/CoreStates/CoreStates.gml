@@ -22,8 +22,8 @@ function CoreStateFree(){
 function CoreStateFocus() {
 	
 	// Focus SFX
-	if !audio_is_playing(sFocusRing) {
-		focus_sfx = audio_play_sound(sFocusRing, 0, true);
+	if !audio_is_playing(sndFocusRing) {
+		focus_sfx = audio_play_sound(sndFocusRing, 0, true);
 	} else {
 		var _sfx_pos = audio_sound_get_track_position(focus_sfx);
 		if (_sfx_pos > FOCUS_SFX_INTRO_LEN + FOCUS_SFX_LOOP_LEN) {
@@ -67,7 +67,7 @@ function CoreStateFocus() {
 		// Picked attack
 		if atk_hover != NONE {
 			atk_select = atk_hover;
-			audio_play_sound(sAtkShift, 0, false);
+			audio_play_sound(sndAtkShift, 0, false);
 		}
         aim_lock = true;
         aim_reset_timer = AIM_LOCK_FRAMES;

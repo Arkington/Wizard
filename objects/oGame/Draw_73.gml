@@ -4,7 +4,7 @@ if !global.debug { exit; }
 with (global.text_handler) {
 	image_blend = (state == stateAwaiting) ? c_white : c_yellow;
 	draw_sprite_ext(
-		sprTextHandler,
+		sTextHandler,
 		image_index,
 		camera_get_view_x(view_camera[0]),
 		camera_get_view_y(view_camera[0]),
@@ -20,7 +20,7 @@ with (pEntity) {
 	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
 }
 
-with (objPlayer) {
+with (oPlayer) {
 	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
 	draw_circle(
 		x + lengthdir_x(INTERACT_DIST, direction) - 1,
