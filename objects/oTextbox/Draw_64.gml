@@ -5,13 +5,16 @@ y = screenpos_y;
 var _text_to_draw = string_copy(text, 1, char_count);
 draw_set_font(textbox_font);
 
-draw_sprite_stretched(
+// Textbox
+draw_sprite_stretched_ext(
 	textbox_sprite,
 	0,
 	x + portrait_x_adj,
 	y,
-	textbox_width - portrait_x_adj,
-	textbox_height
+	(textbox_width - portrait_x_adj) * scale,
+	textbox_height * scale,
+	c_white,
+	alpha
 );
 
 // Each letter rendered individually
@@ -33,31 +36,45 @@ for (var c = 0; c < char_count; c++) {
 		_shake_adj_y = lengthdir_y(_shake_len, _shake_dir);
 	}
 
-	draw_text_colour(
-		x + char_x[c] + x_buffer + portrait_x_adj + _shake_adj_x,
-		y + char_y[c] + y_buffer + _wave_adj + _shake_adj_y,
+	draw_text_transformed_colour(
+		x + char_x[c]*scale + x_buffer + portrait_x_adj + _shake_adj_x,
+		y + char_y[c]*scale + y_buffer + _wave_adj + _shake_adj_y,
 		string_char_at(text, c+1),
+		scale,
+		scale,
+		0,
 		char_col[c],
 		char_col[c],
 		char_col[c],
 		char_col[c],
-		1
+		alpha
 	);
 }
 
 if portrait != NO_PORTRAIT {
-	draw_sprite_stretched(
+	
+	// Portrait border
+	draw_sprite_stretched_ext(
 		portrait_border_sprite,
 		0,
 		x - x_buffer/2 - portrait_border_width,
 		y + y_buffer - portrait_border_width,
-		sprite_get_width(portrait) + 2*portrait_border_width,
-		sprite_get_height(portrait) + 2*portrait_border_width
+		(sprite_get_width(portrait) + 2*portrait_border_width) * scale,
+		(sprite_get_height(portrait) + 2*portrait_border_width) * scale,
+		c_white,
+		alpha
 	);
-	draw_sprite(
+	
+	// Portrait
+	draw_sprite_ext(
 		portrait,
 		0,
 		x - x_buffer/2,
-		y + y_buffer
+		y + y_buffer,
+		scale,
+		scale,
+		0,
+		c_white,
+		alpha
 	);
 }
