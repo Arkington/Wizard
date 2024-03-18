@@ -1,23 +1,17 @@
-lifetime = 0;
-thoughts = [];
+state = ThoughtSwirlStateWaiting;
 thought_swirl = variable_global_get(thought_swirl_name);
-textnodes = [];
 key = {};
 
-// var n = 0;
-// struct_foreach({thought_swirl}, function(_thought, _textnode) {
-//     if (n < MAX_THOUGHTS) {
-//         thoughts[n] = _thought;
-//         textnodes[n] = _textnode;
-//     }
-//     n++;
-// });
+n_thoughts = 0;
+struct_foreach(thought_swirl, function(_thought, _textnode) {
+    thought_textboxes[n_thoughts] = create_thought_textbox(_thought);
+    thoughts[n_thoughts] = _thought;
+	thought_scales[n_thoughts] = THOUGHT_TEXT_SCALE;
+    n_thoughts++;
+});
 
-// TODO: make macro:
-rotate_speed = 1;
-thought_radius = 32;
-n_thoughts = 7;
-
+lifetime = 0;
+alpha = 0;
 aim_lock = false;
 aim_reset_timer = 0;
 angle = 90;

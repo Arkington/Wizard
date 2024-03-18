@@ -1,5 +1,7 @@
 
 text = DEFAULT_TEXT;
+scale = 1;
+alpha = 1;
 
 // Speaker
 portrait = NO_PORTRAIT;
@@ -28,4 +30,6 @@ wave_sep = TEXT_WAVE_SEP_MID;
 wave_speed = TEXT_WAVE_SPEED_MID;
 wave_height_factor = TEXT_WAVE_HEIGHT_FACTOR_MID;
 shake_intensity = TEXT_SHAKE_INTENSITY_MID;
-shake_ave_time = TEXT_SHAKE_AVE_TIME_MID
+shake_ave_time = TEXT_SHAKE_AVE_TIME_MID;
+
+SetupTextbox();

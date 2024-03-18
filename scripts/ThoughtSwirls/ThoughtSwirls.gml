@@ -1,3 +1,4 @@
+initializeSpeakers();
 /*
 	"I have a thought!" : TextNode(
 	    [

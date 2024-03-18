@@ -8,7 +8,14 @@ if (char_count < text_length) && (pause_text_timer <= 0) {
 		if (pause_sound_timer <= 0 and voices != NO_VOICE) {
 			// Play a random voice clip, alter pitch as specified
 			var _voice_clip = voices[irandom(array_length(voices) - 1)];
-			audio_play_sound(_voice_clip, 0, false, NONE, NONE, pitch_alter());
+			audio_play_sound(
+				_voice_clip,
+				0,
+				false,
+				1,
+				0,
+				pitch_alter()
+			);
 			pause_sound_timer = pause_sound_length;
 		}
 	}
