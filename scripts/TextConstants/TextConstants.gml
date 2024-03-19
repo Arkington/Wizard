@@ -6,7 +6,7 @@
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
 
-#macro DEFAULT_TEXTBOX_WIDTH 256
+#macro DEFAULT_TEXTBOX_WIDTH 352
 #macro DEFAULT_TEXTBOX_HEIGHT 64
 #macro DEFAULT_BUFFER 8
 

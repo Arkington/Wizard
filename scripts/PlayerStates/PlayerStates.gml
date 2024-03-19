@@ -27,3 +27,7 @@ function PlayerStateFree() {
     sprite_index = sprite[CARDINAL_DIR];
     depth = -bbox_bottom;
 }
+
+function PlayerStatePaused() {
+	image_index = 0;
+}

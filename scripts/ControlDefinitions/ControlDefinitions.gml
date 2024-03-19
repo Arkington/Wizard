@@ -21,4 +21,5 @@
 #macro KEY_SKIP_TEXT ord("E")
 
 #macro INTERACT_DIST 10
+#macro INTERACT_RANGE 5
 #macro INTERACT_ANGLE 45

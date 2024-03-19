@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "path":"folders/Entities.yy",
   },
   "parentObjectId":{
     "name":"pEntity",

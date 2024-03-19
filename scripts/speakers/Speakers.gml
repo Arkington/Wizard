@@ -9,6 +9,10 @@ function initializeSpeakers() {
 	// Axel
 	spkAxelNeutral = Speaker(porAxelTest, [vDefault]);
 
+	// HC, via bird
+	spkHCViaBird = Speaker(porBird, [vDefault]);
+
+
 	// Hatrick
 	spkHatrickNeutral = Speaker(
 		porHatrickTest,
