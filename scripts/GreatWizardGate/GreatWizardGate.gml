@@ -1,11 +1,7 @@
 /// Code
 function GreatWizardGate_CheckBird() {
-	with (global.state) {
-		if !variable_instance_exists(id, "gwg_bird_interacts") { gwg_bird_interacts = 1; }
-		else { gwg_bird_interacts++; }
-	}
-	bird_check_count = min(global.state.gwg_bird_interacts, 5);
-	show_debug_message(bird_check_count);
+	global.state.GWG_BIRD_INTERACTS++;
+	bird_check_count = min(global.state.GWG_BIRD_INTERACTS, 5);
 	load_textnode("textGreatWizardGate", $"bird_check_{bird_check_count}");
 }
 

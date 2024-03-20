@@ -10,7 +10,21 @@ function initializeSpeakers() {
 	spkAxelNeutral = Speaker(porAxelTest, [vDefault]);
 
 	// HC, via bird
-	spkHCViaBird = Speaker(porBird, [vDefault]);
+	spkHCViaBird = Speaker(
+		porBird,
+		[
+			vHC1,
+			vHC2,
+			vHC3,
+			vHC4
+		],
+		{
+			pitch_factor: 0.9,
+			pitch_variance: 0.3,
+			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
+			pause_sound_length: 8
+		}
+	);
 
 
 	// Hatrick
@@ -22,6 +36,7 @@ function initializeSpeakers() {
 			vHatrickNeutral8
 		],
 		{
+			pitch_variance: 0.5,
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/2; },
 			pause_sound_length: 8
 		}
@@ -34,6 +49,8 @@ function initializeSpeakers() {
 			vHatrickSad5
 		],
 		{
+			pitch_factor: 0.9,
+			pitch_variance: 0.33,
 			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
 			pause_sound_length: 8
 		}
@@ -46,6 +63,7 @@ function initializeSpeakers() {
 			vHatrickHappy5
 		],
 		{
+			pitch_variance: 0.67,
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/1.5; },
 			pause_sound_length: 8
 		}

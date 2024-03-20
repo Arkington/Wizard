@@ -6,7 +6,8 @@ alpha = 1;
 // Speaker
 portrait = NO_PORTRAIT;
 voices = [vDefault];
-pitch_alter = function() { return 1; }
+pitch_factor = 1;
+pitch_variance = 0;
 
 // Sprites
 textbox_sprite = sMenubox;

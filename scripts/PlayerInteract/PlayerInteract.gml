@@ -50,8 +50,10 @@ function PlayerInteract() {
 	// Check in order of closest to rectangle mid
 	for (var i = 0; i < _entities_found; i++) {
 		_interact = _interact_list[| i];
+		
 		if (_interact.on_interact != NO_INTERACT) {
 			script_execute_ext(_interact.on_interact, _interact.on_interact_args);
+		
 			// Facing player
 			if (_interact.face_player_on_interact) {
 				with (_interact) {

@@ -14,7 +14,7 @@ if (char_count < text_length) && (pause_text_timer <= 0) {
 				false,
 				1,
 				0,
-				pitch_alter()
+				pitch_factor + (random(1) - 0.5)*pitch_variance
 			);
 			pause_sound_timer = pause_sound_length;
 		}
