@@ -5,13 +5,14 @@
 #macro NO_CHOICES undefined
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
+#macro DEFAULT_TEXT_KEY "main_1"
 
-#macro DEFAULT_TEXTBOX_WIDTH 352
+#macro DEFAULT_TEXTBOX_WIDTH 272
 #macro DEFAULT_TEXTBOX_HEIGHT 64
 #macro DEFAULT_BUFFER 8
 
 // Textbox locations
-#macro TEXTBOX_BOTTOM_X 16
+#macro TEXTBOX_BOTTOM_X 56
 #macro TEXTBOX_BOTTOM_Y 144
 
 // Textbox effects
@@ -50,6 +51,6 @@
 #macro THOUGHT_RADIUS 32
 #macro THOUGHT_WIDTH 40
 #macro THOUGHT_HEIGHT 20
-#macro THOUGHT_TEXT_SCALE 0.4
+#macro THOUGHT_TEXT_SCALE (1/3)
 #macro HOVER_THOUGHT_SCALE 1.25
 #macro HOVER_THOUGHT_SPEED 0.01

@@ -9,9 +9,9 @@ draw_set_font(textbox_font);
 draw_sprite_stretched_ext(
 	textbox_sprite,
 	0,
-	x + portrait_x_adj,
+	x,
 	y,
-	(textbox_width - portrait_x_adj) * scale,
+	(textbox_width) * scale,
 	textbox_height * scale,
 	c_white,
 	alpha
@@ -36,9 +36,10 @@ for (var c = 0; c < char_count; c++) {
 		_shake_adj_y = lengthdir_y(_shake_len, _shake_dir);
 	}
 
+	// Draw text
 	draw_text_transformed_colour(
-		x + char_x[c]*scale + x_buffer + portrait_x_adj + _shake_adj_x,
-		y + char_y[c]*scale + y_buffer + _wave_adj + _shake_adj_y,
+		res_round(x + char_x[c]*scale + x_buffer + _shake_adj_x),
+		res_round(y + char_y[c]*scale + y_buffer + _wave_adj + _shake_adj_y),
 		string_char_at(text, c+1),
 		scale,
 		scale,
@@ -57,10 +58,10 @@ if portrait != NO_PORTRAIT {
 	draw_sprite_stretched_ext(
 		portrait_border_sprite,
 		0,
-		x - x_buffer/2 - portrait_border_width,
+		x - x_buffer - portrait_border_width - portrait_width,
 		y + y_buffer - portrait_border_width,
-		(sprite_get_width(portrait) + 2*portrait_border_width) * scale,
-		(sprite_get_height(portrait) + 2*portrait_border_width) * scale,
+		(portrait_width + 2*portrait_border_width) * scale,
+		(portrait_height + 2*portrait_border_width) * scale,
 		c_white,
 		alpha
 	);
@@ -69,7 +70,7 @@ if portrait != NO_PORTRAIT {
 	draw_sprite_ext(
 		portrait,
 		0,
-		x - x_buffer/2,
+		x - x_buffer - portrait_width,
 		y + y_buffer,
 		scale,
 		scale,

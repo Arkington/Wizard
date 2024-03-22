@@ -28,7 +28,7 @@ function create_choice_menu(_choices) {
 
 /// @param {String} _text_source_name
 /// @param {String} _key
-function load_textnode(_text_source_name, _key = "main_1") {
+function load_textnode(_text_source_name, _key = DEFAULT_TEXT_KEY) {
 	if global.text_handler.activeTextNode == noone {
 		_text_source = variable_global_get(_text_source_name);
 		global.text_handler.text_source = _text_source;

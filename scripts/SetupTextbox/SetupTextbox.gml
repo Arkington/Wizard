@@ -12,9 +12,10 @@ function SetupTextbox(){
     char_count = 0;
     pause_text_timer = 0;
 	pause_sound_timer = 0;
-    portrait_x_adj =  (portrait == NO_PORTRAIT ? 0 : sprite_get_width(portrait) + x_buffer/2);
-    line_width = textbox_width - 2*x_buffer - portrait_x_adj;
-    line_height = string_height(ALPHABET);
+	portrait_width = portrait != NO_PORTRAIT ? sprite_get_width(portrait) : 0;
+	portrait_height = portrait != NO_PORTRAIT ? sprite_get_height(portrait) : 0;
+    line_width = textbox_width - 2*x_buffer;
+	line_height = string_height(ALPHABET);
     
     // Auto add line breaks, colours, effects
     last_space_pos = -1;

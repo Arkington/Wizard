@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"GameState",
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Managers.yy",
+    "name":"Wizard",
+    "path":"Wizard.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

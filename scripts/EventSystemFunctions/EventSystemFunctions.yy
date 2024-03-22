@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"CreateTextSystem",
+  "%Name":"EventSystemFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"CreateTextSystem",
+  "name":"EventSystemFunctions",
   "parent":{
-    "name":"Text System",
-    "path":"folders/Text System.yy",
+    "name":"Event System",
+    "path":"folders/Event System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

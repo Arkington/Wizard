@@ -1,0 +1,1 @@
+if (global.state.GWG_OPEN) { instance_destroy(); }

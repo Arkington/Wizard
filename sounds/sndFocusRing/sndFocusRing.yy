@@ -12,8 +12,8 @@
   "duration":2.477687,
   "name":"sndFocusRing",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"Battle SFX",
+    "path":"folders/Sounds/Battle SFX.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
