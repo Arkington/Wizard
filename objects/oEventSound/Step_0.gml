@@ -2,9 +2,9 @@
 if !active { exit; }
 
 // Play sound
-if !played {
+if !begun {
 	audio_play_sound(sound, 0, false);
-	played = true;
+	begun = true;
 }
 
 // Complete condition

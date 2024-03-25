@@ -2,7 +2,7 @@
 
 global.initial_state = {
 	// Lower Bizzaire
-	GWG_BIRD_INTERACTS : 0,
+	GWG_BIRD_INTERACTS : 4,
 	GWG_OPEN : 0,
 }
 

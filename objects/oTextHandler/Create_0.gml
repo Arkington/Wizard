@@ -8,5 +8,6 @@ nextTextNode = NO_NEXT_NODE;
 page = 0;
 page_rendered = false;
 final_page = false;
+player_state_prior = NONE;
 
 state = TextHandlerStateAwaiting;

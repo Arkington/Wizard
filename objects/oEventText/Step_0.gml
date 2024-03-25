@@ -1,9 +1,9 @@
 // Load textnode
 if !active { exit; }
 
-if !loaded {
+if !begun {
 	load_textnode(text_source, key);
-	loaded = true;
+	begun = true;
 }
 
 // Complete condition

@@ -13,10 +13,7 @@
     "name":"Room Transitions",
     "path":"folders/Objects/Room Transitions.yy",
   },
-  "parentObjectId":{
-    "name":"oPauser",
-    "path":"objects/oPauser/oPauser.yy",
-  },
+  "parentObjectId":null,
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

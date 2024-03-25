@@ -1,7 +1,7 @@
 /// @desc State Machine for oTextHandler
 function TextHandlerStateAwaiting() {
 	if activeTextNode == noone { return; }
-	oPlayer.state = PlayerStatePaused;
+	oPlayer.state = PlayerStateCutscene;
 	activeTextbox = create_textbox(activeTextNode.pages[0]);
 	nextTextNode = activeTextNode.nextnode;
 	state = TextHandlerStateReadingPage;
@@ -55,7 +55,7 @@ function TextHandlerStateCleanUp() {
 		nextTextNode = NO_NEXT_NODE;
 	}
 	
-	oPlayer.state = PlayerStateFree;
+	oPlayer.state = player_state_prior;
 	
 	state = TextHandlerStateAwaiting;
 	state(); // Call again to prevent a frame of lawlessness

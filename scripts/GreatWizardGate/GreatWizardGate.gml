@@ -7,15 +7,33 @@ function GreatWizardGate_CheckBird() {
 	} else if bird_check_count == 5 {
 		// Gate opening cutscene
 		global.state.GWG_OPEN = true;
+		oPlayer.state = PlayerStateCutscene;
 		EventDestroy(oInteractTile);
 		EventText("textGreatWizardGate", "bird_check_final");
 		WaitForEvents();
 		EventSound(sndBirdCry);
 		WaitForEvents();
-		EventCode(function() { oBird.sprite_index = sBirdFly; });
-		EventMove(oBird, -32, 44, 1);
+		EventAnimation(oBird, sBirdFly);
+		EventMove(oBird, -16, 40, 1);
+		EventWait(1);
+		EventFace(oPlayer, LEFT);
+		EventWait(1.5);
+		EventSound(sndGateOpen);
+		EventFace(oPlayer, UP);
+		EventAnimation(oGreatWizardGate, sGreatWizardGate);
+		EventWait(2.5);
+		EventMove(oPlayer, NONE, 180, CUTSCENE_WALK_SPEED);
+		EventWait(0.4);
+		EventMove(oPlayer, 192, NONE, CUTSCENE_WALK_SPEED);
 		WaitForEvents();
+		EventFace(oPlayer, UP);
 		EventDestroy(oBird);
+		EventWait(0.5);
+		EventSound(sndOpen);
+		EventAnimation(oGreatWizardGate, sGreatWizardGateOpen);
+		EventWait(2.5);
+		EventCode(PlayMusic, [musSpacewalk, true]);
+		EventPlayerStateFree();
 	}
 }
 
