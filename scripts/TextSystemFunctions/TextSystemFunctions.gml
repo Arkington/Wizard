@@ -1,5 +1,5 @@
 /// @param _page
-function create_textbox(_page) {
+function create_textbox(_page, _fade_in = true) {
 	textbox = instance_create_layer(0, 0, LAYER_TEXT, oTextbox);
 	textbox_params = _page.textbox_params;
 	with (textbox) {
@@ -9,6 +9,8 @@ function create_textbox(_page) {
 		struct_foreach(other.textbox_params, function(_param, _value) {
 			variable_instance_set(id, _param, _value);
 		});
+		// Specify fade in
+		variable_instance_set(id, "fade_in", _fade_in);
 		
 		SetupTextbox();
 	}

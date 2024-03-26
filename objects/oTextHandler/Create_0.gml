@@ -1,4 +1,4 @@
-
+first_textbox = true; // First textbox is faded in
 text_source = undefined; // Text loaded into the handler
 activeTextNode = noone;
 activeTextbox = noone;

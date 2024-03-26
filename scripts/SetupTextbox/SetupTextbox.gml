@@ -1,5 +1,6 @@
 /// @desc
-function SetupTextbox(){
+function SetupTextbox() {
+	
     // Text effect arrays
     char_x = [];
     char_y = [];
@@ -14,7 +15,8 @@ function SetupTextbox(){
 	pause_sound_timer = 0;
 	portrait_width = portrait != NO_PORTRAIT ? sprite_get_width(portrait) : 0;
 	portrait_height = portrait != NO_PORTRAIT ? sprite_get_height(portrait) : 0;
-    line_width = textbox_width - 2*x_buffer;
+	portrait_x_adj = portrait != NO_PORTRAIT ? portrait_width + 2*portrait_border_width : 0;
+    line_width = textbox_width - 2*x_buffer - portrait_x_adj;
 	line_height = string_height(ALPHABET);
     
     // Auto add line breaks, colours, effects

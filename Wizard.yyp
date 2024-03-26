@@ -214,6 +214,7 @@
     {"id":{"name":"sItemFrame","path":"sprites/sItemFrame/sItemFrame.yy",},},
     {"id":{"name":"sItemFrameSelected","path":"sprites/sItemFrameSelected/sItemFrameSelected.yy",},},
     {"id":{"name":"sMenubox","path":"sprites/sMenubox/sMenubox.yy",},},
+    {"id":{"name":"sPortraitBorder","path":"sprites/sPortraitBorder/sPortraitBorder.yy",},},
     {"id":{"name":"sMenuGrapes","path":"sprites/sMenuGrapes/sMenuGrapes.yy",},},
     {"id":{"name":"sMenuSoulFlame_tmp","path":"sprites/sMenuSoulFlame_tmp/sMenuSoulFlame_tmp.yy",},},
     {"id":{"name":"sMenuStunShock_tmp","path":"sprites/sMenuStunShock_tmp/sMenuStunShock_tmp.yy",},},

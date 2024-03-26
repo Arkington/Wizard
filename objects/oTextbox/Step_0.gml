@@ -1,3 +1,6 @@
+pause_text_timer--;
+pause_sound_timer--;
+frame++;
 
 // Count up characters, leaving time for spaces
 if (char_count < text_length) && (pause_text_timer <= 0) {
@@ -22,10 +25,6 @@ if (char_count < text_length) && (pause_text_timer <= 0) {
 	var _check_char = string_char_at(text, char_count);
 	if string_contains(_check_char, ".,!?") { pause_text_timer = pause_text_length; }
 }
-
-pause_text_timer--;
-pause_sound_timer--;
-frame++;
 
 // Skip text
 if keyboard_check_pressed(KEY_SKIP_TEXT) {

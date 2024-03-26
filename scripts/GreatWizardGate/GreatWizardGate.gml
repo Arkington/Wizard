@@ -19,12 +19,13 @@ function GreatWizardGate_CheckBird() {
 		EventFace(oPlayer, LEFT);
 		EventWait(1.5);
 		EventSound(sndGateOpen);
-		EventFace(oPlayer, UP);
 		EventAnimation(oGreatWizardGate, sGreatWizardGate);
+		EventWait(1);
+		EventFace(oPlayer, UP);
 		EventWait(2.5);
 		EventMove(oPlayer, NONE, 180, CUTSCENE_WALK_SPEED);
 		EventWait(0.4);
-		EventMove(oPlayer, 192, NONE, CUTSCENE_WALK_SPEED);
+		EventMove(oPlayer, 168, NONE, CUTSCENE_WALK_SPEED);
 		WaitForEvents();
 		EventFace(oPlayer, UP);
 		EventDestroy(oBird);

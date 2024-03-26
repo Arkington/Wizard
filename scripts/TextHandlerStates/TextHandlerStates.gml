@@ -2,7 +2,8 @@
 function TextHandlerStateAwaiting() {
 	if activeTextNode == noone { return; }
 	oPlayer.state = PlayerStateCutscene;
-	activeTextbox = create_textbox(activeTextNode.pages[0]);
+	activeTextbox = create_textbox(activeTextNode.pages[0], first_textbox);
+	first_textbox = false;
 	nextTextNode = activeTextNode.nextnode;
 	state = TextHandlerStateReadingPage;
 }
@@ -15,8 +16,7 @@ function TextHandlerStateReadingPage() {
 		} else {
 			state = TextHandlerStateAwaitNextPage;
 		}
-	}
-	
+	}	
 }
 
 function TextHandlerStateAwaitNextPage() {
@@ -26,7 +26,7 @@ function TextHandlerStateAwaitNextPage() {
 		} else {
 			page += 1;
 			instance_destroy(activeTextbox);
-			activeTextbox = create_textbox(activeTextNode.pages[page]);
+			activeTextbox = create_textbox(activeTextNode.pages[page], first_textbox);
 			state = TextHandlerStateReadingPage;
 		}
 	}
@@ -50,13 +50,17 @@ function TextHandlerStateCleanUp() {
 	
 	page = 0;
 
-	if nextTextNode != NO_NEXT_NODE {
+	// Either continue chain or do not
+	if nextTextNode == NO_NEXT_NODE {
+		first_textbox = true;
+	}
+	else {
 		activeTextNode = text_source[$nextTextNode];
 		nextTextNode = NO_NEXT_NODE;
 	}
 	
+	// Change player state
 	oPlayer.state = player_state_prior;
-	
 	state = TextHandlerStateAwaiting;
 	state(); // Call again to prevent a frame of lawlessness
 }

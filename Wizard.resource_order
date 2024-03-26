@@ -157,6 +157,7 @@
     {"name":"sHatrickRight","order":3,"path":"sprites/sHatrickRight/sHatrickRight.yy",},
     {"name":"sItemFrame","order":1,"path":"sprites/sItemFrame/sItemFrame.yy",},
     {"name":"sItemFrameSelected","order":2,"path":"sprites/sItemFrameSelected/sItemFrameSelected.yy",},
+    {"name":"sPortraitBorder","order":5,"path":"sprites/sPortraitBorder/sPortraitBorder.yy",},
     {"name":"sMenuGrapes","order":5,"path":"sprites/sMenuGrapes/sMenuGrapes.yy",},
     {"name":"sMenuSoulFlame_tmp","order":1,"path":"sprites/sMenuSoulFlame_tmp/sMenuSoulFlame_tmp.yy",},
     {"name":"sMenuStunShock_tmp","order":3,"path":"sprites/sMenuStunShock_tmp/sMenuStunShock_tmp.yy",},
