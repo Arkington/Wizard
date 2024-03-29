@@ -10,4 +10,4 @@ state();
 
 // Irrespective of state
 sprite_index = sprite[CARDINAL_DIR];
-depth = -bbox_bottom;
+depth = -bbox_bottom - depth_adj;

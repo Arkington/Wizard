@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oGreatWizardGate",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oBench",
+  "eventList":[],
   "managed":true,
-  "name":"oGreatWizardGate",
-  "overriddenProperties":[],
+  "name":"oBench",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"propertyId":{"name":"on_interact","path":"objects/pEntity/pEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"BenchInteract",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"propertyId":{"name":"on_interact_args","path":"objects/pEntity/pEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[id]",},
+  ],
   "parent":{
     "name":"Overworld Objects",
     "path":"folders/Entities/Overworld Objects.yy",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sGreatWizardGate",
-    "path":"sprites/sGreatWizardGate/sGreatWizardGate.yy",
+    "name":"sBench",
+    "path":"sprites/sBench/sBench.yy",
   },
   "spriteMaskId":null,
   "visible":true,

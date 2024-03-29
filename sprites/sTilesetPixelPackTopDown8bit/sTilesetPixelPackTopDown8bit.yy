@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"sTilesetPixelPackTopDown8bit",
   "bboxMode":0,
-  "bbox_bottom":511,
+  "bbox_bottom":527,
   "bbox_left":0,
   "bbox_right":255,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":512,
+  "height":592,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"1af6f68e-7152-4adf-84a7-01cd9d5aaec3","blendMode":0,"displayName":"default","isLocked":false,"name":"1af6f68e-7152-4adf-84a7-01cd9d5aaec3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

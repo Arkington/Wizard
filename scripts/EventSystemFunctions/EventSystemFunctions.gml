@@ -50,8 +50,26 @@ function EventFace(_obj, _face) {
 	[_obj, _face]);
 }
 
+/// @desc Queue an object to warp instananeously to a position
+function EventWarp(_obj, _x, _y) {
+	EventCode(
+		function(_obj, _x, _y) {
+			_obj.x = _x;
+			_obj.y = _y;
+		},
+	[_obj, _x, _y]);
+}
+
+/// @desc Queue adjusting an object's depth
+function EventDepthAdj(_obj, _depth_adj) {
+	EventCode(
+		function(_obj, _depth_adj) { _obj.depth_adj = _depth_adj; },
+		[_obj, _depth_adj]
+	);
+}
+
 /// @desc Queue an object to move
-function EventMove(_obj_to_move, _x, _y, _move_speed, _animate = true) {
+function EventMove(_obj_to_move, _x, _y, _move_speed = CUTSCENE_WALK_SPEED, _animate = true) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventMove);
 	with (_event) {
 		obj_to_move = _obj_to_move;

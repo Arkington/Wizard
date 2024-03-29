@@ -6,8 +6,8 @@
   "name":"oInteractTile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/Entities.yy",
+    "name":"Room Essentials",
+    "path":"folders/Room Essentials.yy",
   },
   "parentObjectId":{
     "name":"pEntity",

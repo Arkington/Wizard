@@ -11,10 +11,7 @@ function PlayerStateFree() {
     x_speed = _move_speed * lengthdir_x(_input_magnitude, _input_direction);
     y_speed = _move_speed * lengthdir_y(_input_magnitude, _input_direction);
 
-	PlayerCollision();
-    
-    x += x_speed;
-    y += y_speed;
+	PlayerMoveCollide();
 
     // Animate
     if x_speed == 0 && y_speed == 0 {
@@ -35,4 +32,9 @@ function PlayerStateCutscene() {
     if x_speed == 0 && y_speed == 0 {
     	image_index = 0;
     }
+}
+
+function PlayerStateSitting() {
+	// TODO
+	image_index = 0;
 }

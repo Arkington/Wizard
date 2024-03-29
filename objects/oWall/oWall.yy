@@ -6,8 +6,8 @@
   "name":"oWall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overworld Mechanics Tiles",
-    "path":"folders/Objects/Overworld Mechanics Tiles.yy",
+    "name":"Room Essentials",
+    "path":"folders/Room Essentials.yy",
   },
   "parentObjectId":null,
   "persistent":false,

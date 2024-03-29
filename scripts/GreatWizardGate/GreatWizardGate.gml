@@ -14,10 +14,11 @@ function GreatWizardGate_CheckBird() {
 		EventSound(sndBirdCry);
 		WaitForEvents();
 		EventAnimation(oBird, sBirdFly);
-		EventMove(oBird, -16, 40, 1);
+		EventMove(oBird, -24, 40, 1);
 		EventWait(1);
 		EventFace(oPlayer, LEFT);
-		EventWait(1.5);
+		WaitForEvents();
+		EventDestroy(oBird);
 		EventSound(sndGateOpen);
 		EventAnimation(oGreatWizardGate, sGreatWizardGate);
 		EventWait(1);
@@ -28,7 +29,6 @@ function GreatWizardGate_CheckBird() {
 		EventMove(oPlayer, 168, NONE, CUTSCENE_WALK_SPEED);
 		WaitForEvents();
 		EventFace(oPlayer, UP);
-		EventDestroy(oBird);
 		EventWait(0.5);
 		EventSound(sndOpen);
 		EventAnimation(oGreatWizardGate, sGreatWizardGateOpen);
