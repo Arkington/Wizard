@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sndBirdCry",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.803923,
+  "name":"sndBirdCry",
+  "parent":{
+    "name":"Overworld SFX",
+    "path":"folders/Sounds/Overworld SFX.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndBirdCry.wav",
+  "type":0,
+  "volume":1.0,
+}

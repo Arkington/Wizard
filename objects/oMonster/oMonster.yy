@@ -8,8 +8,8 @@
   "name":"oMonster",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "name":"NPCs",
+    "path":"folders/Entities/NPCs.yy",
   },
   "parentObjectId":{
     "name":"oWall",

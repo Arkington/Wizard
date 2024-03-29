@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"GameState",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GameState",
+  "parent":{
+    "name":"Wizard",
+    "path":"Wizard.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -6,14 +6,16 @@ alpha = 1;
 // Speaker
 portrait = NO_PORTRAIT;
 voices = [vDefault];
-pitch_alter = function() { return 1; }
+pitch_factor = 1;
+pitch_variance = 0;
 
 // Sprites
 textbox_sprite = sMenubox;
 textbox_font = fntText;
-portrait_border_sprite = sMenubox;
-portrait_border_width = 3;
-	
+fade_in = true;
+portrait_border_sprite = sPortraitBorder;
+portrait_border_width = 4;
+
 // Screen position params
 textbox_width = DEFAULT_TEXTBOX_WIDTH;
 textbox_height = DEFAULT_TEXTBOX_HEIGHT;
@@ -21,7 +23,7 @@ screenpos_x = TEXTBOX_BOTTOM_X;
 screenpos_y = TEXTBOX_BOTTOM_Y;
 x_buffer = DEFAULT_BUFFER;
 y_buffer = DEFAULT_BUFFER;
-	
+
 // Text effect params
 text_speed = TEXT_SPEED_MID;
 pause_text_length = TEXT_PAUSE_LENGTH_MID;

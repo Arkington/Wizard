@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "path":"folders/Entities.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -26,11 +26,11 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"","%Name":"onInteract","filters":[],"listItems":[],"multiselect":false,"name":"onInteract","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NO_INTERACT","varType":4,},
-    {"$GMObjectProperty":"","%Name":"onInteractArgs","filters":[],"listItems":[
+    {"$GMObjectProperty":"","%Name":"on_interact","filters":[],"listItems":[],"multiselect":false,"name":"on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NO_INTERACT","varType":4,},
+    {"$GMObjectProperty":"","%Name":"on_interact_args","filters":[],"listItems":[
         "\"Item 0\"",
-      ],"multiselect":true,"name":"onInteractArgs","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
-    {"$GMObjectProperty":"","%Name":"facePlayerOnInteract","filters":[],"listItems":[],"multiselect":false,"name":"facePlayerOnInteract","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
+      ],"multiselect":true,"name":"on_interact_args","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
+    {"$GMObjectProperty":"","%Name":"face_player_on_interact","filters":[],"listItems":[],"multiselect":false,"name":"face_player_on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

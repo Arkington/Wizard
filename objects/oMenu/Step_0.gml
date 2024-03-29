@@ -5,3 +5,7 @@ interact = keyboard_check_pressed(KEY_INTERACT);
 n_options = array_length(options);
 pos += down - up;
 pos = (pos + n_options) % n_options; // Loop around
+
+// SFX
+if (down - up != 0) { audio_play_sound(sndMenuMove, 0, false); }
+if (interact) { audio_play_sound(sndMenuSelect, 0, false); }

@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
   "%Name":"oInteractTile",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"oInteractTile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overworld Mechanics Tiles",
-    "path":"folders/Objects/Overworld Mechanics Tiles.yy",
+    "name":"Room Essentials",
+    "path":"folders/Room Essentials.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"pEntity",
+    "path":"objects/pEntity/pEntity.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

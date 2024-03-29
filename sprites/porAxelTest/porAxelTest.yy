@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"porAxelTest",
   "bboxMode":0,
-  "bbox_bottom":31,
+  "bbox_bottom":47,
   "bbox_left":0,
-  "bbox_right":31,
+  "bbox_right":47,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":32,
+  "height":48,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"c7b6c332-d2d1-4bd9-b9e8-4592e647b340","blendMode":0,"displayName":"default","isLocked":false,"name":"c7b6c332-d2d1-4bd9-b9e8-4592e647b340","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":32,
+  "width":48,
 }

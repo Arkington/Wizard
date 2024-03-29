@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Overworld Mechanics Tiles",
-    "path":"folders/Sprites/Overworld Mechanics Tiles.yy",
+    "name":"Room Essentials",
+    "path":"folders/Sprites/Room Essentials.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
