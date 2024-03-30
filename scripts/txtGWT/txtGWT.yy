@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"txtGWT",
   "parent":{
-    "name":"Text",
-    "path":"folders/Text.yy",
+    "name":"TestRooms",
+    "path":"folders/Rooms Overworld/TestRooms.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

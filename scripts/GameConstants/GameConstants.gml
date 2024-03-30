@@ -2,4 +2,4 @@
 #macro RESOLUTION_H 224
 #macro VIEWPORT_RATIO 3
 
-#macro ROOM_START rGWGPathBelow
+#macro ROOM_START rCliffBench

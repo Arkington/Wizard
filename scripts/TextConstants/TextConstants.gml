@@ -9,7 +9,7 @@
 
 #macro DEFAULT_TEXTBOX_WIDTH 304
 #macro DEFAULT_TEXTBOX_HEIGHT 56
-#macro DEFAULT_BUFFER 8
+#macro DEFAULT_BUFFER 5
 
 // Textbox locations
 #macro TEXTBOX_BOTTOM_X 16

@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"sTilesetPixelPackTopDown8bit",
   "bboxMode":0,
-  "bbox_bottom":527,
+  "bbox_bottom":543,
   "bbox_left":0,
   "bbox_right":255,
   "bbox_top":0,

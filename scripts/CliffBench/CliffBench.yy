@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"ConstructThoughtSwirl",
+  "%Name":"CliffBench",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ConstructThoughtSwirl",
+  "name":"CliffBench",
   "parent":{
-    "name":"Thought Swirl",
-    "path":"folders/Thought Swirl.yy",
+    "name":"Lower Bizzaire",
+    "path":"folders/Rooms Overworld/Lower Bizzaire.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

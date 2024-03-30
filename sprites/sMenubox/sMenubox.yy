@@ -20,7 +20,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"bb9be8cc-e65f-43de-a9a2-458a711aa0aa","blendMode":0,"displayName":"border","isLocked":false,"name":"bb9be8cc-e65f-43de-a9a2-458a711aa0aa","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"a93f0e70-365a-4790-9776-78587efe99db","blendMode":0,"displayName":"background","isLocked":false,"name":"a93f0e70-365a-4790-9776-78587efe99db","opacity":75.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a93f0e70-365a-4790-9776-78587efe99db","blendMode":0,"displayName":"background","isLocked":false,"name":"a93f0e70-365a-4790-9776-78587efe99db","opacity":85.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sMenubox",
   "nineSlice":{

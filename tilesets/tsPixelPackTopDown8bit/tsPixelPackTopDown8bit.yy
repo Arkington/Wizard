@@ -1,7 +1,12 @@
 {
   "$GMTileSet":"",
   "%Name":"tsPixelPackTopDown8bit",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":true,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[502,502,502,486,502,501,502,485,502,502,503,487,518,517,519,470,],},
+    {"$GMAutoTileSet":"","%Name":"autotile_2","closed_edge":false,"name":"autotile_2","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+      ],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,

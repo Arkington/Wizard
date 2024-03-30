@@ -1,4 +1,0 @@
-/// @desc
-function FuncsThoughtSwirl(){
-
-}
