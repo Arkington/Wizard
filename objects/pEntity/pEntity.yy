@@ -26,6 +26,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
+    {"$GMObjectProperty":"","%Name":"is_solid","filters":[],"listItems":[],"multiselect":false,"name":"is_solid","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"","%Name":"on_interact","filters":[],"listItems":[],"multiselect":false,"name":"on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NO_INTERACT","varType":4,},
     {"$GMObjectProperty":"","%Name":"on_interact_args","filters":[],"listItems":[
         "\"Item 0\"",

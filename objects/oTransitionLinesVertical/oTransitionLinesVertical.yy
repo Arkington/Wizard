@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Room Transitions",
-    "path":"folders/Objects/Room Transitions.yy",
+    "path":"folders/Room Essentials/Room Transitions.yy",
   },
   "parentObjectId":{
     "name":"oTransition",
