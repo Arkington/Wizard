@@ -34,7 +34,29 @@ function PlayerStateCutscene() {
     }
 }
 
+// @desc Players can get up with the interact key if no thought swirl is present
 function PlayerStateSitting() {
-	// TODO
+	
+	if !instance_exists(oThoughtSwirl) {
+		if (key.interact) {
+			state = PlayerStateCutscene;
+			switch CARDINAL_DIR {
+				case LEFT:
+					EventMove(id, sitting_on.bbox_left + x - bbox_right, y);
+					break;
+				case RIGHT:
+					EventMove(id, sitting_on.bbox_right + x - bbox_left, y);
+					break;
+				case UP:
+					EventMove(id, x, sitting_on.bbox_top + y - bbox_bottom);
+					break;
+				case DOWN:
+					EventMove(id, x, sitting_on.bbox_bottom + y - bbox_top);
+					break;
+			}
+			WaitForEvents();
+			EventPlayerStateFree();
+		}
+	}
 	image_index = 0;
 }

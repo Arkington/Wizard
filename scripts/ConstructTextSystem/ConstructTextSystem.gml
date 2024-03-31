@@ -12,7 +12,7 @@ function Page(_speaker, _text, _textbox_params = {}, _code = function(){}) {
     return {
         text: _text,
         textbox_params: struct_merge(_speaker, _textbox_params),
-        code: _code
+        code: _code,
     }
 }
 
@@ -20,14 +20,15 @@ function Choice(_text, _nextnode = NO_NEXT_NODE, _code = function(){}) {
     return {
         text: _text,
         nextnode: _nextnode,
-        code: _code
+        code: _code,
     }
 }
 
-function TextNode(_pages, _choices = NO_CHOICES, _nextnode = NO_NEXT_NODE) {
+function TextNode(_pages, _choices = NO_CHOICES, _nextnode = NO_NEXT_NODE, _code = function(){}) {
     return {
         pages: _pages,
         choices: _choices,
         nextnode: _nextnode,
+		code: _code,
     }
 }

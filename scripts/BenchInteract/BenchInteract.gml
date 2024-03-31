@@ -22,6 +22,7 @@ function BenchInteract(_bench) {
 	EventFace(oPlayer, _bench_face);
 	EventSound(sndMenuSelect);
 	EventPlayerState(PlayerStateSitting);
+	oPlayer.sitting_on = id;
 }
 
 

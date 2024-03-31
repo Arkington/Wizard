@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"GameConstants",
   "parent":{
-    "name":"Macros",
-    "path":"folders/Macros.yy",
+    "name":"Wizard",
+    "path":"Wizard.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

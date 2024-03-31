@@ -41,6 +41,10 @@ function TextHandlerStateAwaitChoice() {
 }
 
 function TextHandlerStateCleanUp() {
+
+	// Execute textnode code
+	script_execute(activeTextNode.code);
+	
 	instance_destroy(activeTextNode);
 	instance_destroy(activeTextbox);
 	instance_destroy(activeChoiceMenu);

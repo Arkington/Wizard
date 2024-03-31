@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"CreateThoughtSwirl",
+  "%Name":"ThoughtSwirlFuncs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"CreateThoughtSwirl",
+  "name":"ThoughtSwirlFuncs",
   "parent":{
     "name":"Thought Swirl",
     "path":"folders/Thought Swirl.yy",

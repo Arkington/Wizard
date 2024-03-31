@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"FuncsThoughtSwirl",
+  "%Name":"BenchInteract",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"FuncsThoughtSwirl",
+  "name":"BenchInteract",
   "parent":{
-    "name":"Thought Swirl",
-    "path":"folders/Thought Swirl.yy",
+    "name":"Overworld Objects",
+    "path":"folders/Entities/Overworld Objects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

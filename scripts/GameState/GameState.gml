@@ -2,6 +2,7 @@
 
 global.initial_state = {
 	// Lower Bizzaire
+	CLIFF_THOUGHT_SWIRL : false,
 	GWG_BIRD_INTERACTS : 4,
 	GWG_OPEN : 0,
 }

@@ -1,3 +1,6 @@
+// @desc Player actions
+// In Begin Step so Camera (etc) can update to player movement
+
 audio_listener_position(x, y, 0);
 key.up = keyboard_check(KEY_MOVE_UP);
 key.left = keyboard_check(KEY_MOVE_LEFT);
