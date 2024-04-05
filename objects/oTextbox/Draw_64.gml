@@ -4,7 +4,6 @@ y = screenpos_y;
 
 var _text_to_draw = string_copy(text, 1, char_count);
 var _fade_factor = fade_in ? min(frame/TEXTBOX_FADE_IN_FRAMES, 1) : 1;
-draw_set_font(textbox_font);
 
 // Textbox
 draw_sprite_stretched_ext(
@@ -19,6 +18,7 @@ draw_sprite_stretched_ext(
 );
 
 // Each letter rendered individually
+draw_set_text(textbox_font);
 for (var c = 0; c < char_count; c++) {
 	
 	// Wavy text

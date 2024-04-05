@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"ShakeCamera",
+  "%Name":"Loading",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ShakeCamera",
+  "name":"Loading",
   "parent":{
-    "name":"Managers",
-    "path":"folders/Managers.yy",
+    "name":"Save System",
+    "path":"folders/Save System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
