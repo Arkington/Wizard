@@ -16,3 +16,8 @@ global.music_handler = instance_create_layer(0, 0, LAYER_MECHANICS, oMusicHandle
 global.camera = instance_create_layer(0, 0, LAYER_MECHANICS, oCamera);
 
 room_goto(ROOM_START);
+
+
+// Development tools
+save_state_message = "";
+time_since_save_state = 0;
