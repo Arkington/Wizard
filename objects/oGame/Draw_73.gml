@@ -17,24 +17,4 @@ with (oPlayer) {
 		_interact_y + INTERACT_RANGE,
 		true
 	)
-	/*
-	draw_circle(
-		x + lengthdir_x(INTERACT_DIST, direction) - 1,
-		y + lengthdir_y(INTERACT_DIST, direction),
-		1,
-		false
-	);
-	draw_circle(
-		x + lengthdir_x(INTERACT_DIST, direction - INTERACT_ANGLE) - 1,
-		y + lengthdir_y(INTERACT_DIST, direction - INTERACT_ANGLE),
-		1,
-		false
-	);
-	draw_circle(
-		x + lengthdir_x(INTERACT_DIST, direction + INTERACT_ANGLE) - 1,
-		y + lengthdir_y(INTERACT_DIST, direction + INTERACT_ANGLE),
-		1,
-		false
-	);
-	*/
 }

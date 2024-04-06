@@ -24,14 +24,14 @@ initializeSpeakers();
 cliff_thought_swirl = {
 	"What am I doing?" : TextNode(
 	    [
-	        Page(spkAxelNeutral, "What... what am I doing here?"),
-	        Page(spkAxelNeutral, "..."),
-			Page(spkAxelNeutral, "I got all the way to the gate and then I turned around."),
-			Page(spkAxelNeutral, "..."),
-			Page(spkAxelNeutral, "Sigh."),
-			Page(spkAxelNeutral, "At least there's a nice breeze going on."),
-			Page(spkAxelNeutral, "Whoosh... wheesh..."),
-			Page(spkAxelNeutral, "...")
+	        Page(spkAxel, "What... what am I doing here?"),
+	        Page(spkAxel, "..."),
+			Page(spkAxel, "I got all the way to the gate and then I turned around."),
+			Page(spkAxel, "..."),
+			Page(spkAxel, "Sigh."),
+			Page(spkAxel, "At least there's a nice breeze going on."),
+			Page(spkAxel, "Whoosh... wheesh..."),
+			Page(spkAxel, "...")
 	    ],
 		NO_CHOICES,
 		NO_NEXT_NODE,
@@ -39,12 +39,12 @@ cliff_thought_swirl = {
 	),
 	"The sea is nice." : TextNode(
 	    [
-	        Page(spkAxelNeutral, "I like this spot. It's so calm."),
-	        Page(spkAxelNeutral, "I can smell the salt of the ocean."),
-	        Page(spkAxelNeutral, "..."),
-			Page(spkAxelNeutral, "I wonder..."),
-			Page(spkAxelNeutral, "If I brought an omelette here on a plate... and just let it hang out in the breeze..."),
-			Page(spkAxelNeutral, "...would the salty sea air give it some extra flavour?")
+	        Page(spkAxel, "I like this spot. It's so calm."),
+	        Page(spkAxel, "I can smell the salt of the ocean."),
+	        Page(spkAxel, "..."),
+			Page(spkAxel, "I wonder..."),
+			Page(spkAxel, "If I brought an omelette here on a plate... and just let it hang out in the breeze..."),
+			Page(spkAxel, "...would the salty sea air give it some extra flavour?")
 	    ],
 		NO_CHOICES,
 		NO_NEXT_NODE,
@@ -52,16 +52,16 @@ cliff_thought_swirl = {
 	),
 	"I'm going to be late." : TextNode(
 	    [
-	        Page(spkAxelNeutral, "I'll probably be late to class if I keep sitting here."),
-	        Page(spkAxelNeutral, "And yet... I don't really want to move."),
-	        Page(spkAxelNeutral, "The teacher will probably say something like |S|\"Why are you late to my class?\""),
-	        Page(spkAxelNeutral, "And I'm going to have to tell them \"Well it was because I was staring at the ocean.\""),
-	        Page(spkAxelNeutral, "And they will say |S|\"Why didn't you just get up and come to class?/S/\""),
-	        Page(spkAxelNeutral, "And I will tell them that I didn't really want to move."),
-	        Page(spkAxelNeutral, "And that I was thinking about what they, the teacher, would say when I showed up late..."),
-	        Page(spkAxelNeutral, "...and told them I was staring at the ocean."),
-	        Page(spkAxelNeutral, "..."),
-	        Page(spkAxelNeutral, "Ha..."),
+	        Page(spkAxel, "I'll probably be late to class if I keep sitting here."),
+	        Page(spkAxel, "And yet... I don't really want to move."),
+	        Page(spkAxel, "The teacher will probably say something like |S|\"Why are you late to my class?\""),
+	        Page(spkAxel, "And I'm going to have to tell them \"Well it was because I was staring at the ocean.\""),
+	        Page(spkAxel, "And they will say |S|\"Why didn't you just get up and come to class?/S/\""),
+	        Page(spkAxel, "And I will tell them that I didn't really want to move."),
+	        Page(spkAxel, "And that I was thinking about what they, the teacher, would say when I showed up late..."),
+	        Page(spkAxel, "...and told them I was staring at the ocean."),
+	        Page(spkAxel, "..."),
+	        Page(spkAxel, "Ha..."),
 	    ],
 		NO_CHOICES,
 		NO_NEXT_NODE,

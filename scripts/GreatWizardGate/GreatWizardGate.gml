@@ -43,15 +43,17 @@ function GreatWizardGate_CheckBird() {
 // Text
 initializeSpeakers();
 /*
+textRoomName = {
 	key: TextNode(
 	    [
-	        Page("")
+	        Page(spkSpeaker, "")
 	    ],
 	    [
 	        Choice("", "key"),
 	        Choice("", "key")
 	    ]
 	),
+}
 */
 textGreatWizardGate = {
 	gate_check: TextNode(
@@ -81,12 +83,12 @@ textGreatWizardGate = {
 	),
 	bird_check_final: TextNode(
 	    [
-	        Page(spkAxelNeutral, "Hey there little guy."),
+	        Page(spkAxel, "Hey there little guy."),
 			Page(spkNone, "..."),
 			Page(spkHCViaBird, "..."),
 			Page(spkHCViaBird, "Yes?!"),
 			Page(spkHCViaBird, "...Yes?"),
-	        Page(spkAxelNeutral, "Oh, I--"),
+	        Page(spkAxel, "Oh, I--"),
 			Page(spkHCViaBird, "Hold on one second."),
 	    ],
 	),

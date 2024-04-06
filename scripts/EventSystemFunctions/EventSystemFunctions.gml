@@ -135,3 +135,10 @@ function EventAnimation(
 
 // I could elliminate all oEventXXX objects by just passing in a custom step function to a regular oEvent
 // Keep this in mind if I want to remove all these objects
+
+/// @desc Clear the global event handler of all events
+function ClearEventHandler() {
+	with global.event_handler {
+		event_array = [];
+	}
+}

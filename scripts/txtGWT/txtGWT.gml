@@ -37,18 +37,18 @@ hatrick_intro_conversation = {
 	main_1: TextNode(
 	    [
 	        Page(spkHatrickNeutral, "hi... Hi!"),
-	        Page(spkAxelNeutral, "Hi."),
+	        Page(spkAxel, "Hi."),
 	        Page(spkHatrickNeutral, "Hi. Hey. I... kinda saw you shoot that guy... with |S|MAGIC/S/! It was... kinda cool."),
-	        Page(spkAxelNeutral, "Thanks."),
+	        Page(spkAxel, "Thanks."),
 	        Page(spkHatrickNeutral, "...you must be some sort of wizard, right?"),
 	        Page(spkHatrickNeutral, "...some kinda |S|MAGIC/S/ man???"),
-	        Page(spkAxelNeutral, "It's literally my first day learning magic."),
+	        Page(spkAxel, "It's literally my first day learning magic."),
 	        Page(spkHatrickNeutral, "No way."),
-	        Page(spkAxelNeutral, "Yes way."),
+	        Page(spkAxel, "Yes way."),
 	        Page(spkHatrickNeutral, "Wow, I've never seen magic like that before in my entire life."),
-	        Page(spkAxelNeutral, "Really?"),
+	        Page(spkAxel, "Really?"),
 	        Page(spkHatrickNeutral, "Yeah for real. Never seen it. Who are you?"),
-	        Page(spkAxelNeutral, "I'm Axel."),
+	        Page(spkAxel, "I'm Axel."),
 	        Page(spkHatrickNeutral, "That's cool. Cool to meet you. Umm, I mean, nice to meet you.")
 	    ],
 	    [
@@ -59,7 +59,7 @@ hatrick_intro_conversation = {
 	early_bye: TextNode(
 	    [
 	        Page(spkHatrickSad, "WAIT don't go I haven't talked to anyone in a really long time..."),
-	        Page(spkAxelNeutral, "...")
+	        Page(spkAxel, "...")
 	    ],
 	    NO_CHOICES,
 	    "main_2"

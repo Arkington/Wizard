@@ -7,6 +7,11 @@
 #macro NO_VOICE undefined
 #macro DEFAULT_TEXT_KEY "main_1"
 
+// Special strings
+#macro AXEL "AxelMM"
+
+
+// Textbox size
 #macro DEFAULT_TEXTBOX_WIDTH 304
 #macro DEFAULT_TEXTBOX_HEIGHT 56
 #macro DEFAULT_BUFFER 5

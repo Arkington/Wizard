@@ -7,7 +7,7 @@ function initializeSpeakers() {
 	spkSilent = Speaker(NO_PORTRAIT, [NO_VOICE]);
 
 	// Axel
-	spkAxelNeutral = Speaker(porAxelTest, [vDefault]);
+	spkAxel = Speaker(porAxelTest, [vDefault]);
 
 	// HC, via bird
 	spkHCViaBird = Speaker(
@@ -40,7 +40,7 @@ function initializeSpeakers() {
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/2; },
 			pause_sound_length: 8
 		}
-	)
+	);
 	spkHatrickSad = Speaker(
 		porHatrickSadTest,
 		[
@@ -54,7 +54,7 @@ function initializeSpeakers() {
 			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
 			pause_sound_length: 8
 		}
-	)
+	);
 	spkHatrickHappy = Speaker(
 		porHatrickHappyTest,
 		[
@@ -67,5 +67,8 @@ function initializeSpeakers() {
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/1.5; },
 			pause_sound_length: 8
 		}
-	)
+	);
+	
+	// Misc NPCs
+	spkBubblegum = Speaker(porBubblegum, [vDefault]);
 }

@@ -43,7 +43,7 @@ function TextHandlerStateAwaitChoice() {
 function TextHandlerStateCleanUp() {
 
 	// Execute textnode code
-	script_execute(activeTextNode.code);
+	if (activeTextNode != noone) { script_execute(activeTextNode.code); }
 	
 	instance_destroy(activeTextNode);
 	instance_destroy(activeTextbox);
