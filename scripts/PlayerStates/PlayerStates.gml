@@ -12,11 +12,7 @@ function PlayerStateFree() {
     y_speed = _move_speed * lengthdir_y(_input_magnitude, _input_direction);
 
 	PlayerMoveCollide();
-
-    // Animate
-    if x_speed == 0 && y_speed == 0 {
-    	image_index = 0;
-    }
+	PlayerAnimate();
 	
 	// Interact key
 	if (key.interact) {
@@ -24,23 +20,19 @@ function PlayerStateFree() {
 		y_speed = 0;
 		PlayerInteract();
 	}
+	
+	depth_adj = 0; // Resets any cutscene/sitting depth adj
 }
 
 function PlayerStateCutscene() {
-
-    // Animate if needed
-    if x_speed == 0 && y_speed == 0 {
-    	image_index = 0;
-    }
+	PlayerAnimate();
 }
 
 // @desc Players can get up with the interact key if no thought swirl is present
 function PlayerStateSitting() {
 	
 	// Can't get up while thinking
-	if instance_exists(oThoughtSwirl) { return; }
-	
-	if (key.interact) {
+	if (key.interact and !instance_exists(oThoughtSwirl)) {
 		state = PlayerStateCutscene;
 		var _exit_face;
 		
@@ -66,5 +58,5 @@ function PlayerStateSitting() {
 		WaitForEvents();
 		EventPlayerStateFree();
 	}
-	image_index = 0;
+	PlayerAnimate();
 }

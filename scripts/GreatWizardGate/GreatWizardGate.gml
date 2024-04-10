@@ -33,7 +33,7 @@ function GreatWizardGate_CheckBird() {
 		EventSound(sndOpen);
 		EventAnimation(oGreatWizardGate, sGreatWizardGateOpen);
 		EventWait(2.5);
-		EventCode(PlayMusic, [musSpacewalk, true]);
+		EventCode(PlayMusic, [musSpacewalk]);
 		EventPlayerStateFree();
 	}
 }

@@ -52,6 +52,10 @@
 #macro TEXT_SHAKE_AVE_TIME_MID 2
 #macro TEXT_SHAKE_AVE_TIME_HIGH 5
 
+// Choice menu stats
+#macro CHOICE_MENU_BUFFER 2
+#macro CHOICE_MENU_SCALE (2/3)
+
 // Thought swirl stats
 #macro THOUGHT_FADE_SPEED 0.01
 #macro THOUGHT_ROTATE_SPEED 0.5

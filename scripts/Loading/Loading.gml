@@ -4,16 +4,16 @@ function LoadGame(_slot) {
 	if (file_exists(_file)) {
 
 		// Reset the handlers
-		ClearTextHandler();
 		ClearEventHandler();
+		ClearTextHandler();
 		
 		// Load the game data
 		var _save_data = LoadJSONFromFile(_file);
-		global.state = _save_data;
+		global.state = struct_merge(global.initial_state, _save_data);
 
 		// Position player
 		room_goto(_save_data.room);
-		
+	
 		with oPlayer {
 			x = _save_data.x;
 			y = _save_data.y;

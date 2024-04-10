@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Overworld NPCs",
-    "path":"folders/Sprites/Overworld NPCs.yy",
+    "name":"NPCs",
+    "path":"folders/Sprites/NPCs.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -2,6 +2,7 @@
 
 // Ensure the first element is an incomplete event
 while (array_length(event_array) > 0) {
+
 	// Remove WAIT_FOR_EVENTS
 	if (event_array[0] == WAIT_FOR_EVENTS) { array_shift(event_array); }
 	// Remove completed events

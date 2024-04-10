@@ -32,12 +32,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayerRight",
-    "path":"sprites/sPlayerRight/sPlayerRight.yy",
+    "name":"sPlayer",
+    "path":"sprites/sPlayer/sPlayer.yy",
   },
   "spriteMaskId":{
-    "name":"sPlayerDown",
-    "path":"sprites/sPlayerDown/sPlayerDown.yy",
+    "name":"sPlayer",
+    "path":"sprites/sPlayer/sPlayer.yy",
   },
   "visible":true,
 }

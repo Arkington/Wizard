@@ -29,7 +29,7 @@ function initializeSpeakers() {
 
 	// Hatrick
 	spkHatrickNeutral = Speaker(
-		porHatrickTest,
+		porHatrick,
 		[
 			vHatrickSad2,
 			vHatrickNeutral7,
@@ -42,7 +42,7 @@ function initializeSpeakers() {
 		}
 	);
 	spkHatrickSad = Speaker(
-		porHatrickSadTest,
+		porHatrickSad,
 		[
 			vHatrickSad1,
 			vHatrickSad2,
@@ -56,7 +56,7 @@ function initializeSpeakers() {
 		}
 	);
 	spkHatrickHappy = Speaker(
-		porHatrickHappyTest,
+		porHatrickHappy,
 		[
 			vHatrickHappy1,
 			vHatrickHappy3,

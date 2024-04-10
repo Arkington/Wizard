@@ -50,7 +50,22 @@ with (global.text_handler) {
 }
 
 with (global.music_handler) {
-	image_blend = (current_track == NONE) ? c_white : c_yellow;
+	switch state {
+		case MusicHandlerStateAwaiting:
+			image_blend = c_white;
+			break;
+			
+		case MusicHandlerStateSwitching:
+			image_blend = c_blue;
+			break;
+			
+		case MusicHandlerStateStopping:
+			image_blend = c_red;
+			break;
+			
+		case MusicHandlerStatePlaying:
+			image_blend = c_yellow;
+	}
 	draw_sprite_ext(
 		sMusicHandler,
 		image_index,
@@ -62,4 +77,8 @@ with (global.music_handler) {
 		image_blend,
 		image_alpha
 	);
+	if (current_track != NONE) {
+		draw_set_text(fntDebug);
+		draw_text(18, 32, $"{audio_get_name(current_track)}")
+	}
 }

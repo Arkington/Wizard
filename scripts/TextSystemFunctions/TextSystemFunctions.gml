@@ -20,10 +20,12 @@ function create_textbox(_page, _fade_in = true) {
 /// @param _choices
 function create_choice_menu(_choices) {
 	var choice_menu = instance_create_layer(0, 0, LAYER_TEXT, oChoiceMenu);
-	choice_menu.choices = _choices;
-	choice_menu.options = [];
-	for (var i = 0; i < array_length(_choices); i++) {
-	    choice_menu.options[i] = _choices[i].text;
+	with choice_menu {
+		choices = _choices;
+		options = [];
+		for (var i = 0; i < array_length(_choices); i++) {
+			options[i] = _choices[i].text;
+		}
 	}
 	return choice_menu;
 }

@@ -1,10 +1,18 @@
-/// @desc Set music and play if it's not currently playing
-function PlayMusic(_mus, _override_current = false) {
+/// @desc Play music. Auto-overrides current track. Can specify fade in, fade out and cross fade.
+function PlayMusic(_mus, _fade_in = false, _fade_out = true, _cross_fade = false) {
 	with (global.music_handler) {
-		if (current_track == NONE or (_override_current and !audio_is_playing(_mus))) {
-			current_track_type = _mus;
-			current_track = audio_play_sound(_mus, 0, true);
-			audio_sound_loop_start(current_track, LoopStart(_mus));
-		}
+		
+		fade_in = _fade_in;
+		fade_out = _fade_out;
+		cross_fade = false;
+
+		incoming_track = _mus;
+	}
+}
+
+/// @desc Stop currently playing music.
+function StopMusic() {
+	with (global.music_handler) {
+		current_track = NONE;
 	}
 }

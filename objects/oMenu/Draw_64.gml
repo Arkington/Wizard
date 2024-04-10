@@ -2,32 +2,56 @@ x = screenpos_x;
 y = screenpos_y;
 
 
-draw_set_font(fntText);
-draw_set_valign(fa_top);
-draw_set_halign(fa_left);
+draw_set_text(fntText, c_white, fa_left, fa_top);
 
 var _w = min_width;
 for (var i = 0; i < n_options; i++) {
 	_w = max(_w, string_width(options[i]));
 }
-width = _w + selector_width + 3*x_offset;
-height = n_options * (y_offset + line_height) + y_offset;
+width = _w + selector_width + 3*x_buffer;
+height = n_options * (y_buffer + line_height) + y_buffer;
+
 
 // Background
-draw_sprite_stretched(menu_sprite, 0, x, y, width, height);
+if !box_per_choice { draw_sprite_stretched(menu_sprite, 0, x, y, width, height); }
 
+// Iterate over options
 for (var i = 0; i < n_options; i++) {
-	draw_text(
-		x + selector_width + 2*x_offset,
-		y + i * line_height + (i + 1) * y_offset,
-		options[i]
+	
+	// Box-per-choice box
+	if box_per_choice {
+		draw_sprite_stretched(
+			menu_sprite,
+			0,
+			x,
+			y + i*(line_height + 2*y_buffer),
+			width,
+			line_height + 2*y_buffer
+		);
+	}
+
+	// Text option
+	draw_text_transformed(
+		x + selector_width + 2*x_buffer,
+		y + i*line_height + (2*i + 1)*y_buffer,
+		options[i],
+		scale,
+		scale,
+		0
 	);
+	
+	// Selector
 	if i == pos {
-		draw_sprite(
+		draw_sprite_ext(
 			selector_sprite,
 			0,
-			x + x_offset + sprite_get_xoffset(selector_sprite),
-			y + i * line_height + (i + 1) * y_offset + sprite_get_yoffset(selector_sprite)
+			x + x_buffer + selector_xoffset,
+			y + i*line_height + (2*i + 1)*y_buffer + selector_yoffset,
+			scale,
+			scale,
+			0,
+			c_white,
+			1
 		)
 	}
 }

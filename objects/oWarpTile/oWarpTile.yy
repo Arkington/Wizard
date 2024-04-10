@@ -1,17 +1,21 @@
 {
   "$GMObject":"",
   "%Name":"oWarpTile",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"oWarpTile",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oTriggerTile","path":"objects/oTriggerTile/oTriggerTile.yy",},"propertyId":{"name":"on_trigger","path":"objects/oTriggerTile/oTriggerTile.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"WarpTileTrigger",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oTriggerTile","path":"objects/oTriggerTile/oTriggerTile.yy",},"propertyId":{"name":"self_destruct","path":"objects/oTriggerTile/oTriggerTile.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
+  ],
   "parent":{
     "name":"Room Essentials",
     "path":"folders/Room Essentials.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oTriggerTile",
+    "path":"objects/oTriggerTile/oTriggerTile.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +34,7 @@
     {"$GMObjectProperty":"","%Name":"target_x","filters":[],"listItems":[],"multiselect":false,"name":"target_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
     {"$GMObjectProperty":"","%Name":"target_y","filters":[],"listItems":[],"multiselect":false,"name":"target_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
     {"$GMObjectProperty":"","%Name":"target_face","filters":[],"listItems":[],"multiselect":false,"name":"target_face","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"DOWN","varType":1,},
-    {"$GMObjectProperty":"","%Name":"transition_object","filters":[],"listItems":[],"multiselect":false,"name":"transition_object","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"oTransitionFade","varType":5,},
+    {"$GMObjectProperty":"","%Name":"transition_type","filters":[],"listItems":[],"multiselect":false,"name":"transition_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"oTransitionFade","varType":5,},
     {"$GMObjectProperty":"","%Name":"relative_x","filters":[],"listItems":[],"multiselect":false,"name":"relative_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"","%Name":"relative_y","filters":[],"listItems":[],"multiselect":false,"name":"relative_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
   ],

@@ -1,1 +1,0 @@
-sprite_index = sprite[CARDINAL_DIR];
