@@ -11,8 +11,8 @@ function SetupTextbox() {
     draw_set_font(textbox_font);
     frame = 0;
     char_count = 0;
-    pause_text_timer = 0;
-	pause_sound_timer = 0;
+    text_pause_timer = 0;
+	text_pause_voice_timer = 0;
 	portrait_width = portrait != NO_PORTRAIT ? sprite_get_width(portrait) : 0;
 	portrait_height = portrait != NO_PORTRAIT ? sprite_get_height(portrait) : 0;
 	portrait_x_adj = portrait != NO_PORTRAIT ? portrait_width + 2*portrait_border_width : 0;

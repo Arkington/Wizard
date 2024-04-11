@@ -31,10 +31,9 @@ for (var c = 0; c < char_count; c++) {
 	var _shake_adj_x = 0;
 	var _shake_adj_y = 0;
 	if char_shake[c] && irandom(shake_ave_time - 1) == 0 {
-		var _shake_len = random(shake_intensity);
 		var _shake_dir = irandom(360);
-		_shake_adj_x = lengthdir_x(_shake_len, _shake_dir);
-		_shake_adj_y = lengthdir_y(_shake_len, _shake_dir);
+		_shake_adj_x = lengthdir_x(random(shake_intensity_x), _shake_dir);
+		_shake_adj_y = lengthdir_y(random(shake_intensity_y), _shake_dir);
 	}
 
 	// Draw text

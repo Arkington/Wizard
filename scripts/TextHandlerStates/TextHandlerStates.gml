@@ -2,8 +2,8 @@
 function TextHandlerStateAwaiting() {
 	if activeTextNode == noone { return; }
 	oPlayer.state = PlayerStateCutscene;
-	activeTextbox = create_textbox(activeTextNode.pages[0], first_textbox);
-	first_textbox = false;
+	activeTextbox = create_textbox(activeTextNode.pages[page], fade_in);
+	fade_in = false;
 	nextTextNode = activeTextNode.nextnode;
 	state = TextHandlerStateReadingPage;
 }
@@ -26,9 +26,27 @@ function TextHandlerStateAwaitNextPage() {
 		} else {
 			page += 1;
 			instance_destroy(activeTextbox);
-			activeTextbox = create_textbox(activeTextNode.pages[page], first_textbox);
-			state = TextHandlerStateReadingPage;
+			activeTextbox = noone;
+			
+			// Pause page logic
+			var _next_page = activeTextNode.pages[page];
+			if (_next_page.pause_page) {
+				pause_page_timer = _next_page.pause_page_s*FPS;
+				fade_in = true;
+				state = TextHandlerStatePausing;
+			} else {
+				activeTextbox = create_textbox(_next_page, fade_in);
+				state = TextHandlerStateReadingPage;
+			}
 		}
+	}
+}
+
+function TextHandlerStatePausing() {
+	if (pause_page_timer <= 0) {
+		page += 1;
+		state = TextHandlerStateAwaiting;
+		state(); // Call again to get us to reading
 	}
 }
 
@@ -56,7 +74,7 @@ function TextHandlerStateCleanUp() {
 
 	// Either continue chain or do not
 	if nextTextNode == NO_NEXT_NODE {
-		first_textbox = true;
+		fade_in = true;
 	}
 	else {
 		activeTextNode = text_source[$nextTextNode];

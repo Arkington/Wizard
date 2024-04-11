@@ -6,9 +6,10 @@
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
 #macro DEFAULT_TEXT_KEY "main_1"
+#macro PAGE_PAUSE_S 2
 
 // Special strings
-#macro AXEL "AxelMM"
+#macro AXEL "[Axel]"
 
 
 // Textbox size
@@ -31,9 +32,9 @@
 #macro TEXT_PAUSE_LENGTH_MID 6
 #macro TEXT_PAUSE_LENGTH_HIGH 12
 
-#macro TEXT_VOICE_PAUSE_LENGTH_LOW 2
-#macro TEXT_VOICE_PAUSE_LENGTH_MID 4
-#macro TEXT_VOICE_PAUSE_LENGTH_HIGH 8
+#macro TEXT_PAUSE_VOICE_LENGTH_LOW 2
+#macro TEXT_PAUSE_VOICE_LENGTH_MID 4
+#macro TEXT_PAUSE_VOICE_LENGTH_HIGH 8
 
 #macro TEXT_WAVE_SEP_LOW 10
 #macro TEXT_WAVE_SEP_MID 20

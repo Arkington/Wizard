@@ -54,9 +54,9 @@ cliff_thought_swirl = {
 	    [
 	        Page(spkAxel, "I'll probably be late to class if I keep sitting here."),
 	        Page(spkAxel, "And yet... I don't really want to move."),
-	        Page(spkAxel, "The teacher will probably say something like |S|\"Why are you late to my class?\""),
-	        Page(spkAxel, "And I'm going to have to tell them \"Well it was because I was staring at the ocean.\""),
-	        Page(spkAxel, "And they will say |S|\"Why didn't you just get up and come to class?/S/\""),
+	        Page(spkAxel, "The teacher will probably say something like |S|\"Why are you late to my class?\"", {shake_intensity_x: 0}),
+	        Page(spkAxel, "And I'm going to have to tell them |V|\"Well it was because I was staring at the ocean.\"/V/"),
+	        Page(spkAxel, "And they will say |S|\"Why didn't you just get up and come to class?/S/\"", {shake_intensity_x: 0}),
 	        Page(spkAxel, "And I will tell them that I didn't really want to move."),
 	        Page(spkAxel, "And that I was thinking about what they, the teacher, would say when I showed up late..."),
 	        Page(spkAxel, "...and told them I was staring at the ocean."),

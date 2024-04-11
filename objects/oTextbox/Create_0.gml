@@ -1,4 +1,4 @@
-
+/// @desc Default textbox params
 text = DEFAULT_TEXT;
 scale = 1;
 alpha = 1;
@@ -26,12 +26,13 @@ y_buffer = DEFAULT_BUFFER;
 
 // Text effect params
 text_speed = TEXT_SPEED_MID;
-pause_text_length = TEXT_PAUSE_LENGTH_MID;
-pause_sound_length = TEXT_VOICE_PAUSE_LENGTH_MID;
+text_pause_length = TEXT_PAUSE_LENGTH_MID;
+text_pause_voice_length = TEXT_PAUSE_VOICE_LENGTH_MID;
 wave_sep = TEXT_WAVE_SEP_MID;
 wave_speed = TEXT_WAVE_SPEED_MID;
 wave_height_factor = TEXT_WAVE_HEIGHT_FACTOR_MID;
-shake_intensity = TEXT_SHAKE_INTENSITY_MID;
+shake_intensity_x = TEXT_SHAKE_INTENSITY_MID;
+shake_intensity_y = TEXT_SHAKE_INTENSITY_MID;
 shake_ave_time = TEXT_SHAKE_AVE_TIME_MID;
 
 SetupTextbox();

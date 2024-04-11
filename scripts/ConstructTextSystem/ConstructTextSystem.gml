@@ -13,7 +13,16 @@ function Page(_speaker, _text, _textbox_params = {}, _code = function(){}) {
         text: _text,
         textbox_params: struct_merge(_speaker, _textbox_params),
         code: _code,
+		pause_page: false,
     }
+}
+
+/// @desc Special type of page which has no text and causes a mid-text pause cutscene.
+function PausePage(_seconds = PAGE_PAUSE_S) {
+	return {
+		pause_page: true,
+		pause_page_s: _seconds,
+	}
 }
 
 function Choice(_text, _nextnode = NO_NEXT_NODE, _code = function(){}) {

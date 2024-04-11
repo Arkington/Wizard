@@ -7,7 +7,13 @@ function initializeSpeakers() {
 	spkSilent = Speaker(NO_PORTRAIT, [NO_VOICE]);
 
 	// Axel
-	spkAxel = Speaker(porAxelTest, [vDefault]);
+	spkAxel = Speaker(
+		porAxelTest,
+		[vDefault],
+		{
+			wave_height_factor: TEXT_WAVE_HEIGHT_FACTOR_LOW,
+		}
+	);
 
 	// HC, via bird
 	spkHCViaBird = Speaker(
@@ -70,5 +76,13 @@ function initializeSpeakers() {
 	);
 	
 	// Misc NPCs
-	spkBubblegum = Speaker(porBubblegum, [vDefault]);
+	spkBubblegum = Speaker(
+		porBubblegum,
+		[vDefault],
+		{
+			text_speed: TEXT_SPEED_LOW,
+			pause_text_length: TEXT_PAUSE_LENGTH_HIGH,
+			pause_sound_length: TEXT_PAUSE_VOICE_LENGTH_HIGH,
+		}
+	);
 }
