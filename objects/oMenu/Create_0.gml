@@ -12,19 +12,10 @@ options = [
 	"You get the idea",
 ];
 
-selector_width = sprite_get_width(sAxelHat);
-selector_height = sprite_get_height(sAxelHat);
-line_height = max(string_height(ALPHABET), selector_height);
+scale = 1;
+box_per_choice = false;
 
-x_offset = 4;
-y_offset = 4;
+x_buffer = CHOICE_MENU_BUFFER;
+y_buffer = CHOICE_MENU_BUFFER;
 
-// Initialize variables
-width = min_width;
-height = min_height;
-pos = 0;
-
-up = 0;
-down = 0;
-interact = 0;
-n_options = 0;
+MenuSetup();

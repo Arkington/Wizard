@@ -7,7 +7,13 @@ function initializeSpeakers() {
 	spkSilent = Speaker(NO_PORTRAIT, [NO_VOICE]);
 
 	// Axel
-	spkAxelNeutral = Speaker(porAxelTest, [vDefault]);
+	spkAxel = Speaker(
+		porAxelTest,
+		[vDefault],
+		{
+			wave_height_factor: TEXT_WAVE_HEIGHT_FACTOR_LOW,
+		}
+	);
 
 	// HC, via bird
 	spkHCViaBird = Speaker(
@@ -22,14 +28,14 @@ function initializeSpeakers() {
 			pitch_factor: 0.9,
 			pitch_variance: 0.3,
 			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
 	);
 
 
 	// Hatrick
 	spkHatrickNeutral = Speaker(
-		porHatrickTest,
+		porHatrick,
 		[
 			vHatrickSad2,
 			vHatrickNeutral7,
@@ -38,11 +44,11 @@ function initializeSpeakers() {
 		{
 			pitch_variance: 0.5,
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/2; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
-	)
+	);
 	spkHatrickSad = Speaker(
-		porHatrickSadTest,
+		porHatrickSad,
 		[
 			vHatrickSad1,
 			vHatrickSad2,
@@ -52,11 +58,11 @@ function initializeSpeakers() {
 			pitch_factor: 0.9,
 			pitch_variance: 0.33,
 			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
-	)
+	);
 	spkHatrickHappy = Speaker(
-		porHatrickHappyTest,
+		porHatrickHappy,
 		[
 			vHatrickHappy1,
 			vHatrickHappy3,
@@ -65,7 +71,18 @@ function initializeSpeakers() {
 		{
 			pitch_variance: 0.67,
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/1.5; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
-	)
+	);
+	
+	// Misc NPCs
+	spkBubblegum = Speaker(
+		porBubblegum,
+		[vDefault],
+		{
+			text_speed: TEXT_SPEED_LOW,
+			pause_text_length: TEXT_PAUSE_LENGTH_HIGH,
+			text_pause_voice_length: TEXT_PAUSE_VOICE_LENGTH_HIGH,
+		}
+	);
 }

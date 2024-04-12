@@ -3,6 +3,7 @@
   "%Name":"pEntity",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"pEntity",
@@ -27,10 +28,11 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"","%Name":"is_solid","filters":[],"listItems":[],"multiselect":false,"name":"is_solid","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
-    {"$GMObjectProperty":"","%Name":"on_interact","filters":[],"listItems":[],"multiselect":false,"name":"on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NO_INTERACT","varType":4,},
+    {"$GMObjectProperty":"","%Name":"on_interact","filters":[],"listItems":[],"multiselect":false,"name":"on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NONE","varType":4,},
     {"$GMObjectProperty":"","%Name":"on_interact_args","filters":[],"listItems":[
         "\"Item 0\"",
       ],"multiselect":true,"name":"on_interact_args","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
+    {"$GMObjectProperty":"","%Name":"standard_animation","filters":[],"listItems":[],"multiselect":false,"name":"standard_animation","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"","%Name":"face_player_on_interact","filters":[],"listItems":[],"multiselect":false,"name":"face_player_on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
   ],
   "resourceType":"GMObject",

@@ -1,10 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"oHatrick",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"oHatrick",
   "overriddenProperties":[
@@ -12,6 +9,7 @@
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"propertyId":{"name":"on_interact","path":"objects/pEntity/pEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"load_textnode",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"propertyId":{"name":"face_player_on_interact","path":"objects/pEntity/pEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"propertyId":{"name":"is_solid","path":"objects/pEntity/pEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"propertyId":{"name":"standard_animation","path":"objects/pEntity/pEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
   ],
   "parent":{
     "name":"NPCs",
@@ -39,12 +37,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sHatrickRight",
-    "path":"sprites/sHatrickRight/sHatrickRight.yy",
+    "name":"sHatrick",
+    "path":"sprites/sHatrick/sHatrick.yy",
   },
   "spriteMaskId":{
-    "name":"sHatrickDown",
-    "path":"sprites/sHatrickDown/sHatrickDown.yy",
+    "name":"sHatrick",
+    "path":"sprites/sHatrick/sHatrick.yy",
   },
   "visible":true,
 }

@@ -2,17 +2,24 @@ function LoadGame(_slot) {
 
 	var _file = SaveFileName(_slot);
 	if (file_exists(_file)) {
-		game_restart();
+
+		// Reset the handlers
+		ClearEventHandler();
+		ClearTextHandler();
 		
 		// Load the game data
 		var _save_data = LoadJSONFromFile(_file);
-		global.state = _save_data;
+		global.state = struct_merge(global.initial_state, _save_data);
 
 		// Position player
 		room_goto(_save_data.room);
-		oPlayer.x = _save_data.x;
-		oPlayer.y = _save_data.y;
-
+	
+		with oPlayer {
+			x = _save_data.x;
+			y = _save_data.y;
+			state = PlayerStateFree;
+		}
+		
 		return true;
 
 	} else {

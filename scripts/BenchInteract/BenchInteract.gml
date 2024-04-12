@@ -1,6 +1,4 @@
-/// @desc
-
-// Let's start by writing this assuming the bench is facing right
+/// @desc Interact with a bench. Approach it from any direction and sit down from a set direction.
 function BenchInteract(_bench) {
 	var _bench_midpt_x = mean(_bench.bbox_left, _bench.bbox_right);
 	var _bench_midpt_y = mean(_bench.bbox_top, _bench.bbox_bottom);
@@ -22,7 +20,7 @@ function BenchInteract(_bench) {
 	EventFace(oPlayer, _bench_face);
 	EventSound(sndMenuSelect);
 	EventPlayerState(PlayerStateSitting);
-	oPlayer.sitting_on = id;
+	oPlayer.sitting_on = _bench;
 }
 
 

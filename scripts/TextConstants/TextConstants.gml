@@ -6,7 +6,13 @@
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
 #macro DEFAULT_TEXT_KEY "main_1"
+#macro PAGE_PAUSE_S 2
 
+// Special strings
+#macro AXEL "[Axel]"
+
+
+// Textbox size
 #macro DEFAULT_TEXTBOX_WIDTH 304
 #macro DEFAULT_TEXTBOX_HEIGHT 56
 #macro DEFAULT_BUFFER 5
@@ -26,9 +32,9 @@
 #macro TEXT_PAUSE_LENGTH_MID 6
 #macro TEXT_PAUSE_LENGTH_HIGH 12
 
-#macro TEXT_VOICE_PAUSE_LENGTH_LOW 2
-#macro TEXT_VOICE_PAUSE_LENGTH_MID 4
-#macro TEXT_VOICE_PAUSE_LENGTH_HIGH 8
+#macro TEXT_PAUSE_VOICE_LENGTH_LOW 2
+#macro TEXT_PAUSE_VOICE_LENGTH_MID 4
+#macro TEXT_PAUSE_VOICE_LENGTH_HIGH 8
 
 #macro TEXT_WAVE_SEP_LOW 10
 #macro TEXT_WAVE_SEP_MID 20
@@ -46,6 +52,11 @@
 #macro TEXT_SHAKE_AVE_TIME_LOW 1
 #macro TEXT_SHAKE_AVE_TIME_MID 2
 #macro TEXT_SHAKE_AVE_TIME_HIGH 5
+
+// Choice menu stats
+#macro CHOICE_MENU_BUFFER 2
+#macro CHOICE_MENU_SCALE (2/3)
+#macro CHOICE_MENU_X 160
 
 // Thought swirl stats
 #macro THOUGHT_FADE_SPEED 0.01

@@ -7,6 +7,8 @@ with (pEntity) {
 
 with (oPlayer) {
 	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+
+/*
 	// Interact range
 	var _interact_x = x + lengthdir_x(INTERACT_DIST, direction);
 	var _interact_y = y + lengthdir_y(INTERACT_DIST, direction);
@@ -17,24 +19,17 @@ with (oPlayer) {
 		_interact_y + INTERACT_RANGE,
 		true
 	)
-	/*
-	draw_circle(
-		x + lengthdir_x(INTERACT_DIST, direction) - 1,
-		y + lengthdir_y(INTERACT_DIST, direction),
-		1,
-		false
-	);
-	draw_circle(
-		x + lengthdir_x(INTERACT_DIST, direction - INTERACT_ANGLE) - 1,
-		y + lengthdir_y(INTERACT_DIST, direction - INTERACT_ANGLE),
-		1,
-		false
-	);
-	draw_circle(
-		x + lengthdir_x(INTERACT_DIST, direction + INTERACT_ANGLE) - 1,
-		y + lengthdir_y(INTERACT_DIST, direction + INTERACT_ANGLE),
-		1,
-		false
-	);
-	*/
+*/
+	
+	var _h_shift = lengthdir_x(bbox_right - bbox_left, CARDINAL_DIR*90);
+	var _v_shift = lengthdir_y(bbox_bottom - bbox_top, CARDINAL_DIR*90);
+	
+	draw_rectangle(
+		bbox_left + _h_shift,
+		bbox_top + _v_shift,
+		bbox_right + _h_shift,
+		bbox_bottom + _v_shift,
+		true
+	)
+
 }

@@ -9,11 +9,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Room Transitions",
-    "path":"folders/Room Essentials/Room Transitions.yy",
+    "path":"folders/Event System/Room Transitions.yy",
   },
   "parentObjectId":{
-    "name":"oTransition",
-    "path":"objects/oTransition/oTransition.yy",
+    "name":"pTransition",
+    "path":"objects/pTransition/pTransition.yy",
   },
   "persistent":true,
   "physicsAngularDamping":0.1,
