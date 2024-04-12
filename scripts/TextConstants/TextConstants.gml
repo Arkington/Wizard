@@ -56,6 +56,7 @@
 // Choice menu stats
 #macro CHOICE_MENU_BUFFER 2
 #macro CHOICE_MENU_SCALE (2/3)
+#macro CHOICE_MENU_X 160
 
 // Thought swirl stats
 #macro THOUGHT_FADE_SPEED 0.01

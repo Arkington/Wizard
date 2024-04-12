@@ -4,14 +4,6 @@ y = screenpos_y;
 
 draw_set_text(fntText, c_white, fa_left, fa_top);
 
-var _w = min_width;
-for (var i = 0; i < n_options; i++) {
-	_w = max(_w, string_width(options[i]));
-}
-width = _w + selector_width + 3*x_buffer;
-height = n_options * (y_buffer + line_height) + y_buffer;
-
-
 // Background
 if !box_per_choice { draw_sprite_stretched(menu_sprite, 0, x, y, width, height); }
 
@@ -54,4 +46,5 @@ for (var i = 0; i < n_options; i++) {
 			1
 		)
 	}
+	
 }

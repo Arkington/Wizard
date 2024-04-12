@@ -28,7 +28,7 @@ function initializeSpeakers() {
 			pitch_factor: 0.9,
 			pitch_variance: 0.3,
 			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
 	);
 
@@ -44,7 +44,7 @@ function initializeSpeakers() {
 		{
 			pitch_variance: 0.5,
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/2; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
 	);
 	spkHatrickSad = Speaker(
@@ -58,7 +58,7 @@ function initializeSpeakers() {
 			pitch_factor: 0.9,
 			pitch_variance: 0.33,
 			pitch_alter: function() { return 0.9 + (random(1) - 0.5)/3; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
 	);
 	spkHatrickHappy = Speaker(
@@ -71,7 +71,7 @@ function initializeSpeakers() {
 		{
 			pitch_variance: 0.67,
 			pitch_alter: function() { return 1 + (random(1) - 0.5)/1.5; },
-			pause_sound_length: 8
+			text_pause_voice_length: 8
 		}
 	);
 	
@@ -82,7 +82,7 @@ function initializeSpeakers() {
 		{
 			text_speed: TEXT_SPEED_LOW,
 			pause_text_length: TEXT_PAUSE_LENGTH_HIGH,
-			pause_sound_length: TEXT_PAUSE_VOICE_LENGTH_HIGH,
+			text_pause_voice_length: TEXT_PAUSE_VOICE_LENGTH_HIGH,
 		}
 	);
 }

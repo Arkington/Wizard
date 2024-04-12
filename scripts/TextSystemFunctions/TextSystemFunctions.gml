@@ -26,6 +26,11 @@ function create_choice_menu(_choices) {
 		for (var i = 0; i < array_length(_choices); i++) {
 			options[i] = _choices[i].text;
 		}
+		MenuSetup();
+
+		// Menu y-pos
+		screenpos_y = TEXTBOX_BOTTOM_Y - height - y_buffer;
+	
 	}
 	return choice_menu;
 }

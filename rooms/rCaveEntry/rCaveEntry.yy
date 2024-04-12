@@ -246,8 +246,8 @@
   ],
   "name":"rCaveEntry",
   "parent":{
-    "name":"TestRooms",
-    "path":"folders/Rooms Overworld/TestRooms.yy",
+    "name":"Test Rooms",
+    "path":"folders/Test Rooms.yy",
   },
   "parentRoom":{
     "name":"rParent",

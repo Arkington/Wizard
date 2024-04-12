@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ThoughtSwirls",
   "parent":{
-    "name":"TestRooms",
-    "path":"folders/Rooms Overworld/TestRooms.yy",
+    "name":"Test Rooms",
+    "path":"folders/Test Rooms.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
