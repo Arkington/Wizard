@@ -27,6 +27,12 @@ function MusicOnRoomEntry() {
 			
 		case rGWGPathAbove:
 			return musSpacewalk;
+			
+		case rGreatWizardCourtyard:
+			return musSpacewalk;
+			
+		case rGreatWizardWishingWell:
+			return musSpacewalk;
 		
 		// Default
 		default:

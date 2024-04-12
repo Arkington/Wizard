@@ -9,6 +9,7 @@ global.initial_state = {
 	CLIFF_THOUGHT_SWIRL : false,
 	GWG_BIRD_INTERACTS : 4,
 	GWG_OPEN : false,
+	GWC_WISH_MADE : NONE,
 }
 
 global.state = struct_copy(global.initial_state);

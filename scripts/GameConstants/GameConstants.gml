@@ -4,4 +4,4 @@
 #macro VIEWPORT_RATIO 3
 #macro FPS 60
 
-#macro ROOM_START rLowerBizzaire
+#macro ROOM_START rGreatWizardCourtyard
