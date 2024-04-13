@@ -1,6 +1,10 @@
 /// @desc Queue an event
-function QueueEvent(event) {
-	array_push(global.event_handler.event_array, event);
+function QueueEvent(event, priority = 0) {
+	
+	// Priority queue events
+	with (global.event_handler) {
+		array_push(event_array, event);
+	}
 }
 
 /// @desc Queue a signal to wait for any existing events to complete
@@ -89,7 +93,7 @@ function EventDepthAdj(_obj, _depth_adj) {
 }
 
 /// @desc Play music.
-function EventPlayMusic(_mus, _fade_in = false, _fade_out = true, _cross_fade = false) {
+function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_fade = false) {
 	EventCode(
 		PlayMusic,
 		[_mus, _fade_in, _fade_out, _cross_fade]

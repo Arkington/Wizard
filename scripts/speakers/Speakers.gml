@@ -14,6 +14,7 @@ function initializeSpeakers() {
 			wave_height_factor: TEXT_WAVE_HEIGHT_FACTOR_LOW,
 		}
 	);
+	spkAxelInner = struct_copy(spkAxel); struct_set(spkAxelInner, "voices", NO_VOICE);
 
 	// HC, via bird
 	spkHCViaBird = Speaker(
@@ -32,6 +33,8 @@ function initializeSpeakers() {
 		}
 	);
 
+	// Gecko Wizard
+	spkGeckoWizard = Speaker(NO_PORTRAIT, [vDefault]);
 
 	// Hatrick
 	spkHatrickNeutral = Speaker(
