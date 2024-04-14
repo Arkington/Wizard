@@ -18,10 +18,11 @@ function Page(_speaker, _text, _textbox_params = {}, _code = function(){}) {
 }
 
 /// @desc Special type of page which has no text and causes a mid-text pause cutscene.
-function PausePage(_seconds = PAGE_PAUSE_S) {
+function PausePage(_seconds = PAGE_PAUSE_S, _code = function(){}) {
 	return {
 		pause_page: true,
 		pause_page_s: _seconds,
+		code: _code,
 	}
 }
 

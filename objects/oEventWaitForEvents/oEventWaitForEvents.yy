@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oTestClicker",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oEventWaitForEvents",
+  "eventList":[],
   "managed":true,
-  "name":"oTestClicker",
+  "name":"oEventWaitForEvents",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room Essentials",
-    "path":"folders/Room Essentials.yy",
+    "name":"Event System",
+    "path":"folders/Event System.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"pEvent",
+    "path":"objects/pEvent/pEvent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sTestClicker",
-    "path":"sprites/sTestClicker/sTestClicker.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

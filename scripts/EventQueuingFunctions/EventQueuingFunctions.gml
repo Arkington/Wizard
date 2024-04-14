@@ -1,15 +1,34 @@
-/// @desc Queue an event
-function QueueEvent(event, priority = 0) {
+/// @desc Queue an event. Events generated via TextNodes can queue-jump.
+function QueueEvent(_event) {
 	
-	// Priority queue events
+	// Text events get priority so then can play during text sequences
+	var _priority = 0;
+	if (object_index == oTextHandler) { _priority = 1; }
+	with _event { priority = _priority; }
+	
 	with (global.event_handler) {
-		array_push(event_array, event);
+		
+		// No priority
+		if (_priority <= 0) {
+			array_push(event_array, _event);
+			return;
+		}
+		
+		// Priority
+		for (var i = 0; i < array_length(event_array); i++) {
+			if (_event.priority > event_array[i].priority) {
+				array_insert(event_array, i, _event);
+				return;
+			}
+		}
+		array_push(event_array, _event);
 	}
 }
 
 /// @desc Queue a signal to wait for any existing events to complete
 function WaitForEvents() {
-	QueueEvent(WAIT_FOR_EVENTS);
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventWaitForEvents);
+	QueueEvent(_event);
 }
 
 /// @desc Queue a wait period which blocks following events for some time
@@ -48,7 +67,7 @@ function EventPlayerState(_state) {
 function EventPlayerStateFree() { EventPlayerState(PlayerStateFree); }
 
 /// @desc Set player's state to PlayerStateCutscene. Optionally kill existing movement.
-function EventPlayerStateCutscene(_halt = false) {
+function EventPlayerStateCutscene(_halt = true) {
 	EventCode(
 		function(_halt) {
 			with oPlayer {
@@ -100,8 +119,10 @@ function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_
 	);
 }
 
-
-
+/// @desc Pause music.
+function EventStopMusic(_fade = true, _fade_out_s = SONG_FADE_SECS) {
+	EventCode(StopMusic, [_fade, _fade_out_s]);
+}
 
 
 

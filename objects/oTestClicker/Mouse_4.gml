@@ -1,2 +1,3 @@
 ShakeCameraX(4, 30);
-ThoughtSwirlFuncs("test_thought_swirl", 0, 10);
+
+print(GetState("GWC_GW_DIALOGUE"));

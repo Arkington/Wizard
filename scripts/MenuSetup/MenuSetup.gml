@@ -15,6 +15,7 @@ function MenuSetup() {
 	n_options = array_length(options);
 	
 	// Set width and height
+	draw_set_text(menu_font, c_white, fa_left, fa_top);
 	var _w = min_width;
 	for (var i = 0; i < n_options; i++) {
 		_w = max(_w, string_width(options[i])*scale);

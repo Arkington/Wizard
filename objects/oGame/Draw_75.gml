@@ -18,11 +18,12 @@ with (global.event_handler) {
 	// Roughly draw queued events
 	for (var i = 0; i < array_length(event_array); i++) {
 		var _col = c_white;
-		if (event_array[i] == WAIT_FOR_EVENTS) { _col = c_red; }
+		var _event = event_array[i];
+		if (_event.object_index == oEventWaitForEvents) { _col = c_red; }
 		else {
-			if (event_array[i].active) { _col = c_yellow; }
-			if (event_array[i].complete) { _col = c_green; }
-			if (event_array[i].object_index == oEventWait) { _col = c_orange; }
+			if (_event.active) { _col = c_yellow; }
+			if (_event.complete) { _col = c_green; }
+			if (_event.object_index == oEventWait) { _col = c_orange; }
 		}
 		draw_rectangle_color(
 			16 + 8*i + 1,

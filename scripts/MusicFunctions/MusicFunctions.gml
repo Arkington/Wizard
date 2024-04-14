@@ -10,9 +10,11 @@ function PlayMusic(_mus, _fade_in = false, _fade_out = true, _cross_fade = false
 	}
 }
 
-/// @desc Stop currently playing music.
-function StopMusic() {
+/// @desc Stop currently playing music, with optional fade out.
+function StopMusic(_fade = true, _fade_length_s = SONG_FADE_SECS) {
 	with (global.music_handler) {
+		fade_out = _fade;
+		fade_length_s = _fade_length_s;
 		current_track = NONE;
 	}
 }

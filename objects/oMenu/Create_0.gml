@@ -1,3 +1,4 @@
+menu_font = fntText;
 menu_sprite = sMenubox;
 selector_sprite = sAxelHat;
 

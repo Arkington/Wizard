@@ -21,6 +21,9 @@ function TextHandlerStateReadingPage() {
 
 function TextHandlerStateAwaitNextPage() {
 	if keyboard_check_pressed(KEY_INTERACT) {
+		// Execute page code
+		script_execute(activeTextNode.pages[page].code);
+		
 		if final_page {
 			state = TextHandlerStateCleanUp;
 		} else {
@@ -44,6 +47,10 @@ function TextHandlerStateAwaitNextPage() {
 
 function TextHandlerStatePausing() {
 	if (pause_page_timer <= 0) {
+		// Execute pause page code
+		script_execute(activeTextNode.pages[page].code);
+		
+		// Then move on
 		page += 1;
 		state = TextHandlerStateAwaiting;
 		state(); // Call again to get us to reading

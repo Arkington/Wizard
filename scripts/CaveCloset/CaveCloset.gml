@@ -1,3 +1,55 @@
+function CaveCloset_CutsceneShowcase() {
+	EventPlayerStateCutscene();
+	EventFace(oPlayer, RIGHT);
+	EventWait(1);
+	EventFace(oPlayer, DOWN);
+	EventWait(2);
+	EventText("cutscene_showcase", "cs1");
+	WaitForEvents();
+	EventCode(CaveCloset_CutsceneShowcase_2);
+}
+
+function CaveCloset_CutsceneShowcase_2() {
+	
+	switch GetState("cs_dir") {
+		case UP:
+			EventText("cutscene_showcase", "cs_up");
+			WaitForEvents();
+			EventMove(oPlayer, 168, 96);
+			break;
+		case DOWN:
+			EventText("cutscene_showcase", "cs_down");
+			WaitForEvents();
+			EventMove(oPlayer, 168, 192);
+			break;
+		case LEFT:
+			EventText("cutscene_showcase", "cs_left");
+			WaitForEvents();
+			EventMove(oPlayer, 88, 144);
+			break;
+		case RIGHT:
+			EventText("cutscene_showcase", "cs_right");
+			WaitForEvents();
+			EventMove(oPlayer, 248, 144);
+			break;
+	}
+	
+	WaitForEvents();
+	EventMove(oPlayer, 168, 144);
+	EventText("cutscene_showcase", "cs2");
+	WaitForEvents();
+	EventMove(oHatrick, 176, 80);
+	WaitForEvents();
+	EventWait(2);
+	EventMove(oPlayer, 176, 96);
+	EventWait(2);
+	EventFace(oPlayer, DOWN);
+	EventPlayerStateFree();
+}
+
+
+
+
 initializeSpeakers();
 /*
 	key: TextNode(
@@ -10,6 +62,73 @@ initializeSpeakers();
 	    ]
 	),
 */
+cutscene_showcase = {
+	cs1: TextNode(
+	    [
+	        Page(spkAxel, "Hi! Welcome to the cutscene showcase."),
+	        Page(spkAxel, "Now that cutscenes have become extensively implemented, there's no limit to what we can do."),
+			Page(spkAxel, "For example, I can stop speaking and walk whatever direction you pick!"),
+		],
+	    [
+	        Choice("Up!", NO_NEXT_NODE, function() { SetState("cs_dir", UP)}),
+	        Choice("Down!", NO_NEXT_NODE, function() { SetState("cs_dir", DOWN)}),
+	        Choice("Left!", NO_NEXT_NODE, function() { SetState("cs_dir", LEFT)}),
+	        Choice("Right!", NO_NEXT_NODE, function() { SetState("cs_dir", RIGHT)}),
+	    ]
+	),
+	cs_up: TextNode(
+	    [
+	        Page(spkAxel, "Great choice! Going up!"),
+		],
+	),
+	cs_down: TextNode(
+	    [
+	        Page(spkAxel, "Great choice! Going down!"),
+		],
+	),
+	cs_left: TextNode(
+	    [
+	        Page(spkAxel, "Great choice! Going left!"),
+		],
+	),
+	cs_right: TextNode(
+	    [
+	        Page(spkAxel, "Great choice! Going right!"),
+		],
+	),
+	cs2: TextNode(
+	    [
+	        Page(spkAxel, "Phew!"),
+	        Page(spkAxel, "That was a lot of walking.", {}, function() {
+				EventMove(oHatrick, 240, 80);
+				WaitForEvents();
+				EventMove(oHatrick, 176, 80);
+				WaitForEvents();
+				EventMove(oHatrick, 240, 80);
+				WaitForEvents();
+				EventMove(oHatrick, 176, 80);
+				WaitForEvents();
+				EventMove(oHatrick, 240, 80);
+				WaitForEvents();
+				EventMove(oHatrick, 176, 80);
+				WaitForEvents();
+			}),
+			Page(spkAxel, "..."),
+			Page(spkAxel, "What are you doing?"),
+			Page(spkHatrickNeutral, "..."),
+			Page(spkHatrickNeutral, "Tee hee", {}, function() {
+				for (var i = 0; i < 10; i++) {
+					EventMove(oHatrick, floor(random_range(72, 264)), floor(random_range(40, 168)), 5);
+					WaitForEvents();
+				}
+			}),
+			Page(spkHatrickNeutral, "|S|I'm moving while talking, silly!/S/"),
+			Page(spkHatrickNeutral, "|S|Anything is possible with the new event system!/S/"),
+		],
+	)
+}
+
+
 
 test_conversation = {
 	test_1: TextNode(
