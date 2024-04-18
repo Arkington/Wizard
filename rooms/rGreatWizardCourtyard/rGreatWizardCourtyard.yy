@@ -17,10 +17,13 @@
     {"name":"inst_17AFDF3C","path":"rooms/rGreatWizardCourtyard/rGreatWizardCourtyard.yy",},
     {"name":"inst_7BA75EE4","path":"rooms/rGreatWizardCourtyard/rGreatWizardCourtyard.yy",},
     {"name":"inst_7F120566","path":"rooms/rGreatWizardCourtyard/rGreatWizardCourtyard.yy",},
+    {"name":"inst_18151DA9","path":"rooms/rGreatWizardCourtyard/rGreatWizardCourtyard.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"Text","depth":-1100,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Text","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Text","depth":-1100,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_18151DA9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_18151DA9","objectId":{"name":"oTestClicker","path":"objects/oTestClicker/oTestClicker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1512.0,"y":224.0,},
+      ],"layers":[],"name":"Text","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Walls","depth":-1000,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Walls","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":26,"SerialiseWidth":106,"TileCompressedData":[
           -427,-2147483648,-3,1,-100,-2147483648,-4,1,3,-2147483648,1,1,-105,-2147483648,1,1,-99,-2147483648,-5,
           1,5,-2147483648,1,-2147483648,-2147483648,1,-99,-2147483648,-2,1,5,-2147483648,1,-2147483648,-2147483648,

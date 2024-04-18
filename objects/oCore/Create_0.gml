@@ -1,4 +1,4 @@
-
+if (instance_number(oCore) > 1) { instance_destroy(); }
 attacks = [
     SoulFlame,
     StunShock,

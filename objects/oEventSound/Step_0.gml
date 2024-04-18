@@ -8,6 +8,6 @@ if !begun {
 }
 
 // Complete condition
-if !audio_is_playing(sound) {
+if !wait_for_sound or !audio_is_playing(sound) {
 	complete = true;
 }

@@ -34,8 +34,9 @@ function MusicOnRoomEntry() {
 		case rGreatWizardWishingWell:
 			return musSpacewalk;
 		
+		
 		// Default
 		default:
-			return musNoMusicFound;
+			return NONE;
 	}
 }

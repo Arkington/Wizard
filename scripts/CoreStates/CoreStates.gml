@@ -78,3 +78,5 @@ function CoreStateFocus() {
 		state = CoreStateFree;
 	}
 }
+
+function CoreStateInit() {}

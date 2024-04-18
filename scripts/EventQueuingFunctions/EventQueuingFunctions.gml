@@ -79,6 +79,17 @@ function EventPlayerStateCutscene(_halt = true) {
 	);
 }
 
+
+/// @desc Queue a player state change
+function EventCoreState(_state) {
+	EventCode(
+		function(_state) {
+			with oCore { state = _state; }
+		},
+		[_state]
+	);
+}
+
 /// @desc Queue an instance_destroy()
 function EventDestroy(_obj) {
 	EventCode(instance_destroy, [_obj]);
@@ -147,6 +158,20 @@ function EventMove(_obj_to_move, _x, _y, _move_speed = CUTSCENE_WALK_SPEED, _ani
 	QueueEvent(_event);
 }
 
+/// @desc Queue an object to jump
+function EventJump(_obj_to_jump, _height = EVENT_JUMP_HEIGHT, _time_s = EVENT_JUMP_TIME_S) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventJump);
+	with (_event) {
+		obj_to_jump = _obj_to_jump;
+		height = _height;
+		total_frames = _time_s*FPS;
+
+		// Set up event
+		t = 0;
+	}
+	QueueEvent(_event);
+}
+
 /// @desc Queue a textnode
 function EventText(_text_source, _key = DEFAULT_TEXT_KEY) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventText);
@@ -155,10 +180,13 @@ function EventText(_text_source, _key = DEFAULT_TEXT_KEY) {
 	QueueEvent(_event);
 }
 
-/// @desc Queue a sound
-function EventSound(_sound) {
+/// @desc Queue a sound. wait_for_sound specifies whether we should wait for the sound to finish playing before marking the event as 'complete'.
+function EventSound(_sound, _wait_for_sound = false) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventSound);
-	_event.sound = _sound;
+	with (_event) {
+		sound = _sound;
+		wait_for_sound = _wait_for_sound;
+	}
 	QueueEvent(_event);
 }
 
@@ -195,7 +223,7 @@ function EventAnimation(
 }
 
 /// @desc Queue a transition
-function EventTransition(_target_room, _target_x, _target_y, _target_face, _transition_type) {
+function EventTransition(_target_room, _target_x, _target_y, _target_face, _transition_type = oTransitionFade) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventTransition);
 	with (_event) {
 		target_room = _target_room;
@@ -214,6 +242,16 @@ function EventObjectFade(_in_or_out, _obj_to_fade, _fade_rate = EVENT_FADE_OUT_R
 		in_or_out = _in_or_out;
 		obj_to_fade = _obj_to_fade;
 		fade_rate = _fade_rate;
+	}
+	QueueEvent(_event);
+}
+
+// @desc Initialize the Core in preparation for a battle
+function EventCoreInit(_x, _y, ) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreInit);
+	with (_event) {
+		target_x = _x;
+		target_y = _y;
 	}
 	QueueEvent(_event);
 }

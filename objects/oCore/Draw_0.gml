@@ -2,6 +2,8 @@
 var draw_adj_x = 0;
 var draw_adj_y = 0;
 
+
+// Focus UI
 if state == CoreStateFocus {
 
 	// Ring
@@ -44,15 +46,19 @@ if state == CoreStateFocus {
 	}
 }
 
+
 // Draw Core
-draw_sprite_ext(
-    sprite,
-    image_index,
-    x + draw_adj_x,
-    y,
-    image_xscale,
-    image_yscale,
-    image_angle,
-    image_blend,
-    image_alpha
-);
+if state != CoreStateInit {
+	// Draw Core
+	draw_sprite_ext(
+	    sprite,
+	    image_index,
+	    x + draw_adj_x,
+	    y,
+	    image_xscale,
+	    image_yscale,
+	    image_angle,
+	    image_blend,
+	    image_alpha
+	);
+}

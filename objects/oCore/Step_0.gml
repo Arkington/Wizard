@@ -20,6 +20,8 @@ key.fire = keyboard_check_pressed(KEY_FIRE);
 key.focus = keyboard_check(KEY_FOCUS);
 
 
+print($"x: {x}");
+print($"y: {y}");
 
 time_in_state++;
 state();

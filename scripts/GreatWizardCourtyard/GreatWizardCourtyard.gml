@@ -13,7 +13,7 @@ function GreatWizardCourtyard_ApproachGeckoWizard_2() {
 	EventWait(2);
 	EventText("textGreatWizardCourtyard", GetState("GWC_GW_DIALOGUE") + "_2");
 	WaitForEvents();
-	EventPlayerStateFree();
+	BattleTransition();
 }
 
 
