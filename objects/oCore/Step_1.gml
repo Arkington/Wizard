@@ -1,4 +1,4 @@
-
+/// @desc Goes before oBulletBox
 key.move_up = keyboard_check(KEY_MOVE_UP);
 key.move_left = keyboard_check(KEY_MOVE_LEFT);
 key.move_down = keyboard_check(KEY_MOVE_DOWN);
@@ -18,10 +18,6 @@ key.aim_released = (
 
 key.fire = keyboard_check_pressed(KEY_FIRE);
 key.focus = keyboard_check(KEY_FOCUS);
-
-
-print($"x: {x}");
-print($"y: {y}");
 
 time_in_state++;
 state();

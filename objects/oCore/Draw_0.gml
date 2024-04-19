@@ -55,8 +55,8 @@ if state != CoreStateInit {
 	    image_index,
 	    x + draw_adj_x,
 	    y,
-	    image_xscale,
-	    image_yscale,
+	    (2/3),
+	    (2/3),
 	    image_angle,
 	    image_blend,
 	    image_alpha

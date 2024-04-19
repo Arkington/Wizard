@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"sAtkSoulFlame_tmp",
-  "bboxMode":0,
-  "bbox_bottom":15,
+  "bboxMode":2,
+  "bbox_bottom":6,
   "bbox_left":0,
   "bbox_right":7,
   "bbox_top":0,
@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Attacks",
-    "path":"folders/Sprites/Attacks.yy",
+    "name":"Attack Sprites",
+    "path":"folders/Attacks/Attack Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

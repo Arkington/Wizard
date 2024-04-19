@@ -1,6 +1,7 @@
 /// @desc UI Debug Draw
 if !global.debug { exit; }
 
+// Event Handler
 with (global.event_handler) {
 	image_blend = (array_length(event_array) == 0) ? c_white: c_yellow;
 	draw_sprite_ext(
@@ -35,6 +36,7 @@ with (global.event_handler) {
 	}
 }
 
+// Text Handler
 with (global.text_handler) {
 	image_blend = (state == TextHandlerStateAwaiting) ? c_white : c_yellow;
 	draw_sprite_ext(
@@ -50,6 +52,7 @@ with (global.text_handler) {
 	);
 }
 
+// Music Handler
 with (global.music_handler) {
 	switch state {
 		case MusicHandlerStateAwaiting:
@@ -82,4 +85,20 @@ with (global.music_handler) {
 		draw_set_text(fntDebug);
 		draw_text(18, 32, $"{audio_get_name(current_track)}")
 	}
+}
+
+// Battle Engine
+with (global.battle_engine) {
+	image_blend = (state == BattleEngineStateAwaiting) ? c_white : c_yellow;
+	draw_sprite_ext(
+		sBattleEngine,
+		image_index,
+		0,
+		48,
+		1,
+		1,
+		0,
+		image_blend,
+		image_alpha
+	);
 }

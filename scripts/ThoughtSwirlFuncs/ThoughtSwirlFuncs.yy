@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ThoughtSwirlFuncs",
   "parent":{
-    "name":"Thought Swirl",
-    "path":"folders/Thought Swirl.yy",
+    "name":"Text System",
+    "path":"folders/Text System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

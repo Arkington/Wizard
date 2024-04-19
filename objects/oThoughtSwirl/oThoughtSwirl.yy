@@ -9,8 +9,8 @@
   "name":"oThoughtSwirl",
   "overriddenProperties":[],
   "parent":{
-    "name":"Thought Swirl",
-    "path":"folders/Thought Swirl.yy",
+    "name":"Text System",
+    "path":"folders/Text System.yy",
   },
   "parentObjectId":null,
   "persistent":false,

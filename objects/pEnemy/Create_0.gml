@@ -1,6 +1,7 @@
 /// @desc Enemy setup
 
 lifetime = 0;
+wave = NONE;
 
 // Conditions
 stunned = false;
