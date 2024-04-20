@@ -70,84 +70,57 @@ function Bubblegums_Stools(_id) {
 
 // Text
 initializeSpeakers();
-/*
-textRoomName = {
-	key: TextNode(
-	    [
-	        Page(spkSpeaker, "")
-	    ],
-	    [
-	        Choice("", "key"),
-	        Choice("", "key")
-	    ]
-	),
-}
-*/
 
 textBubblegums = {
-	on_entry_1: TextNode(
-	    [
-	        Page(spkAxel, "Hi Bubblegum."),
-	    ]
-	),
-	on_entry_2: TextNode(
-		[
-			Page(spkBubblegum, "Ooohh how lovely!"),
-			Page(spkBubblegum, $"{AXEL} dearie, take a seat."),
-		]
-	),
-	invitation_declined: TextNode(
-		[
-			Page(spkBubblegum, "Or don't! That's fine too!"),
-		]
-	),
-	bubblegum_chat: TextNode(
-		[
-			Page(spkAxel, "Hi Bubblegum."),
-			Page(spkBubblegum, $"{AXEL} dearest! How are you doing?"),
-			Page(spkAxel, "..."),
-			Page(spkBubblegum, $"Oh dear... {AXEL}? Are you okay?"),
-			PausePage(),
-			Page(spkBubblegum, "Isn't today the day you finally go to wizard school?"),
-			Page(spkAxel, "..."),
-			Page(spkAxel, "Door is locked. I need to find a key or something. I don't know."),
-			Page(spkBubblegum, $"Oh {AXEL}. Think about it. Why would you need to have a key?"),
-			Page(spkAxel, "Door is locked."),
-			Page(spkBubblegum, "The door to the school? Unlocking that door isn't your job."),
-			Page(spkAxel, "Maybe it's a test. Maybe I've already failed."),
-			Page(spkBubblegum, $"{AXEL}, how can you fail?"),
-			Page(spkAxel, "..."),
-			PausePage(),
-			Page(spkAxel, "I turned around, Bubblegum. I turned around and I came back here."),
-			Page(spkAxel, "I left. I did this."),
-			Page(spkBubblegum, ". . ."),
-			Page(spkBubblegum, $"{AXEL}... I've never been to wizard school. I don't know its tricks."),
-			Page(spkBubblegum, "I've never made fire come out of my eyes or whatever it is you kids do."),
-			Page(spkBubblegum, "But I do know you. You've wanted this for so long."),
-			Page(spkBubblegum, "You told me you were waiting for the right time, and you would know when it was the right time."),
-			Page(spkBubblegum, "And then it was! And now you tell me there's a door. Do you know what that means?"),
-			Page(spkAxel, "..."),
-		],
-	    [
-	        Choice("It means I failed.", "bubblegum_chat_2"),
-	        Choice("It means I need a key.", "bubblegum_chat_2"),
-	        Choice("What does it mean?", "bubblegum_chat_2")
-	    ]
-	),
-	bubblegum_chat_2: TextNode(
-		[
-			Page(spkBubblegum, $"{AXEL}. It means you made it."),
-			Page(spkAxel, "..."),
-			PausePage(),
-			Page(spkAxel, "...Okay."),
-			Page(spkAxel, "..."),
-			Page(spkAxel, "Thanks Bubblegum."),
-			Page(spkBubblegum, "If that door doesn't open, I'll still be here. But I have a feeling it will."),
-		]
-	),
-	bubblegum_gate_not_open: TextNode(
-		[
-			Page(spkBubblegum, $"Go on dearie, you can do this."),
-		]
-	),
+	on_entry_1: [
+	    Page(spkAxel, "Hi Bubblegum."),
+	],
+	on_entry_2: [
+		Page(spkBubblegum, "Ooohh how lovely!"),
+		Page(spkBubblegum, $"{AXEL} dearie, take a seat."),
+	],
+	invitation_declined: [
+		Page(spkBubblegum, "Or don't! That's fine too!"),
+	],
+	bubblegum_chat: [
+		Page(spkAxel, "Hi Bubblegum."),
+		Page(spkBubblegum, $"{AXEL} dearest! How are you doing?"),
+		Page(spkAxel, "..."),
+		Page(spkBubblegum, $"Oh dear... {AXEL}? Are you okay?"),
+		PausePage(),
+		Page(spkBubblegum, "Isn't today the day you finally go to wizard school?"),
+		Page(spkAxel, "..."),
+		Page(spkAxel, "Door is locked. I need to find a key or something. I don't know."),
+		Page(spkBubblegum, $"Oh {AXEL}. Think about it. Why would you need to have a key?"),
+		Page(spkAxel, "Door is locked."),
+		Page(spkBubblegum, "The door to the school? Unlocking that door isn't your job."),
+		Page(spkAxel, "Maybe it's a test. Maybe I've already failed."),
+		Page(spkBubblegum, $"{AXEL}, how can you fail?"),
+		Page(spkAxel, "..."),
+		PausePage(),
+		Page(spkAxel, "I turned around, Bubblegum. I turned around and I came back here."),
+		Page(spkAxel, "I left. I did this."),
+		Page(spkBubblegum, ". . ."),
+		Page(spkBubblegum, $"{AXEL}... I've never been to wizard school. I don't know its tricks."),
+		Page(spkBubblegum, "I've never made fire come out of my eyes or whatever it is you kids do."),
+		Page(spkBubblegum, "But I do know you. You've wanted this for so long."),
+		Page(spkBubblegum, "You told me you were waiting for the right time, and you would know when it was the right time."),
+		Page(spkBubblegum, "And then it was! And now you tell me there's a door. Do you know what that means?"),
+		Page(spkAxel, "..."),
+		ChoicePage(
+	        Choice("It means I failed."),
+	        Choice("It means I need a key."),
+	        Choice("What does it mean?")
+	    ),
+		Page(spkBubblegum, $"{AXEL}. It means you made it."),
+		Page(spkAxel, "..."),
+		PausePage(),
+		Page(spkAxel, "...Okay."),
+		Page(spkAxel, "..."),
+		Page(spkAxel, "Thanks Bubblegum."),
+		Page(spkBubblegum, "If that door doesn't open, I'll still be here. But I have a feeling it will."),
+	],
+	bubblegum_gate_not_open: [
+		Page(spkBubblegum, $"Go on dearie, you can do this."),
+	],
 }

@@ -85,6 +85,7 @@ function TextHandlerStateHandleNextPage() {
 		// Normal Page
 		default:
 			active_textbox = create_textbox(_next_page, fade_in);
+			fade_in = false;
 			state = TextHandlerStateReadPage;
 			break;
 	}

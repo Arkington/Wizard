@@ -54,7 +54,7 @@ function ThoughtSwirlStateActive() {
 	// Selecting thoughts
 	if keyboard_check_pressed(KEY_INTERACT) and (hover_thought != NONE) {
 		state = ThoughtSwirlStateFading;
-		load_textnode(thought_swirl_name, thoughts[hover_thought]);
+		load_text(thought_swirl_name, thoughts[hover_thought]);
 	}
 }
 
