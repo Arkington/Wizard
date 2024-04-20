@@ -8,7 +8,7 @@ function BattleTransition() {
 	WaitForEvents();
 	EventSound(sndAtkShift);
 	EventWait(1);
-	EventTransition(rBattleTest, -LARGE, -LARGE, DOWN);
+	EventTransition(rBattleParent, -LARGE, -LARGE, DOWN);
 	WaitForEvents();
 	EventCoreState(CoreStateFree);
 	EventCode(function() { oCore.persistent = false; });

@@ -222,6 +222,65 @@ hatrick_intro_conversation = {
 	),
 }
 
+
+hat_intro_2 = {
+
+	main_1: [
+	    Page(spkHatrickNeutral, "hi... Hi!"),
+	    Page(spkAxel, "Hi."),
+	    Page(spkHatrickNeutral, "Hi. Hey. I... kinda saw you shoot that guy... with |S|MAGIC/S/! It was... kinda cool."),
+	    Page(spkAxel, "Thanks."),
+	    Page(spkHatrickNeutral, "...you must be some sort of wizard, right?"),
+	    Page(spkHatrickNeutral, "...some kinda |S|MAGIC/S/ man???"),
+	    Page(spkAxel, "It's literally my first day learning magic."),
+	    Page(spkHatrickNeutral, "No way."),
+	    Page(spkAxel, "Yes way."),
+	    Page(spkHatrickNeutral, "Wow, I've never seen magic like that before in my entire life."),
+	    Page(spkAxel, "Really?"),
+	    Page(spkHatrickNeutral, "Yeah for real. Never seen it. Who are you?"),
+	    Page(spkAxel, "I'm Axel."),
+	    Page(spkHatrickNeutral, "That's cool. Cool to meet you. Umm, I mean, nice to meet you."),
+	    ChoicePage(
+	        Choice("What's you name?", "main_2"),
+	        Choice("Ok bye.", "early_bye")
+	    )
+	],
+	early_bye: [
+	    Page(spkHatrickSad, "WAIT don't go I haven't talked to anyone in a really long time..."),
+	    Page(spkAxel, "..."),
+		GoToPage("main_2")
+	],
+	main_2 : [
+        Page(spkHatrickNeutral, "I'm... umm... hat... Hat... yeah."),
+		ChoicePage(
+	    	Choice("Nice to meet you, Hat.", "name_hat"),
+	    	Choice("Short for Hatrick?", "name_hatrick"),
+	    	Choice("I'm gonna call you Hatty.", "name_hatty")
+	    )
+	],
+	name_hat: [
+	    Page(spkHatrickHappy, "Heeee... nice to meet you too.")
+	],
+	name_hatrick: [
+	    Page(spkHatrickHappy, "Yeah... yeah that sounds cool!"),
+	    Page(spkHatrickNeutral, "Short for Hatrick.")
+	],
+	name_hatty: [
+	    Page(spkHatrickNeutral, "!"),
+	    Page(spkHatrickHappy, "I... I have a nickname..."),
+	    Page(spkHatrickHappy, "..."),
+	    Page(spkHatrickNeutral, "This is the best.")
+	],
+}
+
+
+
+
+
+
+
+
+
 hatrick_fav_food = {
 	main_1: TextNode(
 	    [

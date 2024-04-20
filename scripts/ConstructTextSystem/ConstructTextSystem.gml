@@ -6,33 +6,73 @@ function Speaker(_portrait, _voices, _textbox_params = {}) {
     return _textbox_params;
 }
 
-function Page(_speaker, _text, _textbox_params = {}, _code = function(){}) {
+enum PAGE_TYPE {
+	NORMAL,
+	PAUSE,
+	CHOICE,
+	CODE,
+	GOTO,
+}
+
+function Page(_speaker, _text, _textbox_params = {}) {
 
 	// Speaker params added to textbox
     return {
+		type: PAGE_TYPE.NORMAL,
         text: _text,
         textbox_params: struct_merge(_speaker, _textbox_params),
-        code: _code,
-		pause_page: false,
     }
 }
 
 /// @desc Special type of page which has no text and causes a mid-text pause cutscene.
-function PausePage(_seconds = PAGE_PAUSE_S, _code = function(){}) {
+function PausePage(_seconds = PAGE_PAUSE_S) {
 	return {
-		pause_page: true,
+		type: PAGE_TYPE.PAUSE,
 		pause_page_s: _seconds,
+	}
+}
+
+/// @desc Special type of page outlining choices. Usage: ChoicePage(Choice(...), Choice(...), ...)
+function ChoicePage() {
+	var _choices = [];
+	for (var i = 0; i < argument_count; i++) {
+		_choices[i] = argument[i];
+	}
+	
+	return {
+		type: PAGE_TYPE.CHOICE,
+		choices: _choices, // Array of Choice()s
+	}
+}
+
+/// @desc _nextnode specifies the key for the next page_array to load. _nextnode = NONE to continue the current dialogue.
+function Choice(_text, _next_key = NONE, _code = function(){}) {
+    return {
+        text: _text,
+        next_key: _next_key,
+		code: _code,
+    }
+}
+
+/// @desc Special type of page which just runs its code and does nothing else.
+function CodePage(_code = function(){}) {
+	return {
+		type: PAGE_TYPE.CODE,
 		code: _code,
 	}
 }
 
-function Choice(_text, _nextnode = NO_NEXT_NODE, _code = function(){}) {
-    return {
-        text: _text,
-        nextnode: _nextnode,
-        code: _code,
-    }
+/// @desc Special type of page indicating that we move to a new key in the same text_souce.
+function GoToPage(_goto) {
+	return {
+		type: PAGE_TYPE.GOTO,
+		goto: _goto,
+	}
 }
+
+
+/*
+Deprecated...?
 
 function TextNode(_pages, _choices = NO_CHOICES, _nextnode = NO_NEXT_NODE, _code = function(){}) {
     return {
