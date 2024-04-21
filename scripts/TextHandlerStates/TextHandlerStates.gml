@@ -5,11 +5,9 @@ function TextHandlerStateAwaiting() {
 	
 	// We've received a page_array
 	oPlayer.state = PlayerStateCutscene;
-	
 	page = 0;
-	active_textbox = create_textbox(page_array[page], fade_in);
-	fade_in = false;
-	state = TextHandlerStateReadPage;
+	state = TextHandlerStateHandleNextPage;
+	state();
 }
 
 function TextHandlerStateReadPage() {

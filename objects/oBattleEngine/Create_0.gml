@@ -18,3 +18,12 @@ waves_cleared = []; // Tracks which waves have been cleared
 waves_failed = []; // Tracks which waves have been failed
 n_success = 0;
 n_failure = 0;
+
+
+// TEMPORARY, until we set up globals
+atk_select = UP;
+attacks = [
+    SoulFlame,
+    StunShock,
+    Grapes
+];

@@ -33,7 +33,7 @@ if state == CoreStateFocus {
 		// Icons grow when hovering
 		var atk_scale = (i==atk_hover) ? min(1 + hover_time/5, 2) : 1;
 		draw_sprite_ext(
-			attacks[i].menu_spr,
+			global.attacks[i].menu_spr,
 			0,
 			atk_pos[i].x,
 			atk_pos[i].y,

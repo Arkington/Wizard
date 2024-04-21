@@ -8,7 +8,7 @@ function CoreStateFree(){
 	
 	// Fire!
 	if key.fire {
-		CreateAttack(x, y, angle, attacks[atk_select].atk_obj);
+		CreateAttack(x, y, angle, global.attacks[global.atk_select].atk_obj);
 	}
 	
 	// Focus!
@@ -66,7 +66,7 @@ function CoreStateFocus() {
 	if !key.focus {
 		// Picked attack
 		if atk_hover != NONE {
-			atk_select = atk_hover;
+			global.atk_select = atk_hover;
 			audio_play_sound(sndAtkShift, 0, false);
 		}
         aim_lock = true;
