@@ -4,7 +4,7 @@ var draw_adj_y = 0;
 
 
 // Focus UI
-if state == CoreStateFocus {
+if (state == CoreStateFocus) {
 
 	// Ring
     var ring_scale = min(time_in_state, 5)/5;
@@ -39,6 +39,31 @@ if state == CoreStateFocus {
 			atk_pos[i].y,
 			atk_scale,
 			atk_scale,
+			0,
+			c_white,
+			1
+		);
+	}
+}
+
+// Break UI
+if (state == CoreStateBreak) {
+	
+	// Buttons
+	var time_scale = min(time_in_state/15, 1);
+
+	for (var i = 0; i < n_buttons; i++) {
+		
+		// Icons grow when hovering
+		var button_scale = (i == button_hover) ? min(1 + hover_time/5, 2)*time_scale : time_scale;
+		var button_sprite = sButtonMagic;
+		draw_sprite_ext(
+			button_sprite,
+			0,
+			x + (lengthdir_x(BREAK_BUTTON_X_DIST, button_angles[i]) - sprite_get_width(button_sprite)/2) * button_scale,
+			y + (lengthdir_y(BREAK_BUTTON_Y_DIST, button_angles[i]) - sprite_get_height(button_sprite)/2) * button_scale,
+			button_scale,
+			button_scale,
 			0,
 			c_white,
 			1

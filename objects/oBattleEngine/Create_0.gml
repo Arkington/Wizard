@@ -1,5 +1,13 @@
 state = BattleEngineStateAwaiting;
 
+// Battle system features
+battle_struct = NONE;
+hp_bar = NONE;
+attack_ui = NONE;
+meter = NONE;
+get_em = NONE;
+bullet_box = NONE;
+
 // Loaded 
 wave_goal = NONE;
 AfterWave = NONE;

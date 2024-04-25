@@ -1,6 +1,7 @@
 if (instance_number(oCore) > 1) { instance_destroy(); }
 sprite = sAxelHat;
 state = CoreStateFree;
+state_prev = NONE;
 
 atk_hover = NONE;
 time_in_state = 0;
@@ -13,3 +14,12 @@ key = {};
 angle = 90;
 aim_lock = false;
 aim_reset_timer = 0;
+focus_release_timer = 0;
+
+// Break buttons
+buttons = [0, 1, 2, 3];
+n_buttons = array_length(buttons);
+for (var i = 0; i < n_buttons; i++) {
+	button_angles[i] = 90 + 360*i/n_buttons;
+}
+button_hover = NONE;

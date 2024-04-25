@@ -27,19 +27,7 @@ function ThoughtSwirlStateActive() {
 
 	// Aim at a thought
 	CoreAim();
-	if key.aim_held {
-		var shortest_angle_distance = 360;
-		for (var i = 0; i < n_thoughts; i++) {
-			var dist = abs(angle_difference(angle, thought_angles[i]));
-			if (dist < shortest_angle_distance) {
-				shortest_angle_distance = dist;
-				hover_thought = i;
-			}
-		}
-	}
-	else {
-		hover_thought = NONE;
-	}
+	hover_thought = AimHover(angle, thought_angles);
 
 	// Resizing thoughts based on hover
 	for (var i = 0; i < n_thoughts; i++) {

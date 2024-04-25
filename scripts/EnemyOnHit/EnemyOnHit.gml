@@ -4,10 +4,14 @@ function OnHitStandard(_attack) {
 	
 	// Report death to the wave
 	if (hp <= 0) {
+		ReportEnemyDefeated(object_index);
+		/*
 		if (wave != NONE) {
+			Repor
 			var _enemies_remaining = max(struct_get(wave.get_em, object_get_name(object_index)) - 1, 0);
 			struct_set(wave.get_em, object_get_name(object_index), _enemies_remaining);
 		}
+		*/
 		instance_destroy();
 	}
 	

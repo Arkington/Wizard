@@ -23,7 +23,7 @@
   ],
   "name":"sAttackGrapes",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Attack Sprites",
     "path":"folders/Attacks/Attack Sprites.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":8,
-    "yorigin":8,
+    "yorigin":9,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

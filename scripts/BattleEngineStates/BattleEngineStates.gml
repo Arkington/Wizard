@@ -1,28 +1,51 @@
 /// @desc Battle Engine State Machine
 
-function BattleEngineStateAwaiting() {
-	if (wave_goal != NONE) {
-		print($"ID within the engine: {id}");
 
-		state = BattleEngineStateBreak;
-	}
-}
 
 function BattleEngineStateInit() {
 	
 }
 
-function BattleEngineStateBreak() {
-	
-	// Start next wave
-	if (keyboard_check_pressed(ord("C"))) {
-		current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
-		state = BattleEngineStateWave;
+function BattleEngineStateCutscene() {
+
+}
+
+function BattleEngineStateEnd() {
+
+}
+
+
+// AWAITING STATE
+function BattleEngineStateAwaiting() {
+	if (battle_struct != NONE) {
+		bullet_box = instance_create_layer(BB_X, BB_Y, LAYER_BATTLE_GUI, oBulletBox);
+		hp_bar = instance_create_layer(HP_X, HP_Y, LAYER_BATTLE_GUI, oHP);
+		attack_ui = instance_create_layer(0, 0, LAYER_BATTLE_GUI, oAttackUI);
+		meter = instance_create_layer(METER_X, METER_Y, LAYER_BATTLE_GUI, oMeter);
+		BattleEngineShiftToBreak();
 	}
 }
 
-function BattleEngineStateCutscene() {
+// BREAK STATE
+function BattleEngineShiftToBreak() {
+	with (oCore) { state = CoreStateBreak; }
+	state = BattleEngineStateBreak;
+}
 
+function BattleEngineStateBreak() {
+
+}
+
+
+// WAVE STATE
+function BattleEngineShiftToWave() {
+	// Set up for next wave
+	current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
+	get_em = create_get_em(current_wave);
+
+	with (oCore) { state = CoreStateFree; }
+
+	state = BattleEngineStateWave;
 }
 
 function BattleEngineStateWave() {
@@ -41,13 +64,10 @@ function BattleEngineStateWave() {
 	}
 	
 	// Clean up
+	instance_destroy(get_em);
 	instance_destroy(current_wave);
 	current_wave = NONE;
 	
 	// Go to the next state
 	AfterWave();
-}
-
-function BattleEngineStateEnd() {
-
 }

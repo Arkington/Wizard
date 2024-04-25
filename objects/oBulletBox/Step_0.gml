@@ -1,4 +1,5 @@
 /// @desc Keep oCore inside
+if !instance_exists(oCore) { exit; }
 if (oCore.bbox_top < bbox_top) { oCore.y += bbox_top - oCore.bbox_top; }
 if (oCore.bbox_bottom > bbox_bottom) { oCore.y += bbox_bottom - oCore.bbox_bottom; }
 if (oCore.bbox_left < bbox_left) { oCore.x += bbox_left - oCore.bbox_left; }

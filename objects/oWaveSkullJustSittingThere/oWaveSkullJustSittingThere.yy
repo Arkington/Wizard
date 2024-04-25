@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"oWaveSkullJustSittingThere",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemySkull: 1}",},
+  ],
   "parent":{
     "name":"Battle System",
     "path":"folders/Battle System.yy",
