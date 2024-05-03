@@ -38,8 +38,8 @@ for (var c = 0; c < char_count; c++) {
 
 	// Draw text
 	draw_text_transformed_colour(
-		res_round(x + char_x[c]*scale + x_buffer + _shake_adj_x + portrait_x_adj),
-		res_round(y + char_y[c]*scale + y_buffer + _wave_adj + _shake_adj_y),
+		res_round(x + (char_x[c] + x_buffer + _shake_adj_x + portrait_x_adj)*scale),
+		res_round(y + (char_y[c] + y_buffer + _wave_adj + _shake_adj_y)*scale),
 		string_char_at(text, c+1),
 		scale,
 		scale,
@@ -70,8 +70,8 @@ if portrait != NO_PORTRAIT {
 	draw_sprite_ext(
 		portrait,
 		0,
-		x + portrait_border_width,
-		y + portrait_border_width,
+		x + portrait_border_width*scale,
+		y + portrait_border_width*scale,
 		scale,
 		scale,
 		0,

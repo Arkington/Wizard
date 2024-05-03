@@ -2,6 +2,7 @@ state = BattleEngineStateAwaiting;
 
 // Battle system features
 battle_struct = NONE;
+opponent = NONE;
 hp_bar = NONE;
 attack_ui = NONE;
 meter = NONE;
@@ -10,22 +11,19 @@ bullet_box = NONE;
 
 // Loaded 
 wave_goal = NONE;
-AfterWave = NONE;
 NextWave = NONE;
-
-// Bullet box
-bb_top = 80;
-bb_bottom = 120;
-bb_left = 20;
-bb_right = 80;
+NextEvent = NONE;
 
 // Battle tracking variables
 current_wave = NONE;
 battle_info = {};
 waves_cleared = []; // Tracks which waves have been cleared
 waves_failed = []; // Tracks which waves have been failed
-n_success = 0;
-n_failure = 0;
+n_wins = 0;
+n_fails = 0;
+last_wave = NONE;
+last_wave_win = false;
+n_waves = 0;
 
 
 // TEMPORARY, until we set up globals

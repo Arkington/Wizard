@@ -2,13 +2,6 @@
 
 
 
-function BattleEngineStateInit() {
-	
-}
-
-function BattleEngineStateCutscene() {
-
-}
 
 function BattleEngineStateEnd() {
 
@@ -22,6 +15,21 @@ function BattleEngineStateAwaiting() {
 		hp_bar = instance_create_layer(HP_X, HP_Y, LAYER_BATTLE_GUI, oHP);
 		attack_ui = instance_create_layer(0, 0, LAYER_BATTLE_GUI, oAttackUI);
 		meter = instance_create_layer(METER_X, METER_Y, LAYER_BATTLE_GUI, oMeter);
+		opponent = instance_create_layer(0, 0, LAYER_BATTLE_GUI, battle_struct.opponent);
+		BattleEngineShiftToCutscene();
+	}
+}
+
+// CuTSCENE STATE (also initial state)
+function BattleEngineShiftToCutscene() {
+	SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
+	with (oCore) { state = CoreStateCutscene; }
+	state = BattleEngineStateCutscene;
+	NextEvent();
+}
+
+function BattleEngineStateCutscene() {
+	if (EventQtyRemaining() == 0) {
 		BattleEngineShiftToBreak();
 	}
 }
@@ -54,20 +62,28 @@ function BattleEngineStateWave() {
 	
 	// Win
 	if (current_wave.clear) {
-		n_success++;
-		array_push(waves_cleared, current_wave);
+		n_wins++;
+		last_wave_win = true;
+		array_push(waves_cleared, current_wave.object_index);
 	}
 	// Lose
 	else {
-		n_failure++;
-		array_push(waves_failed, current_wave);
+		n_fails++;
+		last_wave_win = false;
+		array_push(waves_failed, current_wave.object_index);
 	}
+	
+	// Report progress
+	meter.progress = n_wins/wave_goal;
+	n_waves++;
+	last_wave = current_wave.object_index;
 	
 	// Clean up
 	instance_destroy(get_em);
 	instance_destroy(current_wave);
+	instance_destroy(pEnemy);
 	current_wave = NONE;
 	
 	// Go to the next state
-	AfterWave();
+	BattleEngineShiftToCutscene();
 }

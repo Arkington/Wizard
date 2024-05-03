@@ -9,8 +9,8 @@
   "name":"pWave",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle System",
-    "path":"folders/Battle System.yy",
+    "name":"Waves",
+    "path":"folders/Waves.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -10,6 +10,7 @@ enum PAGE_TYPE {
 	NORMAL,
 	PAUSE,
 	CHOICE,
+	SWIRL,
 	CODE,
 	GOTO,
 }
@@ -21,6 +22,18 @@ function Page(_speaker, _text, _textbox_params = {}) {
 		type: PAGE_TYPE.NORMAL,
         text: _text,
         textbox_params: struct_merge(_speaker, _textbox_params),
+    }
+}
+
+function BattlePage(_speaker, _text, _pos, _textbox_params = {}) {
+
+	var _battle_page_params = {};
+
+	// Speaker params added to textbox
+    return {
+		type: PAGE_TYPE.NORMAL,
+        text: _text,
+        textbox_params: struct_merge(_speaker, struct_merge(_textbox_params, _battle_page_params)),
     }
 }
 
@@ -41,6 +54,19 @@ function ChoicePage() {
 	
 	return {
 		type: PAGE_TYPE.CHOICE,
+		choices: _choices, // Array of Choice()s
+	}
+}
+
+/// @desc Special type of page outlining choices as a thought swirl. Usage: SwirlPage(Choice(...), Choice(...), ...)
+function SwirlPage() {
+	var _choices = [];
+	for (var i = 0; i < argument_count; i++) {
+		_choices[i] = argument[i];
+	}
+	
+	return {
+		type: PAGE_TYPE.SWIRL,
 		choices: _choices, // Array of Choice()s
 	}
 }

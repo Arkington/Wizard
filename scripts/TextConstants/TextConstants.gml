@@ -61,9 +61,14 @@
 // Thought swirl stats
 #macro THOUGHT_FADE_SPEED 0.01
 #macro THOUGHT_ROTATE_SPEED 0.5
+#macro THOUGHT_BATTLE_ROTATE_SPEED 1
 #macro THOUGHT_RADIUS 32
 #macro THOUGHT_WIDTH 40
 #macro THOUGHT_HEIGHT 20
 #macro THOUGHT_TEXT_SCALE (1/3)
 #macro HOVER_THOUGHT_SCALE 1.25
 #macro HOVER_THOUGHT_SPEED 0.01
+
+// Battle text params
+#macro BATTLE_TEXT_LEFT {screenpos_x: 16, screenpos_y: 114, scale: 2/3, textbox_width: 272 }
+#macro BATTLE_TEXT_RIGHT {screenpos_x: 149, screenpos_y: 114, scale: 2/3, textbox_width: 272 }

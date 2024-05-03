@@ -1,9 +1,9 @@
-/// @desc Battle timer and clear condition
+ /// @desc Battle timer and clear condition
 
 // Fail condition
 
-if random(100) < 2 print("I disabled the wave timer");
-//timer--;
+//if random(100) < 2 print("I disabled the wave timer");
+timer--;
 if (timer < 0) {
 	over = true;
 }

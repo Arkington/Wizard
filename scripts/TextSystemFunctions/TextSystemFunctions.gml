@@ -35,15 +35,27 @@ function create_choice_menu(_choices) {
 	return choice_menu;
 }
 
-/// @param {String} _text_struct_name
-/// @param {String} _key
+/// @desc Loads text into the text handler. 
+/// @desc _key can be a single key or array of keys, which creates a Frankenstein page_array of several other page arrays meshed together.
 function load_text(_text_struct_name, _key = DEFAULT_TEXT_KEY) {
 
+	var _text_struct = variable_global_get(_text_struct_name);
+
+	// Multiple key functionality
+	if is_array(_key) {
+		var _page_array = [];
+		for (var i = 0; i < array_length(_key); i++) {
+			var _sub_page_array = struct_get(_text_struct, _key[i]);
+			_page_array = array_concat(_page_array, _sub_page_array);
+		}
+	} else {
+		var _page_array = struct_get(_text_struct, _key);
+	}
+	
 	with global.text_handler {
 		if instance_exists(oPlayer) { player_state_prior = oPlayer.state; }
-		var _text_struct = variable_global_get(_text_struct_name);
 		text_struct = _text_struct;
-		page_array = struct_get(text_struct, _key);
+		page_array = _page_array;
 	}
 }
 
@@ -52,6 +64,8 @@ function ClearTextHandler() {
 	with global.text_handler {
 		instance_destroy(active_choice_menu);
 		active_choice_menu = noone;
+		instance_destroy(active_thought_swirl);
+		active_thought_swirl = noone;
 		instance_destroy(active_textbox);
 		active_textbox = noone;
 		page_array = NONE;

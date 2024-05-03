@@ -46,3 +46,21 @@ draw_text_transformed(
 	2/3,
 	0
 );
+
+// Battle timer
+if (time_remaining_s <= TIME_WARNING_S) {
+	var _frame = ceil((1 - time_remaining_s/TIME_WARNING_S)*sprite_get_number(sBattleTimer)) - 1;
+	var _scale = 1 + 0.5*abs(sin(16*(1 - time_remaining_s/TIME_WARNING_S))); // Hackjob function to make the timer bounce
+	var _rot = 8*sin(19*(1 - time_remaining_s/TIME_WARNING_S)); // Hackjob function to make the timer rotate
+	draw_sprite_ext(
+		sBattleTimer,
+		_frame,
+		x + GET_EM_W/2,
+		y + 28,
+		_scale,
+		_scale,
+		_rot,
+		WHITE,
+		1
+	)
+}

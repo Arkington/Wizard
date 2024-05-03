@@ -4,7 +4,7 @@ function TextHandlerStateAwaiting() {
 	if page_array == NONE { return; }
 	
 	// We've received a page_array
-	oPlayer.state = PlayerStateCutscene;
+	with (oPlayer) { state = PlayerStateCutscene; }
 	page = 0;
 	state = TextHandlerStateHandleNextPage;
 	state();
@@ -19,6 +19,12 @@ function TextHandlerStateReadPage() {
 		page++; // Advance to the choice page
 		active_choice_menu = create_choice_menu(page_array[page].choices);
 		state = TextHandlerStateAwaitChoice;
+	}
+	// Swirl
+	if next_page_swirl {
+		page++; // Advance to the swirl page
+		active_thought_swirl = CreateThoughtSwirl2(page_array[page].choices, 0, NONE);
+		state = TextHandlerStateAwaitThought;
 	}
 	// No choices
 	else {
@@ -48,7 +54,7 @@ function TextHandlerStateHandleNextPage() {
 		fade_in = true;
 
 		// Change player state
-		oPlayer.state = player_state_prior;
+		if instance_exists(oPlayer) { oPlayer.state = player_state_prior; }
 		page_array = NONE;
 		
 		state = TextHandlerStateAwaiting;
@@ -100,7 +106,7 @@ function TextHandlerStateAwaitChoice() {
 
 	// Choice found
 	if active_choice_menu.choice_made == NONE { return; }
-	var _choice = active_choice_menu.choice_made;
+	var _next_key = active_choice_menu.choice_made.next_key;
 		
 	// Clean up
 	instance_destroy(active_choice_menu);
@@ -110,13 +116,38 @@ function TextHandlerStateAwaitChoice() {
 	page++;
 
 	// No key brings us to the next page
-	if (_choice.next_key == NONE) {
+	if (_next_key == NONE) {
 		state = TextHandlerStateHandleNextPage;
 		state();
 	}
 	// A next key brings us to a new page_array
 	else {
-		page_array = struct_get(text_struct, _choice.next_key);
+		page_array = struct_get(text_struct, _next_key);
+		state = TextHandlerStateAwaiting;
+		state(); // Run again to prevent a frame of lawlessness
+	}
+}
+
+function TextHandlerStateAwaitThought() {
+
+	// Choice found
+	if (active_thought_swirl.thought_picked == NONE) { return; }
+	var _next_key = active_thought_swirl.next_keys[active_thought_swirl.thought_picked];
+		
+	// Clean up
+	active_thought_swirl = noone; // Don't destroy the swirl, as it needs to fade out.
+	instance_destroy(active_textbox);
+	active_textbox = noone;
+	page++;
+
+	// No key brings us to the next page
+	if (_next_key == NONE) {
+		state = TextHandlerStateHandleNextPage;
+		state();
+	}
+	// A next key brings us to a new page_array
+	else {
+		page_array = struct_get(text_struct, _next_key);
 		state = TextHandlerStateAwaiting;
 		state(); // Run again to prevent a frame of lawlessness
 	}

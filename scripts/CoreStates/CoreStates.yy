@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"CoreStates",
   "parent":{
-    "name":"Battle System",
-    "path":"folders/Battle System.yy",
+    "name":"Core",
+    "path":"folders/Battle System/Core.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

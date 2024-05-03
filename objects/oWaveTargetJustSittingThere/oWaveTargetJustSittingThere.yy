@@ -7,11 +7,12 @@
   "managed":true,
   "name":"oWaveTargetJustSittingThere",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemyTarget: 5}",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemyTarget: 1}",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"time_limit_s","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"6",},
   ],
   "parent":{
-    "name":"Battle System",
-    "path":"folders/Battle System.yy",
+    "name":"Waves",
+    "path":"folders/Waves.yy",
   },
   "parentObjectId":{
     "name":"pWave",

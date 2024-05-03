@@ -1,5 +1,12 @@
 function CoreStateInit() {}
 
+function CoreStateCutscene() {
+
+	CoreMove(CORE_MOVE_SPEED);
+	CoreAim();
+
+}
+
 function CoreStateFree(){
 
 	CoreMove(CORE_MOVE_SPEED);
@@ -68,7 +75,12 @@ function CoreStateBreak() {
 
 	CoreMove(CORE_MOVE_SPEED);
 	CoreAim();
-	button_hover = AimHover(angle, button_angles);
+	button_hover = AimHover(angle, button_angles, false);
+	if (button_hover != NONE) {
+		angle = button_angles[button_hover];
+	} else {
+		angle = 90;
+	}
 
 	// Selecting buttons
 	if keyboard_check_pressed(KEY_INTERACT) and (button_hover != NONE) {

@@ -42,12 +42,16 @@ function ThoughtSwirlStateActive() {
 	// Selecting thoughts
 	if keyboard_check_pressed(KEY_INTERACT) and (hover_thought != NONE) {
 		state = ThoughtSwirlStateFading;
-		load_text(thought_swirl_name, thoughts[hover_thought]);
+		script_execute(actions[hover_thought]);
+		thought_picked = hover_thought;
 	}
 }
 
 function ThoughtSwirlStateFading() {
 	// Fade thoughts out
 	alpha = min(1, alpha - 2*THOUGHT_FADE_SPEED);
-	if (alpha <= 0) {	instance_destroy(); }
+	if (alpha <= 0) {
+		for (var i = 0; i < n_thoughts; i++) { instance_destroy(thought_textboxes[i]); }
+		instance_destroy();
+	}
 }

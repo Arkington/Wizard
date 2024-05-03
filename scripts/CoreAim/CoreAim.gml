@@ -22,13 +22,13 @@ function AimLock() {
     if aim_reset_timer < 0 { aim_lock = false; }
 }
 
-/// @desc Returns the index of _target_angles which is closest to _aim_angle. Requires key.aim_held, hover_time.
-function AimHover(_aim_angle, _target_angles) {
+/// @desc Returns the index of _target_angles which is closest to _aim_angle. Requires key.aim_held, hover_time. Optionally allow hover without holding down an aim key.
+function AimHover(_aim_angle, _target_angles, _force_hold = true) {
 	
 	var _hover = NONE; // What we hover over
 
 	// Aim at a target
-	if key.aim_held {
+	if (key.aim_held or !_force_hold) {
 		var _old_hover = _hover;
 		var shortest_angle_distance = 360;
 		for (var i = 0; i < array_length(_target_angles); i++) {

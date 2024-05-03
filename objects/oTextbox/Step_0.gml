@@ -33,3 +33,5 @@ if (char_count < text_length) && (text_pause_timer <= 0) {
 if keyboard_check_pressed(KEY_SKIP_TEXT) {
 	char_count = text_length;
 }
+
+print($"{text}: {depth}");

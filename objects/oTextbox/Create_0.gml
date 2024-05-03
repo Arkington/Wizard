@@ -35,4 +35,7 @@ shake_intensity_x = TEXT_SHAKE_INTENSITY_MID;
 shake_intensity_y = TEXT_SHAKE_INTENSITY_MID;
 shake_ave_time = TEXT_SHAKE_AVE_TIME_MID;
 
+// Choice menu params
+choice_menu_x = CHOICE_MENU_X;
+
 SetupTextbox();

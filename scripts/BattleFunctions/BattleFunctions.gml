@@ -1,9 +1,10 @@
 /// @desc Creates Battle() structs.
-function Battle(_wave_goal, _next_wave, _after_wave) {
+function Battle(_opponent, _wave_goal, _next_wave, _next_event) {
 	return {
+		opponent: _opponent,
 		wave_goal : _wave_goal,
 		NextWave : _next_wave,
-		AfterWave : _after_wave,
+		NextEvent : _next_event,
 	}
 }
 
@@ -13,7 +14,7 @@ function LoadBattle(_battle_struct_name) {
 		var _battle_struct = variable_global_get(_battle_struct_name);
 		battle_struct = _battle_struct;
 		NextWave = _battle_struct.NextWave;
-		AfterWave = _battle_struct.AfterWave;
+		NextEvent = _battle_struct.NextEvent;
 		wave_goal = _battle_struct.wave_goal;
 	}
 }
@@ -49,20 +50,12 @@ function ReportEnemyDefeated(_enemy_id) {
 	}
 }
 
-
-// Testing
-function nw() {
-	if (n_success > 2) {
-		return oWaveSkullJustSittingThere;
-	} else {
-		return oWaveTargetJustSittingThere;
+/// @desc Changes the bullet box orientation
+function SetBulletBox(_x, _y, _w, _h) {
+	with global.battle_engine.bullet_box {
+		target_x = _x;
+		target_y = _y;
+		target_w = _w;
+		target_h = _h;
 	}
 }
-
-function aw() {
-	with (global.battle_engine) {
-		BattleEngineShiftToBreak();
-	}
-}
-
-test_battle = Battle(5, nw, aw);

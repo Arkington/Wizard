@@ -8,8 +8,8 @@
   "name":"oEventObjectFade",
   "overriddenProperties":[],
   "parent":{
-    "name":"Event System",
-    "path":"folders/Event System.yy",
+    "name":"Events",
+    "path":"folders/Event System/Events.yy",
   },
   "parentObjectId":{
     "name":"pEvent",
