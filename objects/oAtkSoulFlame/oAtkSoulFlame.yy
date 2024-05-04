@@ -39,6 +39,9 @@
     "name":"sAtkSoulFlame_tmp",
     "path":"sprites/sAtkSoulFlame_tmp/sAtkSoulFlame_tmp.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"sAtkSoulFlame_tmp",
+    "path":"sprites/sAtkSoulFlame_tmp/sAtkSoulFlame_tmp.yy",
+  },
   "visible":true,
 }

@@ -2,7 +2,9 @@
 var draw_adj_x = 0;
 var draw_adj_y = 0;
 
-if state == CoreStateFocus {
+
+// Focus UI
+if (state == CoreStateFocus) {
 
 	// Ring
     var ring_scale = min(time_in_state, 5)/5;
@@ -31,7 +33,7 @@ if state == CoreStateFocus {
 		// Icons grow when hovering
 		var atk_scale = (i==atk_hover) ? min(1 + hover_time/5, 2) : 1;
 		draw_sprite_ext(
-			attacks[i].menu_spr,
+			global.attacks[i].menu_spr,
 			0,
 			atk_pos[i].x,
 			atk_pos[i].y,
@@ -44,15 +46,44 @@ if state == CoreStateFocus {
 	}
 }
 
+// Break UI
+if (state == CoreStateBreak) {
+	
+	// Buttons
+	var time_scale = min(time_in_state/15, 1);
+
+	for (var i = 0; i < n_buttons; i++) {
+		
+		// Icons grow when hovering
+		var button_scale = (i == button_hover) ? min(1 + hover_time/5, 2)*time_scale : time_scale;
+		var button_sprite = sButtonMagic;
+		draw_sprite_ext(
+			button_sprite,
+			0,
+			x + (lengthdir_x(BREAK_BUTTON_X_DIST, button_angles[i]) - sprite_get_width(button_sprite)/2) * button_scale,
+			y + (lengthdir_y(BREAK_BUTTON_Y_DIST, button_angles[i]) - sprite_get_height(button_sprite)/2) * button_scale,
+			button_scale,
+			button_scale,
+			0,
+			c_white,
+			1
+		);
+	}
+}
+
+
 // Draw Core
-draw_sprite_ext(
-    sprite,
-    image_index,
-    x + draw_adj_x,
-    y,
-    image_xscale,
-    image_yscale,
-    image_angle,
-    image_blend,
-    image_alpha
-);
+if state != CoreStateInit {
+	// Draw Core
+	draw_sprite_ext(
+	    sprite,
+	    image_index,
+	    x + draw_adj_x,
+	    y,
+	    (2/3),
+	    (2/3),
+	    image_angle,
+	    image_blend,
+	    image_alpha
+	);
+}

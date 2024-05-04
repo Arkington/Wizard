@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sMusicHandler",
+    "path":"sprites/sMusicHandler/sMusicHandler.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

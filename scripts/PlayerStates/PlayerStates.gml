@@ -8,8 +8,8 @@ function PlayerStateFree() {
     var _input_magnitude = (key.right - key.left != 0) or (key.down - key.up != 0);
 	if (_input_magnitude > 0) { direction = _input_direction; }
 	
-    x_speed = _move_speed * lengthdir_x(_input_magnitude, _input_direction);
-    y_speed = _move_speed * lengthdir_y(_input_magnitude, _input_direction);
+    x_speed = _move_speed * sign(lengthdir_x(_input_magnitude, _input_direction));
+    y_speed = _move_speed * sign(lengthdir_y(_input_magnitude, _input_direction));
 
 	PlayerMoveCollide();
 	PlayerAnimate();

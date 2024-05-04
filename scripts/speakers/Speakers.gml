@@ -14,10 +14,11 @@ function initializeSpeakers() {
 			wave_height_factor: TEXT_WAVE_HEIGHT_FACTOR_LOW,
 		}
 	);
+	spkAxelInner = struct_copy(spkAxel); struct_set(spkAxelInner, "voices", NO_VOICE);
 
-	// HC, via bird
-	spkHCViaBird = Speaker(
-		porBird,
+	// HC
+	spkHC = Speaker(
+		porHocusCroakus,
 		[
 			vHC1,
 			vHC2,
@@ -31,7 +32,12 @@ function initializeSpeakers() {
 			text_pause_voice_length: 8
 		}
 	);
+	// HC, via bird
+	spkHCViaBird = struct_copy(spkHC);
+	spkHCViaBird.portrait = porBird;
 
+	// Gecko Wizard
+	spkGeckoWizard = Speaker(NO_PORTRAIT, [vDefault]);
 
 	// Hatrick
 	spkHatrickNeutral = Speaker(

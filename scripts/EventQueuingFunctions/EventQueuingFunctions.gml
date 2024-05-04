@@ -1,11 +1,34 @@
-/// @desc Queue an event
-function QueueEvent(event) {
-	array_push(global.event_handler.event_array, event);
+/// @desc Queue an event. Events generated via TextNodes can queue-jump.
+function QueueEvent(_event) {
+	
+	// Text events get priority so then can play during text sequences
+	var _priority = 0;
+	if (object_index == oTextHandler) { _priority = 1; }
+	with _event { priority = _priority; }
+	
+	with (global.event_handler) {
+		
+		// No priority
+		if (_priority <= 0) {
+			array_push(event_array, _event);
+			return;
+		}
+		
+		// Priority
+		for (var i = 0; i < array_length(event_array); i++) {
+			if (_event.priority > event_array[i].priority) {
+				array_insert(event_array, i, _event);
+				return;
+			}
+		}
+		array_push(event_array, _event);
+	}
 }
 
 /// @desc Queue a signal to wait for any existing events to complete
 function WaitForEvents() {
-	QueueEvent(WAIT_FOR_EVENTS);
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventWaitForEvents);
+	QueueEvent(_event);
 }
 
 /// @desc Queue a wait period which blocks following events for some time
@@ -44,7 +67,7 @@ function EventPlayerState(_state) {
 function EventPlayerStateFree() { EventPlayerState(PlayerStateFree); }
 
 /// @desc Set player's state to PlayerStateCutscene. Optionally kill existing movement.
-function EventPlayerStateCutscene(_halt = false) {
+function EventPlayerStateCutscene(_halt = true) {
 	EventCode(
 		function(_halt) {
 			with oPlayer {
@@ -53,6 +76,17 @@ function EventPlayerStateCutscene(_halt = false) {
 			}
 		},
 		[_halt]
+	);
+}
+
+
+/// @desc Queue a player state change
+function EventCoreState(_state) {
+	EventCode(
+		function(_state) {
+			with oCore { state = _state; }
+		},
+		[_state]
 	);
 }
 
@@ -89,15 +123,17 @@ function EventDepthAdj(_obj, _depth_adj) {
 }
 
 /// @desc Play music.
-function EventPlayMusic(_mus, _fade_in = false, _fade_out = true, _cross_fade = false) {
+function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_fade = false) {
 	EventCode(
 		PlayMusic,
 		[_mus, _fade_in, _fade_out, _cross_fade]
 	);
 }
 
-
-
+/// @desc Pause music.
+function EventStopMusic(_fade = true, _fade_out_s = SONG_FADE_SECS) {
+	EventCode(StopMusic, [_fade, _fade_out_s]);
+}
 
 
 
@@ -122,18 +158,37 @@ function EventMove(_obj_to_move, _x, _y, _move_speed = CUTSCENE_WALK_SPEED, _ani
 	QueueEvent(_event);
 }
 
+/// @desc Queue an object to jump
+function EventJump(_obj_to_jump, _height = EVENT_JUMP_HEIGHT, _time_s = EVENT_JUMP_TIME_S) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventJump);
+	with (_event) {
+		obj_to_jump = _obj_to_jump;
+		height = _height;
+		total_frames = _time_s*FPS;
+
+		// Set up event
+		t = 0;
+	}
+	QueueEvent(_event);
+}
+
 /// @desc Queue a textnode
-function EventText(_text_source, _key = DEFAULT_TEXT_KEY) {
+/// @param _text_source {String} The identifier for the text source to be used in the event.
+/// @param _key {String|Array<String>} The key or keys associated with the text event. This can be a single string identifier or an array of string identifiers.
+function EventText(_text_source, _key) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventText);
 	_event.text_source = _text_source;
 	_event.key = _key;
 	QueueEvent(_event);
 }
 
-/// @desc Queue a sound
-function EventSound(_sound) {
+/// @desc Queue a sound. wait_for_sound specifies whether we should wait for the sound to finish playing before marking the event as 'complete'.
+function EventSound(_sound, _wait_for_sound = false) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventSound);
-	_event.sound = _sound;
+	with (_event) {
+		sound = _sound;
+		wait_for_sound = _wait_for_sound;
+	}
 	QueueEvent(_event);
 }
 
@@ -170,7 +225,7 @@ function EventAnimation(
 }
 
 /// @desc Queue a transition
-function EventTransition(_target_room, _target_x, _target_y, _target_face, _transition_type) {
+function EventTransition(_target_room, _target_x, _target_y, _target_face, _transition_type = oTransitionFade) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventTransition);
 	with (_event) {
 		target_room = _target_room;
@@ -189,6 +244,16 @@ function EventObjectFade(_in_or_out, _obj_to_fade, _fade_rate = EVENT_FADE_OUT_R
 		in_or_out = _in_or_out;
 		obj_to_fade = _obj_to_fade;
 		fade_rate = _fade_rate;
+	}
+	QueueEvent(_event);
+}
+
+// @desc Initialize the Core in preparation for a battle
+function EventCoreInit(_x, _y, ) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreInit);
+	with (_event) {
+		target_x = _x;
+		target_y = _y;
 	}
 	QueueEvent(_event);
 }

@@ -1,2 +1,2 @@
-ShakeCameraX(4, 30);
-ThoughtSwirlFuncs("test_thought_swirl", 0, 10);
+audio_play_sound(sndOpen, 0, false);
+LoadBattle("test_battle");

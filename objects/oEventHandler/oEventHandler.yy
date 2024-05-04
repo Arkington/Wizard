@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sEventHandler",
+    "path":"sprites/sEventHandler/sEventHandler.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

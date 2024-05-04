@@ -13,9 +13,7 @@ function struct_copy(_struct) {
 
 /// @desc Copies the first struct, adds in elements of the second
 function struct_merge(first, second) {
-	// TODO: stop first being modified.
-	// Also this doesn't copy sub-structs so this is problematic.
-	var _merged = first;
+	var _merged = struct_copy(first);
 	var _property_names = variable_struct_get_names(second);
 	for (var i = 0; i < array_length(_property_names); i ++) {
 		struct_set(_merged, _property_names[i], struct_get(second, _property_names[i]));

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"BattleConstants",
   "parent":{
-    "name":"Macros",
-    "path":"folders/Macros.yy",
+    "name":"Battle System",
+    "path":"folders/Battle System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

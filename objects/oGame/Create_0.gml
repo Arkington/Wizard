@@ -13,6 +13,7 @@ layer_create(-LARGE, LAYER_MECHANICS);
 global.event_handler = instance_create_layer(0, 0, LAYER_MECHANICS, oEventHandler);
 global.text_handler = instance_create_layer(0, 0, LAYER_MECHANICS, oTextHandler);
 global.music_handler = instance_create_layer(0, 0, LAYER_MECHANICS, oMusicHandler);
+global.battle_engine = instance_create_layer(0, 0, LAYER_MECHANICS, oBattleEngine);
 global.camera = instance_create_layer(0, 0, LAYER_MECHANICS, oCamera);
 
 room_goto(ROOM_START);

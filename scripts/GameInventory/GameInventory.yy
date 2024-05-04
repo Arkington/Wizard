@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"GameInventory",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GameInventory",
+  "parent":{
+    "name":"Wizard",
+    "path":"Wizard.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

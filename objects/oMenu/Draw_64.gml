@@ -2,7 +2,7 @@ x = screenpos_x;
 y = screenpos_y;
 
 
-draw_set_text(fntText, c_white, fa_left, fa_top);
+draw_set_text(menu_font, c_white, fa_left, fa_top);
 
 // Background
 if !box_per_choice { draw_sprite_stretched(menu_sprite, 0, x, y, width, height); }

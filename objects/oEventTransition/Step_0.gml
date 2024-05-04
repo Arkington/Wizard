@@ -2,7 +2,7 @@ if !active { exit; }
 
 // On event begin, create the transition object
 if !begun {
-	transition_object = instance_create_depth(0, 0, -LARGE, transition_type);
+	transition_object = instance_create_depth(0, 0, TRANSITION_DEPTH, transition_type);
 	with (transition_object) {
 		target_room = other.target_room;
 		target_x = other.target_x;

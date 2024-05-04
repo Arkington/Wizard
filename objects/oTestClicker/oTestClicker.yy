@@ -8,8 +8,8 @@
   "name":"oTestClicker",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test",
-    "path":"folders/Test.yy",
+    "name":"Room Essentials",
+    "path":"folders/Room Essentials.yy",
   },
   "parentObjectId":null,
   "persistent":false,

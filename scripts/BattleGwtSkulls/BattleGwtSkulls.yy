@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BattleGwtSkulls",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BattleGwtSkulls",
+  "parent":{
+    "name":"Battles",
+    "path":"folders/Battles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -3,3 +3,4 @@
 #macro LAYER_INSTANCES "Instances"
 #macro LAYER_TILES "TilesMain"
 #macro LAYER_MECHANICS "Mechanics"
+#macro LAYER_BATTLE_GUI "BattleGUI"

@@ -5,7 +5,6 @@
 #macro NO_CHOICES undefined
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
-#macro DEFAULT_TEXT_KEY "main_1"
 #macro PAGE_PAUSE_S 2
 
 // Special strings
@@ -48,7 +47,7 @@
 
 #macro TEXT_SHAKE_INTENSITY_LOW 0.5
 #macro TEXT_SHAKE_INTENSITY_MID 1
-#macro TEXT_SHAKE_INTENSITY_HIGH 3
+#macro TEXT_SHAKE_INTENSITY_HIGH 2
 #macro TEXT_SHAKE_AVE_TIME_LOW 1
 #macro TEXT_SHAKE_AVE_TIME_MID 2
 #macro TEXT_SHAKE_AVE_TIME_HIGH 5
@@ -61,9 +60,14 @@
 // Thought swirl stats
 #macro THOUGHT_FADE_SPEED 0.01
 #macro THOUGHT_ROTATE_SPEED 0.5
+#macro THOUGHT_BATTLE_ROTATE_SPEED 1
 #macro THOUGHT_RADIUS 32
 #macro THOUGHT_WIDTH 40
 #macro THOUGHT_HEIGHT 20
 #macro THOUGHT_TEXT_SCALE (1/3)
 #macro HOVER_THOUGHT_SCALE 1.25
 #macro HOVER_THOUGHT_SPEED 0.01
+
+// Battle text params
+#macro BATTLE_TEXT_LEFT {screenpos_x: 16, screenpos_y: 114, scale: 2/3, textbox_width: 272 }
+#macro BATTLE_TEXT_RIGHT {screenpos_x: 149, screenpos_y: 114, scale: 2/3, textbox_width: 272 }
