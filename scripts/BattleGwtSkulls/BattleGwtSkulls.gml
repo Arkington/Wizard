@@ -101,7 +101,8 @@ textBattleGwtSkulls = {
 	],
 	concentration: [
 		Page(spkAxel, "I think I broke her concentration. She seemed real upset.", BATTLE_TEXT_RIGHT),
-		Page(spkHC, $"Ah, {AXEL}, my student. It is imperative to never break another wizard's concentration.", BATTLE_TEXT_LEFT),
+		Page(spkHC, $"Ah, {AXEL}, my student.", BATTLE_TEXT_LEFT),
+		Page(spkHC, $"It is imperative to never break another wizard's concentration.", BATTLE_TEXT_LEFT),
 		Page(spkAxel, "I didn't know--", BATTLE_TEXT_RIGHT),
 		Page(spkHC, "Watch out!", BATTLE_TEXT_LEFT),
 	],
@@ -149,7 +150,8 @@ textBattleGwtSkulls = {
 	
 	
 	fail_1: [
-		Page(spkHC, $"That's alright, {AXEL}. Learning to harness your connection to magic shouldn't come easy.", BATTLE_TEXT_LEFT),
+		Page(spkHC, $"That's alright, {AXEL}.", BATTLE_TEXT_LEFT),
+		Page(spkHC, "Learning to harness your connection to magic shouldn't come easy.", BATTLE_TEXT_LEFT),
 		Page(spkHC, "You have failed to win this turn, but the battle rages on!", BATTLE_TEXT_LEFT),
 	],
 	fail_2: [

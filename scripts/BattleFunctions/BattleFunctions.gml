@@ -30,7 +30,7 @@ function BattleGUIAlpha(_alpha) {
 }
 
 /// @desc Create a Get Em board by giving it a wave
-function create_get_em(_wave) {
+function CreateGetEm(_wave) {
 	var _get_em = instance_create_layer(GET_EM_X, GET_EM_Y, LAYER_BATTLE_GUI, oGetEm);
 	with (_get_em) {
 		wave = _wave;
@@ -52,10 +52,10 @@ function ReportEnemyDefeated(_enemy_id) {
 
 /// @desc Changes the bullet box orientation
 function SetBulletBox(_x, _y, _w, _h) {
-	with global.battle_engine.bullet_box {
-		target_x = _x;
-		target_y = _y;
-		target_w = _w;
-		target_h = _h;
+	with global.battle_engine {
+		bullet_box.target_x = _x;
+		bullet_box.target_y = _y;
+		bullet_box.target_w = _w;
+		bullet_box.target_h = _h;
 	}
 }

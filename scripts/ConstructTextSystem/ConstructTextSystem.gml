@@ -15,6 +15,9 @@ enum PAGE_TYPE {
 	GOTO,
 }
 
+/// @param {Any} _speaker
+/// @param {String} _text
+/// @param {Struct} _textbox_params
 function Page(_speaker, _text, _textbox_params = {}) {
 
 	// Speaker params added to textbox

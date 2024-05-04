@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"ThoughtSwirlFuncs",
+  "%Name":"ThoughtSwirlFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ThoughtSwirlFuncs",
+  "name":"ThoughtSwirlFunctions",
   "parent":{
     "name":"Text System",
     "path":"folders/Text System.yy",

@@ -173,7 +173,9 @@ function EventJump(_obj_to_jump, _height = EVENT_JUMP_HEIGHT, _time_s = EVENT_JU
 }
 
 /// @desc Queue a textnode
-function EventText(_text_source, _key = DEFAULT_TEXT_KEY) {
+/// @param _text_source {String} The identifier for the text source to be used in the event.
+/// @param _key {String|Array<String>} The key or keys associated with the text event. This can be a single string identifier or an array of string identifiers.
+function EventText(_text_source, _key) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventText);
 	_event.text_source = _text_source;
 	_event.key = _key;

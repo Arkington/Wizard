@@ -1,6 +1,5 @@
 /// @desc State Machine for oTextHandler
 function TextHandlerStateAwaiting() {
-
 	if page_array == NONE { return; }
 	
 	// We've received a page_array
@@ -21,9 +20,9 @@ function TextHandlerStateReadPage() {
 		state = TextHandlerStateAwaitChoice;
 	}
 	// Swirl
-	if next_page_swirl {
+	else if next_page_swirl {
 		page++; // Advance to the swirl page
-		active_thought_swirl = CreateThoughtSwirl2(page_array[page].choices, 0, NONE);
+		active_thought_swirl = CreateBattleSwirl(page_array[page].choices);
 		state = TextHandlerStateAwaitThought;
 	}
 	// No choices
@@ -103,11 +102,10 @@ function TextHandlerStatePause() {
 }
 
 function TextHandlerStateAwaitChoice() {
-
 	// Choice found
 	if active_choice_menu.choice_made == NONE { return; }
 	var _next_key = active_choice_menu.choice_made.next_key;
-		
+	
 	// Clean up
 	instance_destroy(active_choice_menu);
 	active_choice_menu = noone;

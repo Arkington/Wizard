@@ -8,8 +8,8 @@ function create_thought_textbox(_thought) {
 			textbox_font : fntTextswirl,
 			textbox_width : THOUGHT_WIDTH/THOUGHT_TEXT_SCALE,
 			textbox_height : THOUGHT_HEIGHT/THOUGHT_TEXT_SCALE,
-			x_buffer : 2,
-			y_buffer : 2,
+			//x_buffer : 4,
+			//y_buffer : 4,
 			scale : THOUGHT_TEXT_SCALE,
 			alpha : 0.5
 		}
@@ -31,7 +31,6 @@ function CreateThoughtSwirl(_thought_swirl_name, _secs_until_appear = 4, _secs_u
 		thought_angles = [];
 		struct_foreach(thought_swirl, function(_thought, _action) {
 		    thought_textboxes[n_thoughts] = create_thought_textbox(_thought);
-		    thoughts[n_thoughts] = _thought;
 			actions[n_thoughts] = _action;
 			thought_scales[n_thoughts] = THOUGHT_TEXT_SCALE;
 		    n_thoughts++;
@@ -42,13 +41,13 @@ function CreateThoughtSwirl(_thought_swirl_name, _secs_until_appear = 4, _secs_u
 	}
 }
 
-function CreateThoughtSwirl2(_choices, _secs_until_appear = 4, _secs_until_disappear = 10) {
+function CreateBattleSwirl(_choices) {
 	var _swirl = instance_create_layer(0, 0, LAYER_INSTANCES, oThoughtSwirl);
 	with (_swirl) {
 		
 		// Setup Thought Swirl
-		secs_until_appear = _secs_until_appear;
-		secs_until_disappear = _secs_until_disappear;
+		secs_until_appear = 0;
+		secs_until_disappear = NONE;
 		
 		n_thoughts = 0;
 		thought_angles = [];

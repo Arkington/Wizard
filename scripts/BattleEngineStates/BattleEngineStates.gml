@@ -49,7 +49,7 @@ function BattleEngineStateBreak() {
 function BattleEngineShiftToWave() {
 	// Set up for next wave
 	current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
-	get_em = create_get_em(current_wave);
+	get_em = CreateGetEm(current_wave);
 
 	with (oCore) { state = CoreStateFree; }
 

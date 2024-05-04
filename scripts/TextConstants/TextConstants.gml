@@ -5,7 +5,6 @@
 #macro NO_CHOICES undefined
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
-#macro DEFAULT_TEXT_KEY "main_1"
 #macro PAGE_PAUSE_S 2
 
 // Special strings

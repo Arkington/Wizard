@@ -72,7 +72,3 @@ function ClearTextHandler() {
 		state = TextHandlerStateAwaiting;
 	}
 }
-
-function TextNode() {
-	return argument;
-}
