@@ -29,7 +29,7 @@ with (oCore) {
 }
 
 // Attacks
-with (pAtk) {
+with (pAttack) {
 	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
 }
 

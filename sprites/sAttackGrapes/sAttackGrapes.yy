@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"Attack Sprites",
-    "path":"folders/Attacks/Attack Sprites.yy",
+    "path":"folders/Battle System/Attacks/Attack Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

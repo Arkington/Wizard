@@ -1,8 +1,9 @@
 if (instance_number(oCore) > 1) { instance_destroy(); }
+
+// Core data
 sprite = sAxelHat;
 state = CoreStateFree;
 state_prev = NONE;
-
 atk_hover = NONE;
 time_in_state = 0;
 hover_time = 0;
@@ -15,6 +16,11 @@ angle = 90;
 aim_lock = false;
 aim_reset_timer = 0;
 focus_release_timer = 0;
+
+// Active battle data
+attacks = global.attacks;
+cooldowns = [0, 0, 0];
+atk_select = UP;
 
 // Break buttons
 buttons = [0, 1, 2, 3];

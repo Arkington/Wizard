@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"BattleGwtSkulls",
   "parent":{
-    "name":"Battles",
-    "path":"folders/Battles.yy",
+    "name":"GWT Skulls",
+    "path":"folders/Battles, Waves, Opponents/GWT Skulls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,6 +1,7 @@
 // Get 9-slice params
 var _box_nineslice = sprite_get_nineslice(sprite_index);
 var _hp_frac = global.hp/global.max_hp;
+var _drain_frac = draining_hp/global.max_hp;
 
 // Draw HP bar
 draw_sprite_stretched(
@@ -11,6 +12,16 @@ draw_sprite_stretched(
 	HP_LEN,
 	sprite_height
 );
+
+// Draining hp effect
+draw_rectangle_color(
+	x + _box_nineslice.left,
+	y + _box_nineslice.top,
+	x + _box_nineslice.left + (HP_LEN - _box_nineslice.right - _box_nineslice.left)*_drain_frac - 1,
+	y + sprite_height - _box_nineslice.bottom - 1,
+	RED, RED, RED, RED,
+	false
+)
 
 // Fill health
 draw_rectangle_color(

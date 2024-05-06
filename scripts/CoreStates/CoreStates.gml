@@ -7,14 +7,20 @@ function CoreStateCutscene() {
 
 }
 
-function CoreStateFree(){
+function CoreStateFree() {
 
 	CoreMove(CORE_MOVE_SPEED);
 	CoreAim();
 
 	// Fire!
 	if key.fire {
-		CreateAttack(x, y, angle, global.attacks[global.atk_select].atk_obj);
+		if (cooldowns[atk_select] <= 0) {
+			// TODO: less globals...
+			CreateAttack(x, y, angle, attacks[atk_select].atk_obj);
+			cooldowns[atk_select] = attacks[atk_select].cooldown;
+		} else {
+			audio_play_sound(sndEmptyAttack, 0, false);
+		}
 	}
 	
 	// Focus!
@@ -59,7 +65,7 @@ function CoreStateFocus() {
 
 		// Picked attack
 		if atk_hover != NONE {
-			global.atk_select = atk_hover;
+			atk_select = atk_hover;
 			audio_play_sound(sndAtkShift, 0, false);
 		}
         aim_lock = true;

@@ -1,8 +1,5 @@
 /// @desc Enemy setup
-
+hp = max_hp;
 lifetime = 0;
-wave = NONE;
 
-// Conditions
-stunned = false;
-stun_frames_left = STUN_FRAMES;
+on_hit = function(_attack) {};

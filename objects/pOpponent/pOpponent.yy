@@ -9,8 +9,8 @@
   "name":"pOpponent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle System",
-    "path":"folders/Battle System.yy",
+    "name":"Battles, Waves, Opponents",
+    "path":"folders/Battles, Waves, Opponents.yy",
   },
   "parentObjectId":null,
   "persistent":false,

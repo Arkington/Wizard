@@ -7,12 +7,12 @@
   "managed":true,
   "name":"oWaveTargetJustSittingThere",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemyTarget: 1}",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"time_limit_s","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"6",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemyTarget: 1}",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"time_limit_s","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"6",},
   ],
   "parent":{
-    "name":"Waves",
-    "path":"folders/Waves.yy",
+    "name":"Test",
+    "path":"folders/Battles, Waves, Opponents/Test.yy",
   },
   "parentObjectId":{
     "name":"pWave",

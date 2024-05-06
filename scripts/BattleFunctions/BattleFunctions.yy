@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"BattleFunctions",
   "parent":{
-    "name":"Battle System",
-    "path":"folders/Battle System.yy",
+    "name":"Battle Engine and Components",
+    "path":"folders/Battle System/Battle Engine and Components.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

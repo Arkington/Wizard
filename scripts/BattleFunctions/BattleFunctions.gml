@@ -31,7 +31,7 @@ function BattleGUIAlpha(_alpha) {
 
 /// @desc Create a Get Em board by giving it a wave
 function CreateGetEm(_wave) {
-	var _get_em = instance_create_layer(GET_EM_X, GET_EM_Y, LAYER_BATTLE_GUI, oGetEm);
+	var _get_em = instance_create_layer(_wave.get_em_x, _wave.get_em_y, LAYER_BATTLE_GUI, oGetEm);
 	with (_get_em) {
 		wave = _wave;
 	}
