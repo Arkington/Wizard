@@ -8,17 +8,14 @@
   ],
   "managed":true,
   "name":"oEnemySkullShootUpDown",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"propertyId":{"name":"max_hp","path":"objects/pEnemy/pEnemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"propertyId":{"name":"hurt_sprite","path":"objects/pEnemy/pEnemy.yy",},"resource":{"name":"sEnemySkullHurt","path":"sprites/sEnemySkullHurt/sEnemySkullHurt.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sEnemySkullHurt",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"GWT Skulls",
     "path":"folders/Battles, Waves, Opponents/GWT Skulls.yy",
   },
   "parentObjectId":{
-    "name":"pEnemy",
-    "path":"objects/pEnemy/pEnemy.yy",
+    "name":"oEnemySkull",
+    "path":"objects/oEnemySkull/oEnemySkull.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

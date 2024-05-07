@@ -1,11 +1,10 @@
 /// @desc Loads a test wave
-test_wave = oWaveSkullsHorizontal;
 
 // Stuff and stuff
 global.wave_test = Battle(
 	oOpponentSkull,
 	5,
-	function() { return test_wave; },
+	function() { return BATTLE_TEST_WAVE; },
 	EventBattleBreak
 )
 LoadBattle("wave_test");

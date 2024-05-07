@@ -29,6 +29,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"damage","filters":[],"listItems":[],"multiselect":false,"name":"damage","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"speed","filters":[],"listItems":[],"multiselect":false,"name":"speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"knockback","filters":[],"listItems":[],"multiselect":false,"name":"knockback","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"fire_sfx","filters":[],"listItems":[],"multiselect":false,"name":"fire_sfx","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sndAtkFire","path":"sounds/sndAtkFire/sndAtkFire.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sndAtkFire","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"hit_sfx","filters":[],"listItems":[],"multiselect":false,"name":"hit_sfx","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sndAtkHit","path":"sounds/sndAtkHit/sndAtkHit.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sndAtkHit","varType":5,},
   ],

@@ -40,13 +40,27 @@ function CreateGetEm(_wave) {
 
 /// @desc Reports the defeat of an enemy to the active wave
 function ReportEnemyDefeated(_enemy_id) {
-	var _enemy_name = object_get_name(_enemy_id);
+	var _enemy_name = object_get_name(_enemy_id.object_index);
 	
 	with global.battle_engine {
+		// Update clear condition
 		if array_contains(struct_get_names(current_wave.clear_condition_progress), _enemy_name) {
 			var _enemies_remaining = max(struct_get(current_wave.clear_condition_progress, _enemy_name) - 1, 0);
 			struct_set(current_wave.clear_condition_progress, _enemy_name, _enemies_remaining);
 		}
+		
+		// Remove enemy from current wave
+		print(array_length(current_wave.enemies));
+
+		for (var i = 0; i < array_length(current_wave.enemies); i++) {
+			if (current_wave.enemies[i] == _enemy_id) {
+				print("GOT EM");
+				array_delete(current_wave.enemies, i, 1);
+				break;
+			}
+		}
+		print(_enemy_id);
+		print(current_wave.enemies);
 	}
 }
 

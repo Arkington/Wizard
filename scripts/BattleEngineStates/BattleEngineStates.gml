@@ -82,6 +82,7 @@ function BattleEngineStateWave() {
 	instance_destroy(get_em);
 	instance_destroy(current_wave);
 	instance_destroy(pEnemy);
+	instance_destroy(pBullet);
 	current_wave = NONE;
 	
 	// Go to the next state

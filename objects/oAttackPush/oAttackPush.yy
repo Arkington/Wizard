@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oAttackSoulFlame",
+  "%Name":"oAttackPush",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oAttackSoulFlame",
+  "name":"oAttackPush",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"speed","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"damage","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"speed","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"damage","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"fire_sfx","path":"objects/pAttack/pAttack.yy",},"resource":{"name":"sndAtkFire","path":"sounds/sndAtkFire/sndAtkFire.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sndAtkFire",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"hit_sfx","path":"objects/pAttack/pAttack.yy",},"resource":{"name":"sndAtkHit","path":"sounds/sndAtkHit/sndAtkHit.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sndAtkHit",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"knockback","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.4",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"knockback","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
   ],
   "parent":{
     "name":"Attacks",
@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sAtkSoulFlame",
-    "path":"sprites/sAtkSoulFlame/sAtkSoulFlame.yy",
+    "name":"sAttackPush",
+    "path":"sprites/sAttackPush/sAttackPush.yy",
   },
   "spriteMaskId":{
     "name":"sAtkSoulFlame",

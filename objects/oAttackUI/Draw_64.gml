@@ -21,7 +21,11 @@ for (var i = 0; i <= 2; i++) {
 
 	// Attack icon frame
 	var _frame_sprite = (i == atk_select) ? sItemFrameSelected : sItemFrame;
-	var _frame_index = (1 - cooldowns[i]/attacks[i].cooldown)*(sprite_get_number(_frame_sprite) - 1);
+	if (attacks[i].cooldown == 0) {
+		var _frame_index = sprite_get_number(_frame_sprite) - 1;
+	} else {
+		var _frame_index = (1 - cooldowns[i]/attacks[i].cooldown)*(sprite_get_number(_frame_sprite) - 1);
+	}
 	draw_sprite(
 		_frame_sprite,
 		_frame_index,

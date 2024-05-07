@@ -36,4 +36,11 @@ with (pAttack) {
 // Enemies
 with (pEnemy) {
 	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+	draw_line_color(x, y, x + p_x, y + p_y, c_white, c_purple); // Momentum
+	draw_line_color(x, y, target_x, target_y, c_white, c_green); // Target pos
+}
+
+// Bullets
+with (pBullet) {
+	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
 }

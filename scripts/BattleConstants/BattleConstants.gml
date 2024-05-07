@@ -9,6 +9,12 @@
 
 #macro STUN_FRAMES 60
 
+// Enemies
+#macro ENEMY_MAX_P 2
+#macro ENEMY_BUMP_RADIUS 4
+#macro ENEMY_BUMP_DIR_VAR 2
+#macro ENEMY_BUMP_P 0.5
+
 
 // Bullet box
 #macro BB_X 168

@@ -29,3 +29,10 @@ Grapes = Attack(
 	"Your lunch!",
 	sMenuGrapes
 )
+
+Push = Attack(
+	oAttackPush,
+	0,
+	"Pushes foes!",
+	sMenuPush
+)
