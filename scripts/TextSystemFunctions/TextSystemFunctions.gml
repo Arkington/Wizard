@@ -37,7 +37,7 @@ function create_choice_menu(_choices) {
 
 /// @desc Loads text into the text handler. 
 /// @desc _key can be a single key or array of keys, which creates a Frankenstein page_array of several other page arrays meshed together.
-function load_text(_text_struct_name, _key = DEFAULT_TEXT_KEY) {
+function load_text(_text_struct_name, _key) {
 
 	var _text_struct = variable_global_get(_text_struct_name);
 

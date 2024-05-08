@@ -26,3 +26,18 @@ function draw_set_text(_font = fntText, _color = c_white, _halign = fa_left, _va
 	draw_set_halign(_halign);
 	draw_set_valign(_valign);
 }
+
+/// @desc Find the first index of a value in an array, or -1 if not found.
+function array_index_of(_array, _val) {
+    for (var i = 0; i < array_length(_array); i++) {
+        if (_array[i] == _val) {
+            return i;
+        }
+    }
+	return -1;
+}
+
+/// @desc choose() but accepting an array as an argument.
+function array_choose(_array) {
+	return _array[irandom_range(0, array_length(_array) - 1)];
+}

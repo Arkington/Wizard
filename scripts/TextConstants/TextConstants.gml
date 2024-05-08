@@ -6,6 +6,7 @@
 #macro NO_NEXT_NODE undefined
 #macro NO_VOICE undefined
 #macro PAGE_PAUSE_S 2
+#macro fntText global.magic_font
 
 // Special strings
 #macro AXEL "[Axel]"

@@ -49,13 +49,11 @@ function ReportEnemyDefeated(_enemy_id) {
 			struct_set(current_wave.clear_condition_progress, _enemy_name, _enemies_remaining);
 		}
 		
-		// Remove enemy from current wave
-		print(array_length(current_wave.enemies));
-
+		// Replace enemy with ENEMY_DOWN
 		for (var i = 0; i < array_length(current_wave.enemies); i++) {
 			if (current_wave.enemies[i] == _enemy_id) {
-				print("GOT EM");
 				array_delete(current_wave.enemies, i, 1);
+				array_insert(current_wave.enemies, i, ENEMY_DOWN);
 				break;
 			}
 		}

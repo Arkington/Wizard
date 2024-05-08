@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_text",
+  "%Name":"fntText",
   "AntiAlias":0,
   "applyKerning":0,
   "ascender":12,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":16,
   "maintainGms1Font":false,
-  "name":"fnt_text",
+  "name":"fntText",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",
@@ -127,7 +127,7 @@
     {"lower":32,"upper":127,},
     {"lower":9647,"upper":9647,},
   ],
-  "regenerateBitmap":true,
+  "regenerateBitmap":false,
   "resourceType":"GMFont",
   "resourceVersion":"2.0",
   "sampleText":"abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",

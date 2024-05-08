@@ -8,7 +8,7 @@
   "managed":true,
   "name":"oWaveSkullsSpaceInvaders",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemySkullShootCircle: 5}",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemySkullSpaceInvaders: 35}",},
   ],
   "parent":{
     "name":"GWT Skulls",
