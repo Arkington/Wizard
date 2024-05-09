@@ -4,7 +4,7 @@ event_inherited();
 SetBulletBox(RESOLUTION_W/2, RESOLUTION_H/2 + 16, 64, 64)
 
 
-n_enemies = 16;
+n_enemies = clear_condition.oEnemySkullShootCircle;
 radius = 160;
 end_radius = 80;
 rotate_speed = 1;

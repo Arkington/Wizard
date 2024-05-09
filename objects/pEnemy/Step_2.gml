@@ -1,12 +1,26 @@
 /// @desc Movement
 
+// Velocity
+x += vel_x;
+y += vel_y;
+
+// Acceleration
+vel_x += acc_x/FPS;
+vel_y += acc_y/FPS;
+
 // Momentum push
 x += p_x;
 y += p_y;
 
+
 // Movement to target
-var _dir = point_direction(x, y, target_x, target_y);
-var _x_move = lengthdir_x(move_speed, _dir);
-x += sign(_x_move) * min(abs(_x_move), abs(x - target_x));
-var _y_move = lengthdir_y(move_speed, _dir);
-y += sign(_y_move) * min(abs(_y_move), abs(y - target_y));
+if (target_x != NONE) {
+	var _x_dir = point_direction(x, 0, target_x, 0);
+	var _x_move = lengthdir_x(target_speed, _x_dir);
+	x += sign(_x_move) * min(abs(_x_move), abs(x - target_x));
+}
+if (target_y != NONE) {
+	var _y_dir = point_direction(0, y, 0, target_y);
+	var _y_move = lengthdir_y(target_speed, _y_dir);
+	y += sign(_y_move) * min(abs(_y_move), abs(y - target_y));
+}

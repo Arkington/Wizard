@@ -8,8 +8,8 @@ notice_timer = 32;
 StateUnnoticed = function() {
 	
 	// Move
-	target_x = x + lengthdir_x(move_speed, direction);
-	
+	vel_x = target_speed;
+
 	// Animate
 	image_index = sprite_get_number(sprite_index) - 1;
 	
@@ -20,6 +20,8 @@ StateUnnoticed = function() {
 }
 
 StateNoticed = function() {
+	
+	vel_x = 0;
 	
 	// Animate
 	if (oCore.y > y) { image_index = DOWN; }
@@ -34,8 +36,9 @@ StateNoticed = function() {
 }
 
 StateDone = function() {
+	
 	// Move
-	target_x = x + lengthdir_x(move_speed, direction);
+	vel_x = target_speed;
 	
 	// Animate
 	image_index = sprite_get_number(sprite_index) - 1;

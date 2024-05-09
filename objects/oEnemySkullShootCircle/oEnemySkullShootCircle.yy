@@ -8,7 +8,9 @@
   ],
   "managed":true,
   "name":"oEnemySkullShootCircle",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"propertyId":{"name":"target_speed","path":"objects/pEnemy/pEnemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
+  ],
   "parent":{
     "name":"GWT Skulls",
     "path":"folders/Battles, Waves, Opponents/GWT Skulls.yy",

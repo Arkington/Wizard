@@ -19,8 +19,8 @@
   "name":"oGame",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Managers.yy",
+    "name":"Wizard",
+    "path":"Wizard.yyp",
   },
   "parentObjectId":null,
   "persistent":true,

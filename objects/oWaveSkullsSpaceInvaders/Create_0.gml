@@ -16,7 +16,7 @@ y_move_amt = 12;
 
 move_right = true;
 
-update_frame_delay = 3;
+update_frame_delay = 4;
 fire_speed_s = 1;
 current_enemy = n_rows*n_cols - 1;
 
@@ -31,7 +31,6 @@ for (var j = 0; j < n_rows; j++) {
 			LAYER_INSTANCES,
 			oEnemySkullSpaceInvaders
 		)
-		_skull.move_speed = LARGE; // Always end up at the target position
 		array_push(enemies, _skull);
 		enemy_grid[i][j] = _skull;
 	}
@@ -50,10 +49,10 @@ function StateHorizontalMove() {
 		while (current_enemy >= 0 and enemies[current_enemy] == ENEMY_DOWN) { current_enemy--; }
 		if (current_enemy >= 0) {
 			var _skull = enemies[current_enemy];
-			_skull.target_x += move_right ? x_move_amt : -x_move_amt;
+			_skull.x += move_right ? x_move_amt : -x_move_amt;
 			// Check if this is on an edge
-			if (_skull.target_x < leftmost) { leftmost = _skull.target_x; }
-			if (_skull.target_x > rightmost) { rightmost = _skull.target_x; }
+			if (_skull.x < leftmost) { leftmost = _skull.x; }
+			if (_skull.x > rightmost) { rightmost = _skull.x; }
 			current_enemy--;
 		}
 	}
@@ -76,7 +75,7 @@ function StateVerticalMove() {
 		// Skip down enemies
 		while (current_enemy >= 0 and enemies[current_enemy] == ENEMY_DOWN) { current_enemy--; }
 		if (current_enemy >= 0) {
-			enemies[current_enemy].target_y += y_move_amt;
+			enemies[current_enemy].y += y_move_amt;
 			current_enemy--;
 		}
 	}

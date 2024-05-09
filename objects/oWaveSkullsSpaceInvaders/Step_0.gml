@@ -19,11 +19,11 @@ if (t % (fire_speed_s*FPS) == 0) {
         if (_index == -1) { // Not found
 			array_push(_ready_enemies, _enemy);
 			array_push(_enemy_cols, _enemy_col);
-			array_push(_enemy_ys, _enemy.target_y);
-        } else if (_enemy.target_y > _enemy_ys[_index]) {
+			array_push(_enemy_ys, _enemy.y);
+        } else if (_enemy.y > _enemy_ys[_index]) {
             // Update the existing entry with the new front-most enemy
             _ready_enemies[_index] = _enemy;
-            _enemy_ys[_index] = _enemy.target_y;
+            _enemy_ys[_index] = _enemy.y;
 		}
 	}
 	
@@ -34,5 +34,5 @@ if (t % (fire_speed_s*FPS) == 0) {
 
 // End prematurely if skulls advance too far
 for (var i = 0; i < array_length(enemies); i++) {
-	if (enemies[i] != ENEMY_DOWN and enemies[i].target_y > 208) { over = true; }
+	if (enemies[i] != ENEMY_DOWN and enemies[i].y > 208) { over = true; }
 }
