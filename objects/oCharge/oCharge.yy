@@ -1,21 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"oEnemySkullShootUpDown",
+  "%Name":"oCharge",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEnemySkullShootUpDown",
+  "name":"oCharge",
   "overriddenProperties":[],
   "parent":{
-    "name":"GWT Skulls",
-    "path":"folders/Battles/GWT Skulls.yy",
+    "name":"Battle Effects",
+    "path":"folders/Battles/Battle Effects.yy",
   },
   "parentObjectId":{
-    "name":"oEnemySkull",
-    "path":"objects/oEnemySkull/oEnemySkull.yy",
+    "name":"pEffect",
+    "path":"objects/pEffect/pEffect.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,10 +35,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sEnemySkull",
-    "path":"sprites/sEnemySkull/sEnemySkull.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

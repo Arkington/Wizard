@@ -11,7 +11,7 @@
   ],
   "parent":{
     "name":"Test",
-    "path":"folders/Battles, Waves, Opponents/Test.yy",
+    "path":"folders/Battles/Test.yy",
   },
   "parentObjectId":{
     "name":"pWave",

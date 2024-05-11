@@ -46,9 +46,6 @@
 #macro GET_EM_H 56
 #macro TIME_WARNING_S 5
 
-// Focus
-#macro FOCUS_SFX_INTRO_POINT 0.53828
-
 // Break buttons
 #macro BREAK_BUTTON_X_DIST 24
 #macro BREAK_BUTTON_Y_DIST 16

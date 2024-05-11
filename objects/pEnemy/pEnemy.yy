@@ -11,8 +11,8 @@
   "name":"pEnemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Battle System/Enemies.yy",
+    "name":"Battles",
+    "path":"folders/Battles.yy",
   },
   "parentObjectId":null,
   "persistent":false,

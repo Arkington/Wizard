@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oOpponentSkull",
+  "%Name":"pEffect",
   "eventList":[],
   "managed":true,
-  "name":"oOpponentSkull",
+  "name":"pEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"GWT Skulls",
-    "path":"folders/Battles/GWT Skulls.yy",
+    "name":"Battle Effects",
+    "path":"folders/Battles/Battle Effects.yy",
   },
-  "parentObjectId":{
-    "name":"pOpponent",
-    "path":"objects/pOpponent/pOpponent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sOppoSkull",
-    "path":"sprites/sOppoSkull/sOppoSkull.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"MusicData",
+  "%Name":"LoopPoints",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MusicData",
+  "name":"LoopPoints",
   "parent":{
-    "name":"Music System",
-    "path":"folders/Music System.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

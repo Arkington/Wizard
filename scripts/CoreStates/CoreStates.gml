@@ -36,7 +36,6 @@ function CoreStateFocus() {
 	// Focus SFX
 	if !audio_is_playing(sndFocusRing) {
 		focus_sfx = audio_play_sound(sndFocusRing, 0, true);
-		audio_sound_loop_start(focus_sfx, FOCUS_SFX_INTRO_POINT);
 	}
 
     CoreMove(FOCUS_MOVE_SPEED);

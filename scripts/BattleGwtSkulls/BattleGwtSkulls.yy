@@ -6,7 +6,7 @@
   "name":"BattleGwtSkulls",
   "parent":{
     "name":"GWT Skulls",
-    "path":"folders/Battles, Waves, Opponents/GWT Skulls.yy",
+    "path":"folders/Battles/GWT Skulls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

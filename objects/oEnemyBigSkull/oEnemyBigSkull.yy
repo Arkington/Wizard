@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"oEnemySkull",
+  "%Name":"oEnemyBigSkull",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEnemySkull",
+  "name":"oEnemyBigSkull",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"propertyId":{"name":"max_hp","path":"objects/pEnemy/pEnemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"propertyId":{"name":"hurt_sprite","path":"objects/pEnemy/pEnemy.yy",},"resource":{"name":"sEnemySkullHurt","path":"sprites/sEnemySkullHurt/sEnemySkullHurt.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sEnemySkullHurt",},

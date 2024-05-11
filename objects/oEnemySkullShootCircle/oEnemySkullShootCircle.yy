@@ -13,7 +13,7 @@
   ],
   "parent":{
     "name":"GWT Skulls",
-    "path":"folders/Battles, Waves, Opponents/GWT Skulls.yy",
+    "path":"folders/Battles/GWT Skulls.yy",
   },
   "parentObjectId":{
     "name":"oEnemySkull",

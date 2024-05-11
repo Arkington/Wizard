@@ -7,4 +7,4 @@
 #macro FPS 60
 
 #macro ROOM_START rBattleWaveTest
-#macro BATTLE_TEST_WAVE oWaveSkullsHorizontal
+#macro BATTLE_TEST_WAVE oWaveSkullsBigBoy
