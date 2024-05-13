@@ -37,7 +37,14 @@ with (pAttack) {
 with (pEnemy) {
 	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
 	draw_line_color(x, y, x + p_x, y + p_y, c_white, c_purple); // Momentum
-	draw_line_color(x, y, target_x, target_y, c_white, c_green); // Target pos
+	// Target pos
+	if (target_x != NONE and target_y != NONE) {
+		draw_line_color(x, y, target_x, target_y, c_white, c_green); // Target pos
+	} else if (target_x != NONE) {
+		draw_line_color(x, y, target_x, y, c_white, c_green); // Target pos
+	} else if (target_y != NONE) {
+		draw_line_color(x, y, x, target_y, c_white, c_green); // Target pos
+	}
 }
 
 // Bullets

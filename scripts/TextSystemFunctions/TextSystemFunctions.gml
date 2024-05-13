@@ -1,5 +1,5 @@
 /// @param _page
-function create_textbox(_page, _fade_in = true) {
+function CreateTextbox(_page, _fade_in = true) {
 	textbox = instance_create_layer(0, 0, LAYER_TEXT, oTextbox);
 	textbox_params = _page.textbox_params;
 	with (textbox) {
@@ -18,7 +18,7 @@ function create_textbox(_page, _fade_in = true) {
 }
 
 /// @param _choices
-function create_choice_menu(_choices) {
+function CreateChocieMenu(_choices) {
 	var choice_menu = instance_create_layer(0, 0, LAYER_TEXT, oChoiceMenu);
 	with choice_menu {
 		choices = _choices;
@@ -37,7 +37,7 @@ function create_choice_menu(_choices) {
 
 /// @desc Loads text into the text handler. 
 /// @desc _key can be a single key or array of keys, which creates a Frankenstein page_array of several other page arrays meshed together.
-function load_text(_text_struct_name, _key) {
+function LoadText(_text_struct_name, _key) {
 
 	var _text_struct = variable_global_get(_text_struct_name);
 

@@ -2,15 +2,31 @@ battleGwtSkulls = Battle(
 	oOpponentSkull,
 	8,
 	NextWave_GwtSkulls,
-	NextEvent_GwtSkulls
+	FinalEvent_GwtSkulls
 );
 
 
 function NextWave_GwtSkulls() {
-	if (n_success > 2) {
-		return oWaveSkullJustSittingThere;
+	if (n_wins == 0) {
+		return oWaveSkullsHorizontal;
+	} else if (n_wins == 1 and last_wave_win) {
+		return oWaveSkullsCircle;
+	} else if (n_wins == 2 and last_wave_win) {
+		return oWaveSkullsMonoBounce;
+	} else if (n_wins == 3 and last_wave_win) {
+		return oWaveSkullsMultiBounce;
+	} else if (n_wins == 4 and last_wave_win) {
+		return oWaveSkullsSpaceInvaders;
+	} else if (n_wins == 5 and last_wave_win) {
+		return oWaveSkullsAstroBarrier;
+	} else if (n_wins == 6) {
+		return oWaveSkullsBigBoy;
 	} else {
-		return oWaveTargetJustSittingThere;
+		// Return waves cleared or failed, with a few exceptions
+		var _wave_choices = [];
+		array_copy(_wave_choices, 0, waves_cleared, 0, array_length(waves_cleared));
+		_wave_choices = array_remove_values(_wave_choices, [oWaveSkullsAstroBarrier, oWaveSkullsSpaceInvaders]);
+		return array_choose(array_concat(_wave_choices, waves_failed));
 	}
 }
 
@@ -25,7 +41,7 @@ function NextEvent_GwtSkulls() {
 	}
 
 	// Space invaders
-	else if (last_wave == oWaveSkullJustSittingThere and !battle_info.mentioned_space_invaders) {
+	else if (last_wave == oWaveSkullsSpaceInvaders and !battle_info.mentioned_space_invaders) {
 		battle_info.mentioned_space_invaders = true;
 		EventText("textBattleGwtSkulls", "space_invaders")
 	}
@@ -46,38 +62,26 @@ function NextEvent_GwtSkulls() {
 	}
 	else if (!last_wave_win and (n_fails == 10)) {
 		battle_info.many_fails = true;
-		EventText("textBattleGwtSkulls", $"fail_10");
+		EventText("textBattleGwtSkulls", "fail_10");
 	}
 	
 	WaitForEvents();
 	EventBattleBreak();
 }
 
-test_battle = Battle(oOpponentSkull, 5, nw, aw);
-
-
-// Testing
-function nw() {
-	if (n_wins > 2) {
-		return oWaveSkullJustSittingThere;
-	} else {
-		return oWaveTargetJustSittingThere;
-	}
+function FinalEvent_GwtSkulls() {
+	EventText("textBattleGwtSkulls", "final");
+	WaitForEvents();
+	EventWait(2);
+	ExitBattle();
 }
-
-function aw() {
-	BattleEngineShiftToBreak();
-}
-
-test_battle = Battle(oOpponentSkull, 5, nw, NextEvent_GwtSkulls);
-
 
 
 
 // Text
 initializeSpeakers();
 textBattleGwtSkulls = {
-	win_3: [
+	init: [
 		Page(spkHC, $"Alright {AXEL}, your first real opponent is staring you down.", BATTLE_TEXT_LEFT),
 		Page(spkHC, "This might be rather confronting, but now you must do battle!", BATTLE_TEXT_LEFT),
 	],
@@ -91,7 +95,7 @@ textBattleGwtSkulls = {
 		Page(spkHC, "|V|A veritable clashing of might???/V/", BATTLE_TEXT_LEFT),
 		Page(spkAxel, "Yeah, a wizard attacked me this morning.", BATTLE_TEXT_RIGHT),
 	],
-	init: [
+	win_3: [
 		Page(spkHC, "You were attacked on school grounds? What did you do?", BATTLE_TEXT_LEFT),
 		SwirlPage(
 			Choice("Broke her concentration.", "concentration"),
@@ -172,6 +176,13 @@ textBattleGwtSkulls = {
 	post_fail_10: [
 		Page(spkHC, "There you go! I can see it in your eyes... you're improving!", BATTLE_TEXT_LEFT),
 		Page(spkHC, "Anyway...", BATTLE_TEXT_LEFT),
-	]
-
+	],
+	final: [
+		Page(spkHC, "...My goodness.", BATTLE_TEXT_LEFT),
+		Page(spkHC, "...", BATTLE_TEXT_LEFT),
+		Page(spkAxel, "...", BATTLE_TEXT_RIGHT),
+		Page(spkHC, "...", BATTLE_TEXT_LEFT),
+		PausePage(1.5),
+		Page(spkHC, "|V|Huzzaahhhh!!/V/", BATTLE_TEXT_LEFT),
+	],
 }

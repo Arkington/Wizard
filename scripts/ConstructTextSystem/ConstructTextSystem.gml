@@ -99,15 +99,3 @@ function GoToPage(_goto) {
 	}
 }
 
-
-/*
-Deprecated...?
-
-function TextNode(_pages, _choices = NO_CHOICES, _nextnode = NO_NEXT_NODE, _code = function(){}) {
-    return {
-        pages: _pages,
-        choices: _choices,
-        nextnode: _nextnode,
-		code: _code,
-    }
-}

@@ -21,7 +21,7 @@ _attack.on_hit(id);
 
 // Die
 if (hp <= 0) {
-	ReportEnemyDefeated(id);
+	ReportEnemyDown(id);
 	instance_destroy();
 }
 

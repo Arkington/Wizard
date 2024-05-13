@@ -6,6 +6,10 @@ function res_round(x) {
 	return round(VIEWPORT_RATIO*x)/VIEWPORT_RATIO;
 }
 
+function cardinal_dir(_dir) {
+	return round(_dir/90) % 4;
+}
+
 /// @param _object
 function reset_to_noone(_object){
 	instance_destroy(_object);
@@ -35,6 +39,25 @@ function array_index_of(_array, _val) {
         }
     }
 	return -1;
+}
+
+/// @desc Remove all of a particular value from an array
+function array_remove_value(_array, _val) {
+	for (var i = 0; i < array_length(_array); i++) {
+		if (_array[i] == _val) {
+			array_delete(_array, i, 1);
+			i--;
+		}
+	}
+	return _array;
+}
+/// @desc Remove all of several values from an array
+function array_remove_values(_array, _vals) {
+	var _new_array = _array;
+	for (var i = 0; i < array_length(_vals); i++) {
+		_new_array = array_remove_value(_new_array, _vals[i]);
+	}
+	return _new_array;
 }
 
 /// @desc choose() but accepting an array as an argument.

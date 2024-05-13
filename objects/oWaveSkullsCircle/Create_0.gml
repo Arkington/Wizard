@@ -14,10 +14,9 @@ fire_speed_s = 1;
 // Create enemies
 for (var i = 0; i < n_enemies; i++) {
 	var _theta = i*360/n_enemies
-	var _skull = instance_create_layer(
+	var _skull = CreateEnemy(
 		oBulletBox.target_x + lengthdir_x(radius, _theta + t),
 		oBulletBox.target_y + lengthdir_y(radius, _theta + t),
-		LAYER_INSTANCES,
 		oEnemySkullShootCircle
 	)
 	array_push(enemies, _skull);

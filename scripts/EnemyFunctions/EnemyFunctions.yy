@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"CoreAim",
+  "%Name":"EnemyFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"CoreAim",
+  "name":"EnemyFunctions",
   "parent":{
-    "name":"Core",
-    "path":"folders/Battle System/Core.yy",
+    "name":"Enemies",
+    "path":"folders/Battle System/Enemies.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

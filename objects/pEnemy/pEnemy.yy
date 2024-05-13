@@ -11,8 +11,8 @@
   "name":"pEnemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battles",
-    "path":"folders/Battles.yy",
+    "name":"Enemies",
+    "path":"folders/Battle System/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,6 +31,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"max_hp","filters":[],"listItems":[],"multiselect":false,"name":"max_hp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"target_speed","filters":[],"listItems":[],"multiselect":false,"name":"target_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"contact_damage","filters":[],"listItems":[],"multiselect":false,"name":"contact_damage","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"weight","filters":[],"listItems":[],"multiselect":false,"name":"weight","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"hurt_sprite","filters":[],"listItems":[],"multiselect":false,"name":"hurt_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NONE","varType":5,},
   ],

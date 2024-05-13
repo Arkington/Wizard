@@ -4,18 +4,22 @@ n_enemies = array_length(enemies);
 
 // Enemy spawn in
 if (t/FPS % spawn_rate_s == 0) {
-	var _skull = instance_create_layer(
+	var _skull = CreateEnemy(
 		MID_X - (left ? 1 : -1)*spawn_x_dist + random_range(-spawn_radius, spawn_radius),
 		spawn_y + random_range(-spawn_radius, spawn_radius),
-		LAYER_INSTANCES,
-		oEnemySkullBouncy
+		oEnemySkullBouncy,
+		{
+			vel_x: (left ? 1 : -1)*random_range(vel_x - vel_x_var, vel_x + vel_x_var),
+			acc_y: acc_y,
+			spin_factor: left ? random_range(0, spin_factor_range) : random_range(-spin_factor_range, 0),
+		}
 	);
-	_skull.vel_x = (left ? 1 : -1)*random_range(vel_x - vel_x_var, vel_x + vel_x_var);
-	_skull.acc_y = acc_y;
-	_skull.spin_factor = left ? random_range(0, spin_factor_range) : random_range(-spin_factor_range, 0);
 	array_push(enemies, _skull);
 	left = irandom(1);
 }
+// I'm thinking the solution is to build in any field assignments into the CreateEnemy function.
+
+
 
 // Enemies bouncing
 for (var i = 0; i < n_enemies; i++) {

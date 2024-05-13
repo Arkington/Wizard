@@ -8,6 +8,20 @@ function Battle(_opponent, _wave_goal, _next_wave, _next_event) {
 	}
 }
 
+/// @desc Allows the BattleEngine to track the player's overworld position prior to battle
+function BattleEngineStorePlayerPosition() {
+	if (instance_exists(oPlayer)) {
+		with (global.battle_engine) {
+			room_prev = room;
+			x_prev = oPlayer.x;
+			y_prev = oPlayer.y;
+			face_prev = cardinal_dir(oPlayer.direction);
+		}
+	} else {
+		show_debug_message("Player is not in room, cannot store position prior to battle.");
+	}
+}
+
 /// @desc Loads a Battle() struct into the BattleEngine.
 function LoadBattle(_battle_struct_name) {
 	with (global.battle_engine) {
@@ -16,6 +30,14 @@ function LoadBattle(_battle_struct_name) {
 		NextWave = _battle_struct.NextWave;
 		NextEvent = _battle_struct.NextEvent;
 		wave_goal = _battle_struct.wave_goal;
+	}
+}
+
+/// @desc Resets the BattleEngine to await a new battle.
+function EndBattle() {
+	with(global.battle_engine) {
+		battle_struct = NONE;
+		state = BattleEngineStateAwaiting;
 	}
 }
 
@@ -38,13 +60,14 @@ function CreateGetEm(_wave) {
 	return _get_em;
 }
 
-/// @desc Reports the defeat of an enemy to the active wave
-function ReportEnemyDefeated(_enemy_id) {
+/// @desc Reports the defeat of an enemy to the active wave. Optionally choose not to grant the kill to the player.
+function ReportEnemyDown(_enemy_id, _grant_kill = true) {
 	var _enemy_name = object_get_name(_enemy_id.object_index);
 	
 	with global.battle_engine {
+		
 		// Update clear condition
-		if array_contains(struct_get_names(current_wave.clear_condition_progress), _enemy_name) {
+		if (_grant_kill and array_contains(struct_get_names(current_wave.clear_condition_progress), _enemy_name)) {
 			var _enemies_remaining = max(struct_get(current_wave.clear_condition_progress, _enemy_name) - 1, 0);
 			struct_set(current_wave.clear_condition_progress, _enemy_name, _enemies_remaining);
 		}
@@ -57,8 +80,6 @@ function ReportEnemyDefeated(_enemy_id) {
 				break;
 			}
 		}
-		print(_enemy_id);
-		print(current_wave.enemies);
 	}
 }
 

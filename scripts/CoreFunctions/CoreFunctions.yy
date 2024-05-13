@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"CoreMove",
+  "%Name":"CoreFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"CoreMove",
+  "name":"CoreFunctions",
   "parent":{
     "name":"Core",
     "path":"folders/Battle System/Core.yy",

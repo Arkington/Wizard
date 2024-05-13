@@ -28,8 +28,10 @@ if (t % (fire_speed_s*FPS) == 0) {
 	}
 	
 	// Pick one to fire
-	var _chosen = array_choose(_ready_enemies);
-	_chosen.state = _chosen.StateShooting;
+	if (array_length(_ready_enemies) > 0) {
+		var _chosen = array_choose(_ready_enemies);
+		_chosen.state = _chosen.StateShooting;
+	}
 }
 
 // End prematurely if skulls advance too far

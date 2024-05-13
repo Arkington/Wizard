@@ -1,6 +1,8 @@
 // Core
 #macro CORE_MOVE_SPEED 3
 #macro CORE_ROTATE_SPEED 0.3
+#macro CORE_IFRAMES_S 2
+#macro CORE_IFRAMES_BLINK_FRAMES 3
 #macro FOCUS_MOVE_SPEED CORE_MOVE_SPEED/2
 
 #macro AIM_LOCK_FRAMES 5
@@ -16,6 +18,10 @@
 #macro ENEMY_BUMP_DIR_VAR 2
 #macro ENEMY_BUMP_P 0.5
 
+
+// Engine
+#macro COOLOFF_FRAMES_BETWEEN_CLEAR 2
+#macro COOLOFF_MIN_TIME_S 0.8
 
 // Bullet box
 #macro BB_X 168

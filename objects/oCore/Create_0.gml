@@ -7,6 +7,8 @@ state_prev = NONE;
 atk_hover = NONE;
 time_in_state = 0;
 hover_time = 0;
+iframes = false;
+iframes_time = 0;
 
 x_speed = 0;
 y_speed = 0;

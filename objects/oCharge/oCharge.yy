@@ -11,12 +11,12 @@
   "name":"oCharge",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle Effects",
-    "path":"folders/Battles/Battle Effects.yy",
+    "name":"Battle Objects",
+    "path":"folders/Battle System/Battle Objects.yy",
   },
   "parentObjectId":{
-    "name":"pEffect",
-    "path":"objects/pEffect/pEffect.yy",
+    "name":"pBattleObject",
+    "path":"objects/pBattleObject/pBattleObject.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

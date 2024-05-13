@@ -40,9 +40,7 @@ function BattleEngineShiftToBreak() {
 	state = BattleEngineStateBreak;
 }
 
-function BattleEngineStateBreak() {
-
-}
+function BattleEngineStateBreak() {}
 
 
 // WAVE STATE
@@ -50,9 +48,7 @@ function BattleEngineShiftToWave() {
 	// Set up for next wave
 	current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
 	get_em = CreateGetEm(current_wave);
-
 	with (oCore) { state = CoreStateFree; }
-
 	state = BattleEngineStateWave;
 }
 
@@ -78,13 +74,56 @@ function BattleEngineStateWave() {
 	n_waves++;
 	last_wave = current_wave.object_index;
 	
-	// Clean up
-	instance_destroy(get_em);
-	instance_destroy(current_wave);
-	instance_destroy(pEnemy);
+	// Move to Cooloff
+	BattleEngineShiftToWaveCooloff();
+}
+
+
+// WAVE COOLOFF STATE
+
+/// @desc In the Wave-Cooloff phase, all Attacks and Bullets are deleted/disabled
+function BattleEngineShiftToWaveCooloff() {
+	with (oCore) { state = CoreStateCutscene; }
+	instance_destroy(pAttack);
 	instance_destroy(pBullet);
-	current_wave = NONE;
+	state = BattleEngineStateWaveCooloff;
+}
+
+function BattleEngineStateWaveCooloff() {
 	
-	// Go to the next state
-	BattleEngineShiftToCutscene();
+	// Remove enemies
+	if (time_in_state % COOLOFF_FRAMES_BETWEEN_CLEAR == 0) {
+		// Pick an enemy and remove it, granting no kill
+		var _enemy = instance_find(pEnemy, irandom(instance_number(pEnemy) - 1));
+		if (_enemy != noone) {
+			ReportEnemyDown(_enemy, false);
+			instance_destroy(_enemy);
+			audio_play_sound(sndPop, 0, false);
+		}
+	}
+
+	// Finish if all enemies are destroyed and some delay has passed
+	if (instance_number(pEnemy) == 0) and (time_in_state > COOLOFF_MIN_TIME_S*FPS) {	
+
+		// Final cleanup
+		instance_destroy(get_em);
+		instance_destroy(current_wave);
+		instance_destroy(pBattleObject);
+		current_wave = NONE;
+
+		// Go to the next state
+		BattleEngineShiftToCutscene();
+	}
+}
+
+
+// FINAL ATTACK STATE
+
+function BattleEngineShiftToFinalAttack() {
+	with (oCore) { state = CoreStateFinalAttack; }
+	state = BattleEngineStateFinalAttack;
+}
+
+function BattleEngineStateFinalAttack() {
+
 }

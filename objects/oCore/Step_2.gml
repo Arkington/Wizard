@@ -17,3 +17,9 @@ for (var i = 0; i < array_length(attacks); i++) {
 if (state != CoreStateFocus and audio_is_playing(sndFocusRing)) {
 	audio_stop_sound(sndFocusRing);
 }
+
+// iFrames
+iframes_time--;
+if (iframes_time < 0) {
+	iframes = false;
+}

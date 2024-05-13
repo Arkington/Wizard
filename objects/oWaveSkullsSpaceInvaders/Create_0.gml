@@ -25,10 +25,9 @@ enemy_grid = [];
 // Create enemies
 for (var j = 0; j < n_rows; j++) {
 	for (var i = n_cols - 1; i >= 0; i--) {
-		var _skull = instance_create_layer(
+		var _skull = CreateEnemy(
 			MID_X - row_width/2 + i*(row_width/n_rows + 0.5),
 			invaders_y + j*(row_width/n_rows + 0.5),
-			LAYER_INSTANCES,
 			oEnemySkullSpaceInvaders
 		)
 		array_push(enemies, _skull);

@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"pEffect",
-  "eventList":[],
+  "%Name":"oFinalSoulFlame",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"pEffect",
+  "name":"oFinalSoulFlame",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle Effects",
-    "path":"folders/Battles/Battle Effects.yy",
+    "name":"Final Attacks",
+    "path":"folders/Battle System/Attacks/Final Attacks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

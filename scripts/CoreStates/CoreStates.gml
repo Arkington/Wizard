@@ -15,7 +15,6 @@ function CoreStateFree() {
 	// Fire!
 	if key.fire {
 		if (cooldowns[atk_select] <= 0) {
-			// TODO: less globals...
 			CreateAttack(x, y, angle, attacks[atk_select].atk_obj);
 			cooldowns[atk_select] = attacks[atk_select].cooldown;
 		} else {
@@ -93,4 +92,17 @@ function CoreStateBreak() {
 		// TODO: implement buttons
 		with (global.battle_engine) { BattleEngineShiftToWave(); }
 	}
+}
+
+function CoreStateFinalAttack() {
+	angle = 90;
+	CoreMove(CORE_MOVE_SPEED);
+	if key.fire {
+		CreateAttack(x, y, angle, attacks[atk_select].final_atk_obj);
+		state = CoreStateFinalAttackFiring;
+	}
+}
+
+function CoreStateFinalAttackFiring() {
+	CoreMove(CORE_MOVE_SPEED);
 }

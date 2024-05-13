@@ -47,6 +47,18 @@ function CaveCloset_CutsceneShowcase_2() {
 	EventPlayerStateFree();
 }
 
+function HCBattleShowcase() {
+	EventText("hc_battle_showcase", "intro");
+	WaitForEvents();
+	EnterBattle("battleGwtSkulls");
+}
+
+hc_battle_showcase = {
+	intro: [
+		Page(spkHC, "Ah, a new student."),
+		Page(spkHC, "I won't even bother with pleasantries. Have at thee!"),
+	],
+}
 
 
 

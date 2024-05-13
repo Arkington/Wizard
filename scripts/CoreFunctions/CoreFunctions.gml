@@ -1,3 +1,15 @@
+function CoreMove(_speed){
+    var inputDirection = point_direction(0, 0, key.move_right - key.move_left, key.move_down - key.move_up);
+    var inputMagnitude = (key.move_right - key.move_left != 0) or (key.move_down - key.move_up != 0);
+	if (inputMagnitude > 0) { direction = inputDirection; }
+
+    x_speed = _speed * lengthdir_x(inputMagnitude, inputDirection);
+    y_speed = _speed * lengthdir_y(inputMagnitude, inputDirection);
+
+    x += x_speed;
+    y += y_speed;
+}
+
 /// @desc Sets angle. Requires aim_lock, aim_reset_timer, key.aim controls.
 function CoreAim() {
 
@@ -43,4 +55,25 @@ function AimHover(_aim_angle, _target_angles, _force_hold = true) {
 	}
 	
 	return _hover;
+}
+
+function CoreDamage(_amt) {
+
+	// No hit if iframes
+	if (iframes) { return; }
+
+	// Damage
+	global.hp -= _amt;
+	
+	// Apply iframes
+	iframes = true;
+	iframes_time = CORE_IFRAMES_S*FPS;
+
+	// SFX
+	audio_play_sound(sndOpen, 0, false);
+
+	// Die
+	if (global.hp <= 0) {
+		print("OH NO AXEL HAS DIED.");
+	}
 }

@@ -22,8 +22,7 @@ StateAsleep = function() {
 	// Skull slow approach
 	target_speed = max(target_speed*(1 - slow_factor), min_speed);
 	if (t >= time_until_awakening_s*FPS) {
-		charge = instance_create_layer(x, y + 16, LAYER_INSTANCES, oCharge);
-		charge.charge_time_s = time_before_shooting_s;
+		charge = CreateCharge(x, y + 16, time_before_shooting_s);
 		state = StateAwake;
 		t = 0;
 	}

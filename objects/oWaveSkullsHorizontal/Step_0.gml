@@ -2,13 +2,14 @@
 
 // Create new enemies every (spawn_rate_s) seconds
 if (timer % (spawn_rate_s*FPS) == 0) {
-	var _skull = instance_create_layer(
+	var _skull = CreateEnemy(
 		(top and top_left) or (!top and !top_left) ? RESOLUTION_W + 8 : -8,
 		top ? 184 : 72,
-		LAYER_INSTANCES,
-		oEnemySkullShootUpDown
+		oEnemySkullShootUpDown,
+		{
+			target_speed: (top ? -1 : 1)*(top_left ? 1 : -1)*vel_x,
+		}
 	);
-	_skull.target_speed = (top ? -1 : 1)*(top_left ? 1 : -1)*vel_x;
 	array_push(enemies, _skull);
 	top = !top;
 }

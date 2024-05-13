@@ -73,7 +73,7 @@ if (state == CoreStateBreak) {
 
 
 // Draw Core
-if state != CoreStateInit {
+if (state != CoreStateInit) and !(iframes and round(iframes_time/CORE_IFRAMES_BLINK_FRAMES) % 2 == 0) {
 	// Draw Core
 	draw_sprite_ext(
 	    sprite,

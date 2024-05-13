@@ -2,7 +2,7 @@
 #macro UP 1
 #macro LEFT 2
 #macro DOWN 3
-#macro CARDINAL_DIR round(direction/90)%4
+#macro CARDINAL_DIR cardinal_dir(direction)
 
 #macro KEY_MOVE_RIGHT ord("D")
 #macro KEY_MOVE_UP ord("W")
