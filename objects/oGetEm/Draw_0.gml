@@ -1,6 +1,5 @@
 /// @desc
 
-
 // Box
 draw_sprite_stretched(
 	box_sprite,

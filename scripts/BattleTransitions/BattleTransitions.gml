@@ -6,21 +6,18 @@ function EnterBattle(_battle_struct_name) {
 	WaitForEvents();
 	EventSound(sndAtkShift);
 	EventCoreInit(168, 192);
-	EventTransition(rParent, -LARGE, -LARGE, DOWN);
+	EventTransition(rParent);
 	WaitForEvents();
 	EventSound(sndAtkShift);
 	EventWait(1);
-	EventTransition(rBattleParent, -LARGE, -LARGE, DOWN);
+	EventTransition(rBattleParent);
 	WaitForEvents();
 	EventCoreState(CoreStateFree);
 	EventCode(function() { oCore.persistent = false; });
 	EventCode(LoadBattle, [_battle_struct_name]);
 }
 
-/*
-TODO:
-	- Allow transitions to kill the player object
-*/
+
 function ExitBattle() {
 	EventTransition(
 		global.battle_engine.room_prev,

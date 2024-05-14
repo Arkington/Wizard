@@ -26,8 +26,12 @@ function ThoughtSwirlStateActive() {
 	alpha = min(1, alpha + THOUGHT_FADE_SPEED);
 
 	// Aim at a thought
-	CoreAim();
-	hover_thought = AimHover(angle, thought_angles);
+	angle = Aim();
+	if (angle != NONE) {
+		hover_thought = NearestAngle(angle, thought_angles);
+	} else {
+		hover_thought = NONE;
+	}
 
 	// Resizing thoughts based on hover
 	for (var i = 0; i < n_thoughts; i++) {

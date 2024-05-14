@@ -3,10 +3,6 @@
 
 
 
-function BattleEngineStateEnd() {
-
-}
-
 
 // AWAITING STATE
 function BattleEngineStateAwaiting() {
@@ -22,10 +18,12 @@ function BattleEngineStateAwaiting() {
 
 // CuTSCENE STATE (also initial state)
 function BattleEngineShiftToCutscene() {
-	SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
+	with (oBattleEngine) {
+		SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
+		state = BattleEngineStateCutscene;
+		NextEvent();
+	}
 	with (oCore) { state = CoreStateCutscene; }
-	state = BattleEngineStateCutscene;
-	NextEvent();
 }
 
 function BattleEngineStateCutscene() {
@@ -36,8 +34,8 @@ function BattleEngineStateCutscene() {
 
 // BREAK STATE
 function BattleEngineShiftToBreak() {
-	with (oCore) { state = CoreStateBreak; }
-	state = BattleEngineStateBreak;
+	with (oBattleEngine) { 	state = BattleEngineStateBreak; }
+	CoreShiftToBreak();
 }
 
 function BattleEngineStateBreak() {}
@@ -46,10 +44,12 @@ function BattleEngineStateBreak() {}
 // WAVE STATE
 function BattleEngineShiftToWave() {
 	// Set up for next wave
-	current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
-	get_em = CreateGetEm(current_wave);
+	with (oBattleEngine) {
+		current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
+		get_em = CreateGetEm(current_wave);
+		state = BattleEngineStateWave;
+	}
 	with (oCore) { state = CoreStateFree; }
-	state = BattleEngineStateWave;
 }
 
 function BattleEngineStateWave() {
@@ -71,6 +71,9 @@ function BattleEngineStateWave() {
 	
 	// Report progress
 	meter.progress = n_wins/wave_goal;
+	if (n_wins >= wave_goal) {
+		with (oCore) powered_up = true;
+	}
 	n_waves++;
 	last_wave = current_wave.object_index;
 	
@@ -83,10 +86,12 @@ function BattleEngineStateWave() {
 
 /// @desc In the Wave-Cooloff phase, all Attacks and Bullets are deleted/disabled
 function BattleEngineShiftToWaveCooloff() {
+	with (oBattleEngine) {
+		instance_destroy(pAttack);
+		instance_destroy(pBullet);
+		state = BattleEngineStateWaveCooloff;
+	}
 	with (oCore) { state = CoreStateCutscene; }
-	instance_destroy(pAttack);
-	instance_destroy(pBullet);
-	state = BattleEngineStateWaveCooloff;
 }
 
 function BattleEngineStateWaveCooloff() {
@@ -120,10 +125,18 @@ function BattleEngineStateWaveCooloff() {
 // FINAL ATTACK STATE
 
 function BattleEngineShiftToFinalAttack() {
+	with (oBattleEngine) {
+		state = BattleEngineStateFinalAttack;
+	}
 	with (oCore) { state = CoreStateFinalAttack; }
-	state = BattleEngineStateFinalAttack;
 }
 
 function BattleEngineStateFinalAttack() {
-
+	// Wait for the end of the final attack to trigger, then play out the final event
+	if (time_in_state > FPS*10) { // TODO: polish this
+		FinalEvent();
+		state = BattleEngineStateEnd;
+	}
 }
+
+function BattleEngineStateEnd() {}

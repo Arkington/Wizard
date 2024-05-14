@@ -1,10 +1,11 @@
 /// @desc Creates Battle() structs.
-function Battle(_opponent, _wave_goal, _next_wave, _next_event) {
+function Battle(_opponent, _wave_goal, _next_wave, _next_event, _final_event) {
 	return {
 		opponent: _opponent,
 		wave_goal : _wave_goal,
 		NextWave : _next_wave,
 		NextEvent : _next_event,
+		FinalEvent: _final_event,
 	}
 }
 
@@ -29,6 +30,7 @@ function LoadBattle(_battle_struct_name) {
 		battle_struct = _battle_struct;
 		NextWave = _battle_struct.NextWave;
 		NextEvent = _battle_struct.NextEvent;
+		FinalEvent = _battle_struct.FinalEvent;
 		wave_goal = _battle_struct.wave_goal;
 	}
 }
@@ -56,6 +58,9 @@ function CreateGetEm(_wave) {
 	var _get_em = instance_create_layer(_wave.get_em_x, _wave.get_em_y, LAYER_BATTLE_GUI, oGetEm);
 	with (_get_em) {
 		wave = _wave;
+		var _enemies = variable_struct_get_names(wave.clear_condition);
+		enemy_qty = struct_get(wave.clear_condition_progress, _enemies[0]);
+		enemy_sprite = object_get_sprite(asset_get_index(_enemies[0]));
 	}
 	return _get_em;
 }

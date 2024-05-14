@@ -6,9 +6,9 @@ enum GWC_WISH {
 
 function GreatWizardWishingWell_Well() {
 	if (global.state.GWC_WISH_MADE == NONE) {
-		load_text("textGreatWizardWishingWell", "well");
+		LoadText("textGreatWizardWishingWell", "well");
 	} else {
-		load_text("textGreatWizardWishingWell", "wish_made");
+		LoadText("textGreatWizardWishingWell", "wish_made");
 	}
 }
 

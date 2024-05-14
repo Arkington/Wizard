@@ -8,7 +8,7 @@ frame_delay_between_shots = 3;
 shot_angle_var = 30;
 
 StateInit = function() {
-	CreateCharge(oCore.x, oCore.y, charge_time_s);
+	charge = CreateCharge(oCore.x, oCore.y, charge_time_s);
 	state = StateCharging;
 }
 
@@ -17,6 +17,9 @@ StateCharging = function() {
 	if (t > charge_time_s*FPS) {
 		t = 0;
 		state = StateFiring;
+	} else {
+		charge.x = oCore.x;
+		charge.y = oCore.y;
 	}
 }
 

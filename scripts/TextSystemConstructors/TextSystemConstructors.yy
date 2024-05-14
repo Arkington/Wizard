@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"ConstructTextSystem",
+  "%Name":"TextSystemConstructors",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ConstructTextSystem",
+  "name":"TextSystemConstructors",
   "parent":{
     "name":"Text System",
     "path":"folders/Text System.yy",

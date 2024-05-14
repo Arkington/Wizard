@@ -10,9 +10,9 @@ function CliffBench_BenchCheck(_id) {
 // Text
 initializeSpeakers();
 cliff_thought_swirl = {
-	"What am I doing?": function() { load_text("textCliffBench", "what"); },
-	"The sea is nice.": function() { load_text("textCliffBench", "sea"); },
-	"I'm going to be late.": function() { load_text("textCliffBench", "late"); },
+	"What am I doing?": function() { LoadText("textCliffBench", "what"); },
+	"The sea is nice.": function() { LoadText("textCliffBench", "sea"); },
+	"I'm going to be late.": function() { LoadText("textCliffBench", "late"); },
 }
 
 

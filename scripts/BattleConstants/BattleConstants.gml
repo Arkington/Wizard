@@ -8,8 +8,24 @@
 #macro AIM_LOCK_FRAMES 5
 #macro AIM_LOCK_FRAMES_FOCUS 15
 #macro FOCUS_RELEASE_FRAMES 5
+#macro ATTACK_RELEASE_FRAMES 5
+
+#macro BREAK_BUTTON_X_DIST 32
+#macro BREAK_BUTTON_Y_DIST 32
+#macro HOVER_BUTTON_SCALE 1.5
+#macro HOVER_BUTTON_SPEED 0.1
+
+#macro FOCUS_ATTACK_X_DIST 24
+#macro FOCUS_ATTACK_Y_DIST 24
+#macro HOVER_ATTACK_SCALE 2
+#macro HOVER_ATTACK_SPEED 0.2
 
 #macro STUN_FRAMES 60
+
+// Break buttons
+#macro BUTTON_READY "Ready"
+#macro BUTTON_THINK "Think"
+#macro BUTTON_ITEM "Item"
 
 // Enemies
 #macro ENEMY_DOWN -1
@@ -52,9 +68,6 @@
 #macro GET_EM_H 56
 #macro TIME_WARNING_S 5
 
-// Break buttons
-#macro BREAK_BUTTON_X_DIST 24
-#macro BREAK_BUTTON_Y_DIST 16
 
 // Technical constants
 #macro FRAMES_BETWEEN_CLEAN 1*FPS // Clear stale enemies every this number of frames

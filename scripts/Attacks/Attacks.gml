@@ -1,8 +1,8 @@
 // Attack struct
-function Attack(_atk_obj, _final_atk_obj, _cooldown_s, _desc, _menu_spr) {
+function Attack(_attack_obj, _final_attack_obj, _cooldown_s, _desc, _menu_spr) {
     return {
-        atk_obj: _atk_obj,
-		final_atk_obj: _final_atk_obj,
+        attack_obj: _attack_obj,
+		final_attack_obj: _final_attack_obj,
 		cooldown_s: _cooldown_s,
 		cooldown: _cooldown_s*FPS,
 		description: _desc,
