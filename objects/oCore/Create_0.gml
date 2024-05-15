@@ -9,7 +9,6 @@ time_in_state = 0;
 hover_time = 0;
 iframes = false;
 iframes_time = 0;
-powered_up = false; // Tracks the state of winning a battle
 
 x_speed = 0;
 y_speed = 0;
@@ -35,12 +34,3 @@ if (n_attacks <= 2) {
 cooldowns = [0, 0, 0];
 attack_scales = [1, 1, 1];
 attack_select = UP;
-
-// Break buttons
-buttons = [BUTTON_READY, BUTTON_THINK, BUTTON_ITEM];
-n_buttons = array_length(buttons);
-for (var i = 0; i < n_buttons; i++) {
-	button_angles[i] = 270 + 360*i/n_buttons;
-}
-button_scales = [1, 1, 1];
-button_hover = NONE;

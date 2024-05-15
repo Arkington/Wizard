@@ -135,9 +135,9 @@ cutscene_showcase = {
 hat_intro_2 = {
 
 	main_1: [
-	    Page(spkHatrickNeutral, "hi... Hi!"),
+	    Page(spkHatrickNeutral, "|P||X|hi... Hi!/X//P/"),
 	    Page(spkAxel, "Hi."),
-	    Page(spkHatrickNeutral, "Hi. Hey. I... kinda saw you shoot that guy... with |S|MAGIC/S/! It was... kinda cool."),
+	    Page(spkHatrickNeutral, "|P||X|Hi. Hey. I... kinda saw you shoot that guy... with |S|MAGIC/S/! It was... kinda cool./X//P/"),
 	    Page(spkAxel, "Thanks."),
 	    Page(spkHatrickNeutral, "...you must be some sort of wizard, right?"),
 	    Page(spkHatrickNeutral, "...some kinda |S|MAGIC/S/ man???"),

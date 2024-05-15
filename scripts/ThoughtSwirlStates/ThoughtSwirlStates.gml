@@ -1,5 +1,4 @@
 /// @desc Thought Swirl state machine
-
 function ThoughtSwirlStateWaiting() {
 	// Waiting for thoughts to manifest
 	if (lifetime > secs_until_appear*fps) {
@@ -8,19 +7,6 @@ function ThoughtSwirlStateWaiting() {
 }
 
 function ThoughtSwirlStateActive() {
-	
-	// Read player aim
-	key.aim_up = keyboard_check(KEY_AIM_UP);
-	key.aim_left = keyboard_check(KEY_AIM_LEFT);
-	key.aim_down = keyboard_check(KEY_AIM_DOWN);
-	key.aim_right = keyboard_check(KEY_AIM_RIGHT);
-	key.aim_held = key.aim_up or key.aim_left or key.aim_right or key.aim_down;
-	key.aim_released = (
-	    keyboard_check_released(KEY_AIM_UP) or
-	    keyboard_check_released(KEY_AIM_LEFT) or
-	    keyboard_check_released(KEY_AIM_DOWN) or
-	    keyboard_check_released(KEY_AIM_RIGHT)
-	);
 	
 	// Fade in
 	alpha = min(1, alpha + THOUGHT_FADE_SPEED);
@@ -36,11 +22,10 @@ function ThoughtSwirlStateActive() {
 	// Resizing thoughts based on hover
 	for (var i = 0; i < n_thoughts; i++) {
 		if (i == hover_thought) {
-			thought_scales[i] = min(THOUGHT_TEXT_SCALE*HOVER_THOUGHT_SCALE, thought_scales[i]*(1 + HOVER_THOUGHT_SPEED));
+			thought_scales[i] = min(HOVER_THOUGHT_SCALE, thought_scales[i]*(1 + HOVER_THOUGHT_SPEED));
 		} else {
-			thought_scales[i] = max(THOUGHT_TEXT_SCALE, thought_scales[i]*(1 - HOVER_THOUGHT_SPEED));
+			thought_scales[i] = max(1, thought_scales[i]*(1 - HOVER_THOUGHT_SPEED));
 		}
-		thought_textboxes[i].scale = thought_scales[i];
 	}
 
 	// Selecting thoughts
@@ -54,8 +39,5 @@ function ThoughtSwirlStateActive() {
 function ThoughtSwirlStateFading() {
 	// Fade thoughts out
 	alpha = min(1, alpha - 2*THOUGHT_FADE_SPEED);
-	if (alpha <= 0) {
-		for (var i = 0; i < n_thoughts; i++) { instance_destroy(thought_textboxes[i]); }
-		instance_destroy();
-	}
+	if (alpha <= 0) { instance_destroy(); } // Textboxes destroyed in Destroy event
 }

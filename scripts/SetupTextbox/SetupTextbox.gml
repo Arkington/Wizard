@@ -7,6 +7,7 @@ function SetupTextbox() {
     char_col = [];
     char_wave = [];
     char_shake = [];
+	char_rainbow = [];
     
     draw_set_font(textbox_font);
     frame = 0;
@@ -25,6 +26,8 @@ function SetupTextbox() {
     active_colour = WHITE;
     active_wave = false;
     active_shake = false;
+    active_pulse = false;
+	active_rainbow = false;
     for (var c = 0; c < string_length(text); c++) {
     	var c_pos = c+1;
     	var char = string_char_at(text, c_pos);
@@ -46,6 +49,18 @@ function SetupTextbox() {
     			case "|T|":
     				active_colour = TEAL;
     				break;
+				case "|P|":
+					active_pulse = true;
+					break;
+				case "/P/":
+					active_pulse = false;
+					break;
+				case "|X|":
+					active_rainbow = true;
+					break;
+				case "/X/":
+					active_rainbow = false;
+					break;
     			case "|V|":
     				active_wave = true;
     				break;
@@ -73,6 +88,8 @@ function SetupTextbox() {
     	char_col[c] = active_colour;
     	char_wave[c] = active_wave;
     	char_shake[c] = active_shake;
+    	char_pulse[c] = active_pulse;
+		char_rainbow[c] = active_rainbow;
     
     	var substr_to_pos = string_copy(text, line_start_pos, c_pos - line_start_pos + 1);
     	if string_width(substr_to_pos) > line_width {

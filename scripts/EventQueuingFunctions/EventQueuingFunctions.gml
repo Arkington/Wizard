@@ -124,10 +124,7 @@ function EventDepthAdj(_obj, _depth_adj) {
 
 /// @desc Play music.
 function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_fade = false) {
-	EventCode(
-		PlayMusic,
-		[_mus, _fade_in, _fade_out, _cross_fade]
-	);
+	EventCode(PlayMusic, [_mus, _fade_in, _fade_out, _cross_fade]);
 }
 
 /// @desc Pause music.

@@ -41,6 +41,7 @@ if (state == CoreStateFocus) {
 	}
 }
 
+/*
 // Break UI
 if (state == CoreStateBreak) {
 	
@@ -63,6 +64,7 @@ if (state == CoreStateBreak) {
 		);
 	}
 }
+*/
 
 
 // Draw Core

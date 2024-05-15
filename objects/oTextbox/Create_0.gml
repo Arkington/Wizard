@@ -31,9 +31,14 @@ text_pause_voice_length = TEXT_PAUSE_VOICE_LENGTH_MID;
 wave_sep = TEXT_WAVE_SEP_MID;
 wave_speed = TEXT_WAVE_SPEED_MID;
 wave_height_factor = TEXT_WAVE_HEIGHT_FACTOR_MID;
+pulse_sep = 20;
+pulse_speed = 6;
+pulse_scale_factor = 1.2;
 shake_intensity_x = TEXT_SHAKE_INTENSITY_MID;
 shake_intensity_y = TEXT_SHAKE_INTENSITY_MID;
 shake_ave_time = TEXT_SHAKE_AVE_TIME_MID;
+rainbow_sep = 10;
+rainbow_speed = 2;
 
 // Choice menu params
 choice_menu_x = CHOICE_MENU_X;

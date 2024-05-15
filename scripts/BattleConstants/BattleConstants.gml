@@ -1,3 +1,7 @@
+// Full-battle
+#macro OOB_KILL_DIST 32
+
+
 // Core
 #macro CORE_MOVE_SPEED 3
 #macro CORE_ROTATE_SPEED 0.3
@@ -10,11 +14,6 @@
 #macro FOCUS_RELEASE_FRAMES 5
 #macro ATTACK_RELEASE_FRAMES 5
 
-#macro BREAK_BUTTON_X_DIST 32
-#macro BREAK_BUTTON_Y_DIST 32
-#macro HOVER_BUTTON_SCALE 1.5
-#macro HOVER_BUTTON_SPEED 0.1
-
 #macro FOCUS_ATTACK_X_DIST 24
 #macro FOCUS_ATTACK_Y_DIST 24
 #macro HOVER_ATTACK_SCALE 2
@@ -24,8 +23,15 @@
 
 // Break buttons
 #macro BUTTON_READY "Ready"
+#macro BUTTON_READY_X "|X||P|Ready/P//X/"
 #macro BUTTON_THINK "Think"
 #macro BUTTON_ITEM "Item"
+#macro BREAK_BUTTON_TEXT_SCALE (2/3)
+#macro BREAK_BUTTON_WIDTH 32
+#macro BREAK_BUTTON_HEIGHT 18
+#macro BREAK_BUTTON_RADIUS 32
+#macro BREAK_BUTTON_HOVER_SCALE 1.5
+#macro BREAK_BUTTON_HOVER_SPEED 0.1
 
 // Enemies
 #macro ENEMY_DOWN -1

@@ -14,5 +14,4 @@ p_y = 0;
 target_x = NONE;
 target_y = NONE;
 
-
 on_hit = function(_attack) {};

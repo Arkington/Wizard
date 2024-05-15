@@ -24,7 +24,11 @@ n_fails = 0;
 last_wave = NONE;
 last_wave_win = false;
 n_waves = 0;
+victory = false;
 
 // Engine variables
 state_prev = NONE;
 time_in_state = 0;
+
+// Break buttons
+buttons = [BUTTON_READY, BUTTON_THINK, BUTTON_ITEM];

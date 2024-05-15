@@ -1,5 +1,6 @@
 battleGwtSkulls = Battle(
 	oOpponentSkull,
+	musLaughingYouOutTheDoor,
 	8,
 	NextWave_GwtSkulls,
 	NextEvent_GwtSkulls,
@@ -38,8 +39,9 @@ function NextEvent_GwtSkulls() {
 			mentioned_space_invaders: false,
 			many_fails: false,
 		}
-		EventPlayMusic(musLaughingYouOutTheDoor);
 		EventText("textBattleGwtSkulls", "init");
+		WaitForEvents();
+		EventPlayMusic(music);
 	}
 
 	// Space invaders
@@ -72,6 +74,7 @@ function NextEvent_GwtSkulls() {
 }
 
 function FinalEvent_GwtSkulls() {
+	EventWait(1);
 	EventText("textBattleGwtSkulls", "final");
 	WaitForEvents();
 	EventWait(2);

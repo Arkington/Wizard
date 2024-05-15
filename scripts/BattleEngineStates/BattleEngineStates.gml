@@ -34,7 +34,10 @@ function BattleEngineStateCutscene() {
 
 // BREAK STATE
 function BattleEngineShiftToBreak() {
-	with (oBattleEngine) { 	state = BattleEngineStateBreak; }
+	with (oBattleEngine) {
+		state = BattleEngineStateBreak;
+		break_wheel = CreateBreakWheel(buttons, victory);
+	}
 	CoreShiftToBreak();
 }
 
@@ -49,7 +52,10 @@ function BattleEngineShiftToWave() {
 		get_em = CreateGetEm(current_wave);
 		state = BattleEngineStateWave;
 	}
-	with (oCore) { state = CoreStateFree; }
+	with (oCore) {
+		state = CoreStateFree;
+		angle = 90;
+	}
 }
 
 function BattleEngineStateWave() {
@@ -72,7 +78,7 @@ function BattleEngineStateWave() {
 	// Report progress
 	meter.progress = n_wins/wave_goal;
 	if (n_wins >= wave_goal) {
-		with (oCore) powered_up = true;
+		victory = true;
 	}
 	n_waves++;
 	last_wave = current_wave.object_index;
@@ -122,21 +128,25 @@ function BattleEngineStateWaveCooloff() {
 }
 
 
-// FINAL ATTACK STATE
-
+// FINAL ATTACK and END STATES
 function BattleEngineShiftToFinalAttack() {
 	with (oBattleEngine) {
-		state = BattleEngineStateFinalAttack;
+		state = BattleEngineStateFinalAttackStart;
 	}
 	with (oCore) { state = CoreStateFinalAttack; }
 }
-
-function BattleEngineStateFinalAttack() {
-	// Wait for the end of the final attack to trigger, then play out the final event
-	if (time_in_state > FPS*10) { // TODO: polish this
+function BattleEngineStateFinalAttackStart() {
+	StopMusic(true, 1);
+	// Wait for the final attack to start
+	if instance_exists(pAttack) {
+		state = BattleEngineStateFinalAttackEnd;
+	}
+}
+function BattleEngineStateFinalAttackEnd() {
+	// Wait for final attack to end
+	if !instance_exists(pAttack) {
 		FinalEvent();
 		state = BattleEngineStateEnd;
 	}
 }
-
 function BattleEngineStateEnd() {}

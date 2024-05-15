@@ -99,56 +99,7 @@ function CoreShiftToBreak() {
 
 
 function CoreStateBreak() {
-
 	CoreMove(CORE_MOVE_SPEED);
-	
-	// Hover over button
-	var _button_angle = Aim();
-	var _old_button_hover = button_hover;
-	if (_button_angle != NONE) {
-		button_hover = NearestAngle(_button_angle, button_angles);
-		angle = button_angles[button_hover];
-	}
-	if (button_hover != _old_button_hover) {
-		hover_time = 0;
-	} else {
-		hover_time++;
-	}
-	
-	// Resizing based on hover
-	for (var i = 0; i < n_buttons; i++) {
-		if (i == button_hover) {
-			button_scales[i] = min(HOVER_BUTTON_SCALE, button_scales[i]*(1 + HOVER_BUTTON_SPEED));
-		} else {
-			button_scales[i] = max(1, button_scales[i]*(1 - HOVER_BUTTON_SPEED));
-		}
-	}
-
-	// Selecting buttons
-	if keyboard_check_pressed(KEY_INTERACT) and (button_hover != NONE) {
-		audio_play_sound(sndMenuSelect, 0, false);
-		angle = 90;
-		state = CoreStateCutscene;
-		switch (buttons[button_hover]) {
-			case BUTTON_THINK:
-				EventText("textTemp", "think");
-				WaitForEvents();
-				EventCode(BattleEngineShiftToWave);
-				break;
-			case BUTTON_ITEM:
-				EventText("textTemp", "item");
-				WaitForEvents();
-				EventCode(BattleEngineShiftToWave);
-				break;
-			case BUTTON_READY:
-				if (powered_up) {
-					BattleEngineShiftToFinalAttack();
-				} else {
-					BattleEngineShiftToWave();
-				}
-				break;
-		}
-	}
 }
 
 function CoreStateFinalAttack() {

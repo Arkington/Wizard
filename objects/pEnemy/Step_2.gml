@@ -1,4 +1,4 @@
-/// @desc Movement
+/// @desc Movement and OOB
 
 // Velocity
 x += vel_x;
@@ -23,4 +23,14 @@ if (target_y != NONE) {
 	var _y_dir = point_direction(0, y, 0, target_y);
 	var _y_move = lengthdir_y(target_speed, _y_dir);
 	y += sign(_y_move) * min(abs(_y_move), abs(y - target_y));
+}
+
+if (
+	(x < -sprite_width - OOB_KILL_DIST) or
+	(x > sprite_width + RESOLUTION_W + OOB_KILL_DIST) or
+	(y < sprite_height - OOB_KILL_DIST) or
+	(y > sprite_height + RESOLUTION_H + OOB_KILL_DIST)
+) {
+	ReportEnemyDown(id, false);
+	instance_destroy();
 }
