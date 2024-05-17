@@ -1,4 +1,6 @@
 /// @desc Hit by bullet
+if (global.hp <= 0) { exit; }
+
 var _bullet = other;
 
 // Damage

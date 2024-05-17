@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ShakeCamera",
   "parent":{
-    "name":"Managers",
-    "path":"folders/Managers.yy",
+    "name":"Camera",
+    "path":"folders/Camera.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

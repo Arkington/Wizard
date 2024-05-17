@@ -1,4 +1,5 @@
 /// @desc
+event_inherited();
 
 n_enemies = array_length(enemies);
 

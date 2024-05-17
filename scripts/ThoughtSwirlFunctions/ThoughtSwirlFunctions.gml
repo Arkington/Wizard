@@ -36,7 +36,7 @@ function CreateThoughtSwirl(_thought_swirl_name, _secs_until_appear = 4, _secs_u
 		    n_thoughts++;
 		});
 		for (var i = 0; i < n_thoughts; i++) {
-		    thought_angles[i] = 360 * i / n_thoughts;
+		    thought_angles[i] = 180 + 360 * i / n_thoughts;
 		}
 	}
 }
@@ -61,7 +61,7 @@ function CreateBattleSwirl(_choices) {
 		    n_thoughts++;
 		};
 		for (var i = 0; i < n_thoughts; i++) {
-		    thought_angles[i] = 360 * i / n_thoughts;
+		    thought_angles[i] = 180 + 360 * i / n_thoughts;
 		}
 	}
 	return _swirl;

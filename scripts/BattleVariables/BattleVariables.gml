@@ -1,4 +1,4 @@
-global.hp = 10;
+global.hp = 1;
 global.max_hp = 10;
 
 global.attacks = [

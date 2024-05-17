@@ -126,10 +126,53 @@ function CreateBreakWheel(_buttons, _victory) {
 		n_buttons = array_length(buttons);
 		for (var i = 0; i < n_buttons; i++) {
 			// Victorious Ready
-			if (buttons[i] == BUTTON_READY and victory) { buttons[i] = BUTTON_READY_X; }
+			if (buttons[i] == BUTTON_READY and victory) { buttons[i] = BUTTON_GET_EM; }
 			button_angles[i] = 270 + 360*i/n_buttons;
 			button_scales[i] = 1;
 			button_textboxes[i] = CreateBreakButtonTextbox(buttons[i])
 		}
 	}
+}
+
+/// @desc Stop everything in a battle from moving
+function HaltBattle() {
+	with (oBattleEngine) {
+		state = BattleEngineStateAwaitDeathAnimation;
+	}
+	with (pWave) {
+		halted = true; // Halts step function
+	}
+	with (pEnemy) {
+		vel_x = 0;
+		vel_y = 0;
+		acc_x = 0;
+		acc_y = 0;
+		p_x = 0;
+		p_y = 0;
+		target_speed = 0;
+	}
+	with (pBullet) {
+		speed = 0;
+	}
+	with (pAttack) {
+		speed = 0;
+	}
+}
+
+/// @desc Sequence triggered on player death in battle.
+function DeathSequence() {
+	HaltBattle();
+	with (oCore) {
+		persistent = true;
+		state = CoreStateDead;
+	}
+	EventStopMusic(false);
+	EventShakeCamera(4, 0.2);
+	EventWait(1);
+	EventTransition(rDead);
+	EventCoreDeath(); // This thing handles flying backwards and falling to the ground
+	WaitForEvents();
+	EventWait(1);
+	EventPlayMusic(musItsOkayToMakeMistakes);
+	EventCreate(MID_X, GAME_OVER_Y, LAYER_INSTANCES, oRetryMenu);
 }

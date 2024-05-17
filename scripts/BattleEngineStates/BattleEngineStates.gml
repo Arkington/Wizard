@@ -18,7 +18,7 @@ function BattleEngineStateAwaiting() {
 
 // CuTSCENE STATE (also initial state)
 function BattleEngineShiftToCutscene() {
-	with (oBattleEngine) {
+	with (global.battle_engine) {
 		SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
 		state = BattleEngineStateCutscene;
 		NextEvent();
@@ -150,3 +150,12 @@ function BattleEngineStateFinalAttackEnd() {
 	}
 }
 function BattleEngineStateEnd() {}
+
+
+
+// DEATH
+function BattleEngineShiftToDeath() {
+	instance_destroy(pWave);
+}
+
+function BattleEngineStateAwaitDeathAnimation() {}

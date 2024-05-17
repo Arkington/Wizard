@@ -8,4 +8,4 @@
 #macro FPS 60
 
 #macro ROOM_START rCaveCloset
-#macro BATTLE_TEST_WAVE oWaveSkullsMonoBounce
+#macro BATTLE_TEST_WAVE oWaveSkullsCircle

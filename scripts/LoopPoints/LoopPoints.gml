@@ -4,6 +4,7 @@ mus_loop_start = {
 	musBeforeYourCourage: 5.21739,
 	musNervousApproach: 3.03797,
 	musLaughingYouOutTheDoor: 2.96296,
+	musItsOkayToMakeMistakes: 2.44897,
 }
 
 sfx_loop_start = {

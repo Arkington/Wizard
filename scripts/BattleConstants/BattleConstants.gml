@@ -1,5 +1,5 @@
 // Full-battle
-#macro OOB_KILL_DIST 32
+#macro OOB_KILL_DIST 64
 
 
 // Core
@@ -23,11 +23,11 @@
 
 // Break buttons
 #macro BUTTON_READY "Ready"
-#macro BUTTON_READY_X "|X||P|Ready/P//X/"
+#macro BUTTON_GET_EM "|X||P|Get 'em!/P//X/"
 #macro BUTTON_THINK "Think"
 #macro BUTTON_ITEM "Item"
 #macro BREAK_BUTTON_TEXT_SCALE (2/3)
-#macro BREAK_BUTTON_WIDTH 32
+#macro BREAK_BUTTON_WIDTH 36
 #macro BREAK_BUTTON_HEIGHT 18
 #macro BREAK_BUTTON_RADIUS 32
 #macro BREAK_BUTTON_HOVER_SCALE 1.5
@@ -73,6 +73,24 @@
 #macro GET_EM_W 48
 #macro GET_EM_H 56
 #macro TIME_WARNING_S 5
+
+// Retry Menu
+#macro GAME_OVER_Y 80
+#macro GAME_OVER_FADE_IN_TIME 1.22448
+#macro GAME_OVER_TIME_TO_BUTTONS_S 2.44897 // 1 bar of music
+#macro GAME_OVER_MUSIC_FADE_S 1.22448
+#macro RETRY_BUTTON_FRAME_DELAY 8
+#macro RETRY_BUTTON_ARMA_VAR 0.05
+#macro RETRY_BUTTON_AR [0.8, 0.1, 0.07]
+#macro RETRY_BUTTON_MA [1, 0.5, 0.2]
+#macro RETRY_BUTTON_DRIFT_SHOCK_TIME_S 1
+#macro RETRY_BUTTON_Y 100
+#macro RETRY_BUTTON_TEXT_SCALE (2/3)
+#macro RETRY_BUTTON_WIDTH 36
+#macro RETRY_BUTTON_HEIGHT 18
+#macro RETRY_BUTTON_DIST 40
+#macro RETRY_BUTTON_HOVER_SCALE 1.5
+#macro RETRY_BUTTON_HOVER_SPEED 0.1
 
 
 // Technical constants

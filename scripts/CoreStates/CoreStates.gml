@@ -115,6 +115,8 @@ function CoreStateFinalAttackFiring() {
 	CoreMove(CORE_MOVE_SPEED);
 }
 
+function CoreStateDead() {}
+
 
 
 textTemp = {

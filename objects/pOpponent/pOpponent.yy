@@ -9,8 +9,8 @@
   "name":"pOpponent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battles",
-    "path":"folders/Battles.yy",
+    "name":"Battle Engine and Components",
+    "path":"folders/Battle System/Battle Engine and Components.yy",
   },
   "parentObjectId":null,
   "persistent":false,

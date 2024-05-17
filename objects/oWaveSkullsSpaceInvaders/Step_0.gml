@@ -1,4 +1,5 @@
 /// @desc
+event_inherited();
 
 // Move
 state();

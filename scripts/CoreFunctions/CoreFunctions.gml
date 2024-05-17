@@ -81,7 +81,7 @@ function CoreDamage(_amt) {
 	if (iframes) { return; }
 
 	// Damage
-	global.hp -= _amt;
+	global.hp = max(global.hp - _amt, 0);
 	
 	// Apply iframes
 	iframes = true;
@@ -92,6 +92,6 @@ function CoreDamage(_amt) {
 
 	// Die
 	if (global.hp <= 0) {
-		print("OH NO AXEL HAS DIED.");
+		DeathSequence();
 	}
 }

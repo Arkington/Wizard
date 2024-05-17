@@ -90,6 +90,11 @@ function EventCoreState(_state) {
 	);
 }
 
+/// @desc Queue an instance_create_layer()
+function EventCreate(_x, _y, _layer, _obj) {
+	EventCode(instance_create_layer, [_x, _y, _layer, _obj,]);
+}
+
 /// @desc Queue an instance_destroy()
 function EventDestroy(_obj) {
 	EventCode(instance_destroy, [_obj]);
@@ -131,6 +136,8 @@ function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_
 function EventStopMusic(_fade = true, _fade_out_s = SONG_FADE_SECS) {
 	EventCode(StopMusic, [_fade, _fade_out_s]);
 }
+
+
 
 
 
@@ -245,12 +252,32 @@ function EventObjectFade(_in_or_out, _obj_to_fade, _fade_rate = EVENT_FADE_OUT_R
 	QueueEvent(_event);
 }
 
+
+// @desc Shake the camera
+function EventShakeCamera(_magnitude, _shake_time_s) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventShakeCamera);
+	with (_event) {
+		magnitude = _magnitude;
+		shake_time_s = _shake_time_s;
+	}
+	QueueEvent(_event);
+}
+
+
 // @desc Initialize the Core in preparation for a battle
-function EventCoreInit(_x, _y, ) {
+function EventCoreInit(_x, _y) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreInit);
 	with (_event) {
 		target_x = _x;
 		target_y = _y;
 	}
+	QueueEvent(_event);
+}
+
+
+// @desc Initialize the Core in preparation for a battle
+function EventCoreDeath() {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreDeath);
+	with (_event) {}
 	QueueEvent(_event);
 }

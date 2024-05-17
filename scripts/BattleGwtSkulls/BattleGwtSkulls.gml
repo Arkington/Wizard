@@ -1,7 +1,7 @@
 battleGwtSkulls = Battle(
 	oOpponentSkull,
 	musLaughingYouOutTheDoor,
-	8,
+	1,
 	NextWave_GwtSkulls,
 	NextEvent_GwtSkulls,
 	FinalEvent_GwtSkulls

@@ -1,4 +1,5 @@
 /// @desc
+event_inherited();
 
 // Keep king skull moving against player
 if (enemies[0] != ENEMY_DOWN) {

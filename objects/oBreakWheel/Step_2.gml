@@ -50,7 +50,7 @@ if keyboard_check_pressed(KEY_INTERACT) and (button_hover != NONE) {
 		case BUTTON_READY:
 			BattleEngineShiftToWave();
 			break;
-		case BUTTON_READY_X:
+		case BUTTON_GET_EM:
 			BattleEngineShiftToFinalAttack();
 			break;
 	}

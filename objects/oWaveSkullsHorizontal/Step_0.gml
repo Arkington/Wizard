@@ -1,4 +1,5 @@
 /// @desc
+event_inherited();
 
 // Create new enemies every (spawn_rate_s) seconds
 if (timer % (spawn_rate_s*FPS) == 0) {

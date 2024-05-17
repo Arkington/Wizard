@@ -1,8 +1,8 @@
- /// @desc Battle timer and clear condition
+ /// @desc Halting, battle timer, clear condition
+
+if (halted) { exit; }
 
 // Fail condition
-
-//if random(100) < 2 print("I disabled the wave timer");
 t++;
 timer--;
 if (timer < 0) {
