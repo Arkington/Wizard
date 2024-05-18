@@ -26,7 +26,7 @@ if (char_count < text_length) && (text_pause_timer <= 0) {
 		);
 		text_pause_voice_timer = text_pause_voice_length;
 	}
-	if string_contains(_check_char, ".,!?") { text_pause_timer = text_pause_length; }
+	if string_contains(_check_char, TEXT_PAUSE_VOICE_CHARS) { text_pause_timer = text_pause_length; }
 }
 
 // Skip text

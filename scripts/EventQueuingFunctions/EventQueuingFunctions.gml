@@ -90,6 +90,11 @@ function EventCoreState(_state) {
 	);
 }
 
+/// @desc Queue an instance_create_layer()
+function EventCreate(_x, _y, _layer, _obj) {
+	EventCode(instance_create_layer, [_x, _y, _layer, _obj,]);
+}
+
 /// @desc Queue an instance_destroy()
 function EventDestroy(_obj) {
 	EventCode(instance_destroy, [_obj]);
@@ -124,16 +129,15 @@ function EventDepthAdj(_obj, _depth_adj) {
 
 /// @desc Play music.
 function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_fade = false) {
-	EventCode(
-		PlayMusic,
-		[_mus, _fade_in, _fade_out, _cross_fade]
-	);
+	EventCode(PlayMusic, [_mus, _fade_in, _fade_out, _cross_fade]);
 }
 
 /// @desc Pause music.
 function EventStopMusic(_fade = true, _fade_out_s = SONG_FADE_SECS) {
 	EventCode(StopMusic, [_fade, _fade_out_s]);
 }
+
+
 
 
 
@@ -225,7 +229,7 @@ function EventAnimation(
 }
 
 /// @desc Queue a transition
-function EventTransition(_target_room, _target_x, _target_y, _target_face, _transition_type = oTransitionFade) {
+function EventTransition(_target_room, _target_x = NONE, _target_y = NONE, _target_face = NONE, _transition_type = oTransitionFade) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventTransition);
 	with (_event) {
 		target_room = _target_room;
@@ -248,12 +252,32 @@ function EventObjectFade(_in_or_out, _obj_to_fade, _fade_rate = EVENT_FADE_OUT_R
 	QueueEvent(_event);
 }
 
+
+// @desc Shake the camera
+function EventShakeCamera(_magnitude, _shake_time_s) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventShakeCamera);
+	with (_event) {
+		magnitude = _magnitude;
+		shake_time_s = _shake_time_s;
+	}
+	QueueEvent(_event);
+}
+
+
 // @desc Initialize the Core in preparation for a battle
-function EventCoreInit(_x, _y, ) {
+function EventCoreInit(_x, _y) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreInit);
 	with (_event) {
 		target_x = _x;
 		target_y = _y;
 	}
+	QueueEvent(_event);
+}
+
+
+// @desc Initialize the Core in preparation for a battle
+function EventCoreDeath() {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreDeath);
+	with (_event) {}
 	QueueEvent(_event);
 }

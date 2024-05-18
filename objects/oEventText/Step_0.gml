@@ -2,7 +2,7 @@
 if !active { exit; }
 
 if !begun {
-	load_text(text_source, key);
+	LoadText(text_source, key);
 	begun = true;
 }
 

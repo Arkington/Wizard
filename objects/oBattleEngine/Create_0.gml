@@ -17,19 +17,18 @@ NextEvent = NONE;
 // Battle tracking variables
 current_wave = NONE;
 battle_info = {};
-waves_cleared = []; // Tracks which waves have been cleared
-waves_failed = []; // Tracks which waves have been failed
+waves_cleared = []; // Which waves have been cleared
+waves_failed = []; // Which waves have been failed
 n_wins = 0;
 n_fails = 0;
 last_wave = NONE;
 last_wave_win = false;
 n_waves = 0;
+victory = false;
 
+// Engine variables
+state_prev = NONE;
+time_in_state = 0;
 
-// TEMPORARY, until we set up globals
-atk_select = UP;
-attacks = [
-    SoulFlame,
-    StunShock,
-    Grapes
-];
+// Break buttons
+buttons = [BUTTON_READY, BUTTON_THINK, BUTTON_ITEM];

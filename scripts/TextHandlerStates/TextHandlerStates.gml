@@ -16,7 +16,7 @@ function TextHandlerStateReadPage() {
 	// Choices
 	if next_page_choice {
 		page++; // Advance to the choice page
-		active_choice_menu = create_choice_menu(page_array[page].choices);
+		active_choice_menu = CreateChocieMenu(page_array[page].choices);
 		state = TextHandlerStateAwaitChoice;
 	}
 	// Swirl
@@ -87,7 +87,7 @@ function TextHandlerStateHandleNextPage() {
 			
 		// Normal Page
 		default:
-			active_textbox = create_textbox(_next_page, fade_in);
+			active_textbox = CreateTextbox(_next_page, fade_in);
 			fade_in = false;
 			state = TextHandlerStateReadPage;
 			break;

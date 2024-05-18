@@ -6,9 +6,9 @@ enum GWC_WISH {
 
 function GreatWizardWishingWell_Well() {
 	if (global.state.GWC_WISH_MADE == NONE) {
-		load_text("textGreatWizardWishingWell", "well");
+		LoadText("textGreatWizardWishingWell", "well");
 	} else {
-		load_text("textGreatWizardWishingWell", "wish_made");
+		LoadText("textGreatWizardWishingWell", "wish_made");
 	}
 }
 
@@ -34,7 +34,7 @@ textGreatWizardWishingWell = {
 	    ),
 	],
 	well_no: [
-		Page(spkAxel, "I'm probably not at a high enough level to cash wishing magic, anyway.")
+		Page(spkAxel, "I'm probably not at a high enough level to cast wishing magic, anyway.")
 	],
 	wish_health: [
 		Page(spkAxelInner, "(I'm supposed to wish for something sensible, like good health, right?)"),

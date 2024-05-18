@@ -3,10 +3,6 @@
 
 
 
-function BattleEngineStateEnd() {
-
-}
-
 
 // AWAITING STATE
 function BattleEngineStateAwaiting() {
@@ -22,10 +18,12 @@ function BattleEngineStateAwaiting() {
 
 // CuTSCENE STATE (also initial state)
 function BattleEngineShiftToCutscene() {
-	SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
+	with (global.battle_engine) {
+		SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
+		state = BattleEngineStateCutscene;
+		NextEvent();
+	}
 	with (oCore) { state = CoreStateCutscene; }
-	state = BattleEngineStateCutscene;
-	NextEvent();
 }
 
 function BattleEngineStateCutscene() {
@@ -36,24 +34,28 @@ function BattleEngineStateCutscene() {
 
 // BREAK STATE
 function BattleEngineShiftToBreak() {
-	with (oCore) { state = CoreStateBreak; }
-	state = BattleEngineStateBreak;
+	with (oBattleEngine) {
+		state = BattleEngineStateBreak;
+		break_wheel = CreateBreakWheel(buttons, victory);
+	}
+	CoreShiftToBreak();
 }
 
-function BattleEngineStateBreak() {
-
-}
+function BattleEngineStateBreak() {}
 
 
 // WAVE STATE
 function BattleEngineShiftToWave() {
 	// Set up for next wave
-	current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
-	get_em = CreateGetEm(current_wave);
-
-	with (oCore) { state = CoreStateFree; }
-
-	state = BattleEngineStateWave;
+	with (oBattleEngine) {
+		current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
+		get_em = CreateGetEm(current_wave);
+		state = BattleEngineStateWave;
+	}
+	with (oCore) {
+		state = CoreStateFree;
+		angle = 90;
+	}
 }
 
 function BattleEngineStateWave() {
@@ -75,15 +77,85 @@ function BattleEngineStateWave() {
 	
 	// Report progress
 	meter.progress = n_wins/wave_goal;
+	if (n_wins >= wave_goal) {
+		victory = true;
+	}
 	n_waves++;
 	last_wave = current_wave.object_index;
 	
-	// Clean up
-	instance_destroy(get_em);
-	instance_destroy(current_wave);
-	instance_destroy(pEnemy);
-	current_wave = NONE;
-	
-	// Go to the next state
-	BattleEngineShiftToCutscene();
+	// Move to Cooloff
+	BattleEngineShiftToWaveCooloff();
 }
+
+
+// WAVE COOLOFF STATE
+
+/// @desc In the Wave-Cooloff phase, all Attacks and Bullets are deleted/disabled
+function BattleEngineShiftToWaveCooloff() {
+	with (oBattleEngine) {
+		instance_destroy(pAttack);
+		instance_destroy(pBullet);
+		state = BattleEngineStateWaveCooloff;
+	}
+	with (oCore) { state = CoreStateCutscene; }
+}
+
+function BattleEngineStateWaveCooloff() {
+	
+	// Remove enemies
+	if (time_in_state % COOLOFF_FRAMES_BETWEEN_CLEAR == 0) {
+		// Pick an enemy and remove it, granting no kill
+		var _enemy = instance_find(pEnemy, irandom(instance_number(pEnemy) - 1));
+		if (_enemy != noone) {
+			ReportEnemyDown(_enemy, false);
+			instance_destroy(_enemy);
+			audio_play_sound(sndPop, 0, false);
+		}
+	}
+
+	// Finish if all enemies are destroyed and some delay has passed
+	if (instance_number(pEnemy) == 0) and (time_in_state > COOLOFF_MIN_TIME_S*FPS) {	
+
+		// Final cleanup
+		instance_destroy(get_em);
+		instance_destroy(current_wave);
+		instance_destroy(pBattleObject);
+		current_wave = NONE;
+
+		// Go to the next state
+		BattleEngineShiftToCutscene();
+	}
+}
+
+
+// FINAL ATTACK and END STATES
+function BattleEngineShiftToFinalAttack() {
+	with (oBattleEngine) {
+		state = BattleEngineStateFinalAttackStart;
+	}
+	with (oCore) { state = CoreStateFinalAttack; }
+}
+function BattleEngineStateFinalAttackStart() {
+	StopMusic(true, 1);
+	// Wait for the final attack to start
+	if instance_exists(pAttack) {
+		state = BattleEngineStateFinalAttackEnd;
+	}
+}
+function BattleEngineStateFinalAttackEnd() {
+	// Wait for final attack to end
+	if !instance_exists(pAttack) {
+		FinalEvent();
+		state = BattleEngineStateEnd;
+	}
+}
+function BattleEngineStateEnd() {}
+
+
+
+// DEATH
+function BattleEngineShiftToDeath() {
+	instance_destroy(pWave);
+}
+
+function BattleEngineStateAwaitDeathAnimation() {}

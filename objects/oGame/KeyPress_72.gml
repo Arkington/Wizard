@@ -1,5 +1,5 @@
 /// @desc Halt any attacks
 
-with (pAtk) {
+with (pAttack) {
 	speed = 0;
 }

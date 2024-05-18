@@ -1,3 +1,5 @@
+event_inherited();
+
 if (!clear and !instance_exists(oEnemyTarget)) {
 	for (var i = 0; i < 5; i++) {
 		var _target = instance_create_layer(

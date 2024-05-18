@@ -9,8 +9,8 @@
   "name":"oCamera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Managers.yy",
+    "name":"Camera",
+    "path":"folders/Camera.yy",
   },
   "parentObjectId":null,
   "persistent":true,

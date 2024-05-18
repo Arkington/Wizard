@@ -6,8 +6,8 @@
   "name":"oOpponentSkull",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battles",
-    "path":"folders/Battles.yy",
+    "name":"GWT Skulls",
+    "path":"folders/Battles/GWT Skulls.yy",
   },
   "parentObjectId":{
     "name":"pOpponent",

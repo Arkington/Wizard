@@ -25,20 +25,15 @@ if (state == CoreStateFocus) {
     draw_adj_x = sin(time_in_state)/2;
 	
 	// Attacks
-	var atk_pos = {};
-	atk_pos[UP] = {x: x, y: y - 16*ring_scale};
-	atk_pos[LEFT] = {x: x - 14*ring_scale, y: y + 10*ring_scale};
-	atk_pos[RIGHT] = {x: x + 14*ring_scale, y: y + 10*ring_scale};
 	for (var i = 0; i <= 2; i++) {
 		// Icons grow when hovering
-		var atk_scale = (i==atk_hover) ? min(1 + hover_time/5, 2) : 1;
 		draw_sprite_ext(
 			global.attacks[i].menu_spr,
 			0,
-			atk_pos[i].x,
-			atk_pos[i].y,
-			atk_scale,
-			atk_scale,
+			x + lengthdir_x(FOCUS_ATTACK_X_DIST, attack_angles[i])*ring_scale,
+			y + lengthdir_y(FOCUS_ATTACK_Y_DIST, attack_angles[i])*ring_scale,
+			attack_scales[i],
+			attack_scales[i],
 			0,
 			c_white,
 			1
@@ -46,6 +41,7 @@ if (state == CoreStateFocus) {
 	}
 }
 
+/*
 // Break UI
 if (state == CoreStateBreak) {
 	
@@ -55,25 +51,24 @@ if (state == CoreStateBreak) {
 	for (var i = 0; i < n_buttons; i++) {
 		
 		// Icons grow when hovering
-		var button_scale = (i == button_hover) ? min(1 + hover_time/5, 2)*time_scale : time_scale;
-		var button_sprite = sButtonMagic;
-		draw_sprite_ext(
-			button_sprite,
+		draw_set_text(fntText, WHITE, fa_center, fa_middle);
+		var _col = (buttons[i] == BUTTON_READY and powered_up) ? RANDOM_COLOUR : WHITE;
+		draw_text_transformed_color(
+			x + lengthdir_x(BREAK_BUTTON_X_DIST, button_angles[i]),
+			y + lengthdir_y(BREAK_BUTTON_Y_DIST, button_angles[i]),
+			buttons[i],
+			button_scales[i]*time_scale,
+			button_scales[i]*time_scale,
 			0,
-			x + (lengthdir_x(BREAK_BUTTON_X_DIST, button_angles[i]) - sprite_get_width(button_sprite)/2) * button_scale,
-			y + (lengthdir_y(BREAK_BUTTON_Y_DIST, button_angles[i]) - sprite_get_height(button_sprite)/2) * button_scale,
-			button_scale,
-			button_scale,
-			0,
-			c_white,
-			1
+			_col, _col, _col, _col, image_alpha
 		);
 	}
 }
+*/
 
 
 // Draw Core
-if state != CoreStateInit {
+if (state != CoreStateInit) and !(iframes and round(iframes_time/CORE_IFRAMES_BLINK_FRAMES) % 2 == 0) {
 	// Draw Core
 	draw_sprite_ext(
 	    sprite,

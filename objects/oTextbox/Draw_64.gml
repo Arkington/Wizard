@@ -21,12 +21,27 @@ draw_sprite_stretched_ext(
 draw_set_text(textbox_font);
 for (var c = 0; c < char_count; c++) {
 	
+	// Character info
+	var _char = string_char_at(text, c+1);
+	var _char_w = string_width(_char);
+	var _char_h = string_height(_char);
+	
 	// Wavy text
 	var _wave_adj = 0;
 	if char_wave[c] {
 		_wave_adj = wave_height_factor * dsin(wave_sep*c - wave_speed*frame);
 	}
 	
+	// Pulsey text
+	var _pulse_factor = 1;
+	var _pulse_adj_x = 0;
+	var _pulse_adj_y = 0;
+	if char_pulse[c] {
+		_pulse_factor = 1 + (pulse_scale_factor - 1)*dsin(pulse_sep*c - pulse_speed*frame);
+		_pulse_adj_x = _char_w*(1 - _pulse_factor)/2;
+		_pulse_adj_y = _char_h*(1 - _pulse_factor)/2;
+	}
+
 	// Shakey text
 	var _shake_adj_x = 0;
 	var _shake_adj_y = 0;
@@ -37,17 +52,15 @@ for (var c = 0; c < char_count; c++) {
 	}
 
 	// Draw text
+	var _col = (char_rainbow[c] ? ColourGradient(rainbow_sep*c - rainbow_speed*frame) : char_col[c]); // Rainbow wins over other colours
 	draw_text_transformed_colour(
-		res_round(x + (char_x[c] + x_buffer + _shake_adj_x + portrait_x_adj)*scale),
-		res_round(y + (char_y[c] + y_buffer + _wave_adj + _shake_adj_y)*scale),
-		string_char_at(text, c+1),
-		scale,
-		scale,
+		res_round(x + (char_x[c] + x_buffer + _pulse_adj_x + _shake_adj_x + portrait_x_adj)*scale),
+		res_round(y + (char_y[c] + y_buffer + _pulse_adj_y + _wave_adj + _shake_adj_y)*scale),
+		_char,
+		scale * _pulse_factor,
+		scale * _pulse_factor,
 		0,
-		char_col[c],
-		char_col[c],
-		char_col[c],
-		char_col[c],
+		_col, _col, _col, _col,
 		alpha * _fade_factor
 	);
 }

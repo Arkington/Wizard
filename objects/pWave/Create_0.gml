@@ -1,3 +1,5 @@
+halted = false;
+t = 0;
 enemies = [];
 timer = time_limit_s*FPS
 

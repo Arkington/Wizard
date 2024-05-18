@@ -7,7 +7,6 @@ function MusicHandlerStateAwaiting() {
 		current_track = incoming_track;
 		incoming_track = NONE;
 		current_track_instance = audio_play_sound(current_track, 0, true);
-		audio_sound_loop_start(current_track_instance, LoopStart(current_track))
 
 		// Fade in if required
 		if fade_in {

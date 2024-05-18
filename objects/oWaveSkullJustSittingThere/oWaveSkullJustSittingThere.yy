@@ -7,11 +7,11 @@
   "managed":true,
   "name":"oWaveSkullJustSittingThere",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemySkull: 1}",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemySkull: 1}",},
   ],
   "parent":{
-    "name":"Waves",
-    "path":"folders/Waves.yy",
+    "name":"Test",
+    "path":"folders/Battles/Test.yy",
   },
   "parentObjectId":{
     "name":"pWave",
@@ -34,7 +34,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sWave",
+    "path":"sprites/sWave/sWave.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

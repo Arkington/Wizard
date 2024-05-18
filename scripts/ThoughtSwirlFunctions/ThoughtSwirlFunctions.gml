@@ -1,6 +1,6 @@
 /// @desc Creates a thought swirl's textbox. Used in CreateThoughtSwirl().
-function create_thought_textbox(_thought) {
-    return create_textbox(Page(
+function CreateThoughtTextbox(_thought) {
+    return CreateTextbox(Page(
 		Speaker(NO_PORTRAIT, NO_VOICE),
 		_thought,
 		{
@@ -30,13 +30,13 @@ function CreateThoughtSwirl(_thought_swirl_name, _secs_until_appear = 4, _secs_u
 		n_thoughts = 0;
 		thought_angles = [];
 		struct_foreach(thought_swirl, function(_thought, _action) {
-		    thought_textboxes[n_thoughts] = create_thought_textbox(_thought);
+		    thought_textboxes[n_thoughts] = CreateThoughtTextbox(_thought);
 			actions[n_thoughts] = _action;
 			thought_scales[n_thoughts] = THOUGHT_TEXT_SCALE;
 		    n_thoughts++;
 		});
 		for (var i = 0; i < n_thoughts; i++) {
-		    thought_angles[i] = 360 * i / n_thoughts;
+		    thought_angles[i] = 180 + 360 * i / n_thoughts;
 		}
 	}
 }
@@ -52,7 +52,7 @@ function CreateBattleSwirl(_choices) {
 		n_thoughts = 0;
 		thought_angles = [];
 		for (var i = 0; i < array_length(_choices); i++) {
-		    thought_textboxes[n_thoughts] = create_thought_textbox(_choices[i].text);
+		    thought_textboxes[n_thoughts] = CreateThoughtTextbox(_choices[i].text);
 			thought_textboxes[n_thoughts].depth -= 1;
 		    thoughts[n_thoughts] = _choices[i].text;
 			next_keys[n_thoughts] = _choices[i].next_key;
@@ -61,7 +61,7 @@ function CreateBattleSwirl(_choices) {
 		    n_thoughts++;
 		};
 		for (var i = 0; i < n_thoughts; i++) {
-		    thought_angles[i] = 360 * i / n_thoughts;
+		    thought_angles[i] = 180 + 360 * i / n_thoughts;
 		}
 	}
 	return _swirl;

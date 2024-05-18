@@ -10,8 +10,8 @@
   "name":"oGetEm",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle System",
-    "path":"folders/Battle System.yy",
+    "name":"Battle Engine and Components",
+    "path":"folders/Battle System/Battle Engine and Components.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sBattleTimer",
+    "path":"sprites/sBattleTimer/sBattleTimer.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

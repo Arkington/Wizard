@@ -47,6 +47,18 @@ function CaveCloset_CutsceneShowcase_2() {
 	EventPlayerStateFree();
 }
 
+function HCBattleShowcase() {
+	EventText("hc_battle_showcase", "intro");
+	WaitForEvents();
+	EnterBattle("battleGwtSkulls");
+}
+
+hc_battle_showcase = {
+	intro: [
+		Page(spkHC, "Ah, a new student."),
+		Page(spkHC, "I won't even bother with pleasantries. Have at thee!"),
+	],
+}
 
 
 
@@ -123,9 +135,9 @@ cutscene_showcase = {
 hat_intro_2 = {
 
 	main_1: [
-	    Page(spkHatrickNeutral, "hi... Hi!"),
+	    Page(spkHatrickNeutral, "|P||X|hi... Hi!/X//P/"),
 	    Page(spkAxel, "Hi."),
-	    Page(spkHatrickNeutral, "Hi. Hey. I... kinda saw you shoot that guy... with |S|MAGIC/S/! It was... kinda cool."),
+	    Page(spkHatrickNeutral, "|P||X|Hi. Hey. I... kinda saw you shoot that guy... with |S|MAGIC/S/! It was... kinda cool./X//P/"),
 	    Page(spkAxel, "Thanks."),
 	    Page(spkHatrickNeutral, "...you must be some sort of wizard, right?"),
 	    Page(spkHatrickNeutral, "...some kinda |S|MAGIC/S/ man???"),
