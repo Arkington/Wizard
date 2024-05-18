@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"BattleTransitions",
+  "%Name":"TextFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"BattleTransitions",
+  "name":"TextFunctions",
   "parent":{
-    "name":"Event System",
-    "path":"folders/Event System.yy",
+    "name":"Global Functions",
+    "path":"folders/Global Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

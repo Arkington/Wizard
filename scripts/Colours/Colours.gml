@@ -1,4 +1,5 @@
 #macro WHITE c_white
+#macro BLACK c_black
 #macro TEAL $87a348
 #macro RED c_red
 #macro BLUE c_blue

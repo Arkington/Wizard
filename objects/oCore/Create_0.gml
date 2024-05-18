@@ -1,4 +1,6 @@
 if (instance_number(oCore) > 1) { instance_destroy(); }
+image_xscale = 2/3;
+image_yscale = 2/3;
 
 // Core data
 sprite = sAxelHat;

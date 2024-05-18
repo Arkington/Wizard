@@ -2,6 +2,7 @@
 text = DEFAULT_TEXT;
 scale = 1;
 alpha = 1;
+center_text = false;
 
 // Speaker
 portrait = NO_PORTRAIT;

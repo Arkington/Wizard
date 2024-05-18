@@ -2,7 +2,6 @@
 t = 0;
 image_alpha = 0;
 button_alpha = 0;
-PlayMusic(musItsOkayToMakeMistakes);
 button_textboxes = [];
 button_x = [MID_X - RETRY_BUTTON_DIST, MID_X + RETRY_BUTTON_DIST];
 button_x_drift_seq = [[0], [0]];
@@ -15,7 +14,6 @@ button_scales = [1, 1];
 RetryMenuStateFadeIn = function() {
 	image_alpha = min(image_alpha + 1/(GAME_OVER_FADE_IN_TIME*FPS), 1);
 	if (t > GAME_OVER_TIME_TO_BUTTONS_S*FPS) {
-		print("HERE");
 		button_textboxes[0] = CreateBreakButtonTextbox("Retry");
 		button_textboxes[1] = CreateBreakButtonTextbox("Do Not");
 		n_buttons = array_length(button_textboxes);
@@ -64,16 +62,17 @@ RetryMenuStateActive = function() {
 	// Selecting buttons
 	if (_select and _hover != NONE) {
 		state = RetryMenuStateFadeOut;
-		// TODO: implement the buttons tho
+		if (_hover == 0) { RetrySequence(); }
+		else if (_hover == 1) { QuitSequence(); }
 	}
 }
 
 RetryMenuStateFadeOut = function() {
 	image_alpha -= 1/(GAME_OVER_FADE_IN_TIME*FPS);
+	button_alpha -= 1/(GAME_OVER_FADE_IN_TIME*FPS);
 	for (var i = 0; i < n_buttons; i++) {
-		button_textboxes[i].alpha = image_alpha;
+		button_textboxes[i].alpha = button_alpha;
 	}
-	StopMusic(true, GAME_OVER_MUSIC_FADE_S)
 	if (image_alpha <= 0) { instance_destroy(); }
 }
 

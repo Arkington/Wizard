@@ -1,4 +1,4 @@
-/// @desc Default time, n_spins
+/// @desc Default times
 
 event_inherited();
 

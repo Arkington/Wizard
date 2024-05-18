@@ -19,6 +19,8 @@ function SetupTextbox() {
 	portrait_x_adj = portrait != NO_PORTRAIT ? portrait_width + 2*portrait_border_width : 0;
     line_width = textbox_width - 2*x_buffer - portrait_x_adj;
 	line_height = string_height(ALPHABET);
+	string_widths = []; // Track string width of each line
+	n_lines = 0;
     
     // Auto add line breaks, colours, effects
     last_space_pos = -1;
@@ -109,20 +111,36 @@ function SetupTextbox() {
     		last_space_pos = c_pos;
     	}
     }
-    
+
+	// Record the final line widths of each line
+	// Note: must be done after the above loop since Effect Codes need to already be removed
+    line_start_pos = 0;
+	for (var c = 0; c < string_length(text); c++) {
+    	var c_pos = c + 1;
+    	if string_char_at(text, c_pos) == "\n" {
+			string_widths[n_lines] = string_width(string_copy(text, line_start_pos, c_pos - line_start_pos));
+			n_lines++;
+    		line_start_pos = c_pos;
+    	}
+	}
+	// Record the width of the last line
+	string_widths[n_lines] = string_width(string_copy(text, line_start_pos, c_pos - line_start_pos))
+
     // Get coords of each character
     running_x_pos = 0;
     running_y_pos = 0;
     line_start_pos = 1;
+	line = 0;
     for (var c = 0; c < string_length(text); c++) {
     	var c_pos = c + 1;
-    	var substr_to_c = string_copy(text, line_start_pos, c - line_start_pos + 1);
+    	var substr_to_c = string_copy(text, line_start_pos, c_pos - line_start_pos);
     	running_x_pos = string_width(substr_to_c);
-    	char_x[c] = running_x_pos;
+    	char_x[c] = running_x_pos + (center_text)*(line_width - string_widths[line])/2;
     	char_y[c] = running_y_pos;
     	if string_char_at(text, c_pos) == "\n" {
     		line_start_pos = c_pos;
     		running_y_pos += line_height;
+			line++;
     	}
     }
     

@@ -3,7 +3,6 @@
 // Commented for consistency
 // randomize();
 global.debug = false;
-global.gamePaused = false;
 global.fullscreen = false;
 global.magic_font = font_add_sprite(sMagicFont2, 32, true, 2);
 
@@ -28,5 +27,6 @@ room_goto(ROOM_START);
 
 
 // Development tools
+show_instance_report = true;
 save_state_message = "";
 time_since_save_state = 0;

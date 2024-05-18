@@ -102,3 +102,13 @@ with (global.battle_engine) {
 		image_alpha
 	);
 }
+
+
+// Full Entity Reporting
+if (show_instance_report) {
+	draw_set_text(fntDebug);
+	var _reports = GenerateInstanceReport();
+	for (var i = 0; i < array_length(_reports); i++) {
+		draw_text_border(i*80, 80, _reports[i]);
+	}
+}

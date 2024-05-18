@@ -132,11 +132,6 @@ function EventPlayMusic(_mus = NONE, _fade_in = false, _fade_out = true, _cross_
 	EventCode(PlayMusic, [_mus, _fade_in, _fade_out, _cross_fade]);
 }
 
-/// @desc Pause music.
-function EventStopMusic(_fade = true, _fade_out_s = SONG_FADE_SECS) {
-	EventCode(StopMusic, [_fade, _fade_out_s]);
-}
-
 
 
 
@@ -195,6 +190,17 @@ function EventSound(_sound, _wait_for_sound = false) {
 	}
 	QueueEvent(_event);
 }
+
+/// @desc Stop music. Wait for the music to fade out.
+function EventStopMusic(_fade = true, _fade_out_s = SONG_FADE_SECS) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventStopMusic);
+	with (_event) {
+		fade = _fade;
+		fade_out_s = _fade_out_s;
+	}
+	QueueEvent(_event);
+}
+
 
 enum AFTER_ANIMATION {
 	BACK_TO_OLD_SPRITE,
@@ -275,9 +281,17 @@ function EventCoreInit(_x, _y) {
 }
 
 
-// @desc Initialize the Core in preparation for a battle
 function EventCoreDeath() {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreDeath);
 	with (_event) {}
+	QueueEvent(_event);
+}
+
+function EventCoreRetry(_x, _y) {
+	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventCoreRetry);
+	with (_event) {
+		target_x = _x;
+		target_y = _y;
+	}
 	QueueEvent(_event);
 }
