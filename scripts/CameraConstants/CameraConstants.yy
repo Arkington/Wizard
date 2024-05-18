@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"UNSORTED_MACROS",
+  "%Name":"CameraConstants",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"UNSORTED_MACROS",
+  "name":"CameraConstants",
   "parent":{
-    "name":"Macros",
-    "path":"folders/Macros.yy",
+    "name":"Camera",
+    "path":"folders/Camera.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,8 +6,11 @@ t++;
 var _button_angle = Aim();
 var _old_button_hover = button_hover;
 if (_button_angle != NONE) {
-	button_hover = NearestAngle(_button_angle, button_angles);
-	oCore.angle = button_angles[button_hover];
+	var _nearest = NearestAngle(_button_angle, button_angles);
+	if (_nearest != NONE) {
+		button_hover = _nearest;
+		oCore.angle = button_angles[button_hover];
+	}
 }
 if (button_hover != _old_button_hover) {
 	hover_time = 0;

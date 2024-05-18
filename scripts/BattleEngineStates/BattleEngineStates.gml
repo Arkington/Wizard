@@ -16,8 +16,9 @@ function BattleEngineStateAwaiting() {
 	}
 }
 
-// CuTSCENE STATE (also initial state)
+// CUTSCENE STATE (also initial state)
 function BattleEngineShiftToCutscene() {
+	ShowOpponent();
 	with (global.battle_engine) {
 		SetBulletBox(BB_X, BB_Y, BB_W, BB_H);
 		state = BattleEngineStateCutscene;
@@ -34,7 +35,8 @@ function BattleEngineStateCutscene() {
 
 // BREAK STATE
 function BattleEngineShiftToBreak() {
-	with (oBattleEngine) {
+	ShowOpponent();
+	with (global.battle_engine) {
 		state = BattleEngineStateBreak;
 		break_wheel = CreateBreakWheel(buttons, victory);
 	}
@@ -46,8 +48,9 @@ function BattleEngineStateBreak() {}
 
 // WAVE STATE
 function BattleEngineShiftToWave() {
+	HideOpponent();
 	// Set up for next wave
-	with (oBattleEngine) {
+	with (global.battle_engine) {
 		current_wave = instance_create_layer(0, 0, LAYER_MECHANICS, NextWave());
 		get_em = CreateGetEm(current_wave);
 		state = BattleEngineStateWave;
@@ -92,7 +95,7 @@ function BattleEngineStateWave() {
 
 /// @desc In the Wave-Cooloff phase, all Attacks and Bullets are deleted/disabled
 function BattleEngineShiftToWaveCooloff() {
-	with (oBattleEngine) {
+	with (global.battle_engine) {
 		instance_destroy(pAttack);
 		instance_destroy(pBullet);
 		state = BattleEngineStateWaveCooloff;
@@ -130,7 +133,8 @@ function BattleEngineStateWaveCooloff() {
 
 // FINAL ATTACK and END STATES
 function BattleEngineShiftToFinalAttack() {
-	with (oBattleEngine) {
+	ShowOpponent();
+	with (global.battle_engine) {
 		state = BattleEngineStateFinalAttackStart;
 	}
 	with (oCore) { state = CoreStateFinalAttack; }
@@ -149,13 +153,13 @@ function BattleEngineStateFinalAttackEnd() {
 		state = BattleEngineStateEnd;
 	}
 }
-function BattleEngineStateEnd() {}
-
-
-
-// DEATH
-function BattleEngineShiftToDeath() {
-	instance_destroy(pWave);
+function BattleEngineStateEnd() {
+	if (room != rBattleParent) {
+		BattleEngineReset();
+	}
 }
 
-function BattleEngineStateAwaitDeathAnimation() {}
+
+
+// DEAD
+function BattleEngineStateDead() {}

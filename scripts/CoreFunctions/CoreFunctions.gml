@@ -59,7 +59,7 @@ function AimLock() {
     if aim_reset_timer < 0 { aim_lock = false; }
 }
 
-/// @desc Returns the index of _target_angles which is closest to _aim_angle.
+/// @desc Returns the index of _target_angles which is closest to _aim_angle. If there is a tie, returns NONE.
 function NearestAngle(_aim_angle, _target_angles, _force_hold = true) {
 	
 	var _nearest = NONE;
@@ -69,6 +69,8 @@ function NearestAngle(_aim_angle, _target_angles, _force_hold = true) {
 		if (dist < shortest_angle_distance) {
 			shortest_angle_distance = dist;
 			_nearest = i;
+		} else if (dist == shortest_angle_distance) {
+			_nearest = NONE;
 		}
 	}
 	return _nearest;

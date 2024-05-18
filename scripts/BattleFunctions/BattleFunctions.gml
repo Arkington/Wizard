@@ -10,6 +10,20 @@ function Battle(_opponent, _music, _wave_goal, _next_wave, _next_event, _final_e
 	}
 }
 
+/// @desc Loads a Battle() struct into the BattleEngine.
+function LoadBattle(_battle_struct_name) {
+	with (global.battle_engine) {
+		var _battle_struct = variable_global_get(_battle_struct_name);
+		battle_struct_name = _battle_struct_name;
+		battle_struct = _battle_struct;
+		music = _battle_struct.music;
+		NextWave = _battle_struct.NextWave;
+		NextEvent = _battle_struct.NextEvent;
+		FinalEvent = _battle_struct.FinalEvent;
+		wave_goal = _battle_struct.wave_goal;
+	}
+}
+
 /// @desc Allows the BattleEngine to track the player's overworld position prior to battle
 function BattleEngineStorePlayerPosition() {
 	if (instance_exists(oPlayer)) {
@@ -24,36 +38,11 @@ function BattleEngineStorePlayerPosition() {
 	}
 }
 
-/// @desc Loads a Battle() struct into the BattleEngine.
-function LoadBattle(_battle_struct_name) {
-	with (global.battle_engine) {
-		var _battle_struct = variable_global_get(_battle_struct_name);
-		battle_struct = _battle_struct;
-		music = _battle_struct.music;
-		NextWave = _battle_struct.NextWave;
-		NextEvent = _battle_struct.NextEvent;
-		FinalEvent = _battle_struct.FinalEvent;
-		wave_goal = _battle_struct.wave_goal;
-	}
+/// @desc Reset the Battle Engine to factory settings.
+function BattleEngineReset() {
+	with (global.battle_engine) { init(); }
 }
 
-/// @desc Resets the BattleEngine to await a new battle.
-function EndBattle() {
-	with(global.battle_engine) {
-		battle_struct = NONE;
-		state = BattleEngineStateAwaiting;
-	}
-}
-
-/// @desc Set image_alpha for BulletBox, HP bar, AttackUI and Meter
-function BattleGUIAlpha(_alpha) {
-	with global.battle_engine {
-		bullet_box.image_alpha = _alpha;
-		hp_bar.image_alpha = _alpha;
-		attack_ui.image_alpha = _alpha;
-		meter.image_alpha = _alpha;
-	}
-}
 
 /// @desc Create a Get Em board by giving it a wave
 function CreateGetEm(_wave) {
@@ -107,6 +96,8 @@ function CreateBreakButtonTextbox(_button) {
 		Speaker(NO_PORTRAIT, NO_VOICE),
 		_button,
 		{
+			center_text : true,
+			x_buffer: 0,
 			textbox_sprite : sBreakButton,
 			textbox_font : fntText,
 			textbox_width : BREAK_BUTTON_WIDTH/BREAK_BUTTON_TEXT_SCALE,
@@ -134,10 +125,17 @@ function CreateBreakWheel(_buttons, _victory) {
 	}
 }
 
+function HideOpponent() {
+	with (pOpponent) { hidden = true; }
+}
+function ShowOpponent() {
+	with (pOpponent) { hidden = false; }
+}
+
 /// @desc Stop everything in a battle from moving
 function HaltBattle() {
 	with (oBattleEngine) {
-		state = BattleEngineStateAwaitDeathAnimation;
+		state = BattleEngineStateDead;
 	}
 	with (pWave) {
 		halted = true; // Halts step function
@@ -159,6 +157,39 @@ function HaltBattle() {
 	}
 }
 
+/// @desc Standard battle transition
+function EnterBattle(_battle_struct_name) {
+	EventPlayerStateCutscene();
+	BattleEngineStorePlayerPosition();
+	EventJump(oPlayer);
+	WaitForEvents();
+	EventSound(sndAtkShift);
+	EventCoreInit(CORE_INIT_X, CORE_INIT_Y);
+	EventTransition(rParent);
+	WaitForEvents();
+	EventSound(sndAtkShift);
+	EventWait(1);
+	EventTransition(rBattleParent);
+	WaitForEvents();
+	EventCoreState(CoreStateFree);
+	EventCode(function() { oCore.persistent = false; });
+	EventCode(LoadBattle, [_battle_struct_name]);
+}
+
+/// @desc Exits a battle to the overworld using the Battle Engine's stored player info, then resets the engine.
+function ExitBattle() {
+	EventTransition(
+		global.battle_engine.room_prev,
+		global.battle_engine.x_prev,
+		global.battle_engine.y_prev,
+		global.battle_engine.face_prev
+	);
+	WaitForEvents();
+	EventCode(BattleEngineReset);
+	EventPlayerStateFree(); // TODO: maybe script an event immediately following a battle...
+}
+
+
 /// @desc Sequence triggered on player death in battle.
 function DeathSequence() {
 	HaltBattle();
@@ -175,4 +206,29 @@ function DeathSequence() {
 	EventWait(1);
 	EventPlayMusic(musItsOkayToMakeMistakes);
 	EventCreate(MID_X, GAME_OVER_Y, LAYER_INSTANCES, oRetryMenu);
+}
+
+/// @desc Sequence triggered after clicking retry
+function RetrySequence() {
+	var _battle_struct_name = global.battle_engine.battle_struct_name;
+	BattleEngineReset();
+	
+	EventStopMusic(true, 1.5);
+	WaitForEvents();
+	EventCoreRetry(CORE_INIT_X, CORE_INIT_Y); // Handles the animation until the hat lands in the ring
+	WaitForEvents();
+	EventSound(sndAtkShift);
+	EventWait(1);
+	EventTransition(rBattleParent);
+	WaitForEvents();
+	EventCoreState(CoreStateFree);
+	EventCode(function() { oCore.persistent = false; });
+	EventCode(LoadBattle, [_battle_struct_name]);
+}
+
+function QuitSequence() {
+	EventStopMusic(true, 1.5)
+	WaitForEvents();
+	EventWait(1);
+	EventCode(game_end);
 }
