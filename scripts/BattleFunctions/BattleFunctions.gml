@@ -1,12 +1,14 @@
 /// @desc Creates Battle() structs.
-function Battle(_opponent, _music, _wave_goal, _next_wave, _next_event, _final_event) {
+function Battle(_opponent, _background, _music, _wave_goal, _next_wave, _next_event, _final_event, _death_event) {
 	return {
 		opponent: _opponent,
+		background: _background,
 		music: _music,
 		wave_goal : _wave_goal,
 		NextWave : _next_wave,
 		NextEvent : _next_event,
 		FinalEvent: _final_event,
+		DeathEvent: _death_event
 	}
 }
 
@@ -16,10 +18,12 @@ function LoadBattle(_battle_struct_name) {
 		var _battle_struct = variable_global_get(_battle_struct_name);
 		battle_struct_name = _battle_struct_name;
 		battle_struct = _battle_struct;
+		background = instance_create_layer(0, 0, LAYER_BATTLE_BACKGROUND, _battle_struct.background);
 		music = _battle_struct.music;
 		NextWave = _battle_struct.NextWave;
 		NextEvent = _battle_struct.NextEvent;
 		FinalEvent = _battle_struct.FinalEvent;
+		DeathEvent = _battle_struct.DeathEvent;
 		wave_goal = _battle_struct.wave_goal;
 	}
 }
@@ -38,9 +42,21 @@ function BattleEngineStorePlayerPosition() {
 	}
 }
 
-/// @desc Reset the Battle Engine to factory settings.
-function BattleEngineReset() {
+/// @desc Reset the Battle Engine to factory settings. Keep any variables in _to_keep unchanged.
+function BattleEngineReset(_vars_to_keep = []) {
+	
+	// Store variables to keep
+	var _to_keep = {};
+	for (var i = 0; i < array_length(_vars_to_keep); i++) {
+		struct_set(_to_keep, _vars_to_keep[i], variable_instance_get(global.battle_engine, _vars_to_keep[i]));
+	}
+	
 	with (global.battle_engine) { init(); }
+	
+	// Re-load deleted variables
+	for (var i = 0; i < array_length(_vars_to_keep); i++) {
+		variable_instance_set(global.battle_engine, _vars_to_keep[i], struct_get(_to_keep, _vars_to_keep[i]));
+	}	
 }
 
 
@@ -204,6 +220,8 @@ function DeathSequence() {
 	EventCoreDeath(); // This thing handles flying backwards and falling to the ground
 	WaitForEvents();
 	EventWait(1);
+	with (global.battle_engine) { DeathEvent(); } // Run the death event for the battle
+	WaitForEvents();
 	EventPlayMusic(musItsOkayToMakeMistakes);
 	EventCreate(MID_X, GAME_OVER_Y, LAYER_INSTANCES, oRetryMenu);
 }
@@ -211,7 +229,7 @@ function DeathSequence() {
 /// @desc Sequence triggered after clicking retry
 function RetrySequence() {
 	var _battle_struct_name = global.battle_engine.battle_struct_name;
-	BattleEngineReset();
+	BattleEngineReset(["room_prev", "x_prev", "y_prev", "face_prev"]);
 	
 	EventStopMusic(true, 1.5);
 	WaitForEvents();

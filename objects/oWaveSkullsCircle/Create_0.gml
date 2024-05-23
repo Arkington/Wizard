@@ -1,7 +1,7 @@
 /// @desc
 event_inherited();
 
-SetBulletBox(RESOLUTION_W/2, RESOLUTION_H/2 + 16, 64, 64)
+SetBulletBox(MID_X, MID_Y_B, 96, 96)
 
 
 n_enemies = clear_condition.oEnemySkullShootCircle;

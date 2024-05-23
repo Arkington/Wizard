@@ -7,6 +7,7 @@ global.wave_test = Battle(
 	5,
 	function() { return BATTLE_TEST_WAVE; },
 	EventBattleBreak,
+	EventBattleBreak,
 	EventBattleBreak
 )
 LoadBattle("wave_test");

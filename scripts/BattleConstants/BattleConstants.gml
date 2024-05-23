@@ -77,7 +77,8 @@
 #macro GET_EM_H 56
 #macro TIME_WARNING_S 5
 
-// Retry Menu
+// Game Over and Retry Menu
+#macro DEATH_TEXT_Y 72
 #macro GAME_OVER_Y 72
 #macro GAME_OVER_FADE_IN_TIME 1.22448
 #macro GAME_OVER_TIME_TO_BUTTONS_S 2.44897 // 1 bar of music
@@ -96,4 +97,4 @@
 
 
 // Technical constants
-#macro FRAMES_BETWEEN_CLEAN 1*FPS // Clear stale enemies every this number of frames
+#macro FRAMES_BETWEEN_CLEAN 1*FPS

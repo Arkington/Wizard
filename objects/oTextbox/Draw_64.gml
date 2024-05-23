@@ -6,16 +6,18 @@ var _text_to_draw = string_copy(text, 1, char_count);
 var _fade_factor = fade_in ? min(frame/TEXTBOX_FADE_IN_FRAMES, 1) : 1;
 
 // Textbox
-draw_sprite_stretched_ext(
-	textbox_sprite,
-	0,
-	x,
-	y,
-	(textbox_width) * scale,
-	textbox_height * scale,
-	c_white,
-	alpha * _fade_factor
-);
+if (textbox_sprite != NONE) {
+	draw_sprite_stretched_ext(
+		textbox_sprite,
+		0,
+		x,
+		y,
+		(textbox_width) * scale,
+		textbox_height * scale,
+		c_white,
+		alpha * _fade_factor
+	);
+}
 
 // Each letter rendered individually
 draw_set_text(textbox_font);
