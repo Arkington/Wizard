@@ -1,5 +1,5 @@
 // Full-battle
-#macro OOB_KILL_DIST 64
+#macro OOB_KILL_DIST 16
 
 
 // Core
@@ -42,6 +42,9 @@
 #macro ENEMY_BUMP_RADIUS 4
 #macro ENEMY_BUMP_DIR_VAR 2
 #macro ENEMY_BUMP_P 0.5
+
+// Bullets
+#macro BULLET_FIZZLE_S 0.3
 
 
 // Engine
@@ -94,6 +97,9 @@
 #macro RETRY_BUTTON_DIST 40
 #macro RETRY_BUTTON_HOVER_SCALE 1.5
 #macro RETRY_BUTTON_HOVER_SPEED 0.1
+
+// Battle object constance
+#macro POOF_CLOUD_Y_ADJ 5
 
 
 // Technical constants

@@ -14,4 +14,6 @@ p_y = 0;
 target_x = NONE;
 target_y = NONE;
 
+state = function() {}; // Default state does nothing
+
 on_hit = function(_attack) {};

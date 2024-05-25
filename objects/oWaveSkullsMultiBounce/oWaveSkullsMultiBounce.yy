@@ -10,6 +10,8 @@
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"time_limit_s","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"25",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"clear_condition","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"{oEnemySkullBouncy: 10}",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"get_em_x","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pWave","path":"objects/pWave/pWave.yy",},"propertyId":{"name":"get_em_y","path":"objects/pWave/pWave.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"75",},
   ],
   "parent":{
     "name":"GWT Skulls",

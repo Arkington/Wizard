@@ -164,6 +164,7 @@ function HaltBattle() {
 		p_x = 0;
 		p_y = 0;
 		target_speed = 0;
+		state = function() {};
 	}
 	with (pBullet) {
 		speed = 0;

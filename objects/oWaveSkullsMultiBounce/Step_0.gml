@@ -15,6 +15,7 @@ if (t/FPS % spawn_rate_s == 0) {
 			spin_factor: left ? random_range(0, spin_factor_range) : random_range(-spin_factor_range, 0),
 		}
 	);
+	CreatePoofCloud(_skull.x, _skull.y);
 	array_push(enemies, _skull);
 	left = irandom(1);
 }
@@ -29,5 +30,6 @@ for (var i = 0; i < n_enemies; i++) {
 		// Bounce
 		_enemy.vel_y = -random_range(vel_y - vel_y_var, vel_y + vel_y_var);
 		_enemy.spin_factor = left ? random_range(0, spin_factor_range) : random_range(-spin_factor_range, 0);
+		audio_play_sound(sndBoing, 0, false);
 	}
 }

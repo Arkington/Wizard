@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sAtkSoulFlame",
-    "path":"sprites/sAtkSoulFlame/sAtkSoulFlame.yy",
+    "name":"sOppoSkull",
+    "path":"sprites/sOppoSkull/sOppoSkull.yy",
   },
   "spriteMaskId":null,
   "visible":true,

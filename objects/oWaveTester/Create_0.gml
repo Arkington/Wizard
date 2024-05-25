@@ -3,6 +3,7 @@
 // Stuff and stuff
 global.wave_test = Battle(
 	oOpponentSkull,
+	oBackgroundStarRise,
 	musNoMusicFound,
 	5,
 	function() { return BATTLE_TEST_WAVE; },

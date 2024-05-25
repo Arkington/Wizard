@@ -93,11 +93,10 @@ function BattleEngineStateWave() {
 
 // WAVE COOLOFF STATE
 
-/// @desc In the Wave-Cooloff phase, all Attacks and Bullets are deleted/disabled
+/// @desc In the Wave-Cooloff phase, Bullets are deleted/disabled
 function BattleEngineShiftToWaveCooloff() {
 	with (global.battle_engine) {
-		instance_destroy(pAttack);
-		instance_destroy(pBullet);
+		with (pBullet) { fizzle = true; }
 		state = BattleEngineStateWaveCooloff;
 	}
 	with (oCore) { state = CoreStateCutscene; }
