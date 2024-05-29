@@ -1,24 +1,25 @@
 /// @desc
+if (live_call()) return live_result;
+shader_set_live(shader, true);
+
 if (active and shader_progress > 0) {
 	
 	// Get UV info
-	var uvs = sprite_get_uvs(sprite_index, image_index);
-	var uv_w = uvs[2] - uvs[0];
-	var uv_h = uvs[3] - uvs[1];
-	var uv_dimensions = [uv_w, uv_h];
-	var uv_center = [0.5*uv_w + uvs[0], 0.5*uv_h + uvs[1]];
-
-	shader_set(TEST_SHADER);
+	GetUVs();
+	shader_set(shader);
 	
 	// Set shader variables
-	shader_set_uniform_f(shader_x_handle, OBJ_MID_X);
-	shader_set_uniform_f(shader_y_handle, OBJ_MID_Y);
-	shader_set_uniform_f(shader_progress_handle, shader_progress);
-	shader_set_uniform_f_array(shader_uv_center_handle, uv_center);
-	shader_set_uniform_f_array(shader_uv_dimensions_handle, uv_dimensions);
+	SetShaderUniforms();
 
 	draw_self();
 	shader_reset();
 } else {
 	draw_self();
 }
+
+draw_set_text(fntMagic);
+draw_text(0, 0, $"Progress: {shader_progress}");
+
+draw_circle_color(x, y, 1, BLUE, BLUE, false);
+draw_circle_color(OBJ_MID_X, OBJ_MID_Y, 1, RED, RED, false);
+draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);

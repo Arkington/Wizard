@@ -1,8 +1,15 @@
 /// @desc
+if (live_call()) return live_result;
+
+shader = TEST_SHADER;
+
 active = false;
 shader_progress = 0;
-shader_progress_handle = shader_get_uniform(TEST_SHADER, "progress");
-shader_x_handle = shader_get_uniform(TEST_SHADER, "mid_x");
-shader_y_handle = shader_get_uniform(TEST_SHADER, "mid_y");
-shader_uv_center_handle = shader_get_uniform(TEST_SHADER, "uv_center");
-shader_uv_dimensions_handle = shader_get_uniform(TEST_SHADER, "uv_dimensions");
+shader_progress_handle = shader_get_uniform(shader, "progress");
+shader_sprite_dim_handle = shader_get_uniform(shader, "sprite_dim");
+shader_sprite_scale_handle = shader_get_uniform(shader, "sprite_scale");
+shader_uv_mid_handle = shader_get_uniform(shader, "uv_mid");
+shader_uv_dim_handle = shader_get_uniform(shader, "uv_dim");
+shader_mid_pt_handle = shader_get_uniform(shader, "mid_pt");
+uv_mid = [];
+uv_dim = [];

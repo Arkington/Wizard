@@ -39,7 +39,7 @@ draw_sprite_stretched(
 // Draw HP text
 draw_set_text(fntText, WHITE, fa_left, fa_top);
 draw_text_transformed(
-	x + HP_LEN,
+	x + HP_LEN - 4,
 	y + _box_nineslice.top,
 	$"{global.hp}/{global.max_hp}",
 	1/3,

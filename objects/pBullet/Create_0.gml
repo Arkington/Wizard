@@ -8,9 +8,11 @@ shader_progress = 0;
 shader_progress_handle = shader_get_uniform(TEST_SHADER, "progress");
 shader_x_handle = shader_get_uniform(TEST_SHADER, "mid_x");
 shader_y_handle = shader_get_uniform(TEST_SHADER, "mid_y");
-shader_uv_center_handle = shader_get_uniform(TEST_SHADER, "uv_center");
-shader_uv_dimensions_handle = shader_get_uniform(TEST_SHADER, "uv_dimensions");
+shader_uv_mid_handle = shader_get_uniform(TEST_SHADER, "uv_mid");
+shader_uv_dim_handle = shader_get_uniform(TEST_SHADER, "uv_dim");
 
+uv_mid = [];
+uv_dim = [];
 
 audio_play_sound(fire_sfx, 0, false);
 

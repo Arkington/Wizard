@@ -1,8 +1,6 @@
 /// @desc
 var _frac_complete = t/(poof_time_s*FPS);
 var _a = -PiecewiseParabolaY(_frac_complete, 1, 0.5, -0.5, 0);
-print(_a);
-//var _a = 1 - sqr(2*_frac_complete - 1)/2; // Image scale
 var _b = sqrt(_frac_complete); // x- and y-drift
 
 // For all poofs, drift up, drift out and scale

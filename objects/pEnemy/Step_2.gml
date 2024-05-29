@@ -1,4 +1,4 @@
-/// @desc Movement
+/// @desc Movement and shader
 
 // Velocity
 x += vel_x;
@@ -23,4 +23,9 @@ if (target_y != NONE) {
 	var _y_dir = point_direction(0, y, 0, target_y);
 	var _y_move = lengthdir_y(target_speed, _y_dir);
 	y += sign(_y_move) * min(abs(_y_move), abs(y - target_y));
+}
+
+// Damage shader
+if (shader_progress < 1) {
+	shader_progress += 1/(ENEMY_DAMAGE_SHADER_S*FPS);
 }

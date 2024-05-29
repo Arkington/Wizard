@@ -37,6 +37,7 @@
 #macro BREAK_BUTTON_HOVER_SPEED 0.1
 
 // Enemies
+#macro ENEMY_DAMAGE_SHADER_S 0.5
 #macro ENEMY_DOWN -1
 #macro ENEMY_MAX_P 2
 #macro ENEMY_BUMP_RADIUS 4

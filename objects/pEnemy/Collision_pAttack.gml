@@ -1,10 +1,17 @@
+if (live_call()) return live_result;
+
+
 /// @desc Hit by attack
+if (dead) { exit; }
 var _attack = other;
 
 
 // MANDATORY FOR EVERY ENEMY
 // Damage
 hp -= _attack.damage;
+
+// Shader
+shader_progress = 0;
 
 // Momentum - angle is a weighted average of old and new knockback directions
 var _new_p = _attack.knockback;
@@ -21,8 +28,12 @@ _attack.on_hit(id);
 
 // Die
 if (hp <= 0) {
+	dead = true;
+	ResetEnemy(self);
+	shader = shEnemyDie;
+	SetShaderHandlers(shader);
+	state = StateDying;
 	ReportEnemyDown(id);
-	instance_destroy();
 }
 
 // UNIQUE TO EACH ENEMY

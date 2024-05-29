@@ -7,9 +7,9 @@
 #macro VIEWPORT_RATIO 3
 #macro FPS 60
 
-#macro ROOM_START rBattleTest
+#macro ROOM_START rShaderTest
 
 
 // Test constants
 #macro BATTLE_TEST_WAVE oWaveSkullsMultiBounce
-#macro TEST_SHADER shBulletFizzle
+#macro TEST_SHADER shEnemyDie

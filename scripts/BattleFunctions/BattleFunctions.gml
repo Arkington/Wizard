@@ -148,15 +148,10 @@ function ShowOpponent() {
 	with (pOpponent) { hidden = false; }
 }
 
-/// @desc Stop everything in a battle from moving
-function HaltBattle() {
-	with (oBattleEngine) {
-		state = BattleEngineStateDead;
-	}
-	with (pWave) {
-		halted = true; // Halts step function
-	}
-	with (pEnemy) {
+
+/// @desc Resets an Enemy to factory settings.
+function ResetEnemy(_enemy) {
+	with (_enemy) {
 		vel_x = 0;
 		vel_y = 0;
 		acc_x = 0;
@@ -166,6 +161,17 @@ function HaltBattle() {
 		target_speed = 0;
 		state = function() {};
 	}
+}
+
+/// @desc Stop everything in a battle from moving
+function HaltBattle() {
+	with (oBattleEngine) {
+		state = BattleEngineStateDead;
+	}
+	with (pWave) {
+		halted = true; // Halts step function
+	}
+	ResetEnemy(pEnemy);
 	with (pBullet) {
 		speed = 0;
 	}
@@ -250,4 +256,31 @@ function QuitSequence() {
 	WaitForEvents();
 	EventWait(1);
 	EventCode(game_end);
+}
+
+
+/// @desc Check if an object is in battle view, ie in (0,0) to (RESOLUTION_W, RESOLUTION_H).
+function IsInBattleView(_obj) {
+	var _x0 = _obj.x - sprite_get_xoffset(_obj.sprite_index);
+	var _y0 = _obj.y - sprite_get_yoffset(_obj.sprite_index);
+	var _w = sprite_get_width(_obj.sprite_width);
+	var _h = sprite_get_height(_obj.sprite_height);
+	
+	var _to_check = [
+		[_x0, _y0],
+		[_x0 + _w, _y0],
+		[_x0, _y0 + _h],
+		[_x0 + _w, _y0 + _h],
+	]
+	for (var i = 0; i < 4; i++) {
+		if point_in_rectangle(
+			_to_check[i][0],
+			_to_check[i][1],
+			0,
+			0,
+			RESOLUTION_W,
+			RESOLUTION_H
+		) { return true; }
+	}
+	return false;
 }

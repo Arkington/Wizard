@@ -7,7 +7,6 @@ attribute vec2 in_TextureCoord;              // (u,v)
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-
 uniform float progress;                      // Progress of the fizzle effect (in [0, 1])
 uniform float mid_x;
 uniform float mid_y;
