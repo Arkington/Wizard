@@ -1,5 +1,5 @@
 //
-// NOT simple passthrough vertex shader
+// Shader to increase the scale of an object.
 //
 attribute vec3 in_Position;                  // (x,y,z)
 attribute vec4 in_Colour;                    // (r,g,b,a)
@@ -7,10 +7,10 @@ attribute vec2 in_TextureCoord;              // (u,v)
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-uniform float progress;                      // Progress of the fizzle effect (in [0, 1])
+uniform float progress;                      // Progress of the effect in [0, 1]
 uniform vec2 mid_pt;
 
-const float split_dist = 0.5;      // Maximum displacement for the split effect
+const float split_dist = 0.3;      // Maximum displacement for the split effect
 varying float split_dst;
 varying float image_scale;
 varying float prog;

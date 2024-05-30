@@ -4,7 +4,11 @@
 event_inherited();
 
 StateMoving = function() {
-		
+
+	// Look at player
+	image_angle = point_direction(x, y, oCore.x, oCore.y) - 90;
+
+
 	// Animate
 	image_index = sprite_get_number(sprite_index) - 1;
 	
@@ -14,6 +18,10 @@ StateMoving = function() {
 }
 
 StateShooting = function() {
+
+	// Look at player
+	image_angle = point_direction(x, y, oCore.x, oCore.y) - 90;
+
 	
 	// Animate
 	image_index = DOWN;

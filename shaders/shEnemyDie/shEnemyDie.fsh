@@ -1,4 +1,6 @@
-// Simple passthrough fragment shader
+//
+// Shader to separate an object into horizontal pixel bands and visually split these apart, accounting for object rotation.
+//
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
@@ -34,7 +36,7 @@ void main()
 	
 	// Alpha
 	if (split_coord.x >= uv_mid.x - uv_dim.x/2.0 && split_coord.x <= uv_mid.x + uv_dim.x/2.0 && split_coord.y >= uv_mid.y - uv_dim.y/2.0 && split_coord.y <= uv_mid.y + uv_dim.y/2.0) {
-		pix.a = 1.0 - prog;
+		pix.a = min(1.0 - prog, pix.a);
 	} else {
 		pix.a = 0.0;
 	}

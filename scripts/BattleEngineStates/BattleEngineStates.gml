@@ -67,12 +67,14 @@ function BattleEngineStateWave() {
 	
 	// Win
 	if (current_wave.clear) {
+		audio_play_sound(sndWaveWin, 0, false);
 		n_wins++;
 		last_wave_win = true;
 		array_push(waves_cleared, current_wave.object_index);
 	}
 	// Lose
 	else {
+		audio_play_sound(sndWaveFail, 0, false);
 		n_fails++;
 		last_wave_win = false;
 		array_push(waves_failed, current_wave.object_index);
@@ -95,23 +97,42 @@ function BattleEngineStateWave() {
 
 /// @desc In the Wave-Cooloff phase, Bullets are deleted/disabled
 function BattleEngineShiftToWaveCooloff() {
+	with (pBullet) { fizzle = true; }
+
 	with (global.battle_engine) {
-		with (pBullet) { fizzle = true; }
 		state = BattleEngineStateWaveCooloff;
 	}
-	with (oCore) { state = CoreStateCutscene; }
+	
+	// Kill offscreen enemies
+	with (pEnemy) {
+		if (!IsInBattleView(self)) {
+			ReportEnemyDown(id, false);
+			instance_destroy();
+		}
+	}
 }
 
 function BattleEngineStateWaveCooloff() {
 	
 	// Remove enemies
 	if (time_in_state % COOLOFF_FRAMES_BETWEEN_CLEAR == 0) {
-		// Pick an enemy and remove it, granting no kill
-		var _enemy = instance_find(pEnemy, irandom(instance_number(pEnemy) - 1));
-		if (_enemy != noone) {
-			ReportEnemyDown(_enemy, false);
-			instance_destroy(_enemy);
-			audio_play_sound(sndPop, 0, false);
+		
+		var _enemies = GetActiveEnemies();
+		var _n_enemies = array_length(_enemies);
+		if (_n_enemies > 0) {
+			
+			// Pick an enemy and remove it, granting no kill
+			_enemy = _enemies[irandom(_n_enemies - 1)];
+			ReportEnemyDown(_enemy.id, false);
+			
+			// Vary behaviour based on wave success
+			if (current_wave.clear) {
+				audio_play_sound(sndPop, 0, false);
+				_enemy.state = _enemy.StateDying;
+			} else {
+				audio_play_sound(sndEnemyWarp, 0, false);
+				_enemy.state = _enemy.StateWarping;
+			}
 		}
 	}
 
@@ -128,6 +149,7 @@ function BattleEngineStateWaveCooloff() {
 		BattleEngineShiftToCutscene();
 	}
 }
+
 
 
 // FINAL ATTACK and END STATES

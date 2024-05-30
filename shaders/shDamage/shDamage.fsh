@@ -1,5 +1,5 @@
 //
-// Simple passthrough fragment shader
+// Shader to apply a red effect with a purple ring of damage moving towards the sprite's center.
 //
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;

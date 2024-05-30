@@ -1,5 +1,5 @@
 //
-// NOT simple passthrough vertex shader
+// Shader to stretch a sprite in the x-direciton.
 //
 attribute vec3 in_Position;                  // (x,y,z)
 attribute vec4 in_Colour;                    // (r,g,b,a)

@@ -108,7 +108,9 @@ with (global.battle_engine) {
 if (show_instance_report) {
 	draw_set_text(fntDebug);
 	var _reports = GenerateInstanceReport();
+	var _str_width = 0;
 	for (var i = 0; i < array_length(_reports); i++) {
-		draw_text_border(i*80, 80, _reports[i]);
+		draw_text_border(_str_width, 80, _reports[i]);
+		_str_width += string_width(_reports[i]);
 	}
 }

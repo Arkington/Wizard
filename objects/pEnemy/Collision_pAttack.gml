@@ -28,10 +28,6 @@ _attack.on_hit(id);
 
 // Die
 if (hp <= 0) {
-	dead = true;
-	ResetEnemy(self);
-	shader = shEnemyDie;
-	SetShaderHandlers(shader);
 	state = StateDying;
 	ReportEnemyDown(id);
 }

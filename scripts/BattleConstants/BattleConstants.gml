@@ -38,6 +38,8 @@
 
 // Enemies
 #macro ENEMY_DAMAGE_SHADER_S 0.5
+#macro ENEMY_DIE_SHADER_S 0.3
+#macro ENEMY_WARP_SHADER_S 0.35
 #macro ENEMY_DOWN -1
 #macro ENEMY_MAX_P 2
 #macro ENEMY_BUMP_RADIUS 4
@@ -49,8 +51,8 @@
 
 
 // Engine
-#macro COOLOFF_FRAMES_BETWEEN_CLEAR 2
-#macro COOLOFF_MIN_TIME_S 0.8
+#macro COOLOFF_FRAMES_BETWEEN_CLEAR 4
+#macro COOLOFF_MIN_TIME_S 1.2
 
 // Bullet box
 #macro BB_X 168

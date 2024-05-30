@@ -27,5 +27,21 @@ if (target_y != NONE) {
 
 // Damage shader
 if (shader_progress < 1) {
-	shader_progress += 1/(ENEMY_DAMAGE_SHADER_S*FPS);
+	switch(shader) {
+		case shDamage:
+			shader_progress += 1/(ENEMY_DAMAGE_SHADER_S*FPS);
+			break;
+
+		case shEnemyDie:
+			shader_progress += 1/(ENEMY_DIE_SHADER_S*FPS);
+			break;
+			
+		case shEnemyWarp:
+			shader_progress += 1/(ENEMY_WARP_SHADER_S*FPS);
+			break;
+			
+		default:
+			shader_progress += 1/FPS;
+			break;
+	}
 }

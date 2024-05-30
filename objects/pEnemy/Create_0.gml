@@ -21,17 +21,43 @@ y_adj = 0;
 
 // Shader setup
 shader = shDamage;
-shader_progress = 1;
+shader_progress = 1.01;
 SetShaderHandlers(shader);
 
 uv_mid = [];
 uv_dim = [];
 
+
+// Dying behaviour
 StateDying = function() {
+	if (!dead) {
+		dead = true;
+		ResetEnemy(self);
+		shader = shEnemyDie;
+		shader_progress = 0;
+		SetShaderHandlers(shader);
+	}
+	
 	if (shader_progress >= 1) {
 		instance_destroy();
 	}
 }
+
+// Warping (on wave-end) behaviour)
+StateWarping = function() {
+	if (!dead) {
+		dead = true;
+		shader = shEnemyWarp;
+		shader_progress = 0;
+		SetShaderHandlers(shader);
+	}
+	
+	if (shader_progress >= 1) {
+		instance_destroy();
+	}
+}
+
+
 state = function() {}; // Default state does nothing
 
 

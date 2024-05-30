@@ -159,8 +159,18 @@ function ResetEnemy(_enemy) {
 		p_x = 0;
 		p_y = 0;
 		target_speed = 0;
-		state = function() {};
 	}
+}
+
+/// @desc Returns an array of all non-dead enemies.
+function GetActiveEnemies() {
+	var _enemies = [];
+	var _n_enemies = instance_number(pEnemy);
+	for (var i = 0; i < _n_enemies; i++) {
+		var _enemy = instance_find(pEnemy, i);
+		if (!_enemy.dead) { array_push(_enemies, _enemy); }
+	}
+	return _enemies;
 }
 
 /// @desc Stop everything in a battle from moving
