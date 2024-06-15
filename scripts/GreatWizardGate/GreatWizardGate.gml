@@ -1,9 +1,18 @@
 /// Code
+function GreatWizardGate_CheckGate() {
+	if (global.state.BUBBLEGUM_CHAT_COMPLETE) {
+		global.state.GWG_BIRD_INTERACTS = max(2, global.state.GWG_BIRD_INTERACTS);
+		LoadText("textGreatWizardGate", "gate_check_bubblegum");
+	} else {
+		LoadText("textGreatWizardGate", "gate_check");
+	}
+}
+
 function GreatWizardGate_CheckBird() {
 	global.state.GWG_BIRD_INTERACTS++;
 	bird_check_count = min(global.state.GWG_BIRD_INTERACTS, 5);
 	if bird_check_count < 5 {
-		load_text("textGreatWizardGate", $"bird_check_{bird_check_count}");
+		LoadText("textGreatWizardGate", $"bird_check_{bird_check_count}");
 	} else if bird_check_count == 5 {
 		// Gate opening cutscene
 		global.state.GWG_OPEN = true;
@@ -47,14 +56,17 @@ textGreatWizardGate = {
 	gate_check: [
 		Page(spkNone, "Locked.")
 	],
+	gate_check_bubblegum: [
+		Page(spkAxel, "It's locked, but is there anything else I can do here?")
+	],
 	bird_check_1: [
 		Page(spkNone, "Looks like a bird.")
 	],
 	bird_check_2: [
-		Page(spkNone, "Looks like a bird.")
+		Page(spkNone, "Still looks like a bird.")
 	],
 	bird_check_3: [
-		Page(spkNone, "Looks like a bird...")
+		Page(spkNone, "It looks like... a bird.")
 	],
 	bird_check_4: [
 		Page(spkNone, "Looks like a bird...?")

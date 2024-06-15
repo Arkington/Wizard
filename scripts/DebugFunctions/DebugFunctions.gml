@@ -21,6 +21,7 @@ function GenerateInstanceReport() {
 	var _n_reports = 0;
 	var _report = ""
 	var _inst_names = struct_get_names(_inst_dict);
+	array_sort(_inst_names, true);
 	for (var i = 0; i < array_length(_inst_names); i++) {
 	    _report += _inst_names[i] + ": " + string(struct_get(_inst_dict, _inst_names[i])) + "\n";
 		// Start a new string if too many instances

@@ -3,7 +3,7 @@ if (prev_progress != progress) {
 	if (prev_progress < 1 and progress >= 1) {
 		audio_play_sound(sndMeterFull, 0, false);
 	} else if (progress > prev_progress and prev_progress < 1) {
-		audio_play_sound(sndMeterAdd, 0, false, 1, 0, 0.6 + progress/5);
+		audio_play_sound(sndMeterAdd, 0, false, 1, 0, 0.7 + progress/4);
 	}
 	prev_progress = progress;
 }

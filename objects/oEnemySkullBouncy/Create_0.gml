@@ -9,6 +9,7 @@ image_angle = random(360);
 StateMoving = function() {
 		
 	// Animate
+	image_angle += spin_factor;
 	image_index = sprite_get_number(sprite_index) - 1;
 	
 	// Set up
@@ -19,6 +20,7 @@ StateMoving = function() {
 StateShooting = function() {
 	
 	// Animate
+	image_angle += spin_factor;
 	image_index = DOWN;
 	
 	// Fire on a timer

@@ -1,10 +1,12 @@
 battleGwtSkulls = Battle(
 	oOpponentSkull,
+	oBackgroundStarRise,
 	musLaughingYouOutTheDoor,
-	1,
+	8,
 	NextWave_GwtSkulls,
 	NextEvent_GwtSkulls,
-	FinalEvent_GwtSkulls
+	FinalEvent_GwtSkulls,
+	DeathEvent_GwtSkulls
 );
 
 
@@ -81,6 +83,9 @@ function FinalEvent_GwtSkulls() {
 	ExitBattle();
 }
 
+function DeathEvent_GwtSkulls() {
+	EventText("textBattleGwtSkulls", "death");
+}
 
 
 // Text
@@ -190,4 +195,9 @@ textBattleGwtSkulls = {
 		PausePage(1.5),
 		Page(spkHC, "|V|Huzzaahhhh!!/V/", BATTLE_TEXT_LEFT),
 	],
+	death: [
+		DeathPage(spkHC, "|S|My student.../S/"),
+		DeathPage(spkHC, $"|S|That's alright, {AXEL}. It's okay to make mistakes./S/"),
+		DeathPage(spkHC, "|S|But a great wizard will always get back up again!/S/")
+	]
 }

@@ -7,7 +7,7 @@
 #macro NO_VOICE undefined
 #macro TEXT_PAUSE_VOICE_CHARS ".,!?"
 #macro PAGE_PAUSE_S 2
-#macro fntText global.magic_font
+#macro fntMagic global.magic_font
 
 // Special strings
 #macro AXEL "[Axel]"

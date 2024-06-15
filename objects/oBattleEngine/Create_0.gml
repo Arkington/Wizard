@@ -10,6 +10,7 @@ function init() {
 	// Battle system features
 	battle_struct_name = "battleGwtSkulls";
 	battle_struct = NONE;
+	background = NONE;
 	opponent = NONE;
 	hp_bar = NONE;
 	attack_ui = NONE;

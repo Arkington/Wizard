@@ -1,4 +1,4 @@
-/// @desc Movement and OOB
+/// @desc Movement, momentum, shader
 
 // Velocity
 x += vel_x;
@@ -7,11 +7,6 @@ y += vel_y;
 // Acceleration
 vel_x += acc_x/FPS;
 vel_y += acc_y/FPS;
-
-// Momentum push
-x += p_x;
-y += p_y;
-
 
 // Movement to target
 if (target_x != NONE) {
@@ -25,12 +20,32 @@ if (target_y != NONE) {
 	y += sign(_y_move) * min(abs(_y_move), abs(y - target_y));
 }
 
-if (
-	(x < -sprite_width - OOB_KILL_DIST) or
-	(x > sprite_width + RESOLUTION_W + OOB_KILL_DIST) or
-	(y < sprite_height - OOB_KILL_DIST) or
-	(y > sprite_height + RESOLUTION_H + OOB_KILL_DIST)
-) {
-	ReportEnemyDown(id, false);
-	instance_destroy();
+// Momentum push
+x += p_x;
+y += p_y;
+
+// Momentum decay
+// Weight := the momentum loss in one second
+p_x = sign(p_x)*max(abs(p_x) - weight/FPS, 0);
+p_y = sign(p_y)*max(abs(p_y) - weight/FPS, 0);
+
+// Damage shader
+if (shader_progress <= 1) {
+	switch(shader) {
+		case shDamage:
+			shader_progress += 1/(ENEMY_DAMAGE_SHADER_S*FPS);
+			break;
+
+		case shEnemyDie:
+			shader_progress += 1/(ENEMY_DIE_SHADER_S*FPS);
+			break;
+			
+		case shEnemyWarp:
+			shader_progress += 1/(ENEMY_WARP_SHADER_S*FPS);
+			break;
+			
+		default:
+			shader_progress += 1/FPS;
+			break;
+	}
 }

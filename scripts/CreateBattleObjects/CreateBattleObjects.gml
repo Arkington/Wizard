@@ -17,3 +17,12 @@ function CreateBarrier(_x, _y, _w, _h) {
 	
 	return _barrier;
 }
+
+function CreatePoofCloud(_x, _y) {
+	var _poof_cloud = instance_create_layer(_x, _y, LAYER_INSTANCES, oPoofCloud);
+	with (_poof_cloud) {
+		x = _x;
+		y = _y + POOF_CLOUD_Y_ADJ;
+		depth -= 1; // Display above other instances
+	}
+}

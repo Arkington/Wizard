@@ -1,12 +1,14 @@
 /// @desc Creates Battle() structs.
-function Battle(_opponent, _music, _wave_goal, _next_wave, _next_event, _final_event) {
+function Battle(_opponent, _background, _music, _wave_goal, _next_wave, _next_event, _final_event, _death_event) {
 	return {
 		opponent: _opponent,
+		background: _background,
 		music: _music,
 		wave_goal : _wave_goal,
 		NextWave : _next_wave,
 		NextEvent : _next_event,
 		FinalEvent: _final_event,
+		DeathEvent: _death_event
 	}
 }
 
@@ -16,10 +18,12 @@ function LoadBattle(_battle_struct_name) {
 		var _battle_struct = variable_global_get(_battle_struct_name);
 		battle_struct_name = _battle_struct_name;
 		battle_struct = _battle_struct;
+		background = instance_create_layer(0, 0, LAYER_BATTLE_BACKGROUND, _battle_struct.background);
 		music = _battle_struct.music;
 		NextWave = _battle_struct.NextWave;
 		NextEvent = _battle_struct.NextEvent;
 		FinalEvent = _battle_struct.FinalEvent;
+		DeathEvent = _battle_struct.DeathEvent;
 		wave_goal = _battle_struct.wave_goal;
 	}
 }
@@ -38,9 +42,21 @@ function BattleEngineStorePlayerPosition() {
 	}
 }
 
-/// @desc Reset the Battle Engine to factory settings.
-function BattleEngineReset() {
+/// @desc Reset the Battle Engine to factory settings. Keep any variables in _to_keep unchanged.
+function BattleEngineReset(_vars_to_keep = []) {
+	
+	// Store variables to keep
+	var _to_keep = {};
+	for (var i = 0; i < array_length(_vars_to_keep); i++) {
+		struct_set(_to_keep, _vars_to_keep[i], variable_instance_get(global.battle_engine, _vars_to_keep[i]));
+	}
+	
 	with (global.battle_engine) { init(); }
+	
+	// Re-load deleted variables
+	for (var i = 0; i < array_length(_vars_to_keep); i++) {
+		variable_instance_set(global.battle_engine, _vars_to_keep[i], struct_get(_to_keep, _vars_to_keep[i]));
+	}	
 }
 
 
@@ -126,10 +142,41 @@ function CreateBreakWheel(_buttons, _victory) {
 }
 
 function HideOpponent() {
-	with (pOpponent) { hidden = true; }
+	with (pOpponent) {
+		hidden = true;
+		hittable = false;
+	}
 }
 function ShowOpponent() {
-	with (pOpponent) { hidden = false; }
+	with (pOpponent) {
+		hidden = false;
+		hittable = true;
+	}
+}
+
+
+/// @desc Resets an Enemy to factory settings.
+function ResetEnemy(_enemy) {
+	with (_enemy) {
+		vel_x = 0;
+		vel_y = 0;
+		acc_x = 0;
+		acc_y = 0;
+		p_x = 0;
+		p_y = 0;
+		target_speed = 0;
+	}
+}
+
+/// @desc Returns an array of all non-dead enemies.
+function GetActiveEnemies() {
+	var _enemies = [];
+	var _n_enemies = instance_number(pEnemy);
+	for (var i = 0; i < _n_enemies; i++) {
+		var _enemy = instance_find(pEnemy, i);
+		if (!_enemy.dead) { array_push(_enemies, _enemy); }
+	}
+	return _enemies;
 }
 
 /// @desc Stop everything in a battle from moving
@@ -140,15 +187,7 @@ function HaltBattle() {
 	with (pWave) {
 		halted = true; // Halts step function
 	}
-	with (pEnemy) {
-		vel_x = 0;
-		vel_y = 0;
-		acc_x = 0;
-		acc_y = 0;
-		p_x = 0;
-		p_y = 0;
-		target_speed = 0;
-	}
+	ResetEnemy(pEnemy);
 	with (pBullet) {
 		speed = 0;
 	}
@@ -204,6 +243,8 @@ function DeathSequence() {
 	EventCoreDeath(); // This thing handles flying backwards and falling to the ground
 	WaitForEvents();
 	EventWait(1);
+	with (global.battle_engine) { DeathEvent(); } // Run the death event for the battle
+	WaitForEvents();
 	EventPlayMusic(musItsOkayToMakeMistakes);
 	EventCreate(MID_X, GAME_OVER_Y, LAYER_INSTANCES, oRetryMenu);
 }
@@ -211,7 +252,7 @@ function DeathSequence() {
 /// @desc Sequence triggered after clicking retry
 function RetrySequence() {
 	var _battle_struct_name = global.battle_engine.battle_struct_name;
-	BattleEngineReset();
+	BattleEngineReset(["room_prev", "x_prev", "y_prev", "face_prev"]);
 	
 	EventStopMusic(true, 1.5);
 	WaitForEvents();
@@ -231,4 +272,31 @@ function QuitSequence() {
 	WaitForEvents();
 	EventWait(1);
 	EventCode(game_end);
+}
+
+
+/// @desc Check if an object is in battle view, ie in (0,0) to (RESOLUTION_W, RESOLUTION_H).
+function IsInBattleView(_obj) {
+	var _x0 = _obj.x - sprite_get_xoffset(_obj.sprite_index);
+	var _y0 = _obj.y - sprite_get_yoffset(_obj.sprite_index);
+	var _w = sprite_get_width(_obj.sprite_width);
+	var _h = sprite_get_height(_obj.sprite_height);
+	
+	var _to_check = [
+		[_x0, _y0],
+		[_x0 + _w, _y0],
+		[_x0, _y0 + _h],
+		[_x0 + _w, _y0 + _h],
+	]
+	for (var i = 0; i < 4; i++) {
+		if point_in_rectangle(
+			_to_check[i][0],
+			_to_check[i][1],
+			0,
+			0,
+			RESOLUTION_W,
+			RESOLUTION_H
+		) { return true; }
+	}
+	return false;
 }

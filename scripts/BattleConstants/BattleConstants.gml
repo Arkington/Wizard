@@ -1,5 +1,5 @@
 // Full-battle
-#macro OOB_KILL_DIST 64
+#macro OOB_KILL_DIST 16
 
 
 // Core
@@ -22,7 +22,9 @@
 #macro HOVER_ATTACK_SCALE 2
 #macro HOVER_ATTACK_SPEED 0.2
 
-#macro STUN_FRAMES 60
+// Attacks
+#macro ATTACK_DIR_VAR 2
+#macro STUN_FRAMES 90
 
 // Break buttons
 #macro BUTTON_READY "Ready"
@@ -37,16 +39,22 @@
 #macro BREAK_BUTTON_HOVER_SPEED 0.1
 
 // Enemies
+#macro ENEMY_DAMAGE_SHADER_S 0.5
+#macro ENEMY_DIE_SHADER_S 0.3
+#macro ENEMY_WARP_SHADER_S 0.35
 #macro ENEMY_DOWN -1
-#macro ENEMY_MAX_P 2
+#macro ENEMY_MAX_P 5
 #macro ENEMY_BUMP_RADIUS 4
 #macro ENEMY_BUMP_DIR_VAR 2
 #macro ENEMY_BUMP_P 0.5
 
+// Bullets
+#macro BULLET_FIZZLE_S 0.3
+
 
 // Engine
-#macro COOLOFF_FRAMES_BETWEEN_CLEAR 2
-#macro COOLOFF_MIN_TIME_S 0.8
+#macro COOLOFF_FRAMES_BETWEEN_CLEAR 4
+#macro COOLOFF_MIN_TIME_S 1.7
 
 // Bullet box
 #macro BB_X 168
@@ -67,8 +75,10 @@
 #macro METER_LEN 80
 
 // Opponent
-#macro OPPONENT_Y 40
+#macro OPPONENT_Y 96
 #macro OPPONENT_FADE_SPEED 0.05
+#macro OPPONENT_HIT_DIR_VAR 30
+#macro OPPONENT_MAGNET_FACTOR 1/20
 
 // Get em
 #macro GET_EM_X 24
@@ -77,7 +87,8 @@
 #macro GET_EM_H 56
 #macro TIME_WARNING_S 5
 
-// Retry Menu
+// Game Over and Retry Menu
+#macro DEATH_TEXT_Y 72
 #macro GAME_OVER_Y 72
 #macro GAME_OVER_FADE_IN_TIME 1.22448
 #macro GAME_OVER_TIME_TO_BUTTONS_S 2.44897 // 1 bar of music
@@ -94,6 +105,9 @@
 #macro RETRY_BUTTON_HOVER_SCALE 1.5
 #macro RETRY_BUTTON_HOVER_SPEED 0.1
 
+// Battle object constance
+#macro POOF_CLOUD_Y_ADJ 5
+
 
 // Technical constants
-#macro FRAMES_BETWEEN_CLEAN 1*FPS // Clear stale enemies every this number of frames
+#macro FRAMES_BETWEEN_CLEAN 1*FPS
