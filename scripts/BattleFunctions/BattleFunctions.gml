@@ -142,10 +142,16 @@ function CreateBreakWheel(_buttons, _victory) {
 }
 
 function HideOpponent() {
-	with (pOpponent) { hidden = true; }
+	with (pOpponent) {
+		hidden = true;
+		hittable = false;
+	}
 }
 function ShowOpponent() {
-	with (pOpponent) { hidden = false; }
+	with (pOpponent) {
+		hidden = false;
+		hittable = true;
+	}
 }
 
 

@@ -13,7 +13,7 @@ uniform vec2 uv_dim;
 
 void main()
 {
-	float radius = 0.8*(1.0 - progress)*uv_dim.x; // Arbitratily use the u-axis for scale (since u/v axes aren't normalized)
+	float radius = max(0.8*(1.0 - progress)*uv_dim.x, 0.000001); // Arbitratily use the u-axis for scale (since u/v axes aren't normalized)
 	// The closer to the radius, the more purple
 	
     vec4 pix = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
@@ -30,7 +30,7 @@ void main()
 	float d_factor_green = pow(min(d/radius, radius/d), 0.5);
 	float d_factor_blue = pow(min(d/radius, radius/d), 2.0);
 	
-	pix.r = progress*pix.r + (1.0 - progress)*(pix.r*(1.0 - 0.75 - 0.25*d_factor_blue) + 0.75 - 0.5*d_factor_blue); // Make a more red
+	pix.r = progress*pix.r + (1.0 - progress)*(pix.r*(1.0 - 0.75 - 0.25*d_factor_blue) + 0.75 - 0.25*d_factor_blue); // Make a more red
 	pix.g = progress*pix.g + (1.0 - progress)*(0.5*pix.g*(1.0 - d_factor_blue)); // Make less green
 	pix.b = progress*pix.b + (1.0 - progress)*(0.5*pix.b*(1.0 - 0.25*d_factor_blue) + 0.25*d_factor_blue); // Make less blue but more near radius
 	

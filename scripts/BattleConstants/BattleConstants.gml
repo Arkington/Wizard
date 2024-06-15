@@ -22,7 +22,9 @@
 #macro HOVER_ATTACK_SCALE 2
 #macro HOVER_ATTACK_SPEED 0.2
 
-#macro STUN_FRAMES 60
+// Attacks
+#macro ATTACK_DIR_VAR 2
+#macro STUN_FRAMES 90
 
 // Break buttons
 #macro BUTTON_READY "Ready"
@@ -41,7 +43,7 @@
 #macro ENEMY_DIE_SHADER_S 0.3
 #macro ENEMY_WARP_SHADER_S 0.35
 #macro ENEMY_DOWN -1
-#macro ENEMY_MAX_P 2
+#macro ENEMY_MAX_P 5
 #macro ENEMY_BUMP_RADIUS 4
 #macro ENEMY_BUMP_DIR_VAR 2
 #macro ENEMY_BUMP_P 0.5
@@ -52,7 +54,7 @@
 
 // Engine
 #macro COOLOFF_FRAMES_BETWEEN_CLEAR 4
-#macro COOLOFF_MIN_TIME_S 1.2
+#macro COOLOFF_MIN_TIME_S 1.7
 
 // Bullet box
 #macro BB_X 168
@@ -73,8 +75,10 @@
 #macro METER_LEN 80
 
 // Opponent
-#macro OPPONENT_Y 40
+#macro OPPONENT_Y 96
 #macro OPPONENT_FADE_SPEED 0.05
+#macro OPPONENT_HIT_DIR_VAR 30
+#macro OPPONENT_MAGNET_FACTOR 1/20
 
 // Get em
 #macro GET_EM_X 24

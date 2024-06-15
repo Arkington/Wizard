@@ -99,6 +99,7 @@ function CoreShiftToBreak() {
 
 
 function CoreStateBreak() {
+
 	CoreMove(CORE_MOVE_SPEED);
 }
 

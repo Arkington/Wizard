@@ -28,6 +28,7 @@ function Bubblegums_LeaveWarpTile() {
 		WaitForEvents();
 		// Sneak Axel back in
 		EventWarp(oPlayer, LARGE, LARGE);
+		WaitForEvents();
 		EventObjectFade(IN, oPlayer, 1);
 		EventWait(0.75);
 		EventTransition(target_room, target_x, target_y, target_face, transition_type);

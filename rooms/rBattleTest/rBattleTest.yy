@@ -28,8 +28,8 @@
   ],
   "name":"rBattleTest",
   "parent":{
-    "name":"Rooms Battle",
-    "path":"folders/Rooms Battle.yy",
+    "name":"Test Rooms",
+    "path":"folders/Test Rooms.yy",
   },
   "parentRoom":{
     "name":"rBattleParent",

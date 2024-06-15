@@ -1,4 +1,4 @@
-/// @desc Movement and shader
+/// @desc Movement, momentum, shader
 
 // Velocity
 x += vel_x;
@@ -7,11 +7,6 @@ y += vel_y;
 // Acceleration
 vel_x += acc_x/FPS;
 vel_y += acc_y/FPS;
-
-// Momentum push
-x += p_x;
-y += p_y;
-
 
 // Movement to target
 if (target_x != NONE) {
@@ -25,8 +20,17 @@ if (target_y != NONE) {
 	y += sign(_y_move) * min(abs(_y_move), abs(y - target_y));
 }
 
+// Momentum push
+x += p_x;
+y += p_y;
+
+// Momentum decay
+// Weight := the momentum loss in one second
+p_x = sign(p_x)*max(abs(p_x) - weight/FPS, 0);
+p_y = sign(p_y)*max(abs(p_y) - weight/FPS, 0);
+
 // Damage shader
-if (shader_progress < 1) {
+if (shader_progress <= 1) {
 	switch(shader) {
 		case shDamage:
 			shader_progress += 1/(ENEMY_DAMAGE_SHADER_S*FPS);

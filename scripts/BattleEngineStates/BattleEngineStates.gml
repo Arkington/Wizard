@@ -11,7 +11,7 @@ function BattleEngineStateAwaiting() {
 		hp_bar = instance_create_layer(HP_X, HP_Y, LAYER_BATTLE_GUI, oHP);
 		attack_ui = instance_create_layer(0, 0, LAYER_BATTLE_GUI, oAttackUI);
 		meter = instance_create_layer(METER_X, METER_Y, LAYER_BATTLE_GUI, oMeter);
-		opponent = instance_create_layer(0, 0, LAYER_BATTLE_GUI, battle_struct.opponent);
+		opponent = instance_create_layer(MID_X, OPPONENT_Y, LAYER_BATTLE_GUI, battle_struct.opponent);
 		BattleEngineShiftToCutscene();
 	}
 }

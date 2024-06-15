@@ -1,7 +1,7 @@
 /// @desc
 if (live_call()) return live_result;
 
-shader = TEST_SHADER;
+shader = shDamage;
 
 active = false;
 shader_progress = 0;
