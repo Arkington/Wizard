@@ -1,6 +1,6 @@
 battleGwtSkulls = Battle(
 	oOpponentSkull,
-	oBackgroundStarRise,
+	oBackgroundSkulls,
 	musLaughingYouOutTheDoor,
 	8,
 	NextWave_GwtSkulls,

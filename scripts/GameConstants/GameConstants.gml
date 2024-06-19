@@ -7,4 +7,4 @@
 #macro VIEWPORT_RATIO 3
 #macro FPS 60
 
-#macro ROOM_START rGreatWizardGate
+#macro ROOM_START rBattleTest

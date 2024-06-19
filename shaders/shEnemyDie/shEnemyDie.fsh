@@ -18,7 +18,6 @@ void main()
 {
     // Deduce the UV-coords of each pixel after the image splits
     vec2 split_coord = vec2(
-        //uv_mid.x + (v_vTexcoord.x - uv_mid.x)*image_scale,
 		uv_mid.x + (v_vTexcoord.x - uv_mid.x)*image_scale,
 		uv_mid.y + (v_vTexcoord.y - uv_mid.y)*image_scale
 	);

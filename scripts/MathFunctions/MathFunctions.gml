@@ -1,3 +1,9 @@
+// Returns 1 or -1.
+function coin_flip() {
+	if (random(1) < 0.5) { return -1; }
+	return 1;
+}
+
 /*
 	t: Current time
 	T: Total time

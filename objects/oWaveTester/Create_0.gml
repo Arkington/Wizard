@@ -2,11 +2,12 @@
 if (live_call()) return live_result;
 
 test_wave = oWaveSkullsSpaceInvaders;
+test_background = oBackgroundSkulls;
 
 // Stuff and stuff
 global.wave_test = Battle(
 	oOpponentSkull,
-	oBackgroundStarRise,
+	test_background,
 	musNoMusicFound,
 	5,
 	function() { return test_wave; },

@@ -12,7 +12,7 @@ if (time_remaining_s <= TIME_WARNING_S and !wave.over and time_remaining % (FPS/
 }
 
 // Alarm noise
-if (wave.over and !over) {
+if (wave.over and !wave.clear and !over) {
 	audio_play_sound(sndTickAlarm, 0, false);
 	over = true;
 }

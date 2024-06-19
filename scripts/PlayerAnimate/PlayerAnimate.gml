@@ -1,7 +1,5 @@
 /// @desc Animate the player based on movement and direction. Requires: local_frame, x_speed, y_speed.
 
-if (live_call()) return live_result;
-
 function PlayerAnimate() {
 
 	// When stopped

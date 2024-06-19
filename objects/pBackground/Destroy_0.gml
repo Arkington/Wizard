@@ -1,0 +1,2 @@
+// Free background surface
+FreeBackgroundSurface();

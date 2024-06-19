@@ -8,8 +8,7 @@ attribute vec2 in_TextureCoord;              // (u,v)
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 uniform float progress;                      // Progress of the fizzle effect (in [0, 1])
-uniform float mid_x;
-uniform float mid_y;
+uniform vec2 mid_pt;
 
 const float max_scale = 2.5;      // Maximum displacement ratio for the fizzle effect
 varying float image_scale;
@@ -21,10 +20,9 @@ void main()
 	adj_scale = (max_scale - 1.0)*progress; // in [0, max_scale - 1.0] because 1.0 of the final width is reserved for the actual sprite
 	image_scale = (1.0 - progress) + max_scale*progress; // in [1, max_scale] because the image needs to be max_scale by the end
 
-	//vec4 object_space_pos = vec4(in_Position.xyz, 1.0);
     vec4 object_space_pos = vec4(
-		mid_x - image_scale*(mid_x - in_Position.x),
-		in_Position.y,
+		mid_pt.x - image_scale*(mid_pt.x - in_Position.x),
+		mid_pt.y - image_scale*(mid_pt.y - in_Position.y),
 		in_Position.z,
 		1.0
 	);

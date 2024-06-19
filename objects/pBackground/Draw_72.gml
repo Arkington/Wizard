@@ -1,4 +1,5 @@
-/// @desc Draw background colour
+/// @desc Draw
+// We are in Draw Begin so as to go before the application_surface
 draw_rectangle_color(
 	0,
 	0,
@@ -6,3 +7,4 @@ draw_rectangle_color(
 	RESOLUTION_H,
 	colour, colour, colour, colour, false
 )
+DrawBackgroundSurface();
