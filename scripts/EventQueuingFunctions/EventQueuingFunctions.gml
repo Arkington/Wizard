@@ -235,7 +235,7 @@ function EventAnimation(
 }
 
 /// @desc Queue a transition
-function EventTransition(_target_room, _target_x = NONE, _target_y = NONE, _target_face = NONE, _transition_type = oTransitionFade) {
+function EventTransition(_target_room, _target_x = NONE, _target_y = NONE, _target_face = NONE, _transition_type = oTransitionFade, _complete_mid_transition = false) {
 	_event = instance_create_layer(0, 0, LAYER_MECHANICS, oEventTransition);
 	with (_event) {
 		target_room = _target_room;
@@ -243,6 +243,7 @@ function EventTransition(_target_room, _target_x = NONE, _target_y = NONE, _targ
 		target_y = _target_y;
 		target_face = _target_face;
 		transition_type = _transition_type;
+		complete_mid_transition = _complete_mid_transition;
 	}
 	QueueEvent(_event);
 }

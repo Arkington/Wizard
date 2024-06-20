@@ -54,7 +54,7 @@
 
 // Engine
 #macro COOLOFF_FRAMES_BETWEEN_CLEAR 4
-#macro COOLOFF_MIN_TIME_S 1.7
+#macro COOLOFF_MIN_TIME_S 1.2
 
 // Bullet box
 #macro BB_X 168

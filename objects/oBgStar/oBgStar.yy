@@ -8,8 +8,8 @@
   "name":"oBgStar",
   "overriddenProperties":[],
   "parent":{
-    "name":"Background Objects and Sprites",
-    "path":"folders/Battle System/Backgrounds/Background Objects and Sprites.yy",
+    "name":"Unused",
+    "path":"folders/Backgrounds/Unused.yy",
   },
   "parentObjectId":null,
   "persistent":false,

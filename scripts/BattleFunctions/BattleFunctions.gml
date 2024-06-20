@@ -208,7 +208,7 @@ function EnterBattle(_battle_struct_name) {
 	WaitForEvents();
 	EventSound(sndAtkShift);
 	EventWait(1);
-	EventTransition(rBattleParent);
+	EventTransition(rBattleParent, NONE, NONE, NONE, oTransitionFade, true);
 	WaitForEvents();
 	EventCoreState(CoreStateFree);
 	EventCode(function() { oCore.persistent = false; });

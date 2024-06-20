@@ -42,8 +42,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Background Objects and Sprites",
-    "path":"folders/Battle System/Backgrounds/Background Objects and Sprites.yy",
+    "name":"Unused",
+    "path":"folders/Backgrounds/Unused.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

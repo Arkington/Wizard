@@ -7,3 +7,4 @@ target_face = 0;
 kill_player = false;
 transition_type = noone;
 transition_object = noone;
+complete_mid_transition = false;

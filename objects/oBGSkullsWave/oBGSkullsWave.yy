@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oBackgroundStarRise",
+  "%Name":"oBGSkullsWave",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oBackgroundStarRise",
+  "name":"oBGSkullsWave",
   "overriddenProperties":[],
   "parent":{
-    "name":"Unused",
-    "path":"folders/Backgrounds/Unused.yy",
+    "name":"Background Skulls",
+    "path":"folders/Backgrounds/Background Skulls.yy",
   },
-  "parentObjectId":{
-    "name":"pBackground",
-    "path":"objects/pBackground/pBackground.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sRectangle",
+    "path":"sprites/sRectangle/sRectangle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

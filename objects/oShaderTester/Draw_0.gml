@@ -10,7 +10,6 @@ if (active and shader_progress > 0) {
 	
 	// Set shader variables
 	SetShaderUniforms();
-	print(current_time/1000);
 	draw_self();
 	shader_reset();
 } else {

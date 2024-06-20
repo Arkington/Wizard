@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Backgrounds",
-    "path":"folders/Battle System/Backgrounds.yy",
+    "path":"folders/Backgrounds.yy",
   },
   "parentObjectId":null,
   "persistent":false,

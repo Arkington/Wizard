@@ -12,7 +12,9 @@ function DrawBackgroundSurface() {
 	if !surface_exists(global.BACKGROUND_SURFACE) {
 		global.BACKGROUND_SURFACE = surface_create(RESOLUTION_W, RESOLUTION_H);
 	}
-	//shader_set(shPixelateScreen);
+	if (live_call()) return live_result;
+	shader_set_live(shPixelateScreen, true);
+	shader_set(shPixelateScreen);
 	draw_surface(global.BACKGROUND_SURFACE, 0, 0);
 	shader_reset();
 	
@@ -25,4 +27,5 @@ function DrawBackgroundSurface() {
 
 function FreeBackgroundSurface() {
 	surface_free(global.BACKGROUND_SURFACE);
+	global.BACKGROUND_SURFACE = -1;
 }

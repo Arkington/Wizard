@@ -13,3 +13,7 @@ function ColourGradient(t, phase1 = 0, phase2 = 120, phase3 = 240, center = 128,
 	var _b = dsin(t + phase3) * width + center;
 	return make_color_rgb(_r, _g, _b);
 }
+
+function HSVColour(h, s, v) {
+	return make_color_hsv(h*255/360, s*255/100, v*255/100);
+}

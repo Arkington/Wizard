@@ -41,6 +41,7 @@ function NextEvent_GwtSkulls() {
 			mentioned_space_invaders: false,
 			many_fails: false,
 		}
+		EventWait(1);
 		EventText("textBattleGwtSkulls", "init");
 		WaitForEvents();
 		EventPlayMusic(music);
