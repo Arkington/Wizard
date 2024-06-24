@@ -24,7 +24,7 @@ function string_contains(_substr, _str) {
 
 
 /// @desc Combo function to set text drawing parameters.
-function draw_set_text(_font = fntText, _color = c_white, _halign = fa_left, _valign = fa_top) {
+function draw_set_text(_font = fntMagic, _color = c_white, _halign = fa_left, _valign = fa_top) {
 	draw_set_font(_font);
 	draw_set_color(_color);
 	draw_set_halign(_halign);

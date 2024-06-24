@@ -1,3 +1,5 @@
+if (live_call()) return live_result;
+
 // Get 9-slice params
 var _box_nineslice = sprite_get_nineslice(sprite_index);
 var _nineslide_adj = _box_nineslice.left - _box_nineslice.right;
@@ -10,7 +12,7 @@ draw_sprite_stretched(
 	2,
 	x,
 	y,
-	_nineslide_adj + HP_LEN,
+	_nineslide_adj + hp_len,
 	sprite_height
 );
 
@@ -20,7 +22,7 @@ draw_sprite_stretched(
 	1,
 	x,
 	y,
-	_nineslide_adj + HP_LEN*_drain_frac,
+	_nineslide_adj + hp_len*_drain_frac,
 	sprite_height
 );
 
@@ -31,7 +33,7 @@ draw_sprite_stretched(
 	0,
 	x,
 	y,
-	_nineslide_adj + HP_LEN*_hp_frac,
+	_nineslide_adj + hp_len*_hp_frac,
 	sprite_height
 );
 
@@ -39,7 +41,7 @@ draw_sprite_stretched(
 // Draw HP text
 draw_set_text(fntText, WHITE, fa_left, fa_top);
 draw_text_transformed(
-	x + HP_LEN - 4,
+	x + hp_len - 5,
 	y + _box_nineslice.top,
 	$"{global.hp}/{global.max_hp}",
 	1/3,

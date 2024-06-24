@@ -1,7 +1,4 @@
 /// @desc Horizontal line effect
-
-if (live_call()) return live_result;
-
 TargetBackgroundSurface();
 for (var i = 0; i < RESOLUTION_H; i++) {
 	if !(i % 4 == 0) { continue; }

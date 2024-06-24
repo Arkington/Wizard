@@ -1,5 +1,3 @@
-if (live_call()) return live_result;
-
 // Background colour
 oscillator = power(sin(current_time/1000)/5, 64);
 colour = HSVColour(250, 100 - 24*oscillator, 16 + 24*oscillator)
