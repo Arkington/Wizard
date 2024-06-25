@@ -3,6 +3,7 @@
   "%Name":"oAttackSoulFlame",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"oAttackSoulFlame",
@@ -14,8 +15,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"knockback","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.4",},
   ],
   "parent":{
-    "name":"Attacks",
-    "path":"folders/Battle System/Attacks.yy",
+    "name":"SoulFlame",
+    "path":"folders/Battle System/Attacks/SoulFlame.yy",
   },
   "parentObjectId":{
     "name":"pAttack",

@@ -9,8 +9,8 @@
   "name":"oFinalSoulFlame",
   "overriddenProperties":[],
   "parent":{
-    "name":"Final Attacks",
-    "path":"folders/Battle System/Attacks/Final Attacks.yy",
+    "name":"SoulFlame",
+    "path":"folders/Battle System/Attacks/SoulFlame.yy",
   },
   "parentObjectId":null,
   "persistent":false,

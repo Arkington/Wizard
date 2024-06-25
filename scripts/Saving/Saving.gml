@@ -7,15 +7,17 @@ function SaveFileName(i) {
 /// @desc oPlayer must be on-screen in order to save.
 function SaveGame(_slot) {
 
-	// oPlayer must be onscreen to save
+	// Saving without oPlayer
 	if !instance_exists(oPlayer) {
-		show_debug_message("Save failed: Player is not present.");
-		return false;
+		show_debug_message("Player is not present, but saving anyway...");
+		struct_set(global.state, "x", -1);
+		struct_set(global.state, "y", -1);
+	} else {
+		struct_set(global.state, "x", oPlayer.x);
+		struct_set(global.state, "y", oPlayer.y);
 	}
 
 	// Adding additional "on-save" data to State
-	struct_set(global.state, "x", oPlayer.x);
-	struct_set(global.state, "y", oPlayer.y);
 	struct_set(global.state, "room", room);
 
 	// Save state JSON to file selected

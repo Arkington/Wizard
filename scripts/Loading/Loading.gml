@@ -1,5 +1,8 @@
 function LoadGame(_slot) {
 
+	// Remove existing players
+	with (oPlayer) { instance_destroy(); }
+
 	var _file = SaveFileName(_slot);
 	if (file_exists(_file)) {
 
@@ -15,6 +18,7 @@ function LoadGame(_slot) {
 		// Position player
 		room_goto(_save_data.room);
 	
+		// Loading player data
 		with oPlayer {
 			x = _save_data.x;
 			y = _save_data.y;

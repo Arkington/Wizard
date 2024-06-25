@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Attack Sprites",
-    "path":"folders/Battle System/Attacks/Attack Sprites.yy",
+    "name":"SoulFlame",
+    "path":"folders/Battle System/Attacks/SoulFlame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
