@@ -28,15 +28,20 @@ function Page(_speaker, _text, _textbox_params = {}) {
     }
 }
 
-function BattlePage(_speaker, _text, _pos, _textbox_params = {}) {
+/// @desc Special page with parameters for the Retry screen
+function DeathPage(_speaker, _text, _textbox_params = {}) {
 
-	var _battle_page_params = {};
+	var _death_page_params = {
+		textbox_sprite: NONE,
+		portrait : NO_PORTRAIT,
+		screenpos_y : DEATH_TEXT_Y
+	};
 
 	// Speaker params added to textbox
     return {
 		type: PAGE_TYPE.NORMAL,
         text: _text,
-        textbox_params: struct_merge(_speaker, struct_merge(_textbox_params, _battle_page_params)),
+        textbox_params: struct_merge(_speaker, struct_merge(_textbox_params, _death_page_params)),
     }
 }
 

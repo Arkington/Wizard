@@ -4,7 +4,7 @@
 // randomize();
 global.debug = false;
 global.fullscreen = false;
-global.magic_font = font_add_sprite(sMagicFont2, 32, true, 2);
+global.magic_font = font_add_sprite(sMagicFont, 32, true, 2);
 
 // Visual init
 display_set_gui_size(RESOLUTION_W,RESOLUTION_H);

@@ -51,8 +51,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Battle",
-    "path":"folders/Sprites/Battle.yy",
+    "name":"Battle UI",
+    "path":"folders/Sprites/Battle/Battle UI.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

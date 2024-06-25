@@ -12,7 +12,7 @@ pitch_variance = 0;
 
 // Sprites
 textbox_sprite = sMenubox;
-textbox_font = fntText;
+textbox_font = fntMagic;
 fade_in = true;
 portrait_border_sprite = sPortraitBorder;
 portrait_border_width = 4;

@@ -1,5 +1,3 @@
-/// @arg _magnitude sets the strength of the shake (distance range)
-/// @arg _frames sets the length of the shake in frames
 function ShakeCamera(_magnitude, _shake_time){
 	with (global.camera) {
 		if (_magnitude > shake_remain_x) {
@@ -12,9 +10,6 @@ function ShakeCamera(_magnitude, _shake_time){
 	}
 }
 
-/// @arg _magnitude sets the strength of the shake (distance range)
-/// @arg _frames sets the length of the shake in frames
-/// @arg {Bool} _smooth determines smooth shake or not
 function ShakeCameraX(_magnitude, _shake_time, _smooth = true){
 	with (global.camera) {
 		if (_magnitude > shake_remain_x) {

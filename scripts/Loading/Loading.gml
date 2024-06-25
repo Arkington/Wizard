@@ -6,7 +6,7 @@ function LoadGame(_slot) {
 		// Reset the handlers
 		ClearEventHandler();
 		ClearTextHandler();
-		EndBattle();
+		BattleEngineReset();
 		
 		// Load the game data
 		var _save_data = LoadJSONFromFile(_file);

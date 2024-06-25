@@ -3,6 +3,10 @@
 global.initial_state = {
 	
 	// Lower Bizzaire
+	AXEL_TREEHOUSE_INT_DRAWERS : false,
+	AXEL_TREEHOUSE_INT_BED : false,
+	AXEL_TREEHOUSE_INT_APPLE_TAKEN: false,
+	AXEL_TREEHOUSE_INT_NECKLACE_TAKEN: false,
 	BUBBLEGUM_GREETED : false,
 	BUBBLEGUM_INVITATION_DECLINED : false,
 	BUBBLEGUM_CHAT_COMPLETE : false,
@@ -11,6 +15,7 @@ global.initial_state = {
 	GWG_OPEN : false,
 	GWC_WISH_MADE : NONE,
 	GWC_GW_DIALOGUE : NONE,
+	GWC_GECKO_FIGHT: false,
 }
 
 global.state = struct_copy(global.initial_state);

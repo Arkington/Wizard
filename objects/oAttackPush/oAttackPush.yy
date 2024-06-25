@@ -11,7 +11,7 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"damage","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"fire_sfx","path":"objects/pAttack/pAttack.yy",},"resource":{"name":"sndAtkFire","path":"sounds/sndAtkFire/sndAtkFire.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sndAtkFire",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"hit_sfx","path":"objects/pAttack/pAttack.yy",},"resource":{"name":"sndAtkHit","path":"sounds/sndAtkHit/sndAtkHit.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sndAtkHit",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"knockback","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"pAttack","path":"objects/pAttack/pAttack.yy",},"propertyId":{"name":"knockback","path":"objects/pAttack/pAttack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
   ],
   "parent":{
     "name":"Attacks",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"shader_replace_simple_macros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shader_replace_simple_macros",
+  "parent":{
+    "name":"GMLive",
+    "path":"folders/GMLive.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

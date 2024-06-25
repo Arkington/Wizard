@@ -1,7 +1,10 @@
 /// @desc Hit by bullet
 if (global.hp <= 0) { exit; }
-
 var _bullet = other;
+if (!_bullet.active) { exit; } // Inactive (eg fizzling) bullets can't hit player
+
+// Shake
+ShakeCamera(2, 20);
 
 // Damage
 CoreDamage(_bullet.damage);

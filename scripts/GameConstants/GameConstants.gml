@@ -7,5 +7,4 @@
 #macro VIEWPORT_RATIO 3
 #macro FPS 60
 
-#macro ROOM_START rCaveCloset
-#macro BATTLE_TEST_WAVE oWaveSkullsCircle
+#macro ROOM_START rGreatWizardGate
