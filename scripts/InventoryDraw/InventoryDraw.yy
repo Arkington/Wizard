@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"InventoryDraw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InventoryDraw",
+  "parent":{
+    "name":"Inventory",
+    "path":"folders/Inventory.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

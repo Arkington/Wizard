@@ -2,13 +2,16 @@ if (live_call()) return live_result;
 
 // Item select
 item_select = NONE;
-if (selector.loc == INV_SELECTOR_LOC.MAIN and selector.pos < n_items) {
+if ((selector.loc == INV_SELECTOR_LOC.MAIN or selector.loc == INV_SELECTOR_LOC.INFO) and selector.pos < n_items) {
 	item_select = selector.pos;
 }
 
-if keyboard_check_pressed(vk_space) {
-	highlighted_tab++;
-	if highlighted_tab > INV_N_TABS - 1 {
-		highlighted_tab = 0;
-	}
+// HP bar display
+if (tab == TABS.ITEMS and hp == NONE) {
+	hp = instance_create_layer(x + hp_x, y + hp_y, LAYER_TEXT, oHP);
+	hp.hp_len = INV_HP_LEN;
+	hp.depth -= 1;
+} else if (tab != TABS.ITEMS and hp != NONE) {
+	instance_destroy(hp);
+	hp = NONE;
 }

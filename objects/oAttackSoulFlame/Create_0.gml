@@ -1,3 +1,5 @@
+if (live_call()) return live_result;
+
 // Inherit the parent event
 event_inherited();
 
@@ -11,22 +13,26 @@ baby_phase = false;
 post_create = function() {
 	
 	// Burst effect
-	burst = instance_create_depth(x, y, layer, oSoulFlameBurst);
+	burst = instance_create_layer(x, y, layer, oSoulFlameBurst);
 	burst.image_angle = image_angle;
 }
 
 
+particle_var = 1;
+angle_var = 1000;
+
 on_hit = function(_enemy) {
 	
 	// Scatter particles
-	var _n_particles = irandom_range(2, 4);
+	var _n_particles = irandom_range(3, 4);
 	for (var i = 0; i < _n_particles; i++) {
-		instance_create_layer(
-			_enemy.x + random_range(-4, 4),
-			_enemy.y + random_range(-4, 4),
+		var _p = instance_create_layer(
+			x,
+			y,
 			layer,
 			oSoulFlameParticle
 		)
+		_p.direction = direction + rnorm(0, angle_var);
 	}
 	
 	instance_destroy();

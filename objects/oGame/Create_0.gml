@@ -4,6 +4,7 @@
 // randomize();
 global.debug = false;
 global.fullscreen = false;
+global.little_pixels = font_add_sprite(sLittlePixelsFont, 32, true, 1); 
 global.magic_font = font_add_sprite(sMagicFont, 32, true, 2);
 
 // Visual init

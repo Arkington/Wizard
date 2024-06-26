@@ -6,12 +6,13 @@ enum ITEM_TYPE {
 }
 
 // Item struct
-function Item(_name, _sprite, _type, _desc, _quote) {
+function Item(_name, _sprite, _type, _desc_1, _desc_2, _quote) {
     return {
         name: _name,
 		sprite: _sprite,
 		type: _type,
-		desc: _desc,
+		desc_1: _desc_1,
+		desc_2: _desc_2,
 		quote: _quote,
     }
 }
@@ -23,7 +24,8 @@ function InitItems() {
 		"Grapes",
 		sItemGrapes,
 		ITEM_TYPE.CONSUME,
-		"Some grapes you brought for lunch. Restores 4 HP.",
+		"Some grapes you brought for lunch.",
+		"Restores 4 HP.",
 		"Also good for throwing at people!"
 	)
 
@@ -31,7 +33,8 @@ function InitItems() {
 		"Bubble Wrap",
 		sItemBubbleWrap,
 		ITEM_TYPE.CONSUME,
-		"Magical wrapping paper enchanted with pockets of air. Restores 10 HP.",
+		"Magical wrapping paper enchanted with pockets of air.",
+		"Restores 10 HP.",
 		"I like the noise it makes!"
 	)
 
@@ -39,7 +42,8 @@ function InitItems() {
 		"Lucky Spinner",
 		sItemLuckySpinner,
 		ITEM_TYPE.CONSUME,
-		"A spinner made out of cardboard and wire. Restores 1-20 HP.",
+		"A spinner made out of cardboard and wire.",
+		"Restores 1-20 HP.",
 		"I wonder what I'll get?"
 	)
 
@@ -72,7 +76,8 @@ function InitItems() {
 		"Bead Necklace",
 		sItemBeadNecklace,
 		ITEM_TYPE.EQUIP,
-		"A necklace with small wooden beads threaded through. Restores 1 HP if you don't take damage during a turn.",
+		"A necklace with small wooden beads threaded through.",
+		"Restores 1 HP if you don't take damage during a turn.",
 		"I just like the way it feels."
 	)
 
@@ -83,6 +88,7 @@ function InitItems() {
 		sItemDogTreats,
 		ITEM_TYPE.KEY,
 		"Dog treats. Perhaps enjoyed by a dog.",
+		"",
 		"I'm really curious... but I won't try one."
 	)
 

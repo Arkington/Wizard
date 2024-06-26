@@ -156,7 +156,12 @@ function InvSelectorUpdatePosMain(_up, _down, _left, _right, _hwrap = true) {
 }
 
 function InvSelectorUpdatePosInfo(_up, _down, _left, _right, _hwrap = true) {
-	
+	info_pos += _right - _left;
+	if (_hwrap) {
+		info_pos = (info_pos + INV_N_INFO_BUTTONS) % INV_N_INFO_BUTTONS; // Loop around
+	} else {
+		info_pos = clamp(info_pos, 0, INV_N_INFO_BUTTONS - 1);
+	}
 }
 
 function InvSelectorUpdatePosEquip(_up, _down, _left, _right, _hwrap = true, _vwrap = true) {

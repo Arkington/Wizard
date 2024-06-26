@@ -65,6 +65,17 @@ for (var c = 0; c < char_count; c++) {
 		_col, _col, _col, _col,
 		alpha * _fade_factor
 	);
+	draw_text_edge_ext(
+		res_round(x + (char_x[c] + x_buffer + _pulse_adj_x + _shake_adj_x + portrait_x_adj)*scale),
+		res_round(y + (char_y[c] + y_buffer + _pulse_adj_y + _wave_adj + _shake_adj_y)*scale),
+		_char,
+		LARGE,
+		LARGE,
+		scale * _pulse_factor,
+		0,
+		_col,
+		alpha * _fade_factor
+	)
 }
 
 if portrait != NO_PORTRAIT {

@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"InventorySelector",
+  "%Name":"InventoryMove",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"InventorySelector",
+  "name":"InventoryMove",
   "parent":{
     "name":"Inventory",
     "path":"folders/Inventory.yy",

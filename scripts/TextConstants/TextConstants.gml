@@ -7,7 +7,10 @@
 #macro NO_VOICE undefined
 #macro TEXT_PAUSE_VOICE_CHARS ".,!?"
 #macro PAGE_PAUSE_S 2
+
 #macro fntMagic global.magic_font
+#macro fntLittlePixels global.little_pixels
+#macro FNT_SEP_LITTLE_PIXELS 8
 
 // Special strings
 #macro AXEL "[Axel]"

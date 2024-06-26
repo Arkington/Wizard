@@ -1,9 +1,17 @@
 // General properties
-#macro INV_X 32
-#macro INV_Y 52
+#macro INV_X 29//32
+#macro INV_Y 41//52
 #macro INV_BORDER_THICKNESS 5
 #macro INV_N_ROWS 3
 #macro INV_N_COLS 5
+
+enum INV_MODE {
+	ITEMS,
+	ITEM_HIGHLIGHT,
+	KEY_ITEMS,
+	MAGIC,
+	MAGIC_HIGHLIGHT
+}
 
 // Selector
 #macro INV_SELECTOR_DOUBLE_TAP_TIMER 10
@@ -12,6 +20,7 @@
 #macro INV_MAIN_WINDOW_W 156
 #macro INV_MAIN_WINDOW_H 98
 #macro INV_SLOT_BUFFER 1
+#macro INV_SLOTS_V_BUFFER 4
 #macro ITEM_SIZE 20
 
 // Tabs
@@ -22,9 +31,10 @@
 
 // Info window
 #macro INV_INFO_WIDTH 124
-#macro INV_INFO_TEXT_OFFSET 2
+#macro INV_INFO_TEXT_OFFSET 4
 #macro INV_INFO_SLOT_OFFSET 2
-#macro INV_INFO_TEXTBOX_OFFSET 2
+#macro INV_INFO_TEXTBOX_OFFSET 1
+#macro INV_N_INFO_BUTTONS 3
 
 // Equip window
 #macro INV_HP_LEN 64

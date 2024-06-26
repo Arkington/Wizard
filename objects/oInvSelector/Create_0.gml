@@ -1,7 +1,9 @@
 if (live_call()) return live_result;
 
+
 loc = INV_SELECTOR_LOC.MAIN;
 pos = 0;
+info_pos = 0;
 w = 0;
 h = 0;
 

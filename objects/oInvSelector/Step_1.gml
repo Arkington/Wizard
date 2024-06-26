@@ -17,8 +17,13 @@ var _left = (key.left - key.right > 0);
 var _right = (key.left - key.right < 0);
 
 
-if (_up or _down or _left or _right) {
+// Smooth movement
+if (_up or _down or _left or _right or key.interact) {
 	progress = 0;
+}
+
+// Movement
+if (_up or _down or _left or _right) {
 	double_tap = false;
 
 	// Double tap checks
@@ -30,11 +35,13 @@ if (_up or _down or _left or _right) {
 
 	InvSelectorUpdatePos(_up, _down, _left, _right);
 
-
 	// SFX
 	audio_play_sound(sndMenuMove, 0, false);
 }
+
+// Interact
 if (key.interact) {
+	InventoryInteract(oInventory);
 	audio_play_sound(sndMenuSelect, 0, false);
 }
 
