@@ -12,11 +12,21 @@ item_select = NONE;
 x = 29;
 y = 41;
 
+// Items
+items = array_clone(global.inventory.items);
+while (array_length(items) < INV_N_COLS*INV_N_ROWS) { array_push(items, NONE); }
+n_items = array_length(items);
+
+
+
+// Selector
+selector = instance_create_layer(0, 0, LAYER_TEXT, oInvSelector);
+selector.depth -= 2;
+
+// Tabs
 font = fntMagic;
 draw_set_text(fntMagic, WHITE, fa_left, fa_top);
 tab_text_height = string_height(ALPHABET) + 2;
-
-// Tab stats
 tab_text = [
 	"Items",
 	"Key Items",
@@ -32,23 +42,13 @@ for (var i = 1; i < INV_N_TABS; i++) {
 }
 tab_h = tab_text_height + INV_TAB_TEXT_BUFFER_Y;
 
-// Slot stats
+// Main window
 slot_w = sprite_get_width(sInvSlot);
 slot_h = sprite_get_height(sInvSlot);
-
-// Main window
 inv_w = tab_x[INV_N_TABS - 1] + tab_widths[INV_N_TABS - 1];
 excess = inv_w - 2*INV_BORDER_THICKNESS - (INV_N_COLS * (slot_w + INV_SLOT_BUFFER) - INV_SLOT_BUFFER);
 inv_h = 2*(INV_BORDER_THICKNESS + INV_SLOTS_V_BUFFER) + INV_N_ROWS*(slot_h + INV_SLOT_BUFFER) + INV_SLOT_BUFFER;
-
-// Items
-items = global.inventory.items;
-n_items = array_length(items);
 item_offset = (slot_w - ITEM_SIZE)/2;
-
-// Selector
-selector = instance_create_layer(0, 0, LAYER_TEXT, oInvSelector);
-selector.depth -= 2;
 
 // Equip window
 equip_x = 0;
@@ -66,7 +66,6 @@ equip_w = inv_w;
 equip_h = equip_heading_h + 2*INV_EQUIP_SLOT_OFFSET + equip_slot_h + INV_BORDER_THICKNESS;
 back_w = sprite_get_width(sInvBack);
 back_h = sprite_get_height(sInvBack);
-
 
 // Info window
 info_x = inv_w - 1;

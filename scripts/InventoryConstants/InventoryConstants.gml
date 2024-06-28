@@ -4,6 +4,7 @@
 #macro INV_BORDER_THICKNESS 5
 #macro INV_N_ROWS 3
 #macro INV_N_COLS 5
+#macro INV_SWAP_TIME_S 0.18
 
 enum INV_MODE {
 	ITEMS,
@@ -15,6 +16,8 @@ enum INV_MODE {
 
 // Selector
 #macro INV_SELECTOR_DOUBLE_TAP_TIMER 10
+#macro INV_SELECTOR_MIN_SIZE 12
+#macro INV_SELECTOR_GRAB_HEIGHT 6
 
 // Main window
 #macro INV_MAIN_WINDOW_W 156

@@ -26,15 +26,15 @@ function AddToInventory(_item) {
 }
 
 
-function DrawItem(_item, _x, _y, _shadow = true, _scale = 1) {
+function DrawItem(_item, _x, _y, _shadow = true, _scale = 1, _shadow_x = 1, _shadow_y = 1) {
 	
 	// Shadow
 	if (_shadow) {
 		draw_sprite_ext(
 			_item.sprite,
 			0,
-			_x + 1,
-			_y + 1,
+			_x + _shadow_x,
+			_y + _shadow_y,
 			_scale,
 			_scale,
 			0,

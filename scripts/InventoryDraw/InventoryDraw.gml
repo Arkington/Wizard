@@ -35,7 +35,6 @@ function InvDrawMainWindow() {
 		inv_h
 	)
 
-
 	// Highlighted tabs
 	for (var i = 0; i < INV_N_TABS; i++) {
 		if (i != tab) { continue; }
@@ -57,14 +56,14 @@ function InvDrawMainWindow() {
 	
 	}
 
-
+/*
 	// Selector - on tabs
 	for (var i = 0; i < INV_N_TABS; i++) {
 		if (selector.loc == INV_SELECTOR_LOC.TABS and selector.pos == i) {
 			InvSelectorUpdateCoords(x + tab_x[i], y - tab_h + 1, tab_widths[i], tab_h + 3);
 		}
 	}
-
+*/
 
 	// Inventory slots
 	var _item_slot = 0;
@@ -82,19 +81,19 @@ function InvDrawMainWindow() {
 				_slot_y
 			)
 			// Item
-			if (n_items > _item_slot) {
+			if (n_items > _item_slot and items[_item_slot] != NONE) {
 				DrawItem(
 					items[_item_slot],
 					_slot_x + item_offset,
 					_slot_y + item_offset
 				)
 			}
-		
+/*
 			// Selector
 			if (selector.loc == INV_SELECTOR_LOC.MAIN and selector.pos == _item_slot) {
 				InvSelectorUpdateCoords(_slot_x, _slot_y, slot_w, slot_h);
 			}
-		
+*/
 			_item_slot++;
 		}
 	}
@@ -144,9 +143,9 @@ function InvDrawInfoWindow() {
 	)
 
 	// Info tab item highlight
-	if (item_select != NONE) {
+	if (item_select != NONE and items[item_select] != NONE) {
 		var _item = items[item_select];
-	
+
 		// Name
 		draw_set_halign(fa_center);
 		draw_text_border(
@@ -154,7 +153,7 @@ function InvDrawInfoWindow() {
 			y + info_item_name_y,
 			_item.name
 		)
-	
+
 		// Image
 		DrawItem(
 			_item,
@@ -193,7 +192,8 @@ function InvDrawInfoWindow() {
 					info_buttons_w[i],
 					info_buttons_h
 				)
-				
+
+/*
 				// Update selector
 				if (selector.info_pos == i) {
 					InvSelectorUpdateCoords(
@@ -203,6 +203,7 @@ function InvDrawInfoWindow() {
 						info_buttons_h + 2
 					);
 				}
+*/
 			}
 		} else {
 			draw_text_edge_ext(
@@ -264,11 +265,12 @@ function InvDrawEquipWindow() {
 			_equip_slot_x,
 			_equip_slot_y
 		)
-	
+/*
 		// Selector - equip slots
 		if (selector.loc == INV_SELECTOR_LOC.EQUIP and selector.pos == i) {
 			InvSelectorUpdateCoords(_equip_slot_x, _equip_slot_y, equip_slot_w, equip_slot_h);
 		}
+*/
 	}
 
 	// Back button
@@ -280,8 +282,11 @@ function InvDrawEquipWindow() {
 		_back_x,
 		_back_y
 	)
+	
+/*
 	// Selector - back button
 	if (selector.loc == INV_SELECTOR_LOC.EQUIP and selector.pos == 3) {
 		InvSelectorUpdateCoords(_back_x - 2, _back_y - 2, back_w + 4, back_h + 4);
 	}
+*/
 }

@@ -64,3 +64,10 @@ function array_remove_values(_array, _vals) {
 function array_choose(_array) {
 	return _array[irandom_range(0, array_length(_array) - 1)];
 }
+
+/// @desc My array_copy() function.
+function array_clone(_array) {
+	var _copy = [];
+	array_copy(_copy, 0, _array, 0, array_length(_array));
+	return _copy;
+}

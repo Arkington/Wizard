@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"InvSelectorStates",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InvSelectorStates",
+  "parent":{
+    "name":"Inventory",
+    "path":"folders/Inventory.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
