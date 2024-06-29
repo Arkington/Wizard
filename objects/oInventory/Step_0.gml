@@ -6,9 +6,10 @@ if ((selector.loc == INV_SELECTOR_LOC.MAIN or selector.loc == INV_SELECTOR_LOC.I
 	item_select = selector.pos;
 }
 
+
 // HP bar display
 if (tab == TABS.ITEMS and hp == NONE) {
-	hp = instance_create_layer(x + hp_x, y + hp_y, LAYER_TEXT, oHP);
+	hp = instance_create_layer(hp_x, hp_y, LAYER_TEXT, oHP);
 	hp.hp_len = INV_HP_LEN;
 	hp.depth -= 1;
 } else if (tab != TABS.ITEMS and hp != NONE) {

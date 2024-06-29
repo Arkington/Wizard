@@ -12,10 +12,14 @@ key.interact = keyboard_check_pressed(KEY_INTERACT);
 
 
 // Progress
-progress = min(progress + max((1 - progress)*0.2, 0.05), 1);
+progress = min(progress + max((1 - progress)*0.3, 0.1), 1);
 
 // Double tap timer
 double_tap_timer--;
+
+var _ignore_wh = (held_item != NONE or swap_in_item != NONE);
+InvSelectorSmoothMove(_ignore_wh);
+	
 
 // State
 state();

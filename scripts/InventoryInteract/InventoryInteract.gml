@@ -38,7 +38,7 @@ function InvInteractMain() {
 	// Nothing held, bring up info menu
 	if (held_item == NONE) {
 		progress = 0;
-		if (pos < inv.n_items) {
+		if (inv.items[pos] != NONE) {
 			loc = INV_SELECTOR_LOC.INFO;
 			info_pos = 0;
 		}

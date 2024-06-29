@@ -9,10 +9,6 @@ function InvSelectorStateFree() {
 	var _left = (key.left - key.right > 0);
 	var _right = (key.left - key.right < 0);
 
-	// Smooth move
-	if (_up or _down or _left or _right or key.interact) {
-		progress = 0;
-	}
 
 	// Movement or Interact
 	if (_up or _down or _left or _right) {
@@ -35,17 +31,19 @@ function InvSelectorStateFree() {
 		audio_play_sound(sndMenuSelect, 0, false);
 	}
 
+	// Smooth move (must be after interact)
+	if (_up or _down or _left or _right or key.interact) {
+		progress = 0;
+	
+		// Update position
+		InvSelectorUpdatePos(_up, _down, _left, _right);
+		var _ignore_wh = (held_item != NONE or swap_in_item != NONE);
+		InvSelectorUpdateTargets(_ignore_wh);
 
-	// Update position
-	var _ignore_wh = (held_item != NONE or swap_in_item != NONE);
-	InvSelectorUpdatePos(_up, _down, _left, _right);
-	var _targets = InvSelectorGetTargets();
-	InvSelectorUpdateTargets(_targets[0], _targets[1], _targets[2], _targets[3], _ignore_wh);
-	InvSelectorSmoothMove(_ignore_wh);
-
+	}
 
 	// Offset if neeeded
-	if (loc == INV_SELECTOR_LOC.MAIN) {
+	if (loc == INV_SELECTOR_LOC.MAIN and x_offset > 0) {
 		x_offset = (slot_w - w)/2;
 		y_offset = (slot_h - h)/2;
 	} else {
@@ -71,6 +69,7 @@ function InvSelectorStatePlaceItem() {
 		held_item = NONE;
 		w = INV_SELECTOR_MIN_SIZE + 1;
 		h = INV_SELECTOR_MIN_SIZE + 1;
+		InvSelectorUpdateTargets();
 		progress = 0;
 		sprite_index = sInvSelector;
 		image_speed = 1;
@@ -107,8 +106,7 @@ function InvSelectorStateGrabPrep() {
 	loc = INV_SELECTOR_LOC.MAIN;
 	
 	// Interpolate position
-	var _targets = InvSelectorGetTargets();
-	InvSelectorUpdateTargets(_targets[0], _targets[1], _targets[2], _targets[3]);
+	InvSelectorUpdateTargets();
 	InvSelectorSmoothMove();
 
 	if (progress == 1) {

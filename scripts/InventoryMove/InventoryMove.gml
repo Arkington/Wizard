@@ -12,74 +12,63 @@ enum INV_SELECTOR_LOC {
 function InvSelectorGetTargets() {
 	if (live_call()) return live_result;
 
-
-	var _x;
-	var _y;
-	var _w;
-	var _h;
-
 	with (inv) {
 
 		switch(other.loc) {
 			case INV_SELECTOR_LOC.TABS:
-				_x = x + tab_x[other.pos];
-				_y = y - tab_h + 1;
-				_w = tab_widths[other.pos];
-				_h = tab_h + 3;
-				break;
+				return [
+					tab_x[other.pos],
+					tab_y,
+					tab_widths[other.pos],
+					tab_h
+				]
 				
 			case INV_SELECTOR_LOC.MAIN:
-				_x = x + INV_BORDER_THICKNESS + excess/2 + (other.pos mod INV_N_COLS)*(slot_w + INV_SLOT_BUFFER);
-				_y = y + INV_BORDER_THICKNESS + INV_SLOTS_V_BUFFER + INV_SLOT_BUFFER + (other.pos div INV_N_COLS)*(slot_h + INV_SLOT_BUFFER);
-				_w = slot_w;
-				_h = slot_h;
-				break;
+				return [
+					slot_x[other.pos],
+					slot_y[other.pos],
+					slot_w,
+					slot_h
+				]
 				
 			case INV_SELECTOR_LOC.INFO:
-				_x = x + info_buttons_x[other.info_pos] - 1;
-				_y = y + info_textbox_y + info_textbox_h - info_buttons_h - 4;
-				_w = info_buttons_w[other.info_pos] + 2;
-				_h = info_buttons_h + 2;
-				break;
+				return [
+					info_buttons_x[other.info_pos] - 1,
+					info_buttons_y - 1,
+					info_buttons_w[other.info_pos] + 2,
+					info_buttons_h + 2
+				]
 				
 			case INV_SELECTOR_LOC.EQUIP:
 				if (other.pos != 3) {
-					_x = x + equip_x + other.pos*(equip_slot_w + INV_EQUIP_SLOT_OFFSET) + INV_EQUIP_SLOT_OFFSET + INV_BORDER_THICKNESS;
-					_y = y + equip_y + equip_heading_h + INV_EQUIP_SLOT_OFFSET;
-					_w = equip_slot_w;
-					_h = equip_slot_h;
+					return [
+						equip_slot_x[other.pos],
+						equip_slot_y,
+						equip_slot_w,
+						equip_slot_h
+					
+					]
 				} else {
-					_x = x + equip_x + equip_w - back_w - INV_BORDER_THICKNESS - INV_EQUIP_SLOT_OFFSET - 2;
-					_y = y + equip_y + equip_h - back_h - INV_BORDER_THICKNESS - INV_EQUIP_SLOT_OFFSET - 2;
-					_w = back_w + 4;
-					_h = back_h + 4;
-				}
-				break;
-				
+					return [
+						back_x - 2,
+						back_y - 2,
+						back_w + 4,
+						back_h + 4
+					]
+				}				
 		}
 	}
-	
-	// Init condition
-	return [_x, _y, _w, _h];
 }
 
-/// @desc Run from oInvSelector.
-function InvSelectorUpdateTargets(_x, _y, _w, _h, _ignore_wh = false) {
+/// @desc Runs InvSelectorGetTargets() and then updates them. Run from oInvSelector.
+function InvSelectorUpdateTargets(_ignore_wh = false) {
+	
+	var _targets = InvSelectorGetTargets();
+	_x = _targets[0];
+	_y = _targets[1];
+	_w = _targets[2];
+	_h = _targets[3];
 
-
-	// Init condition
-	if (w == 0 or h == 0) {
-		old_x = _x;
-		old_y = _y;
-		old_w = _w;
-		old_h = _h;
-		
-		tar_x = _x;
-		tar_y = _y;
-		tar_w = _w;
-		tar_h = _h;
-	}
-		
 	// Update condition
 	old_x = x;
 	old_y = y;

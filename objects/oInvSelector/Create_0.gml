@@ -16,19 +16,21 @@ swap_progress = 0;
 item_offset = (sprite_get_width(sInvSlot) - ITEM_SIZE)/2;
 
 
+var _targets = InvSelectorGetTargets();
+tar_x = _targets[0];
+tar_y = _targets[1];
+tar_w = _targets[2];
+tar_h = _targets[3];
 
-w = 0;
-h = 0;
+old_x = _targets[0];
+old_y = _targets[1];
+old_w = _targets[2];
+old_h = _targets[3];
 
-tar_x = 0;
-tar_y = 0;
-tar_w = 0;
-tar_h = 0;
-
-old_x = x;
-old_y = y;
-old_w = w;
-old_h = h;
+x = _targets[0];
+y = _targets[1];
+w = _targets[2];
+h = _targets[3];
 
 key = {};
 progress = 1;
