@@ -9,3 +9,6 @@ y_speed = 0;
 z = 0;
 depth_adj = 0;
 key = {};
+
+// Illumination vars
+super_tiles_map = layer_tilemap_get_id(layer_get_id(LAYER_SUPER_TILES));

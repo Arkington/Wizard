@@ -13,6 +13,7 @@ function PlayerStateFree() {
 
 	PlayerMoveCollide();
 	PlayerAnimate();
+	PlayerIlluminate();
 	
 	// Interact key
 	if (key.interact) {

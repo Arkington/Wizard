@@ -61,6 +61,21 @@ function PlayerMoveCollide() {
 	
 }
 
+
+function PlayerIlluminate() {
+	// Trigger if we are more than half covered by tile
+	if tilemap_get_at_pixel(super_tiles_map, OBJ_MID_X, OBJ_MID_Y) {
+		if (!instance_exists(oPlayerIllumination)) { instance_create_depth(0, 0, -LARGE, oPlayerIllumination); }
+		with (oPlayerIllumination) {
+			illuminate = min(illuminate + 1/(PLAYER_ILLUMINATE_TIME_S*FPS), 1);
+		}
+	} else {
+		with (oPlayerIllumination) {
+			illuminate = max(illuminate - 1/(PLAYER_ILLUMINATE_TIME_S*FPS), 0);
+		}
+	}
+}
+
 /// @desc Helper function to check if we hit solid entities
 function entity_collision(x_speed, y_speed) {
 	var _entity_list = ds_list_create();

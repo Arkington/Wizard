@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PlayerConstants",
   "parent":{
-    "name":"Macros",
-    "path":"folders/Macros.yy",
+    "name":"Player",
+    "path":"folders/Player.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

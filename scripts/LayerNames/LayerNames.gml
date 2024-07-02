@@ -2,6 +2,7 @@
 #macro LAYER_WALLS "Walls"
 #macro LAYER_INSTANCES "Instances"
 #macro LAYER_TILES "TilesMain"
+#macro LAYER_SUPER_TILES "TilesWalkBehind"
 #macro LAYER_MECHANICS "Mechanics"
 #macro LAYER_BATTLE_GUI "BattleGUI"
 #macro LAYER_BATTLE_BACKGROUND "BattleBackground"

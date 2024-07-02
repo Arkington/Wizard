@@ -24,7 +24,7 @@
           -67,0,-15,1,-6,0,1,1,-13,0,1,1,-6,0,1,1,-13,0,1,1,-6,0,1,1,-13,0,1,1,-6,0,1,1,-13,0,1,1,-6,0,1,1,-13,
           0,1,1,-6,0,1,1,-13,0,1,1,-6,0,1,1,-13,0,1,1,-6,0,1,1,-13,0,1,1,-6,0,-15,1,-23,0,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tsWall","path":"tilesets/tsWall/tsWall.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
-    {"$GMRTileLayer":"","%Name":"TilesUpper","depth":-999,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"TilesUpper","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":14,"SerialiseWidth":21,"TileCompressedData":[
+    {"$GMRTileLayer":"","%Name":"TilesWalkBehind","depth":-999,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"TilesWalkBehind","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":14,"SerialiseWidth":21,"TileCompressedData":[
           -25,0,2,6,7,-11,8,2,9,10,-6,0,2,38,39,-11,40,2,41,42,-6,0,2,70,71,-11,0,2,73,74,-6,0,2,70,71,-11,0,2,
           73,74,-6,0,2,70,71,-11,0,2,73,74,-6,0,2,70,71,-11,0,2,73,74,-6,0,2,70,71,-11,0,2,73,74,-6,0,2,70,71,
           -11,0,2,73,74,-6,0,2,70,71,-11,0,2,73,74,-6,0,2,70,71,-11,0,2,73,74,-6,0,2,102,103,-11,104,2,105,106,
